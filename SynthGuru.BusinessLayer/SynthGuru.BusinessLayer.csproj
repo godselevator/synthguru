@@ -42,6 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer.cs" />
+    <Compile Include="DTO\DTO.cs" />
+    <Compile Include="GenericResponse.cs" />
+    <Compile Include="Main businesslogic\AdminBL.cs" />
+    <Compile Include="Main businesslogic\SynthModelBL.cs" />
+    <Compile Include="Main businesslogic\ManufacturerBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryImplementations\SynthModel.cs" />
     <Compile Include="RepositoryImplementations\SynthesisType.cs" />

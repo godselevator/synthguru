@@ -19,5 +19,24 @@ namespace SynthGuru.BusinessLayer
             _SynthesisTypeRepository = new SynthesisTypeRepository();
             _SynthModelRepository = new SynthModelRepository();
         }
+
+        public GenericResponse ResetDatabase()
+        {
+            var resp = new GenericResponse();
+
+            try
+            {
+                var dalAdmin = new DALAdmin();
+
+                dalAdmin.ResetDatabase();
+            }
+            catch (Exception ex)
+            {
+                resp.IsOK = false;
+                resp.ErrorMsg = $"Exception: {ex.Message}";
+            }
+
+            return resp;
+        }
     }
 }

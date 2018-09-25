@@ -13,6 +13,7 @@ namespace SynthGuru.BusinessLayer
         IList<SynthModel> GetAllSynthModels();
         SynthModel GetSynthModelById(int id);
         SynthModel GetSynthModelByName(string name);
+        IList<SynthModel> GetSynthModelsByManufacturerId(int id);
         void AddSynthModel(params SynthModel[] SynthModel);
         void UpdateSynthModel(params SynthModel[] SynthModel);
         void RemoveSynthModel(params SynthModel[] SynthModel);
@@ -33,6 +34,11 @@ namespace SynthGuru.BusinessLayer
         public SynthModel GetSynthModelByName(string name)
         {
             return _SynthModelRepository.GetSingle(d => d.Name.ToLower().Equals(name.ToLower()));
+        }
+
+        public IList<SynthModel> GetSynthModelsByManufacturerId(int id)
+        {
+            return _SynthModelRepository.GetList(d => d.ManufacturerId.Equals(id));
         }
 
         public void AddSynthModel(params SynthModel[] SynthModel)

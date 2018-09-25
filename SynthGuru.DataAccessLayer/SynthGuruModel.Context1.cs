@@ -19,6 +19,7 @@ namespace SynthGuru.DataAccessLayer
         public SynthGuruEntities()
             : base("name=SynthGuruEntities")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
