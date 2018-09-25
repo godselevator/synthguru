@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SynthGuruModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SynthesisType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SynthModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ManufacturerId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Polyphony" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SynthesisTypeId" Type="int" Nullable="false" />
+          <Property Name="StorageMemory" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_SynthModel_Manufacturer">
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1" />
+          <End Role="SynthModel" Type="Self.SynthModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SynthModel">
+              <PropertyRef Name="ManufacturerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SynthModel_SynthesisType">
+          <End Role="SynthesisType" Type="Self.SynthesisType" Multiplicity="1" />
+          <End Role="SynthModel" Type="Self.SynthModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SynthesisType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SynthModel">
+              <PropertyRef Name="SynthesisTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SynthGuruModelStoreContainer">
+          <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SynthesisType" EntityType="Self.SynthesisType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SynthModel" EntityType="Self.SynthModel" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_SynthModel_Manufacturer" Association="Self.FK_SynthModel_Manufacturer">
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+            <End Role="SynthModel" EntitySet="SynthModel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SynthModel_SynthesisType" Association="Self.FK_SynthModel_SynthesisType">
+            <End Role="SynthesisType" EntitySet="SynthesisType" />
+            <End Role="SynthModel" EntitySet="SynthModel" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SynthGuruModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="SynthModel" Relationship="Self.FK_SynthModel_Manufacturer" FromRole="Manufacturer" ToRole="SynthModel" />
+        </EntityType>
+        <EntityType Name="SynthesisType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="SynthModel" Relationship="Self.FK_SynthModel_SynthesisType" FromRole="SynthesisType" ToRole="SynthModel" />
+        </EntityType>
+        <EntityType Name="SynthModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ManufacturerId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="Polyphony" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SynthesisTypeId" Type="Int32" Nullable="false" />
+          <Property Name="StorageMemory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Manufacturer" Relationship="Self.FK_SynthModel_Manufacturer" FromRole="SynthModel" ToRole="Manufacturer" />
+          <NavigationProperty Name="SynthesisType" Relationship="Self.FK_SynthModel_SynthesisType" FromRole="SynthModel" ToRole="SynthesisType" />
+        </EntityType>
+        <Association Name="FK_SynthModel_Manufacturer">
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1" />
+          <End Role="SynthModel" Type="Self.SynthModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SynthModel">
+              <PropertyRef Name="ManufacturerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SynthModel_SynthesisType">
+          <End Role="SynthesisType" Type="Self.SynthesisType" Multiplicity="1" />
+          <End Role="SynthModel" Type="Self.SynthModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SynthesisType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SynthModel">
+              <PropertyRef Name="SynthesisTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SynthGuruEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" />
+          <EntitySet Name="SynthesisType" EntityType="Self.SynthesisType" />
+          <EntitySet Name="SynthModel" EntityType="Self.SynthModel" />
+          <AssociationSet Name="FK_SynthModel_Manufacturer" Association="Self.FK_SynthModel_Manufacturer">
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+            <End Role="SynthModel" EntitySet="SynthModel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SynthModel_SynthesisType" Association="Self.FK_SynthModel_SynthesisType">
+            <End Role="SynthesisType" EntitySet="SynthesisType" />
+            <End Role="SynthModel" EntitySet="SynthModel" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SynthGuruModelStoreContainer" CdmEntityContainer="SynthGuruEntities">
+          <EntitySetMapping Name="Manufacturer">
+            <EntityTypeMapping TypeName="SynthGuruModel.Manufacturer">
+              <MappingFragment StoreEntitySet="Manufacturer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SynthesisType">
+            <EntityTypeMapping TypeName="SynthGuruModel.SynthesisType">
+              <MappingFragment StoreEntitySet="SynthesisType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SynthModel">
+            <EntityTypeMapping TypeName="SynthGuruModel.SynthModel">
+              <MappingFragment StoreEntitySet="SynthModel">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ManufacturerId" ColumnName="ManufacturerId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Polyphony" ColumnName="Polyphony" />
+                <ScalarProperty Name="SynthesisTypeId" ColumnName="SynthesisTypeId" />
+                <ScalarProperty Name="StorageMemory" ColumnName="StorageMemory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

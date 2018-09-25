@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOS.BusinessLayer", "AOS.BusinessLayer\AOS.BusinessLayer.csproj", "{16CEAD20-E521-4375-A5B8-BEBA9B32FA12}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOS.DataAccesslayer", "AOS.DataAccesslayer\AOS.DataAccesslayer.csproj", "{5044702C-CF85-4282-8648-34369DD9850B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOS.DomainModel", "AOS.DomainModel\AOS.DomainModel.csproj", "{C6310604-6BC9-4D66-A89C-3C65E7DED6C3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynthGuru.Web", "SynthGuru.Web\SynthGuru.Web.csproj", "{FE7213D1-EF3B-4EF9-A085-2D5C35ED3A32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynthGuru.DomainModel", "SynthGuru.DomainModel\SynthGuru.DomainModel.csproj", "{80458847-65DD-4C36-957C-964321663070}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynthGuru.DataAccessLayer", "SynthGuru.DataAccessLayer\SynthGuru.DataAccessLayer.csproj", "{C58DA2F4-C231-4342-981C-40A8CC1C7FF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynthGuru.BusinessLayer", "SynthGuru.BusinessLayer\SynthGuru.BusinessLayer.csproj", "{020431C0-B2E6-499A-A228-50686D936E2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,22 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{16CEAD20-E521-4375-A5B8-BEBA9B32FA12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16CEAD20-E521-4375-A5B8-BEBA9B32FA12}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16CEAD20-E521-4375-A5B8-BEBA9B32FA12}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16CEAD20-E521-4375-A5B8-BEBA9B32FA12}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5044702C-CF85-4282-8648-34369DD9850B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5044702C-CF85-4282-8648-34369DD9850B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5044702C-CF85-4282-8648-34369DD9850B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5044702C-CF85-4282-8648-34369DD9850B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C6310604-6BC9-4D66-A89C-3C65E7DED6C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6310604-6BC9-4D66-A89C-3C65E7DED6C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C6310604-6BC9-4D66-A89C-3C65E7DED6C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C6310604-6BC9-4D66-A89C-3C65E7DED6C3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FE7213D1-EF3B-4EF9-A085-2D5C35ED3A32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FE7213D1-EF3B-4EF9-A085-2D5C35ED3A32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE7213D1-EF3B-4EF9-A085-2D5C35ED3A32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE7213D1-EF3B-4EF9-A085-2D5C35ED3A32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80458847-65DD-4C36-957C-964321663070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80458847-65DD-4C36-957C-964321663070}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80458847-65DD-4C36-957C-964321663070}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80458847-65DD-4C36-957C-964321663070}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C58DA2F4-C231-4342-981C-40A8CC1C7FF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C58DA2F4-C231-4342-981C-40A8CC1C7FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C58DA2F4-C231-4342-981C-40A8CC1C7FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C58DA2F4-C231-4342-981C-40A8CC1C7FF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{020431C0-B2E6-499A-A228-50686D936E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{020431C0-B2E6-499A-A228-50686D936E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{020431C0-B2E6-499A-A228-50686D936E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{020431C0-B2E6-499A-A228-50686D936E2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
