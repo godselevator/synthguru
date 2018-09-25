@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.superoffice.net/ws/crm/NetServer/Services75" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WcfUserDefinedFieldInfoService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_UserDefinedFieldInfo1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://www.superoffice.net/ws/crm/NetServer/Services75" location="http://192.168.10.151/SuperOffice/Remote/Services75/UserDefinedFieldInfo.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_UserDefinedFieldInfo" type="i0:UserDefinedFieldInfo">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateDefaultUserDefinedFieldInfo">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/CreateDefaultUserDefinedFieldInfo" style="document" />
+      <wsdl:input name="CreateDefaultUserDefinedFieldInfoRequest">
+        <soap:header message="i0:CreateDefaultUserDefinedFieldInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultUserDefinedFieldInfoRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultUserDefinedFieldInfoRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultUserDefinedFieldInfoResponse">
+        <soap:header message="i0:CreateDefaultUserDefinedFieldInfoResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultUserDefinedFieldInfoResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultUserDefinedFieldInfoResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultUserDefinedFieldInfoResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserDefinedFieldInfo">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/SaveUserDefinedFieldInfo" style="document" />
+      <wsdl:input name="SaveUserDefinedFieldInfoRequest">
+        <soap:header message="i0:SaveUserDefinedFieldInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfoRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfoRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveUserDefinedFieldInfoResponse">
+        <soap:header message="i0:SaveUserDefinedFieldInfoResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfoResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfoResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfoResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserDefinedFieldInfo">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/DeleteUserDefinedFieldInfo" style="document" />
+      <wsdl:input name="DeleteUserDefinedFieldInfoRequest">
+        <soap:header message="i0:DeleteUserDefinedFieldInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DeleteUserDefinedFieldInfoRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DeleteUserDefinedFieldInfoRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteUserDefinedFieldInfoResponse">
+        <soap:header message="i0:DeleteUserDefinedFieldInfoResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DeleteUserDefinedFieldInfoResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DeleteUserDefinedFieldInfoResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DeleteUserDefinedFieldInfoResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDefinedFieldInfo">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/GetUserDefinedFieldInfo" style="document" />
+      <wsdl:input name="GetUserDefinedFieldInfoRequest">
+        <soap:header message="i0:GetUserDefinedFieldInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldInfoRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldInfoRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserDefinedFieldInfoResponse">
+        <soap:header message="i0:GetUserDefinedFieldInfoResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldInfoResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldInfoResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldInfoResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDefinedFieldList">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/GetUserDefinedFieldList" style="document" />
+      <wsdl:input name="GetUserDefinedFieldListRequest">
+        <soap:header message="i0:GetUserDefinedFieldListRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldListRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldListRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserDefinedFieldListResponse">
+        <soap:header message="i0:GetUserDefinedFieldListResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldListResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldListResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldListResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDefinedFieldFromFieldLabel">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/GetUserDefinedFieldFromFieldLabel" style="document" />
+      <wsdl:input name="GetUserDefinedFieldFromFieldLabelRequest">
+        <soap:header message="i0:GetUserDefinedFieldFromFieldLabelRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromFieldLabelRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromFieldLabelRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserDefinedFieldFromFieldLabelResponse">
+        <soap:header message="i0:GetUserDefinedFieldFromFieldLabelResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromFieldLabelResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromFieldLabelResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromFieldLabelResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDefinedFieldFromProgId">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/GetUserDefinedFieldFromProgId" style="document" />
+      <wsdl:input name="GetUserDefinedFieldFromProgIdRequest">
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserDefinedFieldFromProgIdResponse">
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDefinedFieldFromIds">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/GetUserDefinedFieldFromIds" style="document" />
+      <wsdl:input name="GetUserDefinedFieldFromIdsRequest">
+        <soap:header message="i0:GetUserDefinedFieldFromIdsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromIdsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromIdsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserDefinedFieldFromIdsResponse">
+        <soap:header message="i0:GetUserDefinedFieldFromIdsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromIdsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromIdsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromIdsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDefinedFieldFromProgIds">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/GetUserDefinedFieldFromProgIds" style="document" />
+      <wsdl:input name="GetUserDefinedFieldFromProgIdsRequest">
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserDefinedFieldFromProgIdsResponse">
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserDefinedFieldInfo">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/CreateUserDefinedFieldInfo" style="document" />
+      <wsdl:input name="CreateUserDefinedFieldInfoRequest">
+        <soap:header message="i0:CreateUserDefinedFieldInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateUserDefinedFieldInfoRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateUserDefinedFieldInfoRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateUserDefinedFieldInfoResponse">
+        <soap:header message="i0:CreateUserDefinedFieldInfoResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateUserDefinedFieldInfoResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateUserDefinedFieldInfoResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateUserDefinedFieldInfoResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeFieldType">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/ChangeFieldType" style="document" />
+      <wsdl:input name="ChangeFieldTypeRequest">
+        <soap:header message="i0:ChangeFieldTypeRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ChangeFieldTypeRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ChangeFieldTypeRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangeFieldTypeResponse">
+        <soap:header message="i0:ChangeFieldTypeResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ChangeFieldTypeResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ChangeFieldTypeResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ChangeFieldTypeResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDefinedPageOneFields">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/GetUserDefinedPageOneFields" style="document" />
+      <wsdl:input name="GetUserDefinedPageOneFieldsRequest">
+        <soap:header message="i0:GetUserDefinedPageOneFieldsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserDefinedPageOneFieldsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserDefinedPageOneFieldsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserDefinedPageOneFieldsResponse">
+        <soap:header message="i0:GetUserDefinedPageOneFieldsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedPageOneFieldsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedPageOneFieldsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserDefinedPageOneFieldsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Publish">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/Publish" style="document" />
+      <wsdl:input name="PublishRequest">
+        <soap:header message="i0:PublishRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:PublishRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:PublishRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PublishResponse">
+        <soap:header message="i0:PublishResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:PublishResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:PublishResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:PublishResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Revert">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/Revert" style="document" />
+      <wsdl:input name="RevertRequest">
+        <soap:header message="i0:RevertRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:RevertRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:RevertRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RevertResponse">
+        <soap:header message="i0:RevertResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:RevertResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:RevertResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:RevertResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserDefinedFieldInfos">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/SaveUserDefinedFieldInfos" style="document" />
+      <wsdl:input name="SaveUserDefinedFieldInfosRequest">
+        <soap:header message="i0:SaveUserDefinedFieldInfosRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfosRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfosRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveUserDefinedFieldInfosResponse">
+        <soap:header message="i0:SaveUserDefinedFieldInfosResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfosResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfosResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfosResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetectUnpublishedChanges">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/DetectUnpublishedChanges" style="document" />
+      <wsdl:input name="DetectUnpublishedChangesRequest">
+        <soap:header message="i0:DetectUnpublishedChangesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DetectUnpublishedChangesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DetectUnpublishedChangesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DetectUnpublishedChangesResponse">
+        <soap:header message="i0:DetectUnpublishedChangesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DetectUnpublishedChangesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DetectUnpublishedChangesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DetectUnpublishedChangesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetectColumnIdChanges">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/DetectColumnIdChanges" style="document" />
+      <wsdl:input name="DetectColumnIdChangesRequest">
+        <soap:header message="i0:DetectColumnIdChangesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DetectColumnIdChangesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DetectColumnIdChangesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DetectColumnIdChangesResponse">
+        <soap:header message="i0:DetectColumnIdChangesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DetectColumnIdChangesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DetectColumnIdChangesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DetectColumnIdChangesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserDefinedPageOneField">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/SetUserDefinedPageOneField" style="document" />
+      <wsdl:input name="SetUserDefinedPageOneFieldRequest">
+        <soap:header message="i0:SetUserDefinedPageOneFieldRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetUserDefinedPageOneFieldRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetUserDefinedPageOneFieldRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetUserDefinedPageOneFieldResponse">
+        <soap:header message="i0:SetUserDefinedPageOneFieldResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetUserDefinedPageOneFieldResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetUserDefinedPageOneFieldResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetUserDefinedPageOneFieldResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPublishEventActive">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/IsPublishEventActive" style="document" />
+      <wsdl:input name="IsPublishEventActiveRequest">
+        <soap:header message="i0:IsPublishEventActiveRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:IsPublishEventActiveRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:IsPublishEventActiveRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IsPublishEventActiveResponse">
+        <soap:header message="i0:IsPublishEventActiveResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:IsPublishEventActiveResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:IsPublishEventActiveResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:IsPublishEventActiveResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAnyPublishEventActive">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/IsAnyPublishEventActive" style="document" />
+      <wsdl:input name="IsAnyPublishEventActiveRequest">
+        <soap:header message="i0:IsAnyPublishEventActiveRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:IsAnyPublishEventActiveRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:IsAnyPublishEventActiveRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IsAnyPublishEventActiveResponse">
+        <soap:header message="i0:IsAnyPublishEventActiveResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:IsAnyPublishEventActiveResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:IsAnyPublishEventActiveResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:IsAnyPublishEventActiveResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChangedPageOneFields">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/GetChangedPageOneFields" style="document" />
+      <wsdl:input name="GetChangedPageOneFieldsRequest">
+        <soap:header message="i0:GetChangedPageOneFieldsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetChangedPageOneFieldsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetChangedPageOneFieldsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetChangedPageOneFieldsResponse">
+        <soap:header message="i0:GetChangedPageOneFieldsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetChangedPageOneFieldsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetChangedPageOneFieldsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetChangedPageOneFieldsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPageOneFieldGrouping">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/SetPageOneFieldGrouping" style="document" />
+      <wsdl:input name="SetPageOneFieldGroupingRequest">
+        <soap:header message="i0:SetPageOneFieldGroupingRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetPageOneFieldGroupingRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetPageOneFieldGroupingRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetPageOneFieldGroupingResponse">
+        <soap:header message="i0:SetPageOneFieldGroupingResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetPageOneFieldGroupingResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetPageOneFieldGroupingResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetPageOneFieldGroupingResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetListTableIdAndUDListDefinitionIdFromSelectedListId">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/SetListTableIdAndUDListDefinitionIdFromSelectedListId" style="document" />
+      <wsdl:input name="SetListTableIdAndUDListDefinitionIdFromSelectedListIdRequest">
+        <soap:header message="i0:SetListTableIdAndUDListDefinitionIdFromSelectedListIdRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetListTableIdAndUDListDefinitionIdFromSelectedListIdRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetListTableIdAndUDListDefinitionIdFromSelectedListIdRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetListTableIdAndUDListDefinitionIdFromSelectedListIdResponse">
+        <soap:header message="i0:SetListTableIdAndUDListDefinitionIdFromSelectedListIdResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetListTableIdAndUDListDefinitionIdFromSelectedListIdResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetListTableIdAndUDListDefinitionIdFromSelectedListIdResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetListTableIdAndUDListDefinitionIdFromSelectedListIdResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FigureOutListIdFromListTableIdAndUDListDefinitionId">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/FigureOutListIdFromListTableIdAndUDListDefinitionId" style="document" />
+      <wsdl:input name="FigureOutListIdFromListTableIdAndUDListDefinitionIdRequest">
+        <soap:header message="i0:FigureOutListIdFromListTableIdAndUDListDefinitionIdRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:FigureOutListIdFromListTableIdAndUDListDefinitionIdRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:FigureOutListIdFromListTableIdAndUDListDefinitionIdRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FigureOutListIdFromListTableIdAndUDListDefinitionIdResponse">
+        <soap:header message="i0:FigureOutListIdFromListTableIdAndUDListDefinitionIdResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:FigureOutListIdFromListTableIdAndUDListDefinitionIdResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:FigureOutListIdFromListTableIdAndUDListDefinitionIdResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:FigureOutListIdFromListTableIdAndUDListDefinitionIdResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRankOnFields">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/SetRankOnFields" style="document" />
+      <wsdl:input name="SetRankOnFieldsRequest">
+        <soap:header message="i0:SetRankOnFieldsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetRankOnFieldsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetRankOnFieldsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetRankOnFieldsResponse">
+        <soap:header message="i0:SetRankOnFieldsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetRankOnFieldsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetRankOnFieldsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetRankOnFieldsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPublishStartSystemEvent">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/SetPublishStartSystemEvent" style="document" />
+      <wsdl:input name="SetPublishStartSystemEventRequest">
+        <soap:header message="i0:SetPublishStartSystemEventRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetPublishStartSystemEventRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetPublishStartSystemEventRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetPublishStartSystemEventResponse">
+        <soap:header message="i0:SetPublishStartSystemEventResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetPublishStartSystemEventResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetPublishStartSystemEventResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetPublishStartSystemEventResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_UserDefinedFieldInfo1" type="i0:UserDefinedFieldInfo">
+    <wsp:PolicyReference URI="#BasicHttpBinding_UserDefinedFieldInfo1_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateDefaultUserDefinedFieldInfo">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/CreateDefaultUserDefinedFieldInfo" style="document" />
+      <wsdl:input name="CreateDefaultUserDefinedFieldInfoRequest">
+        <soap:header message="i0:CreateDefaultUserDefinedFieldInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultUserDefinedFieldInfoRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultUserDefinedFieldInfoRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultUserDefinedFieldInfoResponse">
+        <soap:header message="i0:CreateDefaultUserDefinedFieldInfoResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultUserDefinedFieldInfoResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultUserDefinedFieldInfoResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultUserDefinedFieldInfoResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserDefinedFieldInfo">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/SaveUserDefinedFieldInfo" style="document" />
+      <wsdl:input name="SaveUserDefinedFieldInfoRequest">
+        <soap:header message="i0:SaveUserDefinedFieldInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfoRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfoRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveUserDefinedFieldInfoResponse">
+        <soap:header message="i0:SaveUserDefinedFieldInfoResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfoResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfoResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfoResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserDefinedFieldInfo">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/DeleteUserDefinedFieldInfo" style="document" />
+      <wsdl:input name="DeleteUserDefinedFieldInfoRequest">
+        <soap:header message="i0:DeleteUserDefinedFieldInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DeleteUserDefinedFieldInfoRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DeleteUserDefinedFieldInfoRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteUserDefinedFieldInfoResponse">
+        <soap:header message="i0:DeleteUserDefinedFieldInfoResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DeleteUserDefinedFieldInfoResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DeleteUserDefinedFieldInfoResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DeleteUserDefinedFieldInfoResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDefinedFieldInfo">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/GetUserDefinedFieldInfo" style="document" />
+      <wsdl:input name="GetUserDefinedFieldInfoRequest">
+        <soap:header message="i0:GetUserDefinedFieldInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldInfoRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldInfoRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserDefinedFieldInfoResponse">
+        <soap:header message="i0:GetUserDefinedFieldInfoResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldInfoResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldInfoResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldInfoResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDefinedFieldList">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/GetUserDefinedFieldList" style="document" />
+      <wsdl:input name="GetUserDefinedFieldListRequest">
+        <soap:header message="i0:GetUserDefinedFieldListRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldListRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldListRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserDefinedFieldListResponse">
+        <soap:header message="i0:GetUserDefinedFieldListResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldListResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldListResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldListResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDefinedFieldFromFieldLabel">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/GetUserDefinedFieldFromFieldLabel" style="document" />
+      <wsdl:input name="GetUserDefinedFieldFromFieldLabelRequest">
+        <soap:header message="i0:GetUserDefinedFieldFromFieldLabelRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromFieldLabelRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromFieldLabelRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserDefinedFieldFromFieldLabelResponse">
+        <soap:header message="i0:GetUserDefinedFieldFromFieldLabelResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromFieldLabelResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromFieldLabelResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromFieldLabelResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDefinedFieldFromProgId">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/GetUserDefinedFieldFromProgId" style="document" />
+      <wsdl:input name="GetUserDefinedFieldFromProgIdRequest">
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserDefinedFieldFromProgIdResponse">
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDefinedFieldFromIds">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/GetUserDefinedFieldFromIds" style="document" />
+      <wsdl:input name="GetUserDefinedFieldFromIdsRequest">
+        <soap:header message="i0:GetUserDefinedFieldFromIdsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromIdsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromIdsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserDefinedFieldFromIdsResponse">
+        <soap:header message="i0:GetUserDefinedFieldFromIdsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromIdsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromIdsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromIdsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDefinedFieldFromProgIds">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/GetUserDefinedFieldFromProgIds" style="document" />
+      <wsdl:input name="GetUserDefinedFieldFromProgIdsRequest">
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserDefinedFieldFromProgIdsResponse">
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserDefinedFieldFromProgIdsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserDefinedFieldInfo">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/CreateUserDefinedFieldInfo" style="document" />
+      <wsdl:input name="CreateUserDefinedFieldInfoRequest">
+        <soap:header message="i0:CreateUserDefinedFieldInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateUserDefinedFieldInfoRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateUserDefinedFieldInfoRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateUserDefinedFieldInfoResponse">
+        <soap:header message="i0:CreateUserDefinedFieldInfoResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateUserDefinedFieldInfoResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateUserDefinedFieldInfoResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateUserDefinedFieldInfoResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeFieldType">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/ChangeFieldType" style="document" />
+      <wsdl:input name="ChangeFieldTypeRequest">
+        <soap:header message="i0:ChangeFieldTypeRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ChangeFieldTypeRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ChangeFieldTypeRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangeFieldTypeResponse">
+        <soap:header message="i0:ChangeFieldTypeResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ChangeFieldTypeResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ChangeFieldTypeResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ChangeFieldTypeResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDefinedPageOneFields">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/GetUserDefinedPageOneFields" style="document" />
+      <wsdl:input name="GetUserDefinedPageOneFieldsRequest">
+        <soap:header message="i0:GetUserDefinedPageOneFieldsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserDefinedPageOneFieldsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserDefinedPageOneFieldsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserDefinedPageOneFieldsResponse">
+        <soap:header message="i0:GetUserDefinedPageOneFieldsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedPageOneFieldsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserDefinedPageOneFieldsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserDefinedPageOneFieldsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Publish">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/Publish" style="document" />
+      <wsdl:input name="PublishRequest">
+        <soap:header message="i0:PublishRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:PublishRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:PublishRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PublishResponse">
+        <soap:header message="i0:PublishResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:PublishResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:PublishResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:PublishResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Revert">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/Revert" style="document" />
+      <wsdl:input name="RevertRequest">
+        <soap:header message="i0:RevertRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:RevertRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:RevertRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RevertResponse">
+        <soap:header message="i0:RevertResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:RevertResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:RevertResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:RevertResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserDefinedFieldInfos">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/SaveUserDefinedFieldInfos" style="document" />
+      <wsdl:input name="SaveUserDefinedFieldInfosRequest">
+        <soap:header message="i0:SaveUserDefinedFieldInfosRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfosRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfosRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveUserDefinedFieldInfosResponse">
+        <soap:header message="i0:SaveUserDefinedFieldInfosResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfosResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfosResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveUserDefinedFieldInfosResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetectUnpublishedChanges">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/DetectUnpublishedChanges" style="document" />
+      <wsdl:input name="DetectUnpublishedChangesRequest">
+        <soap:header message="i0:DetectUnpublishedChangesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DetectUnpublishedChangesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DetectUnpublishedChangesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DetectUnpublishedChangesResponse">
+        <soap:header message="i0:DetectUnpublishedChangesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DetectUnpublishedChangesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DetectUnpublishedChangesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DetectUnpublishedChangesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetectColumnIdChanges">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/DetectColumnIdChanges" style="document" />
+      <wsdl:input name="DetectColumnIdChangesRequest">
+        <soap:header message="i0:DetectColumnIdChangesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DetectColumnIdChangesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DetectColumnIdChangesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DetectColumnIdChangesResponse">
+        <soap:header message="i0:DetectColumnIdChangesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DetectColumnIdChangesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DetectColumnIdChangesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DetectColumnIdChangesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserDefinedPageOneField">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/SetUserDefinedPageOneField" style="document" />
+      <wsdl:input name="SetUserDefinedPageOneFieldRequest">
+        <soap:header message="i0:SetUserDefinedPageOneFieldRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetUserDefinedPageOneFieldRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetUserDefinedPageOneFieldRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetUserDefinedPageOneFieldResponse">
+        <soap:header message="i0:SetUserDefinedPageOneFieldResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetUserDefinedPageOneFieldResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetUserDefinedPageOneFieldResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetUserDefinedPageOneFieldResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPublishEventActive">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/IsPublishEventActive" style="document" />
+      <wsdl:input name="IsPublishEventActiveRequest">
+        <soap:header message="i0:IsPublishEventActiveRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:IsPublishEventActiveRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:IsPublishEventActiveRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IsPublishEventActiveResponse">
+        <soap:header message="i0:IsPublishEventActiveResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:IsPublishEventActiveResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:IsPublishEventActiveResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:IsPublishEventActiveResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAnyPublishEventActive">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/IsAnyPublishEventActive" style="document" />
+      <wsdl:input name="IsAnyPublishEventActiveRequest">
+        <soap:header message="i0:IsAnyPublishEventActiveRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:IsAnyPublishEventActiveRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:IsAnyPublishEventActiveRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IsAnyPublishEventActiveResponse">
+        <soap:header message="i0:IsAnyPublishEventActiveResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:IsAnyPublishEventActiveResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:IsAnyPublishEventActiveResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:IsAnyPublishEventActiveResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChangedPageOneFields">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/GetChangedPageOneFields" style="document" />
+      <wsdl:input name="GetChangedPageOneFieldsRequest">
+        <soap:header message="i0:GetChangedPageOneFieldsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetChangedPageOneFieldsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetChangedPageOneFieldsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetChangedPageOneFieldsResponse">
+        <soap:header message="i0:GetChangedPageOneFieldsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetChangedPageOneFieldsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetChangedPageOneFieldsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetChangedPageOneFieldsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPageOneFieldGrouping">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/SetPageOneFieldGrouping" style="document" />
+      <wsdl:input name="SetPageOneFieldGroupingRequest">
+        <soap:header message="i0:SetPageOneFieldGroupingRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetPageOneFieldGroupingRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetPageOneFieldGroupingRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetPageOneFieldGroupingResponse">
+        <soap:header message="i0:SetPageOneFieldGroupingResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetPageOneFieldGroupingResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetPageOneFieldGroupingResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetPageOneFieldGroupingResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetListTableIdAndUDListDefinitionIdFromSelectedListId">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/SetListTableIdAndUDListDefinitionIdFromSelectedListId" style="document" />
+      <wsdl:input name="SetListTableIdAndUDListDefinitionIdFromSelectedListIdRequest">
+        <soap:header message="i0:SetListTableIdAndUDListDefinitionIdFromSelectedListIdRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetListTableIdAndUDListDefinitionIdFromSelectedListIdRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetListTableIdAndUDListDefinitionIdFromSelectedListIdRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetListTableIdAndUDListDefinitionIdFromSelectedListIdResponse">
+        <soap:header message="i0:SetListTableIdAndUDListDefinitionIdFromSelectedListIdResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetListTableIdAndUDListDefinitionIdFromSelectedListIdResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetListTableIdAndUDListDefinitionIdFromSelectedListIdResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetListTableIdAndUDListDefinitionIdFromSelectedListIdResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FigureOutListIdFromListTableIdAndUDListDefinitionId">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/FigureOutListIdFromListTableIdAndUDListDefinitionId" style="document" />
+      <wsdl:input name="FigureOutListIdFromListTableIdAndUDListDefinitionIdRequest">
+        <soap:header message="i0:FigureOutListIdFromListTableIdAndUDListDefinitionIdRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:FigureOutListIdFromListTableIdAndUDListDefinitionIdRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:FigureOutListIdFromListTableIdAndUDListDefinitionIdRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FigureOutListIdFromListTableIdAndUDListDefinitionIdResponse">
+        <soap:header message="i0:FigureOutListIdFromListTableIdAndUDListDefinitionIdResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:FigureOutListIdFromListTableIdAndUDListDefinitionIdResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:FigureOutListIdFromListTableIdAndUDListDefinitionIdResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:FigureOutListIdFromListTableIdAndUDListDefinitionIdResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRankOnFields">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/SetRankOnFields" style="document" />
+      <wsdl:input name="SetRankOnFieldsRequest">
+        <soap:header message="i0:SetRankOnFieldsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetRankOnFieldsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetRankOnFieldsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetRankOnFieldsResponse">
+        <soap:header message="i0:SetRankOnFieldsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetRankOnFieldsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetRankOnFieldsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetRankOnFieldsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPublishStartSystemEvent">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/UserDefinedFieldInfo/SetPublishStartSystemEvent" style="document" />
+      <wsdl:input name="SetPublishStartSystemEventRequest">
+        <soap:header message="i0:SetPublishStartSystemEventRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetPublishStartSystemEventRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetPublishStartSystemEventRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetPublishStartSystemEventResponse">
+        <soap:header message="i0:SetPublishStartSystemEventResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetPublishStartSystemEventResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetPublishStartSystemEventResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetPublishStartSystemEventResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WcfUserDefinedFieldInfoService">
+    <wsdl:port name="BasicHttpBinding_UserDefinedFieldInfo" binding="tns:BasicHttpBinding_UserDefinedFieldInfo">
+      <soap:address location="http://192.168.10.151/SuperOffice/Remote/Services75/UserDefinedFieldInfo.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_UserDefinedFieldInfo1" binding="tns:BasicHttpBinding_UserDefinedFieldInfo1">
+      <soap:address location="https://qm-eis-dev-mok.modules.local/SuperOffice/Remote/Services75/UserDefinedFieldInfo.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

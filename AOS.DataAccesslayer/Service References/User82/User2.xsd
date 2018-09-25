@@ -1,0 +1,1610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.superoffice.net/ws/crm/NetServer/Services82" elementFormDefault="qualified" targetNamespace="http://www.superoffice.net/ws/crm/NetServer/Services82" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/SuperOffice82R01/Remote/Services82/User.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="CreateDefaultRoleEntity">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplicationToken" nillable="true" type="xs:string" />
+  <xs:complexType name="SoCredentials">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ticket" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoCredentials" nillable="true" type="tns:SoCredentials" />
+  <xs:element name="Credentials" nillable="true" type="tns:SoCredentials" />
+  <xs:complexType name="SoTimeZone">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SoTimeZoneId" type="xs:int" />
+      <xs:element minOccurs="0" name="SoTimeZoneLocationCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoTimeZone" nillable="true" type="tns:SoTimeZone" />
+  <xs:element name="TimeZone" nillable="true" type="tns:SoTimeZone" />
+  <xs:element name="CreateDefaultRoleEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:RoleEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RoleEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tooltip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleType" type="tns:RoleType" />
+          <xs:element minOccurs="0" name="Deleted" type="xs:short" />
+          <xs:element minOccurs="0" name="Rank" type="xs:short" />
+          <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UseCategories" type="xs:short" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="tns:Associate" />
+          <xs:element minOccurs="0" name="Updated" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="tns:Associate" />
+          <xs:element minOccurs="0" name="DataRights" nillable="true" type="tns:DataRights" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RoleEntity" nillable="true" type="tns:RoleEntity" />
+  <xs:complexType name="Carrier">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TableRight" nillable="true" type="tns:TableRight" />
+      <xs:element minOccurs="0" name="FieldProperties" nillable="true" type="tns:FieldPropertyDictionary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Carrier" nillable="true" type="tns:Carrier" />
+  <xs:complexType name="TableRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Mask" type="tns:ETableRight" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TableRight" nillable="true" type="tns:TableRight" />
+  <xs:simpleType name="ETableRight">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Select" />
+          <xs:enumeration value="Update" />
+          <xs:enumeration value="Insert" />
+          <xs:enumeration value="Delete" />
+          <xs:enumeration value="Filtering" />
+          <xs:enumeration value="RestrictedUpdate" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ETableRight" nillable="true" type="tns:ETableRight" />
+  <xs:complexType name="FieldPropertyDictionary">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FieldPropertyDictionaryKeyValuePair">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element name="Value" nillable="true" type="tns:FieldProperty" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FieldPropertyDictionary" nillable="true" type="tns:FieldPropertyDictionary" />
+  <xs:complexType name="FieldProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldRight" nillable="true" type="tns:FieldRight" />
+      <xs:element minOccurs="0" name="FieldType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldLength" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FieldProperty" nillable="true" type="tns:FieldProperty" />
+  <xs:complexType name="FieldRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Mask" type="tns:EFieldRight" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FieldRight" nillable="true" type="tns:FieldRight" />
+  <xs:simpleType name="EFieldRight">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Read" />
+          <xs:enumeration value="Write" />
+          <xs:enumeration value="Unused1" />
+          <xs:enumeration value="Unused2" />
+          <xs:enumeration value="Unused3" />
+          <xs:enumeration value="Unused4" />
+          <xs:enumeration value="UIHintMandatory" />
+          <xs:enumeration value="UIHintReadOnly" />
+          <xs:enumeration value="UndefinedValue256" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="EFieldRight" nillable="true" type="tns:EFieldRight" />
+  <xs:simpleType name="RoleType">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="short" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Employee" />
+      <xs:enumeration value="ExternalUser" />
+      <xs:enumeration value="Anonymous" />
+      <xs:enumeration value="System" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RoleType" nillable="true" type="tns:RoleType" />
+  <xs:complexType name="Associate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+          <xs:element minOccurs="0" name="Rank" type="xs:short" />
+          <xs:element minOccurs="0" name="Tooltip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" type="tns:UserType" />
+          <xs:element minOccurs="0" name="GroupIdx" type="xs:int" />
+          <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FormalName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Deleted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EjUserId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Associate" nillable="true" type="tns:Associate" />
+  <xs:simpleType name="UserType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="InternalAssociate" />
+      <xs:enumeration value="ResourceAssociate" />
+      <xs:enumeration value="ExternalAssociate" />
+      <xs:enumeration value="AnonymousAssociate" />
+      <xs:enumeration value="SystemAssociate" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserType" nillable="true" type="tns:UserType" />
+  <xs:complexType name="DataRights">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ColumnsInfo" nillable="true" type="tns:ArrayOfRelationToOwner" />
+          <xs:element minOccurs="0" name="RowsInfo" nillable="true" type="tns:ArrayOfEntityName" />
+          <xs:element minOccurs="0" name="Rights" nillable="true" type="tns:ArrayOfArrayOfDataRight" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataRights" nillable="true" type="tns:DataRights" />
+  <xs:complexType name="ArrayOfRelationToOwner">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RelationToOwner" nillable="true" type="tns:RelationToOwner" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRelationToOwner" nillable="true" type="tns:ArrayOfRelationToOwner" />
+  <xs:complexType name="RelationToOwner">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tooltip" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RelationToOwner" nillable="true" type="tns:RelationToOwner" />
+  <xs:complexType name="ArrayOfEntityName">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EntityName" nillable="true" type="tns:EntityName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEntityName" nillable="true" type="tns:ArrayOfEntityName" />
+  <xs:complexType name="EntityName">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TableDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityName" nillable="true" type="tns:EntityName" />
+  <xs:complexType name="ArrayOfArrayOfDataRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfDataRight" nillable="true" type="tns:ArrayOfDataRight" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArrayOfDataRight" nillable="true" type="tns:ArrayOfArrayOfDataRight" />
+  <xs:complexType name="ArrayOfDataRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataRight" nillable="true" type="tns:DataRight" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataRight" nillable="true" type="tns:ArrayOfDataRight" />
+  <xs:complexType name="DataRight">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataRight" nillable="true" type="tns:DataRight" />
+  <xs:complexType name="SoExceptionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StackTrace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FriendlyText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExceptionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InnerException" nillable="true" type="tns:SoExceptionInfo" />
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:SoExceptionInfoParameters" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoExceptionInfo" nillable="true" type="tns:SoExceptionInfo" />
+  <xs:complexType name="SoExceptionInfoParameters">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SoExceptionInfoParametersKeyValuePair">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element name="Value" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoExceptionInfoParameters" nillable="true" type="tns:SoExceptionInfoParameters" />
+  <xs:element name="ExceptionInfo" nillable="true" type="tns:SoExceptionInfo" />
+  <xs:complexType name="SoExtraInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExtraInfoNameValuePair">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element name="Value" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoExtraInfo" nillable="true" type="tns:SoExtraInfo" />
+  <xs:element name="ExtraInfo" nillable="true" type="tns:SoExtraInfo" />
+  <xs:element name="Succeeded" type="xs:boolean" />
+  <xs:element name="SaveRoleEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleEntity" nillable="true" type="tns:RoleEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveRoleEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:RoleEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDefaultUntrustedCredentials">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDefaultUntrustedCredentialsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:UntrustedCredentials" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="UntrustedCredentials">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ValidFrom" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ValidTo" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SecretValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PublicValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UntrustedCredentials" nillable="true" type="tns:UntrustedCredentials" />
+  <xs:element name="CreateDefaultUser">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDefaultUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="User">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rank" type="xs:short" />
+          <xs:element minOccurs="0" name="Tooltip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseOwners" nillable="true" type="tns:ArrayOfLicenseOwner" />
+          <xs:element minOccurs="0" name="Role" nillable="true" type="tns:Role" />
+          <xs:element minOccurs="0" name="UserGroup" nillable="true" type="tns:UserGroup" />
+          <xs:element minOccurs="0" name="OtherGroups" nillable="true" type="tns:ArrayOfUserGroup" />
+          <xs:element minOccurs="0" name="Person" nillable="true" type="tns:Person" />
+          <xs:element minOccurs="0" name="Deleted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Lastlogin" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Lastlogout" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EjUserId" type="xs:int" />
+          <xs:element minOccurs="0" name="Type" type="tns:UserType" />
+          <xs:element minOccurs="0" name="IsPersonRetired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsOnTravel" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Credentials" nillable="true" type="tns:ArrayOfCredential" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfLicenseOwner">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LicenseOwner" nillable="true" type="tns:LicenseOwner" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLicenseOwner" nillable="true" type="tns:ArrayOfLicenseOwner" />
+  <xs:complexType name="LicenseOwner">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RestrictedModuleLicenses" nillable="true" type="tns:ArrayOfModuleLicenseLink" />
+          <xs:element minOccurs="0" name="UnrestrictedModuleLicenses" nillable="true" type="tns:ArrayOfModuleLicenseLink" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicenseOwner" nillable="true" type="tns:LicenseOwner" />
+  <xs:complexType name="ArrayOfModuleLicenseLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModuleLicenseLink" nillable="true" type="tns:ModuleLicenseLink" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModuleLicenseLink" nillable="true" type="tns:ArrayOfModuleLicenseLink" />
+  <xs:complexType name="ModuleLicenseLink">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Unrestricted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Total" type="xs:int" />
+          <xs:element minOccurs="0" name="Tooltip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CanAssign" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Free" type="xs:int" />
+          <xs:element minOccurs="0" name="InUse" type="xs:int" />
+          <xs:element minOccurs="0" name="Assigned" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ModuleLicenseId" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrerequisiteModuleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SortOrder" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ModuleLicenseLink" nillable="true" type="tns:ModuleLicenseLink" />
+  <xs:complexType name="Role">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tooltip" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Role" nillable="true" type="tns:Role" />
+  <xs:complexType name="UserGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tooltip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Rank" type="xs:short" />
+          <xs:element minOccurs="0" name="Deleted" type="xs:short" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserGroup" nillable="true" type="tns:UserGroup" />
+  <xs:complexType name="ArrayOfUserGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserGroup" nillable="true" type="tns:UserGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserGroup" nillable="true" type="tns:ArrayOfUserGroup" />
+  <xs:complexType name="Person">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+          <xs:element minOccurs="0" name="Mrmrs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Firstname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Lastname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DirectPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FormalName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryId" type="xs:int" />
+          <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+          <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Retired" type="xs:short" />
+          <xs:element minOccurs="0" name="Rank" type="xs:short" />
+          <xs:element minOccurs="0" name="ActiveInterests" type="xs:short" />
+          <xs:element minOccurs="0" name="ContactDepartment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactCountryId" type="xs:int" />
+          <xs:element minOccurs="0" name="ContactOrgNr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FaxPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MobilePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssociateName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+          <xs:element minOccurs="0" name="UsePersonAddress" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ContactFax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Kanafname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Kanalname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Post1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Post2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Post3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmailName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactFullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ActiveErpLinks" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="ArrayOfCredential">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Credential" nillable="true" type="tns:Credential" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCredential" nillable="true" type="tns:ArrayOfCredential" />
+  <xs:complexType name="Credential">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Type" nillable="true" type="tns:CredentialType" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Credential" nillable="true" type="tns:Credential" />
+  <xs:complexType name="CredentialType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DisplayType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValueControl" type="tns:CredentialControlType" />
+          <xs:element minOccurs="0" name="CanCreatePerson" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CredentialType" nillable="true" type="tns:CredentialType" />
+  <xs:simpleType name="CredentialControlType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Static" />
+      <xs:enumeration value="Edit" />
+      <xs:enumeration value="Password" />
+      <xs:enumeration value="Link" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CredentialControlType" nillable="true" type="tns:CredentialControlType" />
+  <xs:element name="SaveUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCredential">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserId" type="xs:int" />
+        <xs:element minOccurs="0" name="Credential" nillable="true" type="tns:Credential" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCredentialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCredential">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserId" type="xs:int" />
+        <xs:element minOccurs="0" name="CredentialType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCredentialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindCredentialsGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SearchString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindCredentialsGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfCredentialsGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfCredentialsGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CredentialsGroup" nillable="true" type="tns:CredentialsGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCredentialsGroup" nillable="true" type="tns:ArrayOfCredentialsGroup" />
+  <xs:complexType name="CredentialsGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CredentialsGroup" nillable="true" type="tns:CredentialsGroup" />
+  <xs:element name="FindCredentialUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SearchString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindCredentialUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:CredentialsGroupUsers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CredentialsGroupUsers">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Headings" nillable="true" type="q1:ArrayOfstring" />
+          <xs:element minOccurs="0" name="Users" nillable="true" type="tns:ArrayOfCredentialUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CredentialsGroupUsers" nillable="true" type="tns:CredentialsGroupUsers" />
+  <xs:complexType name="ArrayOfCredentialUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CredentialUser" nillable="true" type="tns:CredentialUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCredentialUser" nillable="true" type="tns:ArrayOfCredentialUser" />
+  <xs:complexType name="CredentialUser">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayValue" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Columns" nillable="true" type="q2:ArrayOfstring" />
+          <xs:element minOccurs="0" name="CanCreatePerson" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CredentialUser" nillable="true" type="tns:CredentialUser" />
+  <xs:element name="GetCredentialTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCredentialTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfCredentialType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfCredentialType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CredentialType" nillable="true" type="tns:CredentialType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCredentialType" nillable="true" type="tns:ArrayOfCredentialType" />
+  <xs:element name="GetCredentialUsersInGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCredentialUsersInGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:CredentialsGroupUsers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:Role" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleEntityId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:RoleEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleIdToDelete" type="xs:int" />
+        <xs:element minOccurs="0" name="ReplacingRoleId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRoleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleType" type="tns:RoleType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfSelectableMDOListItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfSelectableMDOListItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SelectableMDOListItem" nillable="true" type="tns:SelectableMDOListItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSelectableMDOListItem" nillable="true" type="tns:ArrayOfSelectableMDOListItem" />
+  <xs:complexType name="SelectableMDOListItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ToolTip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Deleted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Rank" type="xs:int" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ColorBlock" type="xs:int" />
+          <xs:element minOccurs="0" name="IconHint" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Selected" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastChanged" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ChildItems" nillable="true" type="tns:ArrayOfSelectableMDOListItem" />
+          <xs:element minOccurs="0" name="ExtraInfo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StyleHint" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Hidden" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SelectableMDOListItem" nillable="true" type="tns:SelectableMDOListItem" />
+  <xs:element name="GetAllFunctionalRights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleType" type="tns:RoleType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllFunctionalRightsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfSelectableMDOListItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFunctionalRights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFunctionalRightsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfSelectableMDOListItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetFunctionalRights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FunctionalRightIds" nillable="true" type="q3:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetFunctionalRightsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDataRight">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+        <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RelationToOwner" type="tns:RoleRelationToOwner" />
+        <xs:element minOccurs="0" name="DataRightValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="RoleRelationToOwner">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MyOwn" />
+      <xs:enumeration value="PrimaryGroup" />
+      <xs:enumeration value="OtherGroups" />
+      <xs:enumeration value="OtherAssociates" />
+      <xs:enumeration value="ExternalUser" />
+      <xs:enumeration value="Anonymous" />
+      <xs:enumeration value="MyCompany" />
+      <xs:enumeration value="SameProject" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RoleRelationToOwner" nillable="true" type="tns:RoleRelationToOwner" />
+  <xs:element name="SetDataRightResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDefaultRoleEntityFromType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Type" type="tns:RoleType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDefaultRoleEntityFromTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:RoleEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRolesWithFunctionalRights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FunctionalRightNames" nillable="true" type="q4:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRolesWithFunctionalRightsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Response" nillable="true" type="q5:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRolesWithoutFunctionalRights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FunctionalRightNames" nillable="true" type="q6:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRolesWithoutFunctionalRightsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Response" nillable="true" type="q7:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUntrustedCredentials">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Credentials" nillable="true" type="tns:UntrustedCredentials" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUntrustedCredentialsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUntrustedCredentials">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUntrustedCredentialsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfUntrustedCredentials" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfUntrustedCredentials">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UntrustedCredentials" nillable="true" type="tns:UntrustedCredentials" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUntrustedCredentials" nillable="true" type="tns:ArrayOfUntrustedCredentials" />
+  <xs:element name="GetUntrustedCredentialsForAssociate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+        <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUntrustedCredentialsForAssociateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfUntrustedCredentials" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUntrustedCredentialsForAssociate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+        <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Credentials" nillable="true" type="tns:UntrustedCredentials" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUntrustedCredentialsForAssociateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUntrustedCredentials">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PublicValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUntrustedCredentialsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUntrustedCredentialsForAssociate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+        <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PublicValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUntrustedCredentialsForAssociateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateExternalUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+        <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateExternalUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteExternalUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteExternalUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetExternalUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+        <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+        <xs:element minOccurs="0" name="ExternalUserInfoModification" type="tns:ExternalUserInfoModification" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="ExternalUserInfoModification">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="UserName" />
+          <xs:enumeration value="Password" />
+          <xs:enumeration value="Role" />
+          <xs:enumeration value="Active" />
+          <xs:enumeration value="UndefinedValue16" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ExternalUserInfoModification" nillable="true" type="tns:ExternalUserInfoModification" />
+  <xs:element name="SetExternalUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateNewPasswordForExternalUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateNewPasswordForExternalUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+        <xs:element minOccurs="0" name="OldPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserFromPersonId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserFromPersonIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:element name="CreateDefaultUserFromUserTypeAndPersonId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserType" type="tns:UserType" />
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDefaultUserFromUserTypeAndPersonIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDefaultUserFromUserType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserType" type="tns:UserType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDefaultUserFromUserTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserFromEjUserId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EjUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserFromEjUserIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserFromName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserFromNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPasswordFromName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPasswordFromNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeOwnPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OldPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeOwnPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordFromName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OldPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordFromNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsUserNameValid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+        <xs:element minOccurs="0" name="Type" type="tns:UserType" />
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsUserNameValidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsPasswordValid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+        <xs:element minOccurs="0" name="Type" type="tns:UserType" />
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsPasswordValidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetGeneratedPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetGeneratedPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetGeneratedPasswordFromName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetGeneratedPasswordFromNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsPasswordValidWithReason">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+        <xs:element minOccurs="0" name="Type" type="tns:UserType" />
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsPasswordValidWithReasonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:UserValidationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="UserValidationResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Result" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserValidationResult" nillable="true" type="tns:UserValidationResult" />
+  <xs:element name="IsUserNameValidWithReason">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+        <xs:element minOccurs="0" name="Type" type="tns:UserType" />
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsUserNameValidWithReasonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:UserValidationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeUserType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+        <xs:element minOccurs="0" name="UserType" type="tns:UserType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeUserTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDefaultUserFromUserTypeAndCredential">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserType" type="tns:UserType" />
+        <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+        <xs:element minOccurs="0" name="CredentialType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CredentialValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CredentialDisplayValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDefaultUserFromUserTypeAndCredentialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetValidUserName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+        <xs:element minOccurs="0" name="Type" type="tns:UserType" />
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetValidUserNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveLicenses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveLicensesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MakeRetired">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+        <xs:element minOccurs="0" name="Retired" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MakeRetiredResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOwnerContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOwnerContactResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveOwnerContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveOwnerContactResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResolveUserFromInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+        <xs:element minOccurs="0" name="PersonName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PhoneNumbers" nillable="true" type="q8:ArrayOfstring" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Emails" nillable="true" type="q9:ArrayOfstring" />
+        <xs:element minOccurs="0" name="UserType" type="tns:UserType" />
+        <xs:element minOccurs="0" name="Credential" nillable="true" type="tns:Credential" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResolveUserFromInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ResolvedUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResolvedUser">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="PersonCreated" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResolvedUser" nillable="true" type="tns:ResolvedUser" />
+  <xs:element name="GetUserGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserGroupId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:UserGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUserGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserGroup" nillable="true" type="tns:UserGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUserGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:UserGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUserGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IncludeDeleted" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUserGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfUserGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUserGroup">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUserGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:UserGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserGroupToDelete" type="xs:int" />
+        <xs:element minOccurs="0" name="UserGroupToMoveTo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserGroupList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UserGroupIds" nillable="true" type="q10:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserGroupListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfUserGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserInfoId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:UserInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="UserInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Deleted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UserInfoId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+          <xs:element minOccurs="0" name="Rank" type="xs:short" />
+          <xs:element minOccurs="0" name="Tooltip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="EjUserId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserType" type="tns:UserType" />
+          <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GrantedLicenses" nillable="true" type="q11:ArrayOfstring" />
+          <xs:element minOccurs="0" name="CanLogon" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleTooltip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserGroupName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserGroupTooltip" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserInfo" nillable="true" type="tns:UserInfo" />
+  <xs:element name="GetUserInfoList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UserInfoIds" nillable="true" type="q12:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfUserInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserInfo" nillable="true" type="tns:UserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserInfo" nillable="true" type="tns:ArrayOfUserInfo" />
+</xs:schema>

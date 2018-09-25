@@ -1,0 +1,348 @@
+﻿    @model AOS.Platform.Models.EndpointViewModel
+@{
+    ViewBag.Title = "Endpoint settings";
+    Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
+
+    var handshakeStatus = "Ok";
+
+    if (@Model.HandshakeStatus == AOS.Platform.Models.HandshakeStatus.Invalid)
+    {
+        handshakeStatus = "Not valid";
+    }
+    else if (@Model.HandshakeStatus == AOS.Platform.Models.HandshakeStatus.NoMatch)
+    {
+        handshakeStatus = "No match";
+    }
+    else if (@Model.HandshakeStatus == AOS.Platform.Models.HandshakeStatus.NotFound || @Model.HandshakeStatus == AOS.Platform.Models.HandshakeStatus.NoKey)
+    {
+        handshakeStatus = "-";
+    }
+
+}
+<div class="row">
+    <div class="col-md-12">
+        <!-- Upper panel-->
+        <div class="panel panel-primary">
+            <div class="panel-heading panel-heading-custom">
+                <h4 class="panel-title"><strong>Endpoint settings</strong></h4>
+            </div>
+            <div class="panel-body">
+                <div class="aoswell">
+                    <div class="form-group">
+                        Here is where you define your endpoint connection to your SuperOffice database. Using a polling-based technique, the connection
+                        will be checked continuosly to verify the connection between Adwiza Online Services and your SuperOffice database.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Endpoint settings panel-->
+        <div class="panel panel-primary">
+            <div class="panel-heading panel-heading-custom">
+                <h4 class="panel-title"><strong>SO credentials and URI</strong></h4>
+            </div>
+            <div class="panel-body">
+                <div class="aoswell">
+                    <div class="row">
+                        <div class="col-md-12">
+                            @using (Html.BeginForm("UpdateEndpoint", "Account", FormMethod.Post, new { @class = "form center-block", @autocomplete = "off", encType = "multipart/form-data", id = "frmUpdateEndpoint", name = "frmUpdateEndpoint" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.HiddenFor(m => m.ConnectionId, new { id = "hiddenConnectionId" })
+                                <input style="display:none" type="text" name="fakeusernameremembered" />
+                                <input style="display:none" type="password" name="fakepasswordremembered" />
+
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                var disableInput = (Model.IsSOOnline) ? "disabled" : "";
+                                var hiddenInput = (Model.IsSOOnline) ? "hidden" : "";
+
+                                if (Model.IsSOOnline)
+                                {
+                                    <div class="form-group">
+                                        @Html.EditorFor(m => m.EndpointURI, new { htmlAttributes = new { @disabled = "disabled", @class = "form-control input-lg", @placeholder = "Endpoint URL, eg: https://<subdomain>.<companydomain>.com/superoffice/remote/services75/", id = "endpoint", name = "endpoint", autocomplete = "off" } })
+                                        @Html.ValidationMessageFor(m => m.EndpointURI, "", new { @class = "text-danger" })
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="form-group">
+                                        @Html.EditorFor(m => m.EndpointURI, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "Endpoint URL, eg: https://<subdomain>.<companydomain>.com/superoffice/remote/services75/", id = "endpoint", name = "endpoint", autocomplete = "off" } })
+                                        @Html.ValidationMessageFor(m => m.EndpointURI, "", new { @class = "text-danger" })
+                                    </div>
+                                }
+                                if (Model.IsSOOnline)
+                                {
+                                    <div class="form-group">
+                                        @Html.EditorFor(m => m.SysUser, new { htmlAttributes = new { @hidden = "hidden", @class = "form-control input-lg", @placeholder = "System user", id = "sysuser", name = "sysuser", autocomplete = "off" } })
+                                        @Html.ValidationMessageFor(m => m.SysUser, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.EditorFor(m => m.SysPassword, new { htmlAttributes = new { @hidden = "hidden", @class = "form-control input-lg", @placeholder = "System password", id = "syspassword", name = "syspassword", autocomplete = "off", type = "password" } })
+                                        @Html.ValidationMessageFor(m => m.SysPassword, "", new { @class = "text-danger" })
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="form-group">
+                                        @Html.EditorFor(m => m.SysUser, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "System user", id = "sysuser", name = "sysuser", autocomplete = "off" } })
+                                        @Html.ValidationMessageFor(m => m.SysUser, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.EditorFor(m => m.SysPassword, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "System password", id = "syspassword", name = "syspassword", autocomplete = "off", type = "password" } })
+                                        @Html.ValidationMessageFor(m => m.SysPassword, "", new { @class = "text-danger" })
+                                    </div>
+                                }
+                            }
+                            <div class="form-group">
+                                <div class="row">
+                                    @if (Model.IsSOOnline)
+                                    {
+                                        <div class="col-md-12">
+                                            <button class="ladda-button btn btn-primary btn-lg btn-block submitbutton" data-style="zoom-in" type="submit" id="form-submit-test" name="btnTest">
+                                                <span class="ladda-label">Test connection</span>
+                                            </button>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="col-md-6">
+                                            <button class="ladda-button btn btn-primary btn-lg btn-block submitbutton" data-style="zoom-in" type="submit" id="form-submit-test" name="btnTest">
+                                                <span class="ladda-label">Test connection</span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button class="ladda-button btn btn-primary btn-lg btn-block submitbutton" disabled data-style="zoom-in" type="submit" id="form-submit" name="btnSave">
+                                                <span class="ladda-label">Save connection</span>
+                                            </button>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="alert alert-success" role="alert" id="success-alert">Connection succesfully saved...</div>
+                            </div>
+                            <div class="form-group">
+                                <div class="alert alert-danger" role="alert" id="error-alert">Connection error. Check Endpoint URI and credentials</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <hr />
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <p>Company name:</p>
+                            </div>
+                            <div class="col-md-9">
+                                <p class="adwiza-label" id="companyName">@Model.SOCompanyName</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <p>SO version:</p>
+                            </div>
+                            <div class="col-md-9">
+                                <p class="adwiza-label" id="soVersion">@Model.SOVersion</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <p>Serial #:</p>
+                            </div>
+                            <div class="col-md-9">
+                                <p class="adwiza-label" id="serial">@Model.SOSerial</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <p>NetServer version:</p>
+                            </div>
+                            <div class="col-md-9">
+                                <p class="adwiza-label" id="netServerVersion">@Model.SONetserverVersion</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <p>Handshake status:</p>
+                            </div>
+                            <div class="col-md-9">
+                                @if (@handshakeStatus != "Ok")
+                                {
+                                    <p class="adwiza-label adwiza-error" id="handshakeStatus">@handshakeStatus</p>
+                                }
+                                else
+                                {
+                                    <p class="adwiza-label" id="handshakeStatus">@handshakeStatus</p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    $(function () {
+
+        // The ladda button (button with spinner)
+        var ladda = null;
+        var submitBtnClicked = "";
+
+        // Set up events for endpoint field
+        $('#endpoint')
+        .on('input', function () {
+            $("#form-submit").prop("disabled", true); // Element(s) are now disabled.
+        })
+        .on('blur', function () {
+            $("#form-submit").prop("disabled", true); // Element(s) are now disabled.
+        });
+
+        // Set up events for sysuser field
+        $('#sysuser')
+        .on('input', function () {
+            $("#form-submit").prop("disabled", true); // Element(s) are now disabled.
+        })
+        .on('blur', function () {
+            $("#form-submit").prop("disabled", true); // Element(s) are now disabled.
+        });
+
+        // Set up events for syspassword field
+        $('#syspassword')
+        .on('input', function () {
+            $("#form-submit").prop("disabled", true); // Element(s) are now disabled.
+        })
+        .on('blur', function () {
+            $("#form-submit").prop("disabled", true); // Element(s) are now disabled.
+        });
+
+        // Attach click handler to the Test connection button:
+        $('#form-submit-test').click(function () {
+            // Assign button to ladda button
+            ladda = Ladda.create(this);
+            submitBtnClicked = "test";
+            // Submit form
+            $('#frmUpdateEndpoint').submit();
+        });
+
+        // Attach click handler to the Save connection button:
+        $('#form-submit').click(function () {
+            // Assign button to ladda button
+            ladda = Ladda.create(this);
+            submitBtnClicked = "save";
+            // Submit form
+            $('#frmUpdateEndpoint').submit();
+        });
+
+        // Hide alert boxes
+        $("#success-alert").hide();
+        $("#error-alert").hide();
+
+        var connStatus = $("#connStatus");
+        //console.log(connStatus);
+
+        if (connStatus.attr('class').match(/^blink.+/)) {
+            console.log("connStatus does have class = blink")
+        }
+        else {
+            $("#error-alert").hide();
+        }
+
+        if ($("#handshakeStatus").text() == "-") {
+            if ($("#connStatusText").text() != "No endpoint defined") {
+                $("#error-alert").text("Handshake error: Endpoint handshake data not present. Click 'Save connection'");
+                $("#error-alert").show();
+                $("#form-submit").prop("disabled", false);
+            }
+        }
+
+        // Submit form
+        $("#frmUpdateEndpoint").on("submit", function (event) {
+            event.preventDefault();
+
+            var url = $(this).attr("action");
+            var submitUrl = "";
+
+            if (submitBtnClicked == "test")
+                submitUrl = "@Url.Action("TestEndpoint", "Account")";
+            else
+                submitUrl = "@Url.Action("UpdateEndpoint", "Account")";
+
+            var formData = $(this).serialize();
+
+            // Start loading. Turn on spinner
+            ladda.start();
+
+            $.ajax({
+                url: submitUrl,
+                type: "POST",
+                data: formData,
+                dataType: "json",
+                success: function (resp) {
+                    submitBtnClicked = "";
+                    // Check if we should redirect
+                    if (resp.Redirect) {
+                        window.location = "@Url.Action("Login", "Account")";
+                    };
+
+                    if (resp.IsOK) {
+                        // Show success alert box
+                        $("#error-alert").hide();
+                        $("#success-alert").html(resp.ErrorMsg);
+                        $("#success-alert").show();
+                        // Remove success alert-box after a few seconds
+                        $("#success-alert").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#success-alert").hide();
+                        });
+                        if (resp.IsDirty) { // Only enable Save settings button if IsDirty flag is true
+                            $("#form-submit").prop("disabled", false);
+                            console.log("Save settings button enabled...");
+                        }
+                        else {
+                            $("#form-submit").prop("disabled", true);
+                            console.log("Save settings button disabled...");
+                        }
+
+                        // Update SuperOffice information
+                        console.log("SOCompanyName: " + resp.ReturnedJsonData);
+                        var obj = jQuery.parseJSON(resp.ReturnedJsonData);
+                        $("#companyName").html(obj.SOCompanyName);
+                        $("#soVersion").html(obj.SOVersion);
+                        $("#serial").html(obj.SOSerial);
+                        $("#netServerVersion").html(obj.SONetServerVersion);
+                        $("#handshakeStatus").html(obj.SOHandshakeStatus);
+                        $("#handshakeStatus").removeClass("adwiza-error");
+                        // Reload cockpit
+                        $("#cockpitContainer").load('@Url.Action("ShowCockpit","Account")');
+                    }
+                    else {
+                        // Show error alert box
+                        $("#error-alert").html(resp.ErrorMsg);
+                        $("#error-alert").show();
+                        // Remove error alert-box after a few seconds
+                        $("#error-alert").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#error-alert").hide();
+                        });
+                    }
+                }
+            })
+                .always(function () {
+                    // Stop loading. Turn off spinner
+                    ladda.stop();
+                });
+            return false;
+        });
+
+    });
+
+    // Automatically trigger the loading animation on click
+    Ladda.bind('input[type=submit]');
+
+
+
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

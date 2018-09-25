@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0dc71722-9dd2-4eac-8d70-9e7a322e3acd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.10.151/SuperOffice/Remote/Services75/License.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="License3.xsd" MetadataType="Schema" ID="d689c710-69ea-4e35-8d4a-cc364abadfe9" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/License.svc?xsd=xsd0" />
+    <MetadataFile FileName="License31.xsd" MetadataType="Schema" ID="05faaf79-0bfc-4b4e-948a-2480cfc4056c" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/License.svc?xsd=xsd2" />
+    <MetadataFile FileName="WcfLicenseService1.wsdl" MetadataType="Wsdl" ID="905a9368-0ea2-42b3-a08a-ed626dba559d" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/License.svc?wsdl" />
+    <MetadataFile FileName="License1.disco" MetadataType="Disco" ID="2938d8d3-d799-48d8-a36b-fc75ae601455" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/License.svc?disco" />
+    <MetadataFile FileName="License1.wsdl" MetadataType="Wsdl" ID="8ec095f4-98ea-4379-bfd6-0472753c71a3" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/License.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="License32.xsd" MetadataType="Schema" ID="dd8e7440-2a95-4513-9af7-c412ff087f2d" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/License.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,278 @@
+﻿@model AOS.Platform.Models.AccountUsersViewModel
+@{
+    ViewBag.Title = "Account users";
+    Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <!-- My AOS panel-->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title "><strong>Account users administration</strong></h4>
+            </div>
+            <div class="panel-body">
+                <div class="aoswell">
+                    <div class="form-group">
+                        This is your account user administrator page. From here you can adjust various settings for a specific user.
+                        You can add, modify and remove users from your account
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Apps panel-->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title"><strong>Account users</strong></h4>
+            </div>
+            <div class="panel-body">
+                <div class="aoswell">
+                    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseCreateUser" aria-expanded="false" aria-controls="collapseCreateUser"><span class="fa fa-user-plus"></span> Assign user</button>
+                    <div class="collapse" id="collapseCreateUser">
+                        <hr />
+                        @using (Html.BeginForm("AssignAccountUser", "Account", FormMethod.Post, new { @class = "form center-block", role = "form", id = "frmAssignUser" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.EditorFor(m => m.AssignUserFirstName, new { htmlAttributes = new { @class = "form-control", id = "firstName", @placeholder = "Firstname" } })
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                @Html.EditorFor(m => m.AssignUserLastName, new { htmlAttributes = new { @class = "form-control", id = "lastName", @placeholder = "Lastname" } })
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                @Html.EditorFor(m => m.AssignUserEmail, new { htmlAttributes = new { @class = "form-control", id = "email", @placeholder = "E-mail" } })
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        }
+                        <button class="ladda-button btn btn-primary btn-block" data-style="zoom-in" type="submit" id="form-submit">
+                            <span class="ladda-label">Assign account user</span>
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="alert alert-success" role="alert" id="success-alert1"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="alert alert-danger" role="alert" id="error-alert1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tbody>
+                            @{
+                                var indx = 0;
+                                foreach (var item in Model.AccountUsers)
+                                {
+                                    indx++;
+
+                                    var collapseDivName = "collapseSettings" + indx;
+                                    var collapseTargetName = "#collapseSettings" + indx;
+                                    var switchUserIsAdmin = (item.IsAdmin) ? "checked" : "";
+                                    var currentRole = (item.IsAdmin) ? "Administrator" : "User";
+                                    var itemId = Model.AccountId + "#" + item.UserID;
+                                    var ajaxLoaderId = "ajaxLoader" + indx;
+
+                                    var routeValues = new RouteValueDictionary();
+                                    routeValues.Add("UserId", item.UserID);
+                                    routeValues.Add("AccountId", Model.AccountId);
+
+                                    <tr>
+                                        <td>@item.FirstNameLastName</td>
+                                        <td>@item.Email</td>
+                                        @if (item.IsOwner)
+                                        {
+                                            <td>
+                                                <p class="adwiza-label">Account owner</p>
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <input type="checkbox" id=@itemId class="switch" data-size="mini" data-on-text="Administrator" data-off-text="User" @switchUserIsAdmin name=@ajaxLoaderId>
+                                            </td>
+                                        }
+                                        <td>
+                                            @if (!item.IsOwner)
+                                            {
+                                                using (Html.BeginForm("RemoveAccountUser", "Account", new { UserId = item.UserID, AccountId = Model.AccountId }, FormMethod.Post, new { @class = "form center-block", encType = "multipart/form-data", accept_charset = "UTF-8", style = "display:inline", id = "frmUpdateApp", name = "frmUpdateApp" }))
+                                                {
+                                                    <button class="btn btn-sm btn-danger btn-xs" type="button" title="Remove user from account" data-toggle="modal" data-target="#confirmDelete" data-title="Remove user from account" data-message="Are you sure you want to remove @item.FirstNameLastName from this account ?">
+                                                        <i class="glyphicon glyphicon-trash"></i>
+                                                    </button>
+                                                }
+                                            }
+                                        </td>
+                                        <td>
+                                            <div class="frame"><span class="spinnerhelper"></span><img src="~/Content/Images/ajax-loader.gif" id="@ajaxLoaderId" hidden="hidden" style="width:30px" /></div>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="alert alert-success" role="alert" id="success-alert">Role successfully updated...</div>
+                            </div>
+                            <div class="form-group">
+                                <div class="alert alert-danger" role="alert" id="error-alert"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("Confirm")
+</div>
+
+<script>
+
+    $(document).ready(function () {
+
+        $(".switch").on('switchChange.bootstrapSwitch', function (event, state) {
+
+            // Get ajaxloader for current line
+            var $e = $('#' + this.name);
+
+            // Show ajaxloader
+            $e.show();
+
+            var url = "@Url.Action("UpdateAccountUser", "Account")";
+
+            // Assign handlers immediately after making the request,
+            // and remember the jqxhr object for this request
+            var jqxhr = $.getJSON(url, { concatId: this.id, toBeAdmin: state }, function (resp) {
+
+                if (resp.IsOK) {
+                    // Show success alert box
+                    $("#success-alert").html(resp.ErrorMsg);
+                    $("#success-alert").show();
+                    // Remove success alert-box after a few seconds
+                    $("#success-alert").fadeTo(2000, 500).slideUp(500, function () {
+                        $("#success-alert").hide();
+                    });
+                }
+                else {
+                    // Show error alert box
+                    $("#error-alert").html(resp.ErrorMsg);
+                    $("#error-alert").show();
+                    // Remove error alert-box after a few seconds
+                    $("#error-alert").fadeTo(2000, 500).slideUp(500, function () {
+                        $("#error-alert").hide();
+                    });
+                }
+
+                console.log("success");
+
+                // Hide ajaxloader again
+                $e.hide();
+            })
+              .done(function () {
+                  console.log("second success");
+              })
+              .fail(function () {
+                  console.log("error");
+              })
+              .always(function () {
+                  console.log("complete");
+              });
+
+        });
+
+        // The ladda button (button with spinner)
+        var ladda = null;
+
+        // Attach click handler to the submit button:
+        $('#form-submit').click(function () {
+            // Assign button to ladda button
+            ladda = Ladda.create(this);
+            // Submit form
+            $('#frmAssignUser').submit();
+        });
+
+        // Hide alert boxes
+        $("#success-alert").hide();
+        $("#error-alert").hide();
+
+        // Hide alert boxes
+        $("#success-alert1").hide();
+        $("#error-alert1").hide();
+
+        // Submit form
+        $("#frmAssignUser").on("submit", function (event) {
+            event.preventDefault();
+
+            if (!$(this).valid()) {
+                $('input[type=submit]', this).attr('disabled', 'disabled');
+                return;
+            }
+
+            var url = $(this).attr("action");
+            var formData = $(this).serialize();
+
+            // Start loading. Turn on spinner
+            ladda.start();
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: formData,
+                dataType: "json",
+                success: function (resp) {
+
+                    if (resp.IsOK) {
+                        // Show success alert box
+                        $("#success-alert1").html(resp.ErrorMsg);
+                        $("#success-alert1").show();
+                        // Remove success alert-box after a few seconds
+                        $("#success-alert1").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#success-alert1").hide();
+                            location.reload(); // Reload page
+                        });
+                    }
+                    else {
+                        // Show error alert box
+                        $("#error-alert1").html(resp.ErrorMsg);
+                        $("#error-alert1").show();
+                        // Remove error alert-box after a few seconds
+                        $("#error-alert1").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#error-alert1").hide();
+                        });
+                    }
+                }
+            })
+            .always(function () {
+                // Stop loading. Turn off spinner
+                ladda.stop();
+            });
+            return false;
+        });
+
+    });
+
+    // Automatically trigger the loading animation on click
+    Ladda.bind('input[type=submit]');
+
+    // Wire all checkboxes to be displayed as switches
+    $(".switch").bootstrapSwitch();
+
+    $('.typeahead.input-sm').siblings('input.tt-hint').addClass('hint-small');
+    $('.typeahead.input-lg').siblings('input.tt-hint').addClass('hint-large');
+
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

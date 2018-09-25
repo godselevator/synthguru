@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ed577d03-60d0-43a7-9116-154985c44c19" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost/SuperOffice82R01/Remote/Services82/Blob.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WcfBLOBService.wsdl" MetadataType="Wsdl" ID="122fa992-be77-4e45-8a92-e42435ee8fb0" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/BLOB.svc?wsdl" />
+    <MetadataFile FileName="BLOB.xsd" MetadataType="Schema" ID="9d8766ee-79c7-4f7f-9cbe-147ad093b446" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/BLOB.svc?xsd=xsd0" />
+    <MetadataFile FileName="BLOB1.xsd" MetadataType="Schema" ID="978edcc9-68bf-444c-8cb7-e8ad85c92027" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/BLOB.svc?xsd=xsd1" />
+    <MetadataFile FileName="BLOB.disco" MetadataType="Disco" ID="ecc7a69d-eaa6-4c0f-9e01-719c6f253d8d" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/BLOB.svc?disco" />
+    <MetadataFile FileName="BLOB.wsdl" MetadataType="Wsdl" ID="4409bf36-d16d-4de0-9da4-c79735822723" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/BLOB.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

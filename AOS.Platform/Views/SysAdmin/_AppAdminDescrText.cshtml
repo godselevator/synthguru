@@ -1,0 +1,20 @@
+﻿@model AOS.Platform.Models.AppAdminDescrTextViewModel
+@using (Html.BeginForm("UpdateDescrText", "SysAdmin", FormMethod.Post, new { @class = "form center-block", encType = "multipart/form-data", id = "frmUpdateDescrText", name = "frmUpdateDescrText" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(m => m.AppId, new { id = "hiddenAppIdDescrText" })
+    <div class="form-group">
+        @Html.TextAreaFor(m => m.AppAboutText, new { id = "appAboutText" })
+        @Html.ValidationMessageFor(m => m.AppAboutText, "", new { @class = "text-danger" })
+    </div>
+}
+<button class="ladda-button btn btn-primary btn-block btn-sm" data-style="zoom-in" type="submit" id="form-submit5">
+    <span class="ladda-label">Save</span>
+</button>
+<div class="form-group">
+    <div class="alert alert-success" role="alert" id="success-alert-descrtext">Description text successfully updated...</div>
+</div>
+<div class="form-group">
+    <div class="alert alert-danger" role="alert" id="error-alert-descrtext"></div>
+</div>

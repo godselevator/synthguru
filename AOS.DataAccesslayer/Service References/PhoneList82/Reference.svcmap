@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fa129086-2f36-4592-81c5-35c250494185" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost/SuperOffice82R01/Remote/Services82/PhoneList.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PhoneList.xsd" MetadataType="Schema" ID="2e5965fd-71c9-4ca6-85c5-c83be1a78424" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/PhoneList.svc?xsd=xsd0" />
+    <MetadataFile FileName="WcfPhoneListService.wsdl" MetadataType="Wsdl" ID="e081b979-b880-4fb7-bf98-0a116014ba89" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/PhoneList.svc?wsdl" />
+    <MetadataFile FileName="PhoneList.wsdl" MetadataType="Wsdl" ID="68879a97-b2a1-4a87-bac6-114588283127" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/PhoneList.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="PhoneList.disco" MetadataType="Disco" ID="c0863b5c-af27-4735-ba9b-77c2392b56fd" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/PhoneList.svc?disco" />
+    <MetadataFile FileName="PhoneList1.xsd" MetadataType="Schema" ID="5a755f46-5173-4f13-87df-5f93794944a6" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/PhoneList.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

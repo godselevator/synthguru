@@ -1,0 +1,62 @@
+﻿<!-- Modal Dialog -->
+<style>
+    p.test {
+        border: 1px solid #000000;
+        word-wrap: break-word;
+    }
+</style>
+<div class="modal fade" id="connectionInfo" role="dialog" aria-labelledby="showConnectionInfoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Connection info</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon input-sm" style="min-width: 130px; text-align:left" id="igConnectionId">Connection Id</span>
+                        <input type="text" id="connectionId" class="form-control input-sm" aria_describedby="igConnectionId" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon input-sm" style="min-width: 130px; text-align:left" id="igConnectionUrl">URL</span>
+                        <input type="text" id="connectionUrl" class="form-control input-sm" aria_describedby="igConnectionUrl" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon input-sm" style="min-width: 130px; text-align:left" id="igNetserver">Netserver</span>
+                        <input type="text" id="netserver" class="form-control input-sm" aria_describedby="igNetserver" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Dialog show event handler -->
+<script type="text/javascript">
+
+    $('#connectionInfo').on('show.bs.modal', function (e) {
+
+        var height = $(window).height() - 200;
+        $(this).find(".modal-body").css("max-height", height);
+
+        $title = $(e.relatedTarget).attr('data-title');
+        $(this).find('.modal-title').text($title);
+
+        var connId = $(e.relatedTarget).attr('data-id');
+        var connUrl = $(e.relatedTarget).attr('data-url');
+        var netserver = $(e.relatedTarget).attr('data-netserver');
+
+        $('#connectionId').val(connId);
+        $('#connectionUrl').val(connUrl);
+        $('#netserver').val(netserver);
+
+    });
+
+</script>

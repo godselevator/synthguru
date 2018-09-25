@@ -1,0 +1,38 @@
+﻿@model AOS.Platform.Models.AdminHomeAOSWebAPISettingsViewModel
+@using (Html.BeginForm("UpdateAOSWebAPISettings", "SysAdmin", FormMethod.Post, new { @class = "form center-block", encType = "multipart/form-data", id = "frmUpdateAOSWebAPISettings", name = "frmUpdateAOSWebAPISettings" }))
+{
+    @*@Html.AntiForgeryToken()*@
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" id="igAOSWebAPIUser" style="min-width: 185px; text-align:left">AOS WebAPI User</span>
+            @Html.EditorFor(m => m.AOSWebAPIUser, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" , @placeholder = "AOS WebAPI User", aria_describedby = "igAOSWebAPIUser", id = "aosWebAPIUser", name = "aosWebAPIUser", @data_toggle = "tooltip", @data_placement = "bottom", title = "AOS WebAPI User" } })
+            @Html.ValidationMessageFor(m => m.AOSWebAPIUser, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" id="igPassword" style="min-width: 185px; text-align:left">Password</span>
+            @Html.EditorFor(m => m.Password, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" , @placeholder = "Password", aria_describedby = "igPassword", id = "password", name = "password", @data_toggle = "tooltip", @data_placement = "bottom", title = "Password" } })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" id="igAOSWebAPIEnabled" style="min-width: 185px; text-align:left">AOS WebAPI status</span>
+            @Html.CheckBoxFor(m => m.AOSWebAPIEnabled, new { @class = "switch", data_size = "small", aria_describedby = "igAOSWebAPIEnabled", data_on_text = "Enabled", data_off_text = "Disabled", id = "aosWebAPIEnabled", name = "aosWebAPIEnabled" })
+            @Html.ValidationMessageFor(m => m.AOSWebAPIEnabled, "", new { @class = "text-danger" })
+        </div>
+    </div>
+}
+<button class="ladda-button btn btn-primary btn-block btn-sm" data-style="zoom-in" type="submit" id="form-submit4">
+    <span class="ladda-label">Save</span>
+</button>
+<div class="form-group">
+    <div class="alert alert-success" role="alert" id="success-alert-aoswebapisettings">AOS WebAPI settings successfully updated...</div>
+</div>
+<div class="form-group">
+    <div class="alert alert-danger" role="alert" id="error-alert-aoswebapisettings"></div>
+</div>
+

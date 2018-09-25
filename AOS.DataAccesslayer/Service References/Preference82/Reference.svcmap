@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="07b4a0ee-04c7-4359-89c9-244663831375" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost/SuperOffice82R01/Remote/Services82/Preference.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Preference.xsd" MetadataType="Schema" ID="1c4105f8-ccab-44a2-b000-1765509b83ce" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/Preference.svc?xsd=xsd2" />
+    <MetadataFile FileName="WcfPreferenceService.wsdl" MetadataType="Wsdl" ID="f6b4ae62-bbc9-4ad2-890c-851c493e589f" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/Preference.svc?wsdl" />
+    <MetadataFile FileName="Preference1.xsd" MetadataType="Schema" ID="94cb77cc-eb66-437e-96e6-b5b02f0b88b2" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/Preference.svc?xsd=xsd0" />
+    <MetadataFile FileName="Preference.wsdl" MetadataType="Wsdl" ID="1281d7db-473d-4ec4-a07e-cd0c66a8aafa" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/Preference.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Preference2.xsd" MetadataType="Schema" ID="c8a90ed4-1b95-46e0-af69-00c9bad0bb7e" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/Preference.svc?xsd=xsd1" />
+    <MetadataFile FileName="Preference.disco" MetadataType="Disco" ID="1661361f-b21a-44f8-b5f4-0cea08dffc05" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/Preference.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

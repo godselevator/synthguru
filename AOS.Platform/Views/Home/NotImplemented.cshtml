@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Under construction";
+    Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
+}
+
+<div class="container">
+    <div class="content">
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Under construction panel-->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><strong>Under construction</strong></h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <img src="~/Content/Images/underconstruction.jpg" />
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <p>The page or functionality has not been implemented yet</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                @Html.Partial("_CockpitPartial")
+            </div>
+        </div>
+    </div>
+</div>

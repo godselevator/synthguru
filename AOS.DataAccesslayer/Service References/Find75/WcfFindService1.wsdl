@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.superoffice.net/ws/crm/NetServer/Services75" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WcfFindService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_Find1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://www.superoffice.net/ws/crm/NetServer/Services75" location="http://192.168.10.151/SuperOffice/Remote/Services75/Find.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_Find" type="i0:Find">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCriteriaInformation">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetCriteriaInformation" style="document" />
+      <wsdl:input name="GetCriteriaInformationRequest">
+        <soap:header message="i0:GetCriteriaInformationRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetCriteriaInformationResponse">
+        <soap:header message="i0:GetCriteriaInformationResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCriteriaInformationWithContext">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetCriteriaInformationWithContext" style="document" />
+      <wsdl:input name="GetCriteriaInformationWithContextRequest">
+        <soap:header message="i0:GetCriteriaInformationWithContextRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationWithContextRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationWithContextRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetCriteriaInformationWithContextResponse">
+        <soap:header message="i0:GetCriteriaInformationWithContextResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationWithContextResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationWithContextResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationWithContextResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRestrictions">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/SaveRestrictions" style="document" />
+      <wsdl:input name="SaveRestrictionsRequest">
+        <soap:header message="i0:SaveRestrictionsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveRestrictionsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveRestrictionsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveRestrictionsResponse">
+        <soap:header message="i0:SaveRestrictionsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveRestrictionsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveRestrictionsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveRestrictionsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRestrictionsWithContext">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/SaveRestrictionsWithContext" style="document" />
+      <wsdl:input name="SaveRestrictionsWithContextRequest">
+        <soap:header message="i0:SaveRestrictionsWithContextRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveRestrictionsWithContextRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveRestrictionsWithContextRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveRestrictionsWithContextResponse">
+        <soap:header message="i0:SaveRestrictionsWithContextResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveRestrictionsWithContextResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveRestrictionsWithContextResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveRestrictionsWithContextResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRestrictionsAndGetCriteriaInformation">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/SaveRestrictionsAndGetCriteriaInformation" style="document" />
+      <wsdl:input name="SaveRestrictionsAndGetCriteriaInformationRequest">
+        <soap:header message="i0:SaveRestrictionsAndGetCriteriaInformationRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveRestrictionsAndGetCriteriaInformationRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveRestrictionsAndGetCriteriaInformationRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveRestrictionsAndGetCriteriaInformationResponse">
+        <soap:header message="i0:SaveRestrictionsAndGetCriteriaInformationResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveRestrictionsAndGetCriteriaInformationResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveRestrictionsAndGetCriteriaInformationResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveRestrictionsAndGetCriteriaInformationResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Find">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/Find" style="document" />
+      <wsdl:input name="FindRequest">
+        <soap:header message="i0:FindRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:FindRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:FindRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindResponse">
+        <soap:header message="i0:FindResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:FindResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:FindResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:FindResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindFromRestrictions">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/FindFromRestrictions" style="document" />
+      <wsdl:input name="FindFromRestrictionsRequest">
+        <soap:header message="i0:FindFromRestrictionsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindFromRestrictionsResponse">
+        <soap:header message="i0:FindFromRestrictionsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindFromRestrictionsColumns">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/FindFromRestrictionsColumns" style="document" />
+      <wsdl:input name="FindFromRestrictionsColumnsRequest">
+        <soap:header message="i0:FindFromRestrictionsColumnsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindFromRestrictionsColumnsResponse">
+        <soap:header message="i0:FindFromRestrictionsColumnsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableRestrictionColumns">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetAvailableRestrictionColumns" style="document" />
+      <wsdl:input name="GetAvailableRestrictionColumnsRequest">
+        <soap:header message="i0:GetAvailableRestrictionColumnsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetAvailableRestrictionColumnsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetAvailableRestrictionColumnsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAvailableRestrictionColumnsResponse">
+        <soap:header message="i0:GetAvailableRestrictionColumnsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetAvailableRestrictionColumnsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetAvailableRestrictionColumnsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetAvailableRestrictionColumnsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecifiedCriteriaInformationWithDefaults">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetSpecifiedCriteriaInformationWithDefaults" style="document" />
+      <wsdl:input name="GetSpecifiedCriteriaInformationWithDefaultsRequest">
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSpecifiedCriteriaInformationWithDefaultsResponse">
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecifiedCriteriaInformationWithDefaultsWithContext">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetSpecifiedCriteriaInformationWithDefaultsWithContext" style="document" />
+      <wsdl:input name="GetSpecifiedCriteriaInformationWithDefaultsWithContextRequest">
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsWithContextRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsWithContextRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsWithContextRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSpecifiedCriteriaInformationWithDefaultsWithContextResponse">
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsWithContextResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsWithContextResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsWithContextResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsWithContextResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindFromRestrictionsColumnsOrderBy">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/FindFromRestrictionsColumnsOrderBy" style="document" />
+      <wsdl:input name="FindFromRestrictionsColumnsOrderByRequest">
+        <soap:header message="i0:FindFromRestrictionsColumnsOrderByRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsOrderByRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsOrderByRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindFromRestrictionsColumnsOrderByResponse">
+        <soap:header message="i0:FindFromRestrictionsColumnsOrderByResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsOrderByResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsOrderByResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsOrderByResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultDesiredColumns">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetDefaultDesiredColumns" style="document" />
+      <wsdl:input name="GetDefaultDesiredColumnsRequest">
+        <soap:header message="i0:GetDefaultDesiredColumnsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDefaultDesiredColumnsResponse">
+        <soap:header message="i0:GetDefaultDesiredColumnsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultOrderBy">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetDefaultOrderBy" style="document" />
+      <wsdl:input name="GetDefaultOrderByRequest">
+        <soap:header message="i0:GetDefaultOrderByRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDefaultOrderByResponse">
+        <soap:header message="i0:GetDefaultOrderByResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateRestrictions">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/PopulateRestrictions" style="document" />
+      <wsdl:input name="PopulateRestrictionsRequest">
+        <soap:header message="i0:PopulateRestrictionsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:PopulateRestrictionsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:PopulateRestrictionsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PopulateRestrictionsResponse">
+        <soap:header message="i0:PopulateRestrictionsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:PopulateRestrictionsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:PopulateRestrictionsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:PopulateRestrictionsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultDesiredColumnsFromRestrictions">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetDefaultDesiredColumnsFromRestrictions" style="document" />
+      <wsdl:input name="GetDefaultDesiredColumnsFromRestrictionsRequest">
+        <soap:header message="i0:GetDefaultDesiredColumnsFromRestrictionsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsFromRestrictionsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsFromRestrictionsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDefaultDesiredColumnsFromRestrictionsResponse">
+        <soap:header message="i0:GetDefaultDesiredColumnsFromRestrictionsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsFromRestrictionsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsFromRestrictionsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsFromRestrictionsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultOrderByFromDesiredColumns">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetDefaultOrderByFromDesiredColumns" style="document" />
+      <wsdl:input name="GetDefaultOrderByFromDesiredColumnsRequest">
+        <soap:header message="i0:GetDefaultOrderByFromDesiredColumnsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByFromDesiredColumnsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByFromDesiredColumnsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDefaultOrderByFromDesiredColumnsResponse">
+        <soap:header message="i0:GetDefaultOrderByFromDesiredColumnsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByFromDesiredColumnsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByFromDesiredColumnsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByFromDesiredColumnsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindOrderBy">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/FindOrderBy" style="document" />
+      <wsdl:input name="FindOrderByRequest">
+        <soap:header message="i0:FindOrderByRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:FindOrderByRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:FindOrderByRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindOrderByResponse">
+        <soap:header message="i0:FindOrderByResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:FindOrderByResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:FindOrderByResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:FindOrderByResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindWithExtraRestrictions">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/FindWithExtraRestrictions" style="document" />
+      <wsdl:input name="FindWithExtraRestrictionsRequest">
+        <soap:header message="i0:FindWithExtraRestrictionsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:FindWithExtraRestrictionsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:FindWithExtraRestrictionsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindWithExtraRestrictionsResponse">
+        <soap:header message="i0:FindWithExtraRestrictionsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:FindWithExtraRestrictionsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:FindWithExtraRestrictionsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:FindWithExtraRestrictionsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindWithColumns">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/FindWithColumns" style="document" />
+      <wsdl:input name="FindWithColumnsRequest">
+        <soap:header message="i0:FindWithColumnsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:FindWithColumnsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:FindWithColumnsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindWithColumnsResponse">
+        <soap:header message="i0:FindWithColumnsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:FindWithColumnsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:FindWithColumnsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:FindWithColumnsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_Find1" type="i0:Find">
+    <wsp:PolicyReference URI="#BasicHttpBinding_Find1_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCriteriaInformation">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetCriteriaInformation" style="document" />
+      <wsdl:input name="GetCriteriaInformationRequest">
+        <soap:header message="i0:GetCriteriaInformationRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetCriteriaInformationResponse">
+        <soap:header message="i0:GetCriteriaInformationResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCriteriaInformationWithContext">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetCriteriaInformationWithContext" style="document" />
+      <wsdl:input name="GetCriteriaInformationWithContextRequest">
+        <soap:header message="i0:GetCriteriaInformationWithContextRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationWithContextRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationWithContextRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetCriteriaInformationWithContextResponse">
+        <soap:header message="i0:GetCriteriaInformationWithContextResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationWithContextResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationWithContextResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetCriteriaInformationWithContextResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRestrictions">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/SaveRestrictions" style="document" />
+      <wsdl:input name="SaveRestrictionsRequest">
+        <soap:header message="i0:SaveRestrictionsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveRestrictionsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveRestrictionsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveRestrictionsResponse">
+        <soap:header message="i0:SaveRestrictionsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveRestrictionsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveRestrictionsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveRestrictionsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRestrictionsWithContext">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/SaveRestrictionsWithContext" style="document" />
+      <wsdl:input name="SaveRestrictionsWithContextRequest">
+        <soap:header message="i0:SaveRestrictionsWithContextRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveRestrictionsWithContextRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveRestrictionsWithContextRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveRestrictionsWithContextResponse">
+        <soap:header message="i0:SaveRestrictionsWithContextResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveRestrictionsWithContextResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveRestrictionsWithContextResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveRestrictionsWithContextResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRestrictionsAndGetCriteriaInformation">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/SaveRestrictionsAndGetCriteriaInformation" style="document" />
+      <wsdl:input name="SaveRestrictionsAndGetCriteriaInformationRequest">
+        <soap:header message="i0:SaveRestrictionsAndGetCriteriaInformationRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveRestrictionsAndGetCriteriaInformationRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveRestrictionsAndGetCriteriaInformationRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveRestrictionsAndGetCriteriaInformationResponse">
+        <soap:header message="i0:SaveRestrictionsAndGetCriteriaInformationResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveRestrictionsAndGetCriteriaInformationResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveRestrictionsAndGetCriteriaInformationResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveRestrictionsAndGetCriteriaInformationResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Find">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/Find" style="document" />
+      <wsdl:input name="FindRequest">
+        <soap:header message="i0:FindRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:FindRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:FindRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindResponse">
+        <soap:header message="i0:FindResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:FindResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:FindResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:FindResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindFromRestrictions">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/FindFromRestrictions" style="document" />
+      <wsdl:input name="FindFromRestrictionsRequest">
+        <soap:header message="i0:FindFromRestrictionsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindFromRestrictionsResponse">
+        <soap:header message="i0:FindFromRestrictionsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindFromRestrictionsColumns">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/FindFromRestrictionsColumns" style="document" />
+      <wsdl:input name="FindFromRestrictionsColumnsRequest">
+        <soap:header message="i0:FindFromRestrictionsColumnsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindFromRestrictionsColumnsResponse">
+        <soap:header message="i0:FindFromRestrictionsColumnsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableRestrictionColumns">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetAvailableRestrictionColumns" style="document" />
+      <wsdl:input name="GetAvailableRestrictionColumnsRequest">
+        <soap:header message="i0:GetAvailableRestrictionColumnsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetAvailableRestrictionColumnsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetAvailableRestrictionColumnsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAvailableRestrictionColumnsResponse">
+        <soap:header message="i0:GetAvailableRestrictionColumnsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetAvailableRestrictionColumnsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetAvailableRestrictionColumnsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetAvailableRestrictionColumnsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecifiedCriteriaInformationWithDefaults">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetSpecifiedCriteriaInformationWithDefaults" style="document" />
+      <wsdl:input name="GetSpecifiedCriteriaInformationWithDefaultsRequest">
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSpecifiedCriteriaInformationWithDefaultsResponse">
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecifiedCriteriaInformationWithDefaultsWithContext">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetSpecifiedCriteriaInformationWithDefaultsWithContext" style="document" />
+      <wsdl:input name="GetSpecifiedCriteriaInformationWithDefaultsWithContextRequest">
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsWithContextRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsWithContextRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsWithContextRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSpecifiedCriteriaInformationWithDefaultsWithContextResponse">
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsWithContextResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsWithContextResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsWithContextResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSpecifiedCriteriaInformationWithDefaultsWithContextResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindFromRestrictionsColumnsOrderBy">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/FindFromRestrictionsColumnsOrderBy" style="document" />
+      <wsdl:input name="FindFromRestrictionsColumnsOrderByRequest">
+        <soap:header message="i0:FindFromRestrictionsColumnsOrderByRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsOrderByRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsOrderByRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindFromRestrictionsColumnsOrderByResponse">
+        <soap:header message="i0:FindFromRestrictionsColumnsOrderByResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsOrderByResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsOrderByResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:FindFromRestrictionsColumnsOrderByResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultDesiredColumns">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetDefaultDesiredColumns" style="document" />
+      <wsdl:input name="GetDefaultDesiredColumnsRequest">
+        <soap:header message="i0:GetDefaultDesiredColumnsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDefaultDesiredColumnsResponse">
+        <soap:header message="i0:GetDefaultDesiredColumnsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultOrderBy">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetDefaultOrderBy" style="document" />
+      <wsdl:input name="GetDefaultOrderByRequest">
+        <soap:header message="i0:GetDefaultOrderByRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDefaultOrderByResponse">
+        <soap:header message="i0:GetDefaultOrderByResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateRestrictions">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/PopulateRestrictions" style="document" />
+      <wsdl:input name="PopulateRestrictionsRequest">
+        <soap:header message="i0:PopulateRestrictionsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:PopulateRestrictionsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:PopulateRestrictionsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PopulateRestrictionsResponse">
+        <soap:header message="i0:PopulateRestrictionsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:PopulateRestrictionsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:PopulateRestrictionsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:PopulateRestrictionsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultDesiredColumnsFromRestrictions">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetDefaultDesiredColumnsFromRestrictions" style="document" />
+      <wsdl:input name="GetDefaultDesiredColumnsFromRestrictionsRequest">
+        <soap:header message="i0:GetDefaultDesiredColumnsFromRestrictionsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsFromRestrictionsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsFromRestrictionsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDefaultDesiredColumnsFromRestrictionsResponse">
+        <soap:header message="i0:GetDefaultDesiredColumnsFromRestrictionsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsFromRestrictionsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsFromRestrictionsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetDefaultDesiredColumnsFromRestrictionsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultOrderByFromDesiredColumns">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/GetDefaultOrderByFromDesiredColumns" style="document" />
+      <wsdl:input name="GetDefaultOrderByFromDesiredColumnsRequest">
+        <soap:header message="i0:GetDefaultOrderByFromDesiredColumnsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByFromDesiredColumnsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByFromDesiredColumnsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDefaultOrderByFromDesiredColumnsResponse">
+        <soap:header message="i0:GetDefaultOrderByFromDesiredColumnsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByFromDesiredColumnsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByFromDesiredColumnsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetDefaultOrderByFromDesiredColumnsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindOrderBy">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/FindOrderBy" style="document" />
+      <wsdl:input name="FindOrderByRequest">
+        <soap:header message="i0:FindOrderByRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:FindOrderByRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:FindOrderByRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindOrderByResponse">
+        <soap:header message="i0:FindOrderByResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:FindOrderByResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:FindOrderByResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:FindOrderByResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindWithExtraRestrictions">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/FindWithExtraRestrictions" style="document" />
+      <wsdl:input name="FindWithExtraRestrictionsRequest">
+        <soap:header message="i0:FindWithExtraRestrictionsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:FindWithExtraRestrictionsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:FindWithExtraRestrictionsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindWithExtraRestrictionsResponse">
+        <soap:header message="i0:FindWithExtraRestrictionsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:FindWithExtraRestrictionsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:FindWithExtraRestrictionsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:FindWithExtraRestrictionsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindWithColumns">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/Find/FindWithColumns" style="document" />
+      <wsdl:input name="FindWithColumnsRequest">
+        <soap:header message="i0:FindWithColumnsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:FindWithColumnsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:FindWithColumnsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindWithColumnsResponse">
+        <soap:header message="i0:FindWithColumnsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:FindWithColumnsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:FindWithColumnsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:FindWithColumnsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WcfFindService">
+    <wsdl:port name="BasicHttpBinding_Find" binding="tns:BasicHttpBinding_Find">
+      <soap:address location="http://192.168.10.151/SuperOffice/Remote/Services75/Find.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_Find1" binding="tns:BasicHttpBinding_Find1">
+      <soap:address location="https://qm-eis-dev-mok.modules.local/SuperOffice/Remote/Services75/Find.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

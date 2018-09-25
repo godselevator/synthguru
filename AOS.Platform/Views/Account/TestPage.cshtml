@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "AOS Test page";
+    Layout = "~/Views/Shared/_LoggedInLayoutAlternative.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="well">
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        //var colors = ["red", "blue", "green", "yellow", "brown", "black"];
+        //$('#search').typeahead({ source: colors });
+
+        $('#search').change(function () {
+            var result = $(this).val()
+            //call your function here
+            console.log("xxx: " + result);
+
+        });
+
+        $("#search").typeahead({
+            onSelect: function (item) {
+                $("#selMembers").show();
+                console.log(item);
+            },
+            ajax: {
+                url: "@Url.Action("FindSelections", "Account")",
+                timeout: 200,
+                //displayField: "Name",
+                triggerLength: 1,
+                method: "get",
+                //loadingClass: "loading-circle",
+                preDispatch: function (query) {
+                    $("#selMembers").hide();
+                    return {
+                        search: query
+                        //otherParam: 123
+                    }
+                },
+                preProcess: function (data) {
+                    //showLoadingMask(false);
+                    //if (data.success === false) {
+                    //    // Hide the list, there was some error
+                    //    return false;
+                    //}
+                    // We good!
+                    console.log(data);
+                    return data;
+                },
+                done: function () {
+                    console.log("second success");
+                },
+                fail: function () {
+                    console.log("error");
+                },
+                always: function () {
+                    console.log("complete");
+                }
+            }
+        })
+    });
+
+    $('.typeahead.input-sm').siblings('input.tt-hint').addClass('hint-small');
+    $('.typeahead.input-lg').siblings('input.tt-hint').addClass('hint-large');
+
+</script>

@@ -1,0 +1,43 @@
+﻿@model AOS.Platform.Models.BuyTryAppViewModel
+@{
+    ViewBag.Title = "AppBuy";
+    Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- Apps panel-->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title"><strong>Buy @Model.AppName</strong></h4>
+            </div>
+            <div class="panel-body">
+                <div class="aoswell">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Model.PurchaseText<br /><br />
+                                When you press the green button, you accept our terms of service. The Adwiza Online Service Team will contact you within the next days to answer any questions you may have.
+                            </div>
+                            <div class="form-group">
+                                Please confirm your purchase below
+                            </div>
+                            @{
+                                var routeValues = new RouteValueDictionary();
+                                routeValues.Add("Id", Model.AppID);
+                                routeValues.Add("IsTrial", false);
+                                routeValues.Add("UpgradeFromTrial", Model.UpgradeFromTrial);
+                            }
+                            <button class="btn btn-success" type="button" onclick="location.href='@Url.Action("ConfirmPurchase", "App", routeValues)'">
+                                <span class="fa fa-cart-plus"></span> Confirm purchase
+                            </button>
+                            <button class="btn btn-danger" type="button" onclick="location.href='@Url.Action("UserHome", "User")'">
+                                <span class="fa fa-minus-circle"></span> I've changed my mind
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+﻿@model AOS.Platform.Models.AppAdminMaintenanceViewModel
+@using (Html.BeginForm("UpdateMaintenance", "SysAdmin", FormMethod.Post, new { @class = "form center-block", encType = "multipart/form-data", id = "frmUpdateMaintenance", name = "frmUpdateMaintenance" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(m => m.AppId, new { id = "hiddenAppIdMaintenance" })
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" id="igMaintMode" style="min-width: 140px; text-align:left">Maintenance status</span>
+            @Html.CheckBoxFor(m => m.MaintenanceEnabled, new { @class = "switch notifswitch", data_size = "small", aria_describedby = "igMaintMode", data_on_text = "Enabled", data_off_text = "Disabled", id = "maintMode", name = "maintMode" })
+            @Html.ValidationMessageFor(m => m.MaintenanceEnabled, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" id="igMaintModeText" style="min-width: 140px; text-align:left">Text</span>
+            @Html.TextAreaFor(m => m.MaintenanceText, new { @class = "form-control input-sm", @placeholder = "Maintenance mode text", @aria_describedby = "igMaintModeText", id = "maintModeText", name = "maintModeText", style = "min-width: 100%" } )
+            @Html.ValidationMessageFor(m => m.MaintenanceText, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" id="igMaintModePlanned" style="min-width: 140px; text-align:left">Maintenance planned</span>
+            @Html.CheckBoxFor(m => m.MaintenancePlannedEnabled, new { @class = "switch notifswitch", data_size = "small", aria_describedby = "igMaintModePlanned", data_on_text = "Enabled", data_off_text = "Disabled", id = "maintModePlanned", name = "maintModePlanned" })
+            @Html.ValidationMessageFor(m => m.MaintenancePlannedEnabled, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" id="igMaintModePlannedText" style="min-width: 140px; text-align:left">Text</span>
+            @Html.TextAreaFor(m => m.MaintenancePlannedText, new { @class = "form-control input-sm", @placeholder = "Maintenance mode text", @aria_describedby = "igMaintModePlannedText", id = "maintModePlannedText", name = "maintModePlannedText", style = "min-width: 100%" })
+            @Html.ValidationMessageFor(m => m.MaintenancePlannedText, "", new { @class = "text-danger" })
+        </div>
+    </div>
+}
+<button class="ladda-button btn btn-primary btn-block btn-sm" data-style="zoom-in" type="submit" id="form-submit2">
+    <span class="ladda-label">Save</span>
+</button>
+<div class="form-group">
+    <div class="alert alert-success" role="alert" id="success-alert-maintenance">Maintenance properties successfully updated...</div>
+</div>
+<div class="form-group">
+    <div class="alert alert-danger" role="alert" id="error-alert-maintenance"></div>
+</div>

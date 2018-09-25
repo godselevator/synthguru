@@ -1,0 +1,37 @@
+﻿<!-- Modal Dialog -->
+<style>
+    p.test {
+        border: 1px solid #000000;
+        word-wrap: break-word;
+    }
+</style>
+<div class="modal fade" id="showContent" role="dialog" aria-labelledby="showContentLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Private key XML file</h4>
+            </div>
+            <div class="modal-body">
+                <p class="test">Content</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Dialog show event handler -->
+<script type="text/javascript">
+
+    $('#showContent').on('show.bs.modal', function (e) {
+        // Get data-message attr from trigging button
+        $message = $(e.relatedTarget).attr('data-message');
+        $title = $(e.relatedTarget).attr('data-title');
+
+        $(this).find('.modal-body p').text($message);
+        $(this).find('.modal-title').text($title);
+
+    });
+
+</script>

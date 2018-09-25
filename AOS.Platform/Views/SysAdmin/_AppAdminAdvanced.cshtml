@@ -1,0 +1,88 @@
+﻿@model AOS.Platform.Models.AppAdminAdvancedViewModel
+@using (Html.BeginForm("UpdateAdvanced", "SysAdmin", FormMethod.Post, new { @class = "form center-block", encType = "multipart/form-data", id = "frmUpdateAdvanced", name = "frmUpdateAdvanced" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(m => m.AppId, new { id = "hiddenAppIdAdvanced" })
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" style="min-width: 150px; text-align:left" id="igSOAppId">SO App Id</span>
+            @Html.EditorFor(m => m.SOAppId, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "SO App Id", @aria_describedby = "igSOAppId", id = "soAppId", name = "soAppId" } })
+            @Html.ValidationMessageFor(m => m.SOAppId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" style="min-width: 150px; text-align:left" id="igApplicationToken">Application Token</span>
+            @Html.EditorFor(m => m.ApplicationToken, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "Application Token", @aria_describedby = "igApplicationToken", id = "appToken", name = "appToken" } })
+            @Html.ValidationMessageFor(m => m.ApplicationToken, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" style="min-width: 150px; text-align:left" id="igEnvSelector">Globals Environment</span>
+            @Html.DropDownListFor(m => m.SelectedEnvironment, new SelectList(Model.ListOfGlobals, "GlobalsID", "Name"), new { @class = "form-control input-sm", id = "environmentSelection", aria_describedby = "igEnvSelector", style = "width:140px" })
+        </div>
+    </div>
+}
+
+<div class="form-group">
+    <div class="input-group">
+        <span class="input-group-addon input-sm" style="min-width: 150px; text-align:left" id="igPrivateKeySOD">Private Key for SOD</span>
+        @Html.EditorFor(m => m.PrivateKeyFileNameSOD, new { htmlAttributes = new { @class = "form-control input-sm", @disabled = "disabled", @placeholder = "Private Key - SOD", @aria_describedby = "igPrivateKeySOD", id = "privateKeySOD", name = "privateKeySOD", data_appid = @Model.AppId, data_logo_kind = "SOD", data_callback_url = "uploadCallbackPKey" } })
+        @Html.ValidationMessageFor(m => m.PrivateKeyFileNameSOD, "", new { @class = "text-danger" })
+        <span class="file-input btn btn-primary btn-file input-group-btn btn-sm" id="pkeySODUpload">
+            Upload <input type="file" name="upload-productKeySOD" id="upload-productKeySOD">
+        </span>
+        <span class="btn btn-info input-group-btn btn-sm" id="pkeySODView" title="Display private key XML content" data-toggle="modal" data-target="#showContent" data-title="Private key for SOD XML content" data-message="@Model.SODXML">
+            <i class="glyphicon glyphicon-open"></i>
+        </span>
+        <span class="btn btn-danger input-group-btn btn-sm" id="pkeySODDelete" title="Remove private key">
+            Remove
+        </span>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="input-group">
+        <span class="input-group-addon input-sm" style="min-width: 150px; text-align:left" id="igPrivateKeySTAGE">Private Key for STAGE</span>
+        @Html.EditorFor(m => m.PrivateKeyFileNameSTAGE, new { htmlAttributes = new { @class = "form-control input-sm", @disabled = "disabled", @placeholder = "Private Key - STAGE", @aria_describedby = "igPrivateKeySTAGE", id = "privateKeySTAGE", name = "privateKeySTAGE", data_appid = @Model.AppId, data_logo_kind = "STAGE", data_callback_url = "uploadCallbackPKey" } })
+        @Html.ValidationMessageFor(m => m.PrivateKeyFileNameSTAGE, "", new { @class = "text-danger" })
+        <span class="file-input btn btn-primary btn-file input-group-btn btn-sm" id="pkeySTAGEUpload">
+            Upload <input type="file" name="upload-productKeySTAGE" id="upload-productKeySTAGE">
+        </span>
+        <span class="btn btn-info input-group-btn btn-sm" id="pkeySTAGEView" title="Display private key XML content" data-toggle="modal" data-target="#showContent" data-title="Private key for STAGE XML content" data-message="@Model.STAGEXML">
+            <i class="glyphicon glyphicon-open"></i>
+        </span>
+        <span class="btn btn-danger input-group-btn btn-sm" id="pkeySTAGEDelete" title="Remove private key">
+            Remove
+        </span>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="input-group">
+        <span class="input-group-addon input-sm" style="min-width: 150px; text-align:left" id="igPrivateKeyPROD">Private Key for PROD</span>
+        @Html.EditorFor(m => m.PrivateKeyFileNamePROD, new { htmlAttributes = new { @class = "form-control input-sm", @disabled = "disabled", @placeholder = "Private Key - PROD", @aria_describedby = "igPrivateKeyPROD", id = "privateKeyPROD", name = "privateKeyPROD", data_appid = @Model.AppId, data_logo_kind = "PROD", data_callback_url = "uploadCallbackPKey" } })
+        @Html.ValidationMessageFor(m => m.PrivateKeyFileNamePROD, "", new { @class = "text-danger" })
+        <span class="file-input btn btn-primary btn-file input-group-btn btn-sm" id="pkeyPRODUpload">
+            Upload <input type="file" name="upload-productKeyPROD" id="upload-productKeyPROD">
+        </span>
+        <span class="btn btn-info input-group-btn btn-sm" id="pkeyPRODView" title="Display private key XML content" data-toggle="modal" data-target="#showContent" data-title="Private key for PROD XML content" data-message="@Model.PRODXML">
+            <i class="glyphicon glyphicon-open"></i>
+        </span>
+        <span class="btn btn-danger input-group-btn btn-sm" id="pkeyPRODDelete" title="Remove private key">
+            Remove
+        </span>
+    </div>
+</div>
+
+<button class="ladda-button btn btn-primary btn-block btn-sm" data-style="zoom-in" type="submit" id="form-submit6">
+    <span class="ladda-label">Save</span>
+</button>
+<div class="form-group">
+    <div class="alert alert-success" role="alert" id="success-alert-advanced">Advanced properties successfully updated...</div>
+</div>
+<div class="form-group">
+    <div class="alert alert-danger" role="alert" id="error-alert-advanced"></div>
+</div>

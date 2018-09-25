@@ -1,0 +1,129 @@
+﻿<!-- Modal Dialog -->
+@model AOS.Platform.Models.AppAdminNewApp
+<div class="modal fade" id="newApp" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Please enter some basic information for your new app</h4>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("AddNewApp", "SysAdmin", FormMethod.Post, new { @class = "form center-block", encType = "multipart/form-data", id = "frmAddNewApp", name = "frmAddNewApp" }))
+                {
+                    @*@Html.ValidationSummary()*@
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon input-sm" style="min-width: 100px; text-align:left" id="igNewAppCode">Code</span>
+                            @Html.EditorFor(m => m.Code, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "Code (short, 10 chars max.)", data_toggle = "tooltip", data_placement = "bottom", title = "Type in a unique code for your app. For our Address Book, the code is ABOOK. Choose something similar that encapsulates your app", @aria_describedby = "igNewAppCode", id = "newAppCode", name = "newAppCode" } })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.Code, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon input-sm" style="min-width: 100px; text-align:left" id="igNewAppName">Name</span>
+                            @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "Name", data_toggle = "tooltip", data_placement = "bottom", title = "Give your new app a sensible name. Max. 50 chars.", @aria_describedby = "igNewAppName", id = "newAppName", name = "newAppName" } })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon input-sm" style="min-width: 100px; text-align:left" id="igNewAppVersion">Version</span>
+                            @Html.EditorFor(m => m.Version, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "Version (e.g. 1.71)", data_toggle = "tooltip", data_placement = "bottom", title = "Let us know the version no. of your app. You can change this as new versions of your app is being developed", @aria_describedby = "igAppVersion", id = "newAppVersion", name = "newAppVersion" } })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.Version, "", new { @class = "text-danger" })
+                    </div>
+                }
+                <button class="ladda-button btn btn-primary btn-block btn-sm" data-style="zoom-in" type="submit" id="form-submit-addapp">
+                    <span class="ladda-label">Save</span>
+                </button>
+                <div class="form-group">
+                    <div class="alert alert-success" role="alert" id="success-alert-addapp">General info properties successfully updated...</div>
+                </div>
+                <div class="form-group">
+                    <div class="alert alert-danger" role="alert" id="error-alert-addapp"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Dialog show event handler -->
+<script type="text/javascript">
+    $(function () {
+
+        $('[data-toggle="tooltip"]').tooltip()
+
+        $("#success-alert-addapp").hide();
+        $("#error-alert-addapp").hide();
+
+        // Attach click handler to the submit button:
+        $('#form-submit-addapp').click(function () {
+            // Assign button to ladda button
+            ladda = Ladda.create(this);
+
+            // Submit form
+            $('#frmAddNewApp').submit();
+        });
+
+        // General info - submit form
+        $("#frmAddNewApp").on("submit", function (event) {
+            event.preventDefault();
+
+            var url = $(this).attr("action");
+            var formData = $(this).serialize();
+
+            // Start loading. Turn on spinner
+            ladda.start();
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: formData,
+                dataType: "json",
+                success: function (resp) {
+                    // Check if we should redirect
+                    if (resp.Redirect) {
+                        window.location = "@Url.Action("Login", "Account")";
+                    };
+
+                    if (resp.IsOK) {
+                        // Show success alert box
+                        $("#success-alert-addapp").html(resp.ErrorMsg);
+                        $("#success-alert-addapp").show();
+                        // Remove success alert-box after a few seconds
+                        $("#success-alert-addapp").fadeTo(5000, 1000).slideUp(1000, function () {
+                            $("#success-alert-addapp").hide();
+                            // Reset form fields
+                            $('#frmAddNewApp')[0].reset();
+                            $('#newApp').modal('toggle');
+                            //location.reload();
+                            // Unpack JSON payload
+                            var obj = jQuery.parseJSON(resp.ReturnedJsonData);
+
+                            $("#selection").append($("<option></option>").val(obj.AppID).html(obj.Name));
+                            $("#selection").val(obj.AppID).change();
+                        });
+                    }
+                    else {
+                        // Show error alert box
+                        $("#error-alert-addapp").html(resp.ErrorMsg);
+                        $("#error-alert-addapp").show();
+                        // Remove error alert-box after a few seconds
+                        $("#error-alert-addapp").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#error-alert-addapp").hide();
+                        });
+                    }
+                }
+            })
+            .always(function () {
+                // Stop loading. Turn off spinner
+                ladda.stop();
+            });
+
+            return false;
+        });
+
+    })
+</script>

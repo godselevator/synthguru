@@ -1,0 +1,67 @@
+﻿@model AOS.Platform.Models.BuyTryAppViewModel
+@{
+    ViewBag.Title = "Account settings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <!-- Panel -->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title"><strong>@Model.AppName - A great choice!</strong></h4>
+            </div>
+            <div class="panel-body">
+                <div class="aoswell">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                Before we can configure and enable the app for you, we need to get some more information about you and your SuperOffice installation.<br /><br />
+                                You need to be an administrator of your SuperOffice installation to continue.<br />
+                                If you are not an administrator, please contact your SuperOffice administrator and let him do the steps below.<br />
+                                <hr />
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="@Url.Action("Login", "Account")" style="text-decoration:none" class="thumbnail">
+                                        <div class="alertnobottommargin alert-success" role="alert" id="option2" style="height:250px">You already have another one of our apps running</div>
+                                    </a>
+                                </div>
+                                @if (Model.SOOnlinePurchaseVersion == AOS.Platform.Common.PurchaseVersion.SOOnlineNone)
+                                {
+                                    <div class="col-md-6">
+                                        <a href="@Url.Action("RegisterAndBuy", "Account", new { AppID = Model.AppID, IsTrial = Model.IsTrial } )" style="text-decoration:none" class=" thumbnail">
+                                            <div class="alertnobottommargin alert-info" role="alert" id="option2" style="height:250px">
+                                                You are new to our platform and your company is running SuperOffice CRM 7.5 or above on premise on you own server
+                                                <br /><br />
+                                                <div style="text-align: center"><img src="~/Content/Images/so8login_large.png"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-md-6">
+                                        <a href="@Model.SOStartURL" style="text-decoration:none" class=" thumbnail">
+                                            <div class="alertnobottommargin alert-warning" role="alert" id="option2" style="height:250px">
+                                                You are new to our platform and your company are using SuperOffice CRM Online 
+                                                <br /><br />
+                                                <div style="text-align: center"><img src="~/Content/Images/SuperOfficeCRMOnlineLogo_large.png"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        console.log("Model.OnPremisePurchaseVersion: " + "@Model.OnPremisePurchaseVersion");
+        console.log("Model.SOOnlinePurchaseVersion: " + "@Model.SOOnlinePurchaseVersion");
+        console.log("Model.SOStartURL" + "@Model.SOStartURL");
+    });
+</script>

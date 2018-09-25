@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4e9fc351-04b0-498c-a2cd-32c31a9e3fc9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost/SuperOffice82R01/Remote/Services82/Selection.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Selection.wsdl" MetadataType="Wsdl" ID="d2898726-d4e1-4436-a303-a209efa9cdea" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/Selection.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Selection.disco" MetadataType="Disco" ID="fa313c30-041a-4219-8558-b326603c2984" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/Selection.svc?disco" />
+    <MetadataFile FileName="Selection.xsd" MetadataType="Schema" ID="d4447a7b-2d23-47a8-931d-e211a6e89666" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/Selection.svc?xsd=xsd2" />
+    <MetadataFile FileName="Selection1.xsd" MetadataType="Schema" ID="b57bdc9d-3bd0-46a6-b21f-729b62d7e2ef" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/Selection.svc?xsd=xsd0" />
+    <MetadataFile FileName="Selection2.xsd" MetadataType="Schema" ID="95224b03-730e-4263-8e97-186dc84e6b5a" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/Selection.svc?xsd=xsd1" />
+    <MetadataFile FileName="WcfSelectionService.wsdl" MetadataType="Wsdl" ID="d59b53e6-4d01-4af8-9b71-b780d64e08eb" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/Selection.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

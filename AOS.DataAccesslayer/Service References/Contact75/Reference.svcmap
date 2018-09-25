@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e739a7a3-558c-488a-9fd2-5dd76f140f8f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.10.151/SuperOffice/Remote/Services75/Contact.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Contact3.xsd" MetadataType="Schema" ID="9981aa47-447d-4bda-a9f0-efb1e73e6cc7" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Contact.svc?xsd=xsd1" />
+    <MetadataFile FileName="Contact1.wsdl" MetadataType="Wsdl" ID="97cf9cbb-33b9-4006-9c2b-7ac72145269d" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Contact.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Contact31.xsd" MetadataType="Schema" ID="1ed90952-43d6-4f6a-afab-0b413e40d5d9" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Contact.svc?xsd=xsd2" />
+    <MetadataFile FileName="Contact1.disco" MetadataType="Disco" ID="d83121f7-2874-46a2-b6a4-9b190c89f324" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Contact.svc?disco" />
+    <MetadataFile FileName="Contact32.xsd" MetadataType="Schema" ID="f1c299b5-69be-4f78-a3b8-fabf5325ebbb" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Contact.svc?xsd=xsd0" />
+    <MetadataFile FileName="WcfContactService1.wsdl" MetadataType="Wsdl" ID="0201093c-0b99-4bc1-8f8c-c09823e05fad" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Contact.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

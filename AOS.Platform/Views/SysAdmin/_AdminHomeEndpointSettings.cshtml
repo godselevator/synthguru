@@ -1,0 +1,42 @@
+﻿@model AOS.Platform.Models.AdminHomeEndpointSettingsViewModel
+@using (Html.BeginForm("UpdateEndpointSettings", "SysAdmin", FormMethod.Post, new { @class = "form center-block", encType = "multipart/form-data", id = "frmUpdateEndpointSettings", name = "frmUpdateEndpointSettings" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" style="padding-left: 0px">
+                    <div class="input-group">
+                        <span class="input-group-addon input-sm" id="igUpdateEndpoint">Update status in cockpit</span>
+                        @Html.CheckBoxFor(m => m.UpdateEndpoint, new { @class = "switch", data_size = "small", aria_describedby = "igUpdateEndpoint", data_on_text = "On", data_off_text = "Off", id = "updateEndpoint", name = "updateEndpoint" })
+                        @Html.ValidationMessageFor(m => m.UpdateEndpoint, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:55px">
+                    <div class="input-group">
+                        <span class="input-group-addon input-sm" id="igPolling">Polling</span>
+                        @Html.CheckBoxFor(m => m.PollingEnabled, new { @class = "switch", data_size = "small", aria_describedby = "igPolling", data_on_text = "On", data_off_text = "Off", id = "polling", name = "polling" })
+                        @Html.ValidationMessageFor(m => m.PollingEnabled, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-right:0px">
+                    <div class="input-group">
+                        <span class="input-group-addon input-sm" id="igPollingInterval">Interval (ms)</span>
+                        @Html.EditorFor(m => m.PollingInterval, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "Polling interval (ms)", aria_describedby = "igPollingInterval", id = "pollingInterval", name = "pollingInterval", min = "0", max = "30000", step = "1000", @data_toggle = "tooltip", @data_placement = "bottom", title = "Polling interval (ms)" } })
+                        @Html.ValidationMessageFor(m => m.PollingInterval, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<button class="ladda-button btn btn-primary btn-block btn-sm" data-style="zoom-in" type="submit" id="form-submit1">
+    <span class="ladda-label">Save</span>
+</button>
+<div class="form-group">
+    <div class="alert alert-success" role="alert" id="success-alert-endpointsettings">Endpoint settings successfully updated... Page must refreshed in order to complete the updates</div>
+</div>
+<div class="form-group">
+    <div class="alert alert-danger" role="alert" id="error-alert-endpointsettings"></div>
+</div>

@@ -1,0 +1,1101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.superoffice.net/ws/crm/NetServer/Services82" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WcfSaleService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_Sale1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://www.superoffice.net/ws/crm/NetServer/Services82" location="http://localhost/SuperOffice82R01/Remote/Services82/Sale.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_Sale" type="i0:Sale">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateDefaultSaleEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/CreateDefaultSaleEntity" style="document" />
+      <wsdl:input name="CreateDefaultSaleEntityRequest">
+        <soap:header message="i0:CreateDefaultSaleEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultSaleEntityResponse">
+        <soap:header message="i0:CreateDefaultSaleEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSaleEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/SaveSaleEntity" style="document" />
+      <wsdl:input name="SaveSaleEntityRequest">
+        <soap:header message="i0:SaveSaleEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveSaleEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveSaleEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveSaleEntityResponse">
+        <soap:header message="i0:SaveSaleEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveSaleEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveSaleEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveSaleEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSaleEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/DeleteSaleEntity" style="document" />
+      <wsdl:input name="DeleteSaleEntityRequest">
+        <soap:header message="i0:DeleteSaleEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DeleteSaleEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DeleteSaleEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteSaleEntityResponse">
+        <soap:header message="i0:DeleteSaleEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DeleteSaleEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DeleteSaleEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DeleteSaleEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultSaleSummary">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/CreateDefaultSaleSummary" style="document" />
+      <wsdl:input name="CreateDefaultSaleSummaryRequest">
+        <soap:header message="i0:CreateDefaultSaleSummaryRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleSummaryRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleSummaryRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultSaleSummaryResponse">
+        <soap:header message="i0:CreateDefaultSaleSummaryResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleSummaryResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleSummaryResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleSummaryResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSale">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSale" style="document" />
+      <wsdl:input name="GetSaleRequest">
+        <soap:header message="i0:GetSaleRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSaleRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSaleRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSaleResponse">
+        <soap:header message="i0:GetSaleResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSaleResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSaleResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSaleResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSaleEntity" style="document" />
+      <wsdl:input name="GetSaleEntityRequest">
+        <soap:header message="i0:GetSaleEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSaleEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSaleEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSaleEntityResponse">
+        <soap:header message="i0:GetSaleEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSaleEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSaleEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSaleEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasGuide">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/HasGuide" style="document" />
+      <wsdl:input name="HasGuideRequest">
+        <soap:header message="i0:HasGuideRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:HasGuideRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:HasGuideRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="HasGuideResponse">
+        <soap:header message="i0:HasGuideResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:HasGuideResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:HasGuideResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:HasGuideResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextDueDate">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetNextDueDate" style="document" />
+      <wsdl:input name="GetNextDueDateRequest">
+        <soap:header message="i0:GetNextDueDateRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetNextDueDateRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetNextDueDateRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetNextDueDateResponse">
+        <soap:header message="i0:GetNextDueDateResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetNextDueDateResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetNextDueDateResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetNextDueDateResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchUpdateNextDueDate">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/BatchUpdateNextDueDate" style="document" />
+      <wsdl:input name="BatchUpdateNextDueDateRequest">
+        <soap:header message="i0:BatchUpdateNextDueDateRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:BatchUpdateNextDueDateRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:BatchUpdateNextDueDateRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="BatchUpdateNextDueDateResponse">
+        <soap:header message="i0:BatchUpdateNextDueDateResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:BatchUpdateNextDueDateResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:BatchUpdateNextDueDateResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:BatchUpdateNextDueDateResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextSaleStage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetNextSaleStage" style="document" />
+      <wsdl:input name="GetNextSaleStageRequest">
+        <soap:header message="i0:GetNextSaleStageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetNextSaleStageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetNextSaleStageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetNextSaleStageResponse">
+        <soap:header message="i0:GetNextSaleStageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetNextSaleStageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetNextSaleStageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetNextSaleStageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasGuideActivities">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/HasGuideActivities" style="document" />
+      <wsdl:input name="HasGuideActivitiesRequest">
+        <soap:header message="i0:HasGuideActivitiesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:HasGuideActivitiesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:HasGuideActivitiesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="HasGuideActivitiesResponse">
+        <soap:header message="i0:HasGuideActivitiesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:HasGuideActivitiesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:HasGuideActivitiesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:HasGuideActivitiesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OfferAutoNextStageOnApppointmentCompleted">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/OfferAutoNextStageOnApppointmentCompleted" style="document" />
+      <wsdl:input name="OfferAutoNextStageOnApppointmentCompletedRequest">
+        <soap:header message="i0:OfferAutoNextStageOnApppointmentCompletedRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:OfferAutoNextStageOnApppointmentCompletedRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:OfferAutoNextStageOnApppointmentCompletedRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="OfferAutoNextStageOnApppointmentCompletedResponse">
+        <soap:header message="i0:OfferAutoNextStageOnApppointmentCompletedResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:OfferAutoNextStageOnApppointmentCompletedResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:OfferAutoNextStageOnApppointmentCompletedResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:OfferAutoNextStageOnApppointmentCompletedResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProbabilityFromStage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetProbabilityFromStage" style="document" />
+      <wsdl:input name="GetProbabilityFromStageRequest">
+        <soap:header message="i0:GetProbabilityFromStageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetProbabilityFromStageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetProbabilityFromStageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetProbabilityFromStageResponse">
+        <soap:header message="i0:GetProbabilityFromStageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetProbabilityFromStageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetProbabilityFromStageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetProbabilityFromStageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsNumberValid">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/IsNumberValid" style="document" />
+      <wsdl:input name="IsNumberValidRequest">
+        <soap:header message="i0:IsNumberValidRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:IsNumberValidRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:IsNumberValidRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IsNumberValidResponse">
+        <soap:header message="i0:IsNumberValidResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:IsNumberValidResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:IsNumberValidResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:IsNumberValidResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSaleStakeholders">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/AddSaleStakeholders" style="document" />
+      <wsdl:input name="AddSaleStakeholdersRequest">
+        <soap:header message="i0:AddSaleStakeholdersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:AddSaleStakeholdersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:AddSaleStakeholdersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddSaleStakeholdersResponse">
+        <soap:header message="i0:AddSaleStakeholdersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:AddSaleStakeholdersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:AddSaleStakeholdersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:AddSaleStakeholdersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSaleStakeholders">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/DeleteSaleStakeholders" style="document" />
+      <wsdl:input name="DeleteSaleStakeholdersRequest">
+        <soap:header message="i0:DeleteSaleStakeholdersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DeleteSaleStakeholdersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DeleteSaleStakeholdersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteSaleStakeholdersResponse">
+        <soap:header message="i0:DeleteSaleStakeholdersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DeleteSaleStakeholdersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DeleteSaleStakeholdersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DeleteSaleStakeholdersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasStakeholderSetting">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/HasStakeholderSetting" style="document" />
+      <wsdl:input name="HasStakeholderSettingRequest">
+        <soap:header message="i0:HasStakeholderSettingRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:HasStakeholderSettingRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:HasStakeholderSettingRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="HasStakeholderSettingResponse">
+        <soap:header message="i0:HasStakeholderSettingResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:HasStakeholderSettingResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:HasStakeholderSettingResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:HasStakeholderSettingResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleList">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSaleList" style="document" />
+      <wsdl:input name="GetSaleListRequest">
+        <soap:header message="i0:GetSaleListRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSaleListRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSaleListRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSaleListResponse">
+        <soap:header message="i0:GetSaleListResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSaleListResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSaleListResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSaleListResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyOpportunities">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetMyOpportunities" style="document" />
+      <wsdl:input name="GetMyOpportunitiesRequest">
+        <soap:header message="i0:GetMyOpportunitiesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetMyOpportunitiesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetMyOpportunitiesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMyOpportunitiesResponse">
+        <soap:header message="i0:GetMyOpportunitiesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetMyOpportunitiesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetMyOpportunitiesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetMyOpportunitiesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentSales">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetRecentSales" style="document" />
+      <wsdl:input name="GetRecentSalesRequest">
+        <soap:header message="i0:GetRecentSalesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetRecentSalesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetRecentSalesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRecentSalesResponse">
+        <soap:header message="i0:GetRecentSalesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetRecentSalesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetRecentSalesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetRecentSalesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpcomingSales">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetUpcomingSales" style="document" />
+      <wsdl:input name="GetUpcomingSalesRequest">
+        <soap:header message="i0:GetUpcomingSalesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUpcomingSalesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUpcomingSalesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUpcomingSalesResponse">
+        <soap:header message="i0:GetUpcomingSalesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUpcomingSalesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUpcomingSalesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUpcomingSalesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesByDate">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSalesByDate" style="document" />
+      <wsdl:input name="GetSalesByDateRequest">
+        <soap:header message="i0:GetSalesByDateRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSalesByDateRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSalesByDateRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSalesByDateResponse">
+        <soap:header message="i0:GetSalesByDateResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSalesByDateResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSalesByDateResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSalesByDateResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenSalesForContact">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetOpenSalesForContact" style="document" />
+      <wsdl:input name="GetOpenSalesForContactRequest">
+        <soap:header message="i0:GetOpenSalesForContactRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetOpenSalesForContactRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetOpenSalesForContactRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetOpenSalesForContactResponse">
+        <soap:header message="i0:GetOpenSalesForContactResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetOpenSalesForContactResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetOpenSalesForContactResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetOpenSalesForContactResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAsSold">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/SetAsSold" style="document" />
+      <wsdl:input name="SetAsSoldRequest">
+        <soap:header message="i0:SetAsSoldRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetAsSoldRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetAsSoldRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetAsSoldResponse">
+        <soap:header message="i0:SetAsSoldResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetAsSoldResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetAsSoldResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetAsSoldResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAsLost">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/SetAsLost" style="document" />
+      <wsdl:input name="SetAsLostRequest">
+        <soap:header message="i0:SetAsLostRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetAsLostRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetAsLostRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetAsLostResponse">
+        <soap:header message="i0:SetAsLostResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetAsLostResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetAsLostResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetAsLostResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleStakeholder">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSaleStakeholder" style="document" />
+      <wsdl:input name="GetSaleStakeholderRequest">
+        <soap:header message="i0:GetSaleStakeholderRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSaleStakeholderResponse">
+        <soap:header message="i0:GetSaleStakeholderResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleStakeholderList">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSaleStakeholderList" style="document" />
+      <wsdl:input name="GetSaleStakeholderListRequest">
+        <soap:header message="i0:GetSaleStakeholderListRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderListRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderListRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSaleStakeholderListResponse">
+        <soap:header message="i0:GetSaleStakeholderListResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderListResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderListResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderListResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleStakeholders">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSaleStakeholders" style="document" />
+      <wsdl:input name="GetSaleStakeholdersRequest">
+        <soap:header message="i0:GetSaleStakeholdersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSaleStakeholdersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSaleStakeholdersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSaleStakeholdersResponse">
+        <soap:header message="i0:GetSaleStakeholdersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSaleStakeholdersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSaleStakeholdersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSaleStakeholdersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSaleStakeholders">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/UpdateSaleStakeholders" style="document" />
+      <wsdl:input name="UpdateSaleStakeholdersRequest">
+        <soap:header message="i0:UpdateSaleStakeholdersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:UpdateSaleStakeholdersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:UpdateSaleStakeholdersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UpdateSaleStakeholdersResponse">
+        <soap:header message="i0:UpdateSaleStakeholdersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:UpdateSaleStakeholdersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:UpdateSaleStakeholdersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:UpdateSaleStakeholdersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleStakeholderById">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSaleStakeholderById" style="document" />
+      <wsdl:input name="GetSaleStakeholderByIdRequest">
+        <soap:header message="i0:GetSaleStakeholderByIdRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderByIdRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderByIdRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSaleStakeholderByIdResponse">
+        <soap:header message="i0:GetSaleStakeholderByIdResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderByIdResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderByIdResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderByIdResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryByAssociate">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSummaryByAssociate" style="document" />
+      <wsdl:input name="GetSummaryByAssociateRequest">
+        <soap:header message="i0:GetSummaryByAssociateRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSummaryByAssociateRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSummaryByAssociateRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSummaryByAssociateResponse">
+        <soap:header message="i0:GetSummaryByAssociateResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSummaryByAssociateResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSummaryByAssociateResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSummaryByAssociateResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryByGroup">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSummaryByGroup" style="document" />
+      <wsdl:input name="GetSummaryByGroupRequest">
+        <soap:header message="i0:GetSummaryByGroupRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSummaryByGroupRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSummaryByGroupRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSummaryByGroupResponse">
+        <soap:header message="i0:GetSummaryByGroupResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSummaryByGroupResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSummaryByGroupResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSummaryByGroupResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryByContact">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSummaryByContact" style="document" />
+      <wsdl:input name="GetSummaryByContactRequest">
+        <soap:header message="i0:GetSummaryByContactRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSummaryByContactRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSummaryByContactRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSummaryByContactResponse">
+        <soap:header message="i0:GetSummaryByContactResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSummaryByContactResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSummaryByContactResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSummaryByContactResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_Sale1" type="i0:Sale">
+    <wsp:PolicyReference URI="#BasicHttpBinding_Sale1_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateDefaultSaleEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/CreateDefaultSaleEntity" style="document" />
+      <wsdl:input name="CreateDefaultSaleEntityRequest">
+        <soap:header message="i0:CreateDefaultSaleEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultSaleEntityResponse">
+        <soap:header message="i0:CreateDefaultSaleEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSaleEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/SaveSaleEntity" style="document" />
+      <wsdl:input name="SaveSaleEntityRequest">
+        <soap:header message="i0:SaveSaleEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveSaleEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveSaleEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveSaleEntityResponse">
+        <soap:header message="i0:SaveSaleEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveSaleEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveSaleEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveSaleEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSaleEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/DeleteSaleEntity" style="document" />
+      <wsdl:input name="DeleteSaleEntityRequest">
+        <soap:header message="i0:DeleteSaleEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DeleteSaleEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DeleteSaleEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteSaleEntityResponse">
+        <soap:header message="i0:DeleteSaleEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DeleteSaleEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DeleteSaleEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DeleteSaleEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultSaleSummary">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/CreateDefaultSaleSummary" style="document" />
+      <wsdl:input name="CreateDefaultSaleSummaryRequest">
+        <soap:header message="i0:CreateDefaultSaleSummaryRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleSummaryRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleSummaryRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultSaleSummaryResponse">
+        <soap:header message="i0:CreateDefaultSaleSummaryResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleSummaryResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleSummaryResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultSaleSummaryResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSale">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSale" style="document" />
+      <wsdl:input name="GetSaleRequest">
+        <soap:header message="i0:GetSaleRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSaleRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSaleRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSaleResponse">
+        <soap:header message="i0:GetSaleResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSaleResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSaleResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSaleResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSaleEntity" style="document" />
+      <wsdl:input name="GetSaleEntityRequest">
+        <soap:header message="i0:GetSaleEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSaleEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSaleEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSaleEntityResponse">
+        <soap:header message="i0:GetSaleEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSaleEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSaleEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSaleEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasGuide">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/HasGuide" style="document" />
+      <wsdl:input name="HasGuideRequest">
+        <soap:header message="i0:HasGuideRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:HasGuideRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:HasGuideRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="HasGuideResponse">
+        <soap:header message="i0:HasGuideResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:HasGuideResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:HasGuideResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:HasGuideResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextDueDate">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetNextDueDate" style="document" />
+      <wsdl:input name="GetNextDueDateRequest">
+        <soap:header message="i0:GetNextDueDateRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetNextDueDateRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetNextDueDateRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetNextDueDateResponse">
+        <soap:header message="i0:GetNextDueDateResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetNextDueDateResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetNextDueDateResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetNextDueDateResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchUpdateNextDueDate">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/BatchUpdateNextDueDate" style="document" />
+      <wsdl:input name="BatchUpdateNextDueDateRequest">
+        <soap:header message="i0:BatchUpdateNextDueDateRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:BatchUpdateNextDueDateRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:BatchUpdateNextDueDateRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="BatchUpdateNextDueDateResponse">
+        <soap:header message="i0:BatchUpdateNextDueDateResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:BatchUpdateNextDueDateResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:BatchUpdateNextDueDateResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:BatchUpdateNextDueDateResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextSaleStage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetNextSaleStage" style="document" />
+      <wsdl:input name="GetNextSaleStageRequest">
+        <soap:header message="i0:GetNextSaleStageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetNextSaleStageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetNextSaleStageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetNextSaleStageResponse">
+        <soap:header message="i0:GetNextSaleStageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetNextSaleStageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetNextSaleStageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetNextSaleStageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasGuideActivities">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/HasGuideActivities" style="document" />
+      <wsdl:input name="HasGuideActivitiesRequest">
+        <soap:header message="i0:HasGuideActivitiesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:HasGuideActivitiesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:HasGuideActivitiesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="HasGuideActivitiesResponse">
+        <soap:header message="i0:HasGuideActivitiesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:HasGuideActivitiesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:HasGuideActivitiesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:HasGuideActivitiesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OfferAutoNextStageOnApppointmentCompleted">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/OfferAutoNextStageOnApppointmentCompleted" style="document" />
+      <wsdl:input name="OfferAutoNextStageOnApppointmentCompletedRequest">
+        <soap:header message="i0:OfferAutoNextStageOnApppointmentCompletedRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:OfferAutoNextStageOnApppointmentCompletedRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:OfferAutoNextStageOnApppointmentCompletedRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="OfferAutoNextStageOnApppointmentCompletedResponse">
+        <soap:header message="i0:OfferAutoNextStageOnApppointmentCompletedResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:OfferAutoNextStageOnApppointmentCompletedResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:OfferAutoNextStageOnApppointmentCompletedResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:OfferAutoNextStageOnApppointmentCompletedResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProbabilityFromStage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetProbabilityFromStage" style="document" />
+      <wsdl:input name="GetProbabilityFromStageRequest">
+        <soap:header message="i0:GetProbabilityFromStageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetProbabilityFromStageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetProbabilityFromStageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetProbabilityFromStageResponse">
+        <soap:header message="i0:GetProbabilityFromStageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetProbabilityFromStageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetProbabilityFromStageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetProbabilityFromStageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsNumberValid">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/IsNumberValid" style="document" />
+      <wsdl:input name="IsNumberValidRequest">
+        <soap:header message="i0:IsNumberValidRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:IsNumberValidRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:IsNumberValidRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IsNumberValidResponse">
+        <soap:header message="i0:IsNumberValidResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:IsNumberValidResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:IsNumberValidResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:IsNumberValidResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSaleStakeholders">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/AddSaleStakeholders" style="document" />
+      <wsdl:input name="AddSaleStakeholdersRequest">
+        <soap:header message="i0:AddSaleStakeholdersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:AddSaleStakeholdersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:AddSaleStakeholdersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddSaleStakeholdersResponse">
+        <soap:header message="i0:AddSaleStakeholdersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:AddSaleStakeholdersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:AddSaleStakeholdersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:AddSaleStakeholdersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSaleStakeholders">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/DeleteSaleStakeholders" style="document" />
+      <wsdl:input name="DeleteSaleStakeholdersRequest">
+        <soap:header message="i0:DeleteSaleStakeholdersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DeleteSaleStakeholdersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DeleteSaleStakeholdersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteSaleStakeholdersResponse">
+        <soap:header message="i0:DeleteSaleStakeholdersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DeleteSaleStakeholdersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DeleteSaleStakeholdersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DeleteSaleStakeholdersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasStakeholderSetting">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/HasStakeholderSetting" style="document" />
+      <wsdl:input name="HasStakeholderSettingRequest">
+        <soap:header message="i0:HasStakeholderSettingRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:HasStakeholderSettingRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:HasStakeholderSettingRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="HasStakeholderSettingResponse">
+        <soap:header message="i0:HasStakeholderSettingResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:HasStakeholderSettingResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:HasStakeholderSettingResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:HasStakeholderSettingResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleList">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSaleList" style="document" />
+      <wsdl:input name="GetSaleListRequest">
+        <soap:header message="i0:GetSaleListRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSaleListRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSaleListRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSaleListResponse">
+        <soap:header message="i0:GetSaleListResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSaleListResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSaleListResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSaleListResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyOpportunities">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetMyOpportunities" style="document" />
+      <wsdl:input name="GetMyOpportunitiesRequest">
+        <soap:header message="i0:GetMyOpportunitiesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetMyOpportunitiesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetMyOpportunitiesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMyOpportunitiesResponse">
+        <soap:header message="i0:GetMyOpportunitiesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetMyOpportunitiesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetMyOpportunitiesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetMyOpportunitiesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentSales">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetRecentSales" style="document" />
+      <wsdl:input name="GetRecentSalesRequest">
+        <soap:header message="i0:GetRecentSalesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetRecentSalesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetRecentSalesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRecentSalesResponse">
+        <soap:header message="i0:GetRecentSalesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetRecentSalesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetRecentSalesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetRecentSalesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpcomingSales">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetUpcomingSales" style="document" />
+      <wsdl:input name="GetUpcomingSalesRequest">
+        <soap:header message="i0:GetUpcomingSalesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUpcomingSalesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUpcomingSalesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUpcomingSalesResponse">
+        <soap:header message="i0:GetUpcomingSalesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUpcomingSalesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUpcomingSalesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUpcomingSalesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesByDate">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSalesByDate" style="document" />
+      <wsdl:input name="GetSalesByDateRequest">
+        <soap:header message="i0:GetSalesByDateRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSalesByDateRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSalesByDateRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSalesByDateResponse">
+        <soap:header message="i0:GetSalesByDateResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSalesByDateResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSalesByDateResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSalesByDateResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenSalesForContact">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetOpenSalesForContact" style="document" />
+      <wsdl:input name="GetOpenSalesForContactRequest">
+        <soap:header message="i0:GetOpenSalesForContactRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetOpenSalesForContactRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetOpenSalesForContactRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetOpenSalesForContactResponse">
+        <soap:header message="i0:GetOpenSalesForContactResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetOpenSalesForContactResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetOpenSalesForContactResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetOpenSalesForContactResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAsSold">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/SetAsSold" style="document" />
+      <wsdl:input name="SetAsSoldRequest">
+        <soap:header message="i0:SetAsSoldRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetAsSoldRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetAsSoldRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetAsSoldResponse">
+        <soap:header message="i0:SetAsSoldResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetAsSoldResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetAsSoldResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetAsSoldResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAsLost">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/SetAsLost" style="document" />
+      <wsdl:input name="SetAsLostRequest">
+        <soap:header message="i0:SetAsLostRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetAsLostRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetAsLostRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetAsLostResponse">
+        <soap:header message="i0:SetAsLostResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetAsLostResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetAsLostResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetAsLostResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleStakeholder">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSaleStakeholder" style="document" />
+      <wsdl:input name="GetSaleStakeholderRequest">
+        <soap:header message="i0:GetSaleStakeholderRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSaleStakeholderResponse">
+        <soap:header message="i0:GetSaleStakeholderResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleStakeholderList">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSaleStakeholderList" style="document" />
+      <wsdl:input name="GetSaleStakeholderListRequest">
+        <soap:header message="i0:GetSaleStakeholderListRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderListRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderListRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSaleStakeholderListResponse">
+        <soap:header message="i0:GetSaleStakeholderListResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderListResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderListResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderListResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleStakeholders">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSaleStakeholders" style="document" />
+      <wsdl:input name="GetSaleStakeholdersRequest">
+        <soap:header message="i0:GetSaleStakeholdersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSaleStakeholdersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSaleStakeholdersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSaleStakeholdersResponse">
+        <soap:header message="i0:GetSaleStakeholdersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSaleStakeholdersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSaleStakeholdersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSaleStakeholdersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSaleStakeholders">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/UpdateSaleStakeholders" style="document" />
+      <wsdl:input name="UpdateSaleStakeholdersRequest">
+        <soap:header message="i0:UpdateSaleStakeholdersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:UpdateSaleStakeholdersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:UpdateSaleStakeholdersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UpdateSaleStakeholdersResponse">
+        <soap:header message="i0:UpdateSaleStakeholdersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:UpdateSaleStakeholdersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:UpdateSaleStakeholdersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:UpdateSaleStakeholdersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleStakeholderById">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSaleStakeholderById" style="document" />
+      <wsdl:input name="GetSaleStakeholderByIdRequest">
+        <soap:header message="i0:GetSaleStakeholderByIdRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderByIdRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderByIdRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSaleStakeholderByIdResponse">
+        <soap:header message="i0:GetSaleStakeholderByIdResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderByIdResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderByIdResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSaleStakeholderByIdResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryByAssociate">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSummaryByAssociate" style="document" />
+      <wsdl:input name="GetSummaryByAssociateRequest">
+        <soap:header message="i0:GetSummaryByAssociateRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSummaryByAssociateRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSummaryByAssociateRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSummaryByAssociateResponse">
+        <soap:header message="i0:GetSummaryByAssociateResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSummaryByAssociateResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSummaryByAssociateResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSummaryByAssociateResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryByGroup">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSummaryByGroup" style="document" />
+      <wsdl:input name="GetSummaryByGroupRequest">
+        <soap:header message="i0:GetSummaryByGroupRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSummaryByGroupRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSummaryByGroupRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSummaryByGroupResponse">
+        <soap:header message="i0:GetSummaryByGroupResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSummaryByGroupResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSummaryByGroupResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSummaryByGroupResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryByContact">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Sale/GetSummaryByContact" style="document" />
+      <wsdl:input name="GetSummaryByContactRequest">
+        <soap:header message="i0:GetSummaryByContactRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSummaryByContactRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSummaryByContactRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSummaryByContactResponse">
+        <soap:header message="i0:GetSummaryByContactResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSummaryByContactResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSummaryByContactResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSummaryByContactResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WcfSaleService">
+    <wsdl:port name="BasicHttpBinding_Sale" binding="tns:BasicHttpBinding_Sale">
+      <soap:address location="http://localhost/SuperOffice82R01/Remote/Services82/Sale.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_Sale1" binding="tns:BasicHttpBinding_Sale1">
+      <soap:address location="https://qm-eis-dev-mok.modules.local/SuperOffice82R01/Remote/Services82/Sale.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

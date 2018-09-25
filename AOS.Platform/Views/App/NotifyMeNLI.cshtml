@@ -1,0 +1,123 @@
+﻿@model AOS.Platform.Models.NotifyUserViewModel
+@{
+    ViewBag.Title = "Account settings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <!-- Send notification data panel-->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                @if (Model.OnPremiseBetaVersion)
+                {
+                    <h4 class="panel-title"><strong>@Model.AppName - On Premise - Notify me when the beta version is out</strong></h4>
+                }
+                else
+                {
+                    <h4 class="panel-title"><strong>@Model.AppName - SuperOffice Online - Notify me when the beta version is out</strong></h4>
+                }
+            </div>
+            <div class="panel-body">
+                <div class="aoswell">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                Please fill in your name and email address and we will notify you when the beta version is out <br />
+                            </div>
+                            @using (Html.BeginForm("SendNotificationData", "App", FormMethod.Post, new { @class = "form center-block", encType = "multipart/form-data", id = "frmNotifyUser", name = "frmNotifyUser" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(m => m.AppID, new { id = "hiddenAppId" })
+                                @Html.HiddenFor(m => m.AppName, new { id = "hiddenAppName" })
+                                @Html.HiddenFor(m => m.OnPremiseBetaVersion, new { id = "hiddenAOnPremiseVersion" })
+                                <div class="form-group">
+                                    @Html.EditorFor(m => m.FirstNameLastName, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "First name and last name", id = "firstnamelastname", name = "firstnamelastname" } })
+                                    @Html.ValidationMessageFor(m => m.FirstNameLastName, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "Email", id = "email", name = "email" } })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                </div>
+                            }
+                            <button class="btn btn-primary btn-lg btn-block" data-style="zoom-in" type="submit" id="form-submit">Send notification data</button>
+                            <div class="form-group">
+                                <div class="alert alert-success" role="alert" id="success-alert">Notification data succesfully received - we will notify you when the beta version is out. Thank you</div>
+                            </div>
+                            <div class="form-group">
+                                <div class="alert alert-danger" role="alert" id="error-alert"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    $(function () {
+
+        // Attach click handler to the submit button:
+        $('#form-submit').click(function () {
+            // Submit form
+            $('#frmNotifyUser').submit();
+        });
+
+        // Hide alert boxes
+        $("#success-alert").hide();
+        $("#error-alert").hide();
+
+        // Submit form
+        $("#frmNotifyUser").on("submit", function (event) {
+            event.preventDefault();
+
+            var url = $(this).attr("action");
+            var formData = $(this).serialize();
+
+            // Show processing spinner
+            $("#processing").show();
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: formData,
+                dataType: "json",
+                success: function (resp) {
+                    // Check if we should redirect
+                    if (resp.Redirect) {
+                        window.location = "@Url.Action("Login", "Account")";
+                    };
+
+                    if (resp.IsOK) {
+                        // Show success alert box
+                        $("#success-alert").show();
+                        // Remove success alert-box after a few seconds
+                        $("#success-alert").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#success-alert").hide();
+                        });
+                    }
+                    else {
+                        // Show error alert box
+                        $("#error-alert").html(resp.ErrorMsg);
+                        $("#error-alert").show();
+                        // Remove error alert-box after a few seconds
+                        $("#error-alert").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#error-alert").hide();
+                        });
+                    }
+                }
+            })
+            .always(function () {
+                // Hide processing spinner
+                $("#processing").hide();
+            });
+            return false;
+        });
+
+    });
+
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="44beba6e-6f8e-4fd0-b3f5-ce7183bdbf0e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost/SuperOffice82R01/Remote/Services82/ForeignSystem.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WcfForeignSystemService.wsdl" MetadataType="Wsdl" ID="b89c99ae-3d96-4b0a-93c7-bcf1d6fa4281" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/ForeignSystem.svc?wsdl" />
+    <MetadataFile FileName="ForeignSystem.xsd" MetadataType="Schema" ID="89ab1a36-c85b-4001-97cc-16d2e6926b41" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/ForeignSystem.svc?xsd=xsd0" />
+    <MetadataFile FileName="ForeignSystem.disco" MetadataType="Disco" ID="2daed9b8-824d-45af-ae39-ccd28ae335c7" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/ForeignSystem.svc?disco" />
+    <MetadataFile FileName="ForeignSystem1.xsd" MetadataType="Schema" ID="a78e9fb2-00e8-4294-a776-caffaf550ee7" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/ForeignSystem.svc?xsd=xsd1" />
+    <MetadataFile FileName="ForeignSystem.wsdl" MetadataType="Wsdl" ID="0d0726d7-79de-4012-93fe-efac6ab0db05" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/ForeignSystem.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

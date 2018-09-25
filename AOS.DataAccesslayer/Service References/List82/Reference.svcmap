@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="82be4649-9d5c-43ca-8dcf-5647dd09afdc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost/SuperOffice82R01/Remote/Services82/List.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WcfListService.wsdl" MetadataType="Wsdl" ID="eb3130e2-2a70-4bab-b72a-23eb45d7b23c" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/List.svc?wsdl" />
+    <MetadataFile FileName="List.xsd" MetadataType="Schema" ID="d432e2a0-a618-42b4-b260-5f6d3129077c" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/List.svc?xsd=xsd2" />
+    <MetadataFile FileName="List1.xsd" MetadataType="Schema" ID="5778ac8a-9cbc-4905-9bb0-ece99d80c3ee" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/List.svc?xsd=xsd0" />
+    <MetadataFile FileName="List.wsdl" MetadataType="Wsdl" ID="5ba4e703-4c71-4c64-bfd4-ecf3259e9e96" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/List.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="List.disco" MetadataType="Disco" ID="375c31de-5c31-4496-9210-38055131a973" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/List.svc?disco" />
+    <MetadataFile FileName="List2.xsd" MetadataType="Schema" ID="da22fb8b-3ee5-40eb-ada4-e1ab818d3123" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/List.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

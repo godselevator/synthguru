@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="56876313-d099-4287-821d-09387ed6b1bb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost/SuperOffice82R01/Remote/Services82/SoPrincipal.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WcfSoPrincipalService.wsdl" MetadataType="Wsdl" ID="21fab8cf-4ca5-4130-bb6d-534a326076c6" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/SoPrincipal.svc?wsdl" />
+    <MetadataFile FileName="SoPrincipal.xsd" MetadataType="Schema" ID="9ed40143-f16a-47c7-8e6c-03460bc5a86e" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/SoPrincipal.svc?xsd=xsd3" />
+    <MetadataFile FileName="SoPrincipal1.xsd" MetadataType="Schema" ID="e0f6aefd-5dd3-411f-91c1-207ba49b98db" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/SoPrincipal.svc?xsd=xsd1" />
+    <MetadataFile FileName="SoPrincipal.wsdl" MetadataType="Wsdl" ID="768df127-d8af-434a-9681-655f9f6ca687" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/SoPrincipal.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SoPrincipal.disco" MetadataType="Disco" ID="404bd1c6-bd6a-47cf-a6a5-d866df11102f" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/SoPrincipal.svc?disco" />
+    <MetadataFile FileName="SoPrincipal2.xsd" MetadataType="Schema" ID="cb69bcda-c9ad-4223-9fa1-e267de96ac94" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/SoPrincipal.svc?xsd=xsd2" />
+    <MetadataFile FileName="SoPrincipal3.xsd" MetadataType="Schema" ID="06093562-5568-4e47-9ed3-04986c1f62fc" SourceId="1" SourceUrl="http://localhost/SuperOffice82R01/Remote/Services82/SoPrincipal.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,88 @@
+﻿@model AOS.Platform.Models.AppAdminIconsViewModel
+<div class="row">
+    <div class="col-md-2">
+        <div id="img_appcontainer1" style="width:147px; height:200px; border: 1px solid #ddd; border-radius: 4px;">
+            <div id="image-preview-applogo" data-appid="@Model.AppId" data-logo-kind="applogo" data-callback-url="uploadCallback">
+                <img src="data:image/png;base64, @Model.AppLogoIcon" id="applogoimg" style="width: 147px; height:200px" />
+            </div>
+        </div>
+        <div class="caption" style="text-align:center; width:147px; padding-top: 15px">
+            <p class="adwiza-label">App logo</p>
+        </div>
+        <div style="text-align:center; width:147px">
+            <span class="file-input btn btn-primary btn-file" id="appLogoUpload">
+                Upload <input type="file" name="image" id="image-upload-applogo">
+            </span>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+        <div id="img_appcontainer2" style="width:147px; height:200px; border: 1px solid #ddd; border-radius: 4px;">
+            <div id="image-preview-triallogo" data-appid="@Model.AppId" data-logo-kind="triallogo" data-callback-url="uploadCallback">
+                <img src="data:image/png;base64, @Model.TrialLogoIcon" id="triallogoimg" style="width: 147px; height:200px" />
+            </div>
+        </div>
+        <div class="caption" style="text-align:center; width:147px; padding-top: 15px">
+            <p class="adwiza-label">Trial logo</p>
+        </div>
+        <div style="text-align:center; width:147px">
+            <span class="file-input btn btn-primary btn-file" id="trialLogoUpload">
+                Upload <input type="file" name="image" id="image-upload-triallogo">
+            </span>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <strong>NB!</strong> Images must be JPG/JPEG and dimensions must be 147 x 200 px or they will not be displayed correctly
+        </div>
+        <div class="form-group">
+            <p class="adwiza-label">App logo properties:</p>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4">
+                    File name:
+                </div>
+                <div class="col-md-8">
+                    <span id="dispAppLogoName">@Model.AppLogoName</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    File size:
+                </div>
+                <div class="col-md-8">
+                    <span id="dispAppLogoSize">@Model.AppLogoSize bytes</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <p class="adwiza-label">Trial logo properties:</p>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4">
+                    File name:
+                </div>
+                <div class="col-md-8">
+                    <span id="dispTrialLogoName">@Model.TrialLogoName</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    File size:
+                </div>
+                <div class="col-md-8">
+                    <span id="dispTrialLogoSize">@Model.TrialLogoSize bytes</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="alert alert-success" role="alert" id="success-alert-logoupload">Logo succesfully updated...</div>
+        </div>
+        <div class="form-group">
+            <div class="alert alert-danger" role="alert" id="error-alert-logoupload"></div>
+        </div>
+    </div>
+</div>

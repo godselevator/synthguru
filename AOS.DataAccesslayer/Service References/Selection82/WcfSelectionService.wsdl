@@ -1,0 +1,1325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.superoffice.net/ws/crm/NetServer/Services82" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WcfSelectionService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_Selection1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://www.superoffice.net/ws/crm/NetServer/Services82" location="http://localhost/SuperOffice82R01/Remote/Services82/Selection.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_Selection" type="i0:Selection">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateDefaultMailMergeSettings">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateDefaultMailMergeSettings" style="document" />
+      <wsdl:input name="CreateDefaultMailMergeSettingsRequest">
+        <soap:header message="i0:CreateDefaultMailMergeSettingsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeSettingsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeSettingsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultMailMergeSettingsResponse">
+        <soap:header message="i0:CreateDefaultMailMergeSettingsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeSettingsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeSettingsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeSettingsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultMailMergeTask">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateDefaultMailMergeTask" style="document" />
+      <wsdl:input name="CreateDefaultMailMergeTaskRequest">
+        <soap:header message="i0:CreateDefaultMailMergeTaskRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeTaskRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeTaskRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultMailMergeTaskResponse">
+        <soap:header message="i0:CreateDefaultMailMergeTaskResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeTaskResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeTaskResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeTaskResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultSelectionEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateDefaultSelectionEntity" style="document" />
+      <wsdl:input name="CreateDefaultSelectionEntityRequest">
+        <soap:header message="i0:CreateDefaultSelectionEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultSelectionEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultSelectionEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultSelectionEntityResponse">
+        <soap:header message="i0:CreateDefaultSelectionEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultSelectionEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultSelectionEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultSelectionEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSelectionEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/SaveSelectionEntity" style="document" />
+      <wsdl:input name="SaveSelectionEntityRequest">
+        <soap:header message="i0:SaveSelectionEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveSelectionEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveSelectionEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveSelectionEntityResponse">
+        <soap:header message="i0:SaveSelectionEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveSelectionEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveSelectionEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveSelectionEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSelectionEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/DeleteSelectionEntity" style="document" />
+      <wsdl:input name="DeleteSelectionEntityRequest">
+        <soap:header message="i0:DeleteSelectionEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DeleteSelectionEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DeleteSelectionEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteSelectionEntityResponse">
+        <soap:header message="i0:DeleteSelectionEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DeleteSelectionEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DeleteSelectionEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DeleteSelectionEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectionEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/GetSelectionEntity" style="document" />
+      <wsdl:input name="GetSelectionEntityRequest">
+        <soap:header message="i0:GetSelectionEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSelectionEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSelectionEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSelectionEntityResponse">
+        <soap:header message="i0:GetSelectionEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSelectionEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSelectionEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSelectionEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateContactSelectionFromSelection">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateContactSelectionFromSelection" style="document" />
+      <wsdl:input name="CreateContactSelectionFromSelectionRequest">
+        <soap:header message="i0:CreateContactSelectionFromSelectionRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromSelectionRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromSelectionRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateContactSelectionFromSelectionResponse">
+        <soap:header message="i0:CreateContactSelectionFromSelectionResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromSelectionResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromSelectionResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromSelectionResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemporaryContactSelectionFromContactPersonIds">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateTemporaryContactSelectionFromContactPersonIds" style="document" />
+      <wsdl:input name="CreateTemporaryContactSelectionFromContactPersonIdsRequest">
+        <soap:header message="i0:CreateTemporaryContactSelectionFromContactPersonIdsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromContactPersonIdsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromContactPersonIdsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateTemporaryContactSelectionFromContactPersonIdsResponse">
+        <soap:header message="i0:CreateTemporaryContactSelectionFromContactPersonIdsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromContactPersonIdsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromContactPersonIdsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromContactPersonIdsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemporaryContactSelectionFromProjectMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateTemporaryContactSelectionFromProjectMembers" style="document" />
+      <wsdl:input name="CreateTemporaryContactSelectionFromProjectMembersRequest">
+        <soap:header message="i0:CreateTemporaryContactSelectionFromProjectMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromProjectMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromProjectMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateTemporaryContactSelectionFromProjectMembersResponse">
+        <soap:header message="i0:CreateTemporaryContactSelectionFromProjectMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromProjectMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromProjectMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromProjectMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyContactSelectionMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CopyContactSelectionMembers" style="document" />
+      <wsdl:input name="CopyContactSelectionMembersRequest">
+        <soap:header message="i0:CopyContactSelectionMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CopyContactSelectionMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CopyContactSelectionMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CopyContactSelectionMembersResponse">
+        <soap:header message="i0:CopyContactSelectionMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CopyContactSelectionMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CopyContactSelectionMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CopyContactSelectionMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipientStatistics">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/GetRecipientStatistics" style="document" />
+      <wsdl:input name="GetRecipientStatisticsRequest">
+        <soap:header message="i0:GetRecipientStatisticsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRecipientStatisticsResponse">
+        <soap:header message="i0:GetRecipientStatisticsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipientStatisticsFromProjectMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/GetRecipientStatisticsFromProjectMembers" style="document" />
+      <wsdl:input name="GetRecipientStatisticsFromProjectMembersRequest">
+        <soap:header message="i0:GetRecipientStatisticsFromProjectMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromProjectMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromProjectMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRecipientStatisticsFromProjectMembersResponse">
+        <soap:header message="i0:GetRecipientStatisticsFromProjectMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromProjectMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromProjectMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromProjectMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipientStatisticsFromContactPersonIds">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/GetRecipientStatisticsFromContactPersonIds" style="document" />
+      <wsdl:input name="GetRecipientStatisticsFromContactPersonIdsRequest">
+        <soap:header message="i0:GetRecipientStatisticsFromContactPersonIdsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromContactPersonIdsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromContactPersonIdsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRecipientStatisticsFromContactPersonIdsResponse">
+        <soap:header message="i0:GetRecipientStatisticsFromContactPersonIdsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromContactPersonIdsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromContactPersonIdsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromContactPersonIdsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddContactSelectionMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/AddContactSelectionMembers" style="document" />
+      <wsdl:input name="AddContactSelectionMembersRequest">
+        <soap:header message="i0:AddContactSelectionMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddContactSelectionMembersResponse">
+        <soap:header message="i0:AddContactSelectionMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContactSelectionMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/RemoveContactSelectionMembers" style="document" />
+      <wsdl:input name="RemoveContactSelectionMembersRequest">
+        <soap:header message="i0:RemoveContactSelectionMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RemoveContactSelectionMembersResponse">
+        <soap:header message="i0:RemoveContactSelectionMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContactSelectionMembersFromIds">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/RemoveContactSelectionMembersFromIds" style="document" />
+      <wsdl:input name="RemoveContactSelectionMembersFromIdsRequest">
+        <soap:header message="i0:RemoveContactSelectionMembersFromIdsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromIdsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromIdsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RemoveContactSelectionMembersFromIdsResponse">
+        <soap:header message="i0:RemoveContactSelectionMembersFromIdsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromIdsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromIdsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromIdsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddContactSelectionMembersFromSearch">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/AddContactSelectionMembersFromSearch" style="document" />
+      <wsdl:input name="AddContactSelectionMembersFromSearchRequest">
+        <soap:header message="i0:AddContactSelectionMembersFromSearchRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersFromSearchRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersFromSearchRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddContactSelectionMembersFromSearchResponse">
+        <soap:header message="i0:AddContactSelectionMembersFromSearchResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersFromSearchResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersFromSearchResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersFromSearchResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContactSelectionMembersFromSearch">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/RemoveContactSelectionMembersFromSearch" style="document" />
+      <wsdl:input name="RemoveContactSelectionMembersFromSearchRequest">
+        <soap:header message="i0:RemoveContactSelectionMembersFromSearchRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromSearchRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromSearchRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RemoveContactSelectionMembersFromSearchResponse">
+        <soap:header message="i0:RemoveContactSelectionMembersFromSearchResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromSearchResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromSearchResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromSearchResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemporaryContactSelection">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateTemporaryContactSelection" style="document" />
+      <wsdl:input name="CreateTemporaryContactSelectionRequest">
+        <soap:header message="i0:CreateTemporaryContactSelectionRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateTemporaryContactSelectionResponse">
+        <soap:header message="i0:CreateTemporaryContactSelectionResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemporaryContactSelectionFromSelectionMemberIds">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateTemporaryContactSelectionFromSelectionMemberIds" style="document" />
+      <wsdl:input name="CreateTemporaryContactSelectionFromSelectionMemberIdsRequest">
+        <soap:header message="i0:CreateTemporaryContactSelectionFromSelectionMemberIdsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromSelectionMemberIdsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromSelectionMemberIdsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateTemporaryContactSelectionFromSelectionMemberIdsResponse">
+        <soap:header message="i0:CreateTemporaryContactSelectionFromSelectionMemberIdsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromSelectionMemberIdsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromSelectionMemberIdsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromSelectionMemberIdsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRemoveContactSelectionMemberInterests">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/AddRemoveContactSelectionMemberInterests" style="document" />
+      <wsdl:input name="AddRemoveContactSelectionMemberInterestsRequest">
+        <soap:header message="i0:AddRemoveContactSelectionMemberInterestsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:AddRemoveContactSelectionMemberInterestsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:AddRemoveContactSelectionMemberInterestsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddRemoveContactSelectionMemberInterestsResponse">
+        <soap:header message="i0:AddRemoveContactSelectionMemberInterestsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:AddRemoveContactSelectionMemberInterestsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:AddRemoveContactSelectionMemberInterestsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:AddRemoveContactSelectionMemberInterestsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditContactSelectionMemberDetails">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/EditContactSelectionMemberDetails" style="document" />
+      <wsdl:input name="EditContactSelectionMemberDetailsRequest">
+        <soap:header message="i0:EditContactSelectionMemberDetailsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:EditContactSelectionMemberDetailsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:EditContactSelectionMemberDetailsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EditContactSelectionMemberDetailsResponse">
+        <soap:header message="i0:EditContactSelectionMemberDetailsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:EditContactSelectionMemberDetailsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:EditContactSelectionMemberDetailsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:EditContactSelectionMemberDetailsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateFollowUps">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/GenerateFollowUps" style="document" />
+      <wsdl:input name="GenerateFollowUpsRequest">
+        <soap:header message="i0:GenerateFollowUpsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GenerateFollowUpsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GenerateFollowUpsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GenerateFollowUpsResponse">
+        <soap:header message="i0:GenerateFollowUpsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GenerateFollowUpsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GenerateFollowUpsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GenerateFollowUpsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportSelectionMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/ExportSelectionMembers" style="document" />
+      <wsdl:input name="ExportSelectionMembersRequest">
+        <soap:header message="i0:ExportSelectionMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ExportSelectionMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ExportSelectionMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ExportSelectionMembersResponse">
+        <soap:header message="i0:ExportSelectionMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ExportSelectionMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ExportSelectionMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ExportSelectionMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartMailMerge">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/StartMailMerge" style="document" />
+      <wsdl:input name="StartMailMergeRequest">
+        <soap:header message="i0:StartMailMergeRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:StartMailMergeRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:StartMailMergeRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StartMailMergeResponse">
+        <soap:header message="i0:StartMailMergeResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:StartMailMergeResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:StartMailMergeResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:StartMailMergeResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDuplicateRulesStatus">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/SetDuplicateRulesStatus" style="document" />
+      <wsdl:input name="SetDuplicateRulesStatusRequest">
+        <soap:header message="i0:SetDuplicateRulesStatusRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetDuplicateRulesStatusRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetDuplicateRulesStatusRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetDuplicateRulesStatusResponse">
+        <soap:header message="i0:SetDuplicateRulesStatusResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetDuplicateRulesStatusResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetDuplicateRulesStatusResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetDuplicateRulesStatusResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDuplicates">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/GetDuplicates" style="document" />
+      <wsdl:input name="GetDuplicatesRequest">
+        <soap:header message="i0:GetDuplicatesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetDuplicatesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetDuplicatesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDuplicatesResponse">
+        <soap:header message="i0:GetDuplicatesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetDuplicatesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetDuplicatesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetDuplicatesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDuplicateRules">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/GetDuplicateRules" style="document" />
+      <wsdl:input name="GetDuplicateRulesRequest">
+        <soap:header message="i0:GetDuplicateRulesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetDuplicateRulesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetDuplicateRulesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDuplicateRulesResponse">
+        <soap:header message="i0:GetDuplicateRulesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetDuplicateRulesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetDuplicateRulesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetDuplicateRulesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewEntry">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateNewEntry" style="document" />
+      <wsdl:input name="CreateNewEntryRequest">
+        <soap:header message="i0:CreateNewEntryRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateNewEntryRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateNewEntryRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateNewEntryResponse">
+        <soap:header message="i0:CreateNewEntryResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateNewEntryResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateNewEntryResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateNewEntryResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContacts">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/DeleteContacts" style="document" />
+      <wsdl:input name="DeleteContactsRequest">
+        <soap:header message="i0:DeleteContactsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DeleteContactsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DeleteContactsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteContactsResponse">
+        <soap:header message="i0:DeleteContactsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DeleteContactsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DeleteContactsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DeleteContactsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSelectionMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/AddSelectionMembers" style="document" />
+      <wsdl:input name="AddSelectionMembersRequest">
+        <soap:header message="i0:AddSelectionMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:AddSelectionMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:AddSelectionMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddSelectionMembersResponse">
+        <soap:header message="i0:AddSelectionMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:AddSelectionMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:AddSelectionMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:AddSelectionMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSelectionMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/RemoveSelectionMembers" style="document" />
+      <wsdl:input name="RemoveSelectionMembersRequest">
+        <soap:header message="i0:RemoveSelectionMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RemoveSelectionMembersResponse">
+        <soap:header message="i0:RemoveSelectionMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSelectionMembersFromSearch">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/AddSelectionMembersFromSearch" style="document" />
+      <wsdl:input name="AddSelectionMembersFromSearchRequest">
+        <soap:header message="i0:AddSelectionMembersFromSearchRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:AddSelectionMembersFromSearchRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:AddSelectionMembersFromSearchRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddSelectionMembersFromSearchResponse">
+        <soap:header message="i0:AddSelectionMembersFromSearchResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:AddSelectionMembersFromSearchResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:AddSelectionMembersFromSearchResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:AddSelectionMembersFromSearchResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSelectionMembersFromSearch">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/RemoveSelectionMembersFromSearch" style="document" />
+      <wsdl:input name="RemoveSelectionMembersFromSearchRequest">
+        <soap:header message="i0:RemoveSelectionMembersFromSearchRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersFromSearchRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersFromSearchRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RemoveSelectionMembersFromSearchResponse">
+        <soap:header message="i0:RemoveSelectionMembersFromSearchResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersFromSearchResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersFromSearchResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersFromSearchResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopySelectionMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CopySelectionMembers" style="document" />
+      <wsdl:input name="CopySelectionMembersRequest">
+        <soap:header message="i0:CopySelectionMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CopySelectionMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CopySelectionMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CopySelectionMembersResponse">
+        <soap:header message="i0:CopySelectionMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CopySelectionMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CopySelectionMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CopySelectionMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemporarySelectionFromIds">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateTemporarySelectionFromIds" style="document" />
+      <wsdl:input name="CreateTemporarySelectionFromIdsRequest">
+        <soap:header message="i0:CreateTemporarySelectionFromIdsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateTemporarySelectionFromIdsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateTemporarySelectionFromIdsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateTemporarySelectionFromIdsResponse">
+        <soap:header message="i0:CreateTemporarySelectionFromIdsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateTemporarySelectionFromIdsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateTemporarySelectionFromIdsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateTemporarySelectionFromIdsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSelectionFromSelection">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateSelectionFromSelection" style="document" />
+      <wsdl:input name="CreateSelectionFromSelectionRequest">
+        <soap:header message="i0:CreateSelectionFromSelectionRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateSelectionFromSelectionRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateSelectionFromSelectionRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateSelectionFromSelectionResponse">
+        <soap:header message="i0:CreateSelectionFromSelectionResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateSelectionFromSelectionResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateSelectionFromSelectionResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateSelectionFromSelectionResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateContactSelectionFromShadowSelection">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateContactSelectionFromShadowSelection" style="document" />
+      <wsdl:input name="CreateContactSelectionFromShadowSelectionRequest">
+        <soap:header message="i0:CreateContactSelectionFromShadowSelectionRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromShadowSelectionRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromShadowSelectionRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateContactSelectionFromShadowSelectionResponse">
+        <soap:header message="i0:CreateContactSelectionFromShadowSelectionResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromShadowSelectionResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromShadowSelectionResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromShadowSelectionResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntities">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/DeleteEntities" style="document" />
+      <wsdl:input name="DeleteEntitiesRequest">
+        <soap:header message="i0:DeleteEntitiesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DeleteEntitiesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DeleteEntitiesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteEntitiesResponse">
+        <soap:header message="i0:DeleteEntitiesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DeleteEntitiesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DeleteEntitiesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DeleteEntitiesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParentCombinedSelections">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/GetParentCombinedSelections" style="document" />
+      <wsdl:input name="GetParentCombinedSelectionsRequest">
+        <soap:header message="i0:GetParentCombinedSelectionsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetParentCombinedSelectionsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetParentCombinedSelectionsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetParentCombinedSelectionsResponse">
+        <soap:header message="i0:GetParentCombinedSelectionsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetParentCombinedSelectionsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetParentCombinedSelectionsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetParentCombinedSelectionsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_Selection1" type="i0:Selection">
+    <wsp:PolicyReference URI="#BasicHttpBinding_Selection1_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateDefaultMailMergeSettings">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateDefaultMailMergeSettings" style="document" />
+      <wsdl:input name="CreateDefaultMailMergeSettingsRequest">
+        <soap:header message="i0:CreateDefaultMailMergeSettingsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeSettingsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeSettingsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultMailMergeSettingsResponse">
+        <soap:header message="i0:CreateDefaultMailMergeSettingsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeSettingsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeSettingsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeSettingsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultMailMergeTask">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateDefaultMailMergeTask" style="document" />
+      <wsdl:input name="CreateDefaultMailMergeTaskRequest">
+        <soap:header message="i0:CreateDefaultMailMergeTaskRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeTaskRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeTaskRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultMailMergeTaskResponse">
+        <soap:header message="i0:CreateDefaultMailMergeTaskResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeTaskResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeTaskResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultMailMergeTaskResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultSelectionEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateDefaultSelectionEntity" style="document" />
+      <wsdl:input name="CreateDefaultSelectionEntityRequest">
+        <soap:header message="i0:CreateDefaultSelectionEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultSelectionEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultSelectionEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultSelectionEntityResponse">
+        <soap:header message="i0:CreateDefaultSelectionEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultSelectionEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultSelectionEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultSelectionEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSelectionEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/SaveSelectionEntity" style="document" />
+      <wsdl:input name="SaveSelectionEntityRequest">
+        <soap:header message="i0:SaveSelectionEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveSelectionEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveSelectionEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveSelectionEntityResponse">
+        <soap:header message="i0:SaveSelectionEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveSelectionEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveSelectionEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveSelectionEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSelectionEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/DeleteSelectionEntity" style="document" />
+      <wsdl:input name="DeleteSelectionEntityRequest">
+        <soap:header message="i0:DeleteSelectionEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DeleteSelectionEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DeleteSelectionEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteSelectionEntityResponse">
+        <soap:header message="i0:DeleteSelectionEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DeleteSelectionEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DeleteSelectionEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DeleteSelectionEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectionEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/GetSelectionEntity" style="document" />
+      <wsdl:input name="GetSelectionEntityRequest">
+        <soap:header message="i0:GetSelectionEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSelectionEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSelectionEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSelectionEntityResponse">
+        <soap:header message="i0:GetSelectionEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSelectionEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSelectionEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSelectionEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateContactSelectionFromSelection">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateContactSelectionFromSelection" style="document" />
+      <wsdl:input name="CreateContactSelectionFromSelectionRequest">
+        <soap:header message="i0:CreateContactSelectionFromSelectionRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromSelectionRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromSelectionRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateContactSelectionFromSelectionResponse">
+        <soap:header message="i0:CreateContactSelectionFromSelectionResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromSelectionResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromSelectionResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromSelectionResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemporaryContactSelectionFromContactPersonIds">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateTemporaryContactSelectionFromContactPersonIds" style="document" />
+      <wsdl:input name="CreateTemporaryContactSelectionFromContactPersonIdsRequest">
+        <soap:header message="i0:CreateTemporaryContactSelectionFromContactPersonIdsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromContactPersonIdsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromContactPersonIdsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateTemporaryContactSelectionFromContactPersonIdsResponse">
+        <soap:header message="i0:CreateTemporaryContactSelectionFromContactPersonIdsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromContactPersonIdsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromContactPersonIdsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromContactPersonIdsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemporaryContactSelectionFromProjectMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateTemporaryContactSelectionFromProjectMembers" style="document" />
+      <wsdl:input name="CreateTemporaryContactSelectionFromProjectMembersRequest">
+        <soap:header message="i0:CreateTemporaryContactSelectionFromProjectMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromProjectMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromProjectMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateTemporaryContactSelectionFromProjectMembersResponse">
+        <soap:header message="i0:CreateTemporaryContactSelectionFromProjectMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromProjectMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromProjectMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromProjectMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyContactSelectionMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CopyContactSelectionMembers" style="document" />
+      <wsdl:input name="CopyContactSelectionMembersRequest">
+        <soap:header message="i0:CopyContactSelectionMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CopyContactSelectionMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CopyContactSelectionMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CopyContactSelectionMembersResponse">
+        <soap:header message="i0:CopyContactSelectionMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CopyContactSelectionMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CopyContactSelectionMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CopyContactSelectionMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipientStatistics">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/GetRecipientStatistics" style="document" />
+      <wsdl:input name="GetRecipientStatisticsRequest">
+        <soap:header message="i0:GetRecipientStatisticsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRecipientStatisticsResponse">
+        <soap:header message="i0:GetRecipientStatisticsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipientStatisticsFromProjectMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/GetRecipientStatisticsFromProjectMembers" style="document" />
+      <wsdl:input name="GetRecipientStatisticsFromProjectMembersRequest">
+        <soap:header message="i0:GetRecipientStatisticsFromProjectMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromProjectMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromProjectMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRecipientStatisticsFromProjectMembersResponse">
+        <soap:header message="i0:GetRecipientStatisticsFromProjectMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromProjectMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromProjectMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromProjectMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipientStatisticsFromContactPersonIds">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/GetRecipientStatisticsFromContactPersonIds" style="document" />
+      <wsdl:input name="GetRecipientStatisticsFromContactPersonIdsRequest">
+        <soap:header message="i0:GetRecipientStatisticsFromContactPersonIdsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromContactPersonIdsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromContactPersonIdsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRecipientStatisticsFromContactPersonIdsResponse">
+        <soap:header message="i0:GetRecipientStatisticsFromContactPersonIdsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromContactPersonIdsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromContactPersonIdsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetRecipientStatisticsFromContactPersonIdsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddContactSelectionMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/AddContactSelectionMembers" style="document" />
+      <wsdl:input name="AddContactSelectionMembersRequest">
+        <soap:header message="i0:AddContactSelectionMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddContactSelectionMembersResponse">
+        <soap:header message="i0:AddContactSelectionMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContactSelectionMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/RemoveContactSelectionMembers" style="document" />
+      <wsdl:input name="RemoveContactSelectionMembersRequest">
+        <soap:header message="i0:RemoveContactSelectionMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RemoveContactSelectionMembersResponse">
+        <soap:header message="i0:RemoveContactSelectionMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContactSelectionMembersFromIds">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/RemoveContactSelectionMembersFromIds" style="document" />
+      <wsdl:input name="RemoveContactSelectionMembersFromIdsRequest">
+        <soap:header message="i0:RemoveContactSelectionMembersFromIdsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromIdsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromIdsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RemoveContactSelectionMembersFromIdsResponse">
+        <soap:header message="i0:RemoveContactSelectionMembersFromIdsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromIdsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromIdsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromIdsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddContactSelectionMembersFromSearch">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/AddContactSelectionMembersFromSearch" style="document" />
+      <wsdl:input name="AddContactSelectionMembersFromSearchRequest">
+        <soap:header message="i0:AddContactSelectionMembersFromSearchRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersFromSearchRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersFromSearchRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddContactSelectionMembersFromSearchResponse">
+        <soap:header message="i0:AddContactSelectionMembersFromSearchResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersFromSearchResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersFromSearchResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:AddContactSelectionMembersFromSearchResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContactSelectionMembersFromSearch">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/RemoveContactSelectionMembersFromSearch" style="document" />
+      <wsdl:input name="RemoveContactSelectionMembersFromSearchRequest">
+        <soap:header message="i0:RemoveContactSelectionMembersFromSearchRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromSearchRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromSearchRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RemoveContactSelectionMembersFromSearchResponse">
+        <soap:header message="i0:RemoveContactSelectionMembersFromSearchResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromSearchResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromSearchResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:RemoveContactSelectionMembersFromSearchResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemporaryContactSelection">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateTemporaryContactSelection" style="document" />
+      <wsdl:input name="CreateTemporaryContactSelectionRequest">
+        <soap:header message="i0:CreateTemporaryContactSelectionRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateTemporaryContactSelectionResponse">
+        <soap:header message="i0:CreateTemporaryContactSelectionResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemporaryContactSelectionFromSelectionMemberIds">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateTemporaryContactSelectionFromSelectionMemberIds" style="document" />
+      <wsdl:input name="CreateTemporaryContactSelectionFromSelectionMemberIdsRequest">
+        <soap:header message="i0:CreateTemporaryContactSelectionFromSelectionMemberIdsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromSelectionMemberIdsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromSelectionMemberIdsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateTemporaryContactSelectionFromSelectionMemberIdsResponse">
+        <soap:header message="i0:CreateTemporaryContactSelectionFromSelectionMemberIdsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromSelectionMemberIdsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromSelectionMemberIdsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateTemporaryContactSelectionFromSelectionMemberIdsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRemoveContactSelectionMemberInterests">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/AddRemoveContactSelectionMemberInterests" style="document" />
+      <wsdl:input name="AddRemoveContactSelectionMemberInterestsRequest">
+        <soap:header message="i0:AddRemoveContactSelectionMemberInterestsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:AddRemoveContactSelectionMemberInterestsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:AddRemoveContactSelectionMemberInterestsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddRemoveContactSelectionMemberInterestsResponse">
+        <soap:header message="i0:AddRemoveContactSelectionMemberInterestsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:AddRemoveContactSelectionMemberInterestsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:AddRemoveContactSelectionMemberInterestsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:AddRemoveContactSelectionMemberInterestsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditContactSelectionMemberDetails">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/EditContactSelectionMemberDetails" style="document" />
+      <wsdl:input name="EditContactSelectionMemberDetailsRequest">
+        <soap:header message="i0:EditContactSelectionMemberDetailsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:EditContactSelectionMemberDetailsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:EditContactSelectionMemberDetailsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EditContactSelectionMemberDetailsResponse">
+        <soap:header message="i0:EditContactSelectionMemberDetailsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:EditContactSelectionMemberDetailsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:EditContactSelectionMemberDetailsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:EditContactSelectionMemberDetailsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateFollowUps">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/GenerateFollowUps" style="document" />
+      <wsdl:input name="GenerateFollowUpsRequest">
+        <soap:header message="i0:GenerateFollowUpsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GenerateFollowUpsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GenerateFollowUpsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GenerateFollowUpsResponse">
+        <soap:header message="i0:GenerateFollowUpsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GenerateFollowUpsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GenerateFollowUpsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GenerateFollowUpsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportSelectionMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/ExportSelectionMembers" style="document" />
+      <wsdl:input name="ExportSelectionMembersRequest">
+        <soap:header message="i0:ExportSelectionMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ExportSelectionMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ExportSelectionMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ExportSelectionMembersResponse">
+        <soap:header message="i0:ExportSelectionMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ExportSelectionMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ExportSelectionMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ExportSelectionMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartMailMerge">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/StartMailMerge" style="document" />
+      <wsdl:input name="StartMailMergeRequest">
+        <soap:header message="i0:StartMailMergeRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:StartMailMergeRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:StartMailMergeRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StartMailMergeResponse">
+        <soap:header message="i0:StartMailMergeResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:StartMailMergeResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:StartMailMergeResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:StartMailMergeResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDuplicateRulesStatus">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/SetDuplicateRulesStatus" style="document" />
+      <wsdl:input name="SetDuplicateRulesStatusRequest">
+        <soap:header message="i0:SetDuplicateRulesStatusRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetDuplicateRulesStatusRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetDuplicateRulesStatusRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetDuplicateRulesStatusResponse">
+        <soap:header message="i0:SetDuplicateRulesStatusResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetDuplicateRulesStatusResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetDuplicateRulesStatusResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetDuplicateRulesStatusResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDuplicates">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/GetDuplicates" style="document" />
+      <wsdl:input name="GetDuplicatesRequest">
+        <soap:header message="i0:GetDuplicatesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetDuplicatesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetDuplicatesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDuplicatesResponse">
+        <soap:header message="i0:GetDuplicatesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetDuplicatesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetDuplicatesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetDuplicatesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDuplicateRules">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/GetDuplicateRules" style="document" />
+      <wsdl:input name="GetDuplicateRulesRequest">
+        <soap:header message="i0:GetDuplicateRulesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetDuplicateRulesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetDuplicateRulesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDuplicateRulesResponse">
+        <soap:header message="i0:GetDuplicateRulesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetDuplicateRulesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetDuplicateRulesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetDuplicateRulesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewEntry">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateNewEntry" style="document" />
+      <wsdl:input name="CreateNewEntryRequest">
+        <soap:header message="i0:CreateNewEntryRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateNewEntryRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateNewEntryRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateNewEntryResponse">
+        <soap:header message="i0:CreateNewEntryResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateNewEntryResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateNewEntryResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateNewEntryResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContacts">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/DeleteContacts" style="document" />
+      <wsdl:input name="DeleteContactsRequest">
+        <soap:header message="i0:DeleteContactsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DeleteContactsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DeleteContactsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteContactsResponse">
+        <soap:header message="i0:DeleteContactsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DeleteContactsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DeleteContactsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DeleteContactsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSelectionMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/AddSelectionMembers" style="document" />
+      <wsdl:input name="AddSelectionMembersRequest">
+        <soap:header message="i0:AddSelectionMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:AddSelectionMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:AddSelectionMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddSelectionMembersResponse">
+        <soap:header message="i0:AddSelectionMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:AddSelectionMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:AddSelectionMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:AddSelectionMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSelectionMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/RemoveSelectionMembers" style="document" />
+      <wsdl:input name="RemoveSelectionMembersRequest">
+        <soap:header message="i0:RemoveSelectionMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RemoveSelectionMembersResponse">
+        <soap:header message="i0:RemoveSelectionMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSelectionMembersFromSearch">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/AddSelectionMembersFromSearch" style="document" />
+      <wsdl:input name="AddSelectionMembersFromSearchRequest">
+        <soap:header message="i0:AddSelectionMembersFromSearchRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:AddSelectionMembersFromSearchRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:AddSelectionMembersFromSearchRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddSelectionMembersFromSearchResponse">
+        <soap:header message="i0:AddSelectionMembersFromSearchResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:AddSelectionMembersFromSearchResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:AddSelectionMembersFromSearchResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:AddSelectionMembersFromSearchResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSelectionMembersFromSearch">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/RemoveSelectionMembersFromSearch" style="document" />
+      <wsdl:input name="RemoveSelectionMembersFromSearchRequest">
+        <soap:header message="i0:RemoveSelectionMembersFromSearchRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersFromSearchRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersFromSearchRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RemoveSelectionMembersFromSearchResponse">
+        <soap:header message="i0:RemoveSelectionMembersFromSearchResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersFromSearchResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersFromSearchResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:RemoveSelectionMembersFromSearchResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopySelectionMembers">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CopySelectionMembers" style="document" />
+      <wsdl:input name="CopySelectionMembersRequest">
+        <soap:header message="i0:CopySelectionMembersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CopySelectionMembersRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CopySelectionMembersRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CopySelectionMembersResponse">
+        <soap:header message="i0:CopySelectionMembersResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CopySelectionMembersResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CopySelectionMembersResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CopySelectionMembersResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemporarySelectionFromIds">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateTemporarySelectionFromIds" style="document" />
+      <wsdl:input name="CreateTemporarySelectionFromIdsRequest">
+        <soap:header message="i0:CreateTemporarySelectionFromIdsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateTemporarySelectionFromIdsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateTemporarySelectionFromIdsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateTemporarySelectionFromIdsResponse">
+        <soap:header message="i0:CreateTemporarySelectionFromIdsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateTemporarySelectionFromIdsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateTemporarySelectionFromIdsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateTemporarySelectionFromIdsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSelectionFromSelection">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateSelectionFromSelection" style="document" />
+      <wsdl:input name="CreateSelectionFromSelectionRequest">
+        <soap:header message="i0:CreateSelectionFromSelectionRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateSelectionFromSelectionRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateSelectionFromSelectionRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateSelectionFromSelectionResponse">
+        <soap:header message="i0:CreateSelectionFromSelectionResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateSelectionFromSelectionResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateSelectionFromSelectionResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateSelectionFromSelectionResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateContactSelectionFromShadowSelection">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/CreateContactSelectionFromShadowSelection" style="document" />
+      <wsdl:input name="CreateContactSelectionFromShadowSelectionRequest">
+        <soap:header message="i0:CreateContactSelectionFromShadowSelectionRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromShadowSelectionRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromShadowSelectionRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateContactSelectionFromShadowSelectionResponse">
+        <soap:header message="i0:CreateContactSelectionFromShadowSelectionResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromShadowSelectionResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromShadowSelectionResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateContactSelectionFromShadowSelectionResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntities">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/DeleteEntities" style="document" />
+      <wsdl:input name="DeleteEntitiesRequest">
+        <soap:header message="i0:DeleteEntitiesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DeleteEntitiesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DeleteEntitiesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteEntitiesResponse">
+        <soap:header message="i0:DeleteEntitiesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DeleteEntitiesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DeleteEntitiesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DeleteEntitiesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParentCombinedSelections">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Selection/GetParentCombinedSelections" style="document" />
+      <wsdl:input name="GetParentCombinedSelectionsRequest">
+        <soap:header message="i0:GetParentCombinedSelectionsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetParentCombinedSelectionsRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetParentCombinedSelectionsRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetParentCombinedSelectionsResponse">
+        <soap:header message="i0:GetParentCombinedSelectionsResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetParentCombinedSelectionsResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetParentCombinedSelectionsResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetParentCombinedSelectionsResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WcfSelectionService">
+    <wsdl:port name="BasicHttpBinding_Selection" binding="tns:BasicHttpBinding_Selection">
+      <soap:address location="http://localhost/SuperOffice82R01/Remote/Services82/Selection.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_Selection1" binding="tns:BasicHttpBinding_Selection1">
+      <soap:address location="https://qm-eis-dev-mok.modules.local/SuperOffice82R01/Remote/Services82/Selection.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

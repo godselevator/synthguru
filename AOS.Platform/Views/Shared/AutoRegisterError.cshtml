@@ -1,0 +1,42 @@
+﻿@model AOS.BusinessLayer.AOSResponse
+@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> log = Model.ReturnedJsonData.Split('|').ToList();
+}
+
+<div class="container">
+    <div class="content">
+        <div class="row">
+            <div class="col-md-12 alert alert-danger">
+                <h1 class="text-danger">SO Online user creation flow failed</h1>
+                <hr />
+                @{
+                    if (String.IsNullOrEmpty(Model.ErrorMsg))
+                    {
+                        <h2 class="text-danger">An error occurred in AutoRegister flow, but errormessage was not filled...</h2>
+                    }
+                    else
+                    {
+                        <h3 class="text-danger"><strong>Errormessage: </strong>@Model.ErrorMsg</h3>
+                        <hr />
+                        <h4>Trace log:</h4>
+                        <ul style="list-style-type:square">
+                            @foreach (var item in log)
+                            {
+                                <li>@Html.Raw(item)</li>
+                            }
+                        </ul>
+
+                        if (!String.IsNullOrEmpty(@Model.RedirectAction))
+                        {
+                            <br />
+                            var redirect = @Url.Action(@Model.RedirectAction, @Model.RedirectController);
+                            <a href=@redirect>Continue...</a>
+                        }
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2cfa3ecb-b71b-470c-a555-d7561bf6cbb2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.10.151/SuperOffice/Remote/Services75/Find.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WcfFindService1.wsdl" MetadataType="Wsdl" ID="d4de5b15-5d10-4dd2-a27a-9e785a7c7175" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Find.svc?wsdl" />
+    <MetadataFile FileName="Find1.disco" MetadataType="Disco" ID="ea459e44-b86e-41fe-ae9e-448927e45f29" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Find.svc?disco" />
+    <MetadataFile FileName="Find3.xsd" MetadataType="Schema" ID="2a433bd5-3b66-465e-9d8b-5a51a3303d31" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Find.svc?xsd=xsd2" />
+    <MetadataFile FileName="Find31.xsd" MetadataType="Schema" ID="d75327f0-4757-4a75-8dcd-e8f248d15d59" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Find.svc?xsd=xsd0" />
+    <MetadataFile FileName="Find32.xsd" MetadataType="Schema" ID="e167d69a-90ee-4297-8a09-4ec75f99328a" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Find.svc?xsd=xsd1" />
+    <MetadataFile FileName="Find1.wsdl" MetadataType="Wsdl" ID="9b55cd70-6145-4670-bca8-2d2055d8367b" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Find.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

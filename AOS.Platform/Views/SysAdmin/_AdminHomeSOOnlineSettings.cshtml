@@ -1,0 +1,89 @@
+﻿@model AOS.Platform.Models.AdminHomeSOOnlineSettingsViewModel
+@using (Html.BeginForm("UpdateSOOnlineSettings", "SysAdmin", FormMethod.Post, new { @class = "form center-block", encType = "multipart/form-data", id = "frmUpdateSOOnlineSettings", name = "frmUpdateSOOnlineSettings" }))
+{
+    @*@Html.AntiForgeryToken()*@
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(m => m.Environment, new { id = "environment" })
+
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" id="igEnvSelector" style="min-width: 185px; text-align:left">Environment</span>
+            @Html.DropDownListFor(m => m.GlobalsId, new SelectList(Model.ListOfGlobals, "GlobalsID", "Name"), new { @class = "form-control input-sm", id = "envSelection", aria_describedby = "igEnvSelector", style = "width:140px", @onchange = "ChangeEnv(this.value)" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" id="igAdwizaCertificate" style="min-width: 185px; text-align:left">Adwiza Certificate</span>
+            @Html.EditorFor(m => m.AdwizaCertificate, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "Adwiza certificate", aria_describedby = "igAdwizaCertificate", id = "adwizaCertificate", name = "adwizaCertificate", @data_toggle = "tooltip", @data_placement = "bottom", title = "Adwiza certificate" } })
+            @Html.ValidationMessageFor(m => m.AdwizaCertificate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" id="igFederationGateway" style="min-width: 185px; text-align:left">Federation Gateway</span>
+            @Html.EditorFor(m => m.FederationGateway, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "Federation gateway", aria_describedby = "igFederationGateway", id = "federationGateway", name = "federationGateway", @data_toggle = "tooltip", @data_placement = "bottom", title = "Federation gateway" } })
+            @Html.ValidationMessageFor(m => m.FederationGateway, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    @*<div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon input-sm" id="igSystemTokenCertificatePath" style="min-width: 185px; text-align:left">System Token Certificate Path</span>
+                @Html.EditorFor(m => m.SystemTokenCertificatePath, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "Federation gateway", aria_describedby = "igSystemTokenCertificatePath", id = "systemTokenCertificatePath", name = "systemTokenCertificatePath", @data_toggle = "tooltip", @data_placement = "bottom", title = "System Token Certificate Path" } })
+                @Html.ValidationMessageFor(m => m.SystemTokenCertificatePath, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" id="igSuperIdCertificate" style="min-width: 185px; text-align:left">Super Id Certificate</span>
+            @Html.EditorFor(m => m.SuperIdCertificate, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "Super Id Certificate", aria_describedby = "igSuperIdCertificate", id = "superIdCertificate", name = "superIdCertificate", @data_toggle = "tooltip", @data_placement = "bottom", title = "Super Id Certificate" } })
+            @Html.ValidationMessageFor(m => m.SuperIdCertificate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" id="igCreateUserRedirectURL" style="min-width: 185px; text-align:left">Create User Redirect URL</span>
+            @Html.EditorFor(m => m.CreateUserRedirectURL, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "Create User Redirect URL", aria_describedby = "igCreateUserRedirectURL", id = "createUserRedirectURL", name = "createUserRedirectURL", @data_toggle = "tooltip", @data_placement = "bottom", title = "Create User Redirect URL" } })
+            @Html.ValidationMessageFor(m => m.CreateUserRedirectURL, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" id="igAOSURL" style="min-width: 185px; text-align:left">AOS URL</span>
+            @Html.EditorFor(m => m.AOSURL, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "AOS URL", aria_describedby = "igAOSURL", id = "AOSURL", name = "AOSURL", @data_toggle = "tooltip", @data_placement = "bottom", title = "AOS URL" } })
+            @Html.ValidationMessageFor(m => m.AOSURL, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon input-sm" id="igMirroring" style="min-width: 185px; text-align:left">Mirroring service</span>
+            @Html.CheckBoxFor(m => m.MirroringStatus, new { @class = "switch", data_size = "small", aria_describedby = "igMirroring", data_on_text = "Enabled", data_off_text = "Disabled", id = "mirroringStatus", name = "mirroringStatus" })
+            @Html.ValidationMessageFor(m => m.MirroringStatus, "", new { @class = "text-danger" })
+        </div>
+    </div>
+}
+<div class="form-group">
+    <div class="input-group">
+        <span class="input-group-addon input-sm" style="min-width: 185px; text-align:left" id="igSOCertificate">SO certificate (crt)</span>
+        @Html.EditorFor(m => m.SOCertificateFileName, new { htmlAttributes = new { @class = "form-control input-sm", @disabled = "disabled", @placeholder = "SO certificate", @aria_describedby = "igSOCertificate", id = "socertificate", name = "socertificate", data_callback_url = "uploadCallbackSOCertificate" } })
+        @Html.ValidationMessageFor(m => m.SOCertificateFileName, "", new { @class = "text-danger" })
+        <span class="file-input btn btn-primary btn-file input-group-btn btn-sm" id="soCertificateUpload">
+            Upload <input type="file" name="upload-SOCertificate" id="upload-SOCertificate">
+        </span>
+        <span class="btn btn-info input-group-btn btn-sm" id="soCertificateView" title="Display SO Certificate content" data-toggle="modal" data-target="#showContent" data-title="SO Certificate content" data-message="@Model.AdwizaCertificate">
+            <i class="glyphicon glyphicon-open"></i>
+        </span>
+        <span class="btn btn-danger input-group-btn btn-sm" id="soCertificateDelete" title="Remove SO Certificate">
+            Remove
+        </span>
+    </div>
+</div>
+<button class="ladda-button btn btn-primary btn-block btn-sm" data-style="zoom-in" type="submit" id="form-submit3">
+    <span class="ladda-label">Save</span>
+</button>
+<div class="form-group">
+    <div class="alert alert-success" role="alert" id="success-alert-soonlinesettings">SO Online settings successfully updated...</div>
+</div>
+<div class="form-group">
+    <div class="alert alert-danger" role="alert" id="error-alert-soonlinesettings"></div>
+</div>
+

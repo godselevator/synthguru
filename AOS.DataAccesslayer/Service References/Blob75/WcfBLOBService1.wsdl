@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.superoffice.net/ws/crm/NetServer/Services75" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WcfBLOBService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_BLOB1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://www.superoffice.net/ws/crm/NetServer/Services75" location="http://192.168.10.151/SuperOffice/Remote/Services75/BLOB.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_BLOB" type="i0:BLOB">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateDefaultBlobEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/CreateDefaultBlobEntity" style="document" />
+      <wsdl:input name="CreateDefaultBlobEntityRequest">
+        <soap:header message="i0:CreateDefaultBlobEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultBlobEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultBlobEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultBlobEntityResponse">
+        <soap:header message="i0:CreateDefaultBlobEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultBlobEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultBlobEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultBlobEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBlobEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/SaveBlobEntity" style="document" />
+      <wsdl:input name="SaveBlobEntityRequest">
+        <soap:header message="i0:SaveBlobEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveBlobEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveBlobEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveBlobEntityResponse">
+        <soap:header message="i0:SaveBlobEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveBlobEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveBlobEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveBlobEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBlobEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/DeleteBlobEntity" style="document" />
+      <wsdl:input name="DeleteBlobEntityRequest">
+        <soap:header message="i0:DeleteBlobEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DeleteBlobEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DeleteBlobEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteBlobEntityResponse">
+        <soap:header message="i0:DeleteBlobEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DeleteBlobEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DeleteBlobEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DeleteBlobEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlobEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetBlobEntity" style="document" />
+      <wsdl:input name="GetBlobEntityRequest">
+        <soap:header message="i0:GetBlobEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetBlobEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetBlobEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBlobEntityResponse">
+        <soap:header message="i0:GetBlobEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetBlobEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetBlobStream">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/SetBlobStream" style="document" />
+      <wsdl:input name="SetBlobStreamRequest">
+        <soap:header message="i0:SetBlobStreamRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetBlobStreamRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetBlobStreamRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetBlobStreamResponse">
+        <soap:header message="i0:SetBlobStreamResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetBlobStreamResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetBlobStreamResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetBlobStreamResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlobStream">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetBlobStream" style="document" />
+      <wsdl:input name="GetBlobStreamRequest">
+        <soap:header message="i0:GetBlobStreamRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetBlobStreamRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetBlobStreamRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBlobStreamResponse">
+        <soap:header message="i0:GetBlobStreamResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetBlobStreamResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetBlobStreamResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetBlobStreamResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetProjectImage" style="document" />
+      <wsdl:input name="GetProjectImageRequest">
+        <soap:header message="i0:GetProjectImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetProjectImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetProjectImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetProjectImageResponse">
+        <soap:header message="i0:GetProjectImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetProjectImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetProjectImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetProjectImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetPersonImage" style="document" />
+      <wsdl:input name="GetPersonImageRequest">
+        <soap:header message="i0:GetPersonImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPersonImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPersonImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPersonImageResponse">
+        <soap:header message="i0:GetPersonImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPersonImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPersonImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPersonImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProjectImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/SetProjectImage" style="document" />
+      <wsdl:input name="SetProjectImageRequest">
+        <soap:header message="i0:SetProjectImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetProjectImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetProjectImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetProjectImageResponse">
+        <soap:header message="i0:SetProjectImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetProjectImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetProjectImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetProjectImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPersonImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/SetPersonImage" style="document" />
+      <wsdl:input name="SetPersonImageRequest">
+        <soap:header message="i0:SetPersonImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetPersonImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetPersonImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetPersonImageResponse">
+        <soap:header message="i0:SetPersonImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetPersonImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetPersonImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetPersonImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProjectImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/ChangeProjectImage" style="document" />
+      <wsdl:input name="ChangeProjectImageRequest">
+        <soap:header message="i0:ChangeProjectImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ChangeProjectImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ChangeProjectImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangeProjectImageResponse">
+        <soap:header message="i0:ChangeProjectImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ChangeProjectImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ChangeProjectImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ChangeProjectImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProjectImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/SaveProjectImage" style="document" />
+      <wsdl:input name="SaveProjectImageRequest">
+        <soap:header message="i0:SaveProjectImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveProjectImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveProjectImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveProjectImageResponse">
+        <soap:header message="i0:SaveProjectImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveProjectImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveProjectImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveProjectImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlobEntityOnProject">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetBlobEntityOnProject" style="document" />
+      <wsdl:input name="GetBlobEntityOnProjectRequest">
+        <soap:header message="i0:GetBlobEntityOnProjectRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProjectRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProjectRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBlobEntityOnProjectResponse">
+        <soap:header message="i0:GetBlobEntityOnProjectResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProjectResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProjectResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProjectResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlobEntityOnPerson">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetBlobEntityOnPerson" style="document" />
+      <wsdl:input name="GetBlobEntityOnPersonRequest">
+        <soap:header message="i0:GetBlobEntityOnPersonRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnPersonRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnPersonRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBlobEntityOnPersonResponse">
+        <soap:header message="i0:GetBlobEntityOnPersonResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnPersonResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnPersonResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnPersonResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlobEntityOnCountry">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetBlobEntityOnCountry" style="document" />
+      <wsdl:input name="GetBlobEntityOnCountryRequest">
+        <soap:header message="i0:GetBlobEntityOnCountryRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnCountryRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnCountryRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBlobEntityOnCountryResponse">
+        <soap:header message="i0:GetBlobEntityOnCountryResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnCountryResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnCountryResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnCountryResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlobEntityOnProduct">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetBlobEntityOnProduct" style="document" />
+      <wsdl:input name="GetBlobEntityOnProductRequest">
+        <soap:header message="i0:GetBlobEntityOnProductRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProductRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProductRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBlobEntityOnProductResponse">
+        <soap:header message="i0:GetBlobEntityOnProductResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProductResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProductResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProductResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePersonImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/ChangePersonImage" style="document" />
+      <wsdl:input name="ChangePersonImageRequest">
+        <soap:header message="i0:ChangePersonImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ChangePersonImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ChangePersonImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangePersonImageResponse">
+        <soap:header message="i0:ChangePersonImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ChangePersonImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ChangePersonImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ChangePersonImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveImageStream">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/SaveImageStream" style="document" />
+      <wsdl:input name="SaveImageStreamRequest">
+        <soap:header message="i0:SaveImageStreamRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveImageStreamRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveImageStreamRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveImageStreamResponse">
+        <soap:header message="i0:SaveImageStreamResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveImageStreamResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveImageStreamResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveImageStreamResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetProductImage" style="document" />
+      <wsdl:input name="GetProductImageRequest">
+        <soap:header message="i0:GetProductImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetProductImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetProductImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetProductImageResponse">
+        <soap:header message="i0:GetProductImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetProductImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetProductImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetProductImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProductImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/SetProductImage" style="document" />
+      <wsdl:input name="SetProductImageRequest">
+        <soap:header message="i0:SetProductImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetProductImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetProductImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetProductImageResponse">
+        <soap:header message="i0:SetProductImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetProductImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetProductImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetProductImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductThumbnail">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetProductThumbnail" style="document" />
+      <wsdl:input name="GetProductThumbnailRequest">
+        <soap:header message="i0:GetProductThumbnailRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetProductThumbnailRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetProductThumbnailRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetProductThumbnailResponse">
+        <soap:header message="i0:GetProductThumbnailResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetProductThumbnailResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetProductThumbnailResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetProductThumbnailResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProductThumbnail">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/SetProductThumbnail" style="document" />
+      <wsdl:input name="SetProductThumbnailRequest">
+        <soap:header message="i0:SetProductThumbnailRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetProductThumbnailRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetProductThumbnailRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetProductThumbnailResponse">
+        <soap:header message="i0:SetProductThumbnailResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetProductThumbnailResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetProductThumbnailResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetProductThumbnailResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProductImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/ChangeProductImage" style="document" />
+      <wsdl:input name="ChangeProductImageRequest">
+        <soap:header message="i0:ChangeProductImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ChangeProductImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ChangeProductImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangeProductImageResponse">
+        <soap:header message="i0:ChangeProductImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ChangeProductImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ChangeProductImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ChangeProductImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteLineImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetQuoteLineImage" style="document" />
+      <wsdl:input name="GetQuoteLineImageRequest">
+        <soap:header message="i0:GetQuoteLineImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetQuoteLineImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetQuoteLineImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetQuoteLineImageResponse">
+        <soap:header message="i0:GetQuoteLineImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetQuoteLineImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetQuoteLineImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetQuoteLineImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_BLOB1" type="i0:BLOB">
+    <wsp:PolicyReference URI="#BasicHttpBinding_BLOB1_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateDefaultBlobEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/CreateDefaultBlobEntity" style="document" />
+      <wsdl:input name="CreateDefaultBlobEntityRequest">
+        <soap:header message="i0:CreateDefaultBlobEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultBlobEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultBlobEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultBlobEntityResponse">
+        <soap:header message="i0:CreateDefaultBlobEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultBlobEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultBlobEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultBlobEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBlobEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/SaveBlobEntity" style="document" />
+      <wsdl:input name="SaveBlobEntityRequest">
+        <soap:header message="i0:SaveBlobEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveBlobEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveBlobEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveBlobEntityResponse">
+        <soap:header message="i0:SaveBlobEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveBlobEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveBlobEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveBlobEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBlobEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/DeleteBlobEntity" style="document" />
+      <wsdl:input name="DeleteBlobEntityRequest">
+        <soap:header message="i0:DeleteBlobEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DeleteBlobEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DeleteBlobEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteBlobEntityResponse">
+        <soap:header message="i0:DeleteBlobEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DeleteBlobEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DeleteBlobEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DeleteBlobEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlobEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetBlobEntity" style="document" />
+      <wsdl:input name="GetBlobEntityRequest">
+        <soap:header message="i0:GetBlobEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetBlobEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetBlobEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBlobEntityResponse">
+        <soap:header message="i0:GetBlobEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetBlobEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetBlobStream">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/SetBlobStream" style="document" />
+      <wsdl:input name="SetBlobStreamRequest">
+        <soap:header message="i0:SetBlobStreamRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetBlobStreamRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetBlobStreamRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetBlobStreamResponse">
+        <soap:header message="i0:SetBlobStreamResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetBlobStreamResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetBlobStreamResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetBlobStreamResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlobStream">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetBlobStream" style="document" />
+      <wsdl:input name="GetBlobStreamRequest">
+        <soap:header message="i0:GetBlobStreamRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetBlobStreamRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetBlobStreamRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBlobStreamResponse">
+        <soap:header message="i0:GetBlobStreamResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetBlobStreamResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetBlobStreamResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetBlobStreamResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetProjectImage" style="document" />
+      <wsdl:input name="GetProjectImageRequest">
+        <soap:header message="i0:GetProjectImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetProjectImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetProjectImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetProjectImageResponse">
+        <soap:header message="i0:GetProjectImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetProjectImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetProjectImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetProjectImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetPersonImage" style="document" />
+      <wsdl:input name="GetPersonImageRequest">
+        <soap:header message="i0:GetPersonImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPersonImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPersonImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPersonImageResponse">
+        <soap:header message="i0:GetPersonImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPersonImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPersonImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPersonImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProjectImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/SetProjectImage" style="document" />
+      <wsdl:input name="SetProjectImageRequest">
+        <soap:header message="i0:SetProjectImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetProjectImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetProjectImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetProjectImageResponse">
+        <soap:header message="i0:SetProjectImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetProjectImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetProjectImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetProjectImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPersonImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/SetPersonImage" style="document" />
+      <wsdl:input name="SetPersonImageRequest">
+        <soap:header message="i0:SetPersonImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetPersonImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetPersonImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetPersonImageResponse">
+        <soap:header message="i0:SetPersonImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetPersonImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetPersonImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetPersonImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProjectImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/ChangeProjectImage" style="document" />
+      <wsdl:input name="ChangeProjectImageRequest">
+        <soap:header message="i0:ChangeProjectImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ChangeProjectImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ChangeProjectImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangeProjectImageResponse">
+        <soap:header message="i0:ChangeProjectImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ChangeProjectImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ChangeProjectImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ChangeProjectImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProjectImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/SaveProjectImage" style="document" />
+      <wsdl:input name="SaveProjectImageRequest">
+        <soap:header message="i0:SaveProjectImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveProjectImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveProjectImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveProjectImageResponse">
+        <soap:header message="i0:SaveProjectImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveProjectImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveProjectImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveProjectImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlobEntityOnProject">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetBlobEntityOnProject" style="document" />
+      <wsdl:input name="GetBlobEntityOnProjectRequest">
+        <soap:header message="i0:GetBlobEntityOnProjectRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProjectRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProjectRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBlobEntityOnProjectResponse">
+        <soap:header message="i0:GetBlobEntityOnProjectResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProjectResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProjectResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProjectResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlobEntityOnPerson">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetBlobEntityOnPerson" style="document" />
+      <wsdl:input name="GetBlobEntityOnPersonRequest">
+        <soap:header message="i0:GetBlobEntityOnPersonRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnPersonRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnPersonRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBlobEntityOnPersonResponse">
+        <soap:header message="i0:GetBlobEntityOnPersonResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnPersonResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnPersonResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnPersonResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlobEntityOnCountry">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetBlobEntityOnCountry" style="document" />
+      <wsdl:input name="GetBlobEntityOnCountryRequest">
+        <soap:header message="i0:GetBlobEntityOnCountryRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnCountryRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnCountryRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBlobEntityOnCountryResponse">
+        <soap:header message="i0:GetBlobEntityOnCountryResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnCountryResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnCountryResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnCountryResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlobEntityOnProduct">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetBlobEntityOnProduct" style="document" />
+      <wsdl:input name="GetBlobEntityOnProductRequest">
+        <soap:header message="i0:GetBlobEntityOnProductRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProductRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProductRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBlobEntityOnProductResponse">
+        <soap:header message="i0:GetBlobEntityOnProductResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProductResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProductResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetBlobEntityOnProductResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePersonImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/ChangePersonImage" style="document" />
+      <wsdl:input name="ChangePersonImageRequest">
+        <soap:header message="i0:ChangePersonImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ChangePersonImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ChangePersonImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangePersonImageResponse">
+        <soap:header message="i0:ChangePersonImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ChangePersonImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ChangePersonImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ChangePersonImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveImageStream">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/SaveImageStream" style="document" />
+      <wsdl:input name="SaveImageStreamRequest">
+        <soap:header message="i0:SaveImageStreamRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SaveImageStreamRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SaveImageStreamRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SaveImageStreamResponse">
+        <soap:header message="i0:SaveImageStreamResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SaveImageStreamResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SaveImageStreamResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SaveImageStreamResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetProductImage" style="document" />
+      <wsdl:input name="GetProductImageRequest">
+        <soap:header message="i0:GetProductImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetProductImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetProductImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetProductImageResponse">
+        <soap:header message="i0:GetProductImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetProductImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetProductImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetProductImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProductImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/SetProductImage" style="document" />
+      <wsdl:input name="SetProductImageRequest">
+        <soap:header message="i0:SetProductImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetProductImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetProductImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetProductImageResponse">
+        <soap:header message="i0:SetProductImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetProductImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetProductImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetProductImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductThumbnail">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetProductThumbnail" style="document" />
+      <wsdl:input name="GetProductThumbnailRequest">
+        <soap:header message="i0:GetProductThumbnailRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetProductThumbnailRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetProductThumbnailRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetProductThumbnailResponse">
+        <soap:header message="i0:GetProductThumbnailResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetProductThumbnailResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetProductThumbnailResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetProductThumbnailResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProductThumbnail">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/SetProductThumbnail" style="document" />
+      <wsdl:input name="SetProductThumbnailRequest">
+        <soap:header message="i0:SetProductThumbnailRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetProductThumbnailRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetProductThumbnailRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetProductThumbnailResponse">
+        <soap:header message="i0:SetProductThumbnailResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetProductThumbnailResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetProductThumbnailResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetProductThumbnailResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProductImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/ChangeProductImage" style="document" />
+      <wsdl:input name="ChangeProductImageRequest">
+        <soap:header message="i0:ChangeProductImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ChangeProductImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ChangeProductImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangeProductImageResponse">
+        <soap:header message="i0:ChangeProductImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ChangeProductImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ChangeProductImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ChangeProductImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteLineImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/BLOB/GetQuoteLineImage" style="document" />
+      <wsdl:input name="GetQuoteLineImageRequest">
+        <soap:header message="i0:GetQuoteLineImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetQuoteLineImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetQuoteLineImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetQuoteLineImageResponse">
+        <soap:header message="i0:GetQuoteLineImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetQuoteLineImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetQuoteLineImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetQuoteLineImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WcfBLOBService">
+    <wsdl:port name="BasicHttpBinding_BLOB" binding="tns:BasicHttpBinding_BLOB">
+      <soap:address location="http://192.168.10.151/SuperOffice/Remote/Services75/BLOB.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_BLOB1" binding="tns:BasicHttpBinding_BLOB1">
+      <soap:address location="https://qm-eis-dev-mok.modules.local/SuperOffice/Remote/Services75/BLOB.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="879339d9-9b6b-4e30-a275-d780d4ff8f3a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.10.151/SuperOffice/Remote/Services75/PhoneList.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PhoneList2.xsd" MetadataType="Schema" ID="1f86ec55-2c2a-43a2-a497-60098861837b" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/PhoneList.svc?xsd=xsd0" />
+    <MetadataFile FileName="WcfPhoneListService1.wsdl" MetadataType="Wsdl" ID="6977a3b7-409c-4044-ab6c-5a5d8a761083" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/PhoneList.svc?wsdl" />
+    <MetadataFile FileName="PhoneList21.xsd" MetadataType="Schema" ID="1f4e663e-8bdb-4e7d-b02c-fbdb231967c0" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/PhoneList.svc?xsd=xsd1" />
+    <MetadataFile FileName="PhoneList1.wsdl" MetadataType="Wsdl" ID="d8aa1177-a829-4a1b-b76b-8f75eb7f49d6" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/PhoneList.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="PhoneList1.disco" MetadataType="Disco" ID="440a5327-e42c-4786-a57d-09a108bf4a3a" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/PhoneList.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="665271c4-eb58-4410-beed-dfdba78842cb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.10.151/SuperOffice/Remote/Services75/User.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WcfUserService1.wsdl" MetadataType="Wsdl" ID="83a1da8f-e1c8-453e-9c71-2d9d82f123d2" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/User.svc?wsdl" />
+    <MetadataFile FileName="User1.wsdl" MetadataType="Wsdl" ID="8e75b64d-0cc2-4410-b4e0-24d9edc362ed" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/User.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="User3.xsd" MetadataType="Schema" ID="793b862f-556f-4227-80a8-91303176db7c" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/User.svc?xsd=xsd0" />
+    <MetadataFile FileName="User31.xsd" MetadataType="Schema" ID="db35eff9-d065-4ba7-9234-3d8488ab8a8f" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/User.svc?xsd=xsd1" />
+    <MetadataFile FileName="User1.disco" MetadataType="Disco" ID="f02bad41-6cd4-4e7e-84f3-6dba3779d9f1" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/User.svc?disco" />
+    <MetadataFile FileName="User32.xsd" MetadataType="Schema" ID="951ed854-58ec-4406-b315-c181bfdd8a55" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/User.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

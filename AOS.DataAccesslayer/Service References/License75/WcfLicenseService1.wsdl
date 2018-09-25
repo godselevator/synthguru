@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.superoffice.net/ws/crm/NetServer/Services75" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WcfLicenseService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_License1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://www.superoffice.net/ws/crm/NetServer/Services75" location="http://192.168.10.151/SuperOffice/Remote/Services75/License.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_License" type="i0:License">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLicenseForAllOwnersFromDB">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetLicenseForAllOwnersFromDB" style="document" />
+      <wsdl:input name="GetLicenseForAllOwnersFromDBRequest">
+        <soap:header message="i0:GetLicenseForAllOwnersFromDBRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetLicenseForAllOwnersFromDBRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetLicenseForAllOwnersFromDBRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLicenseForAllOwnersFromDBResponse">
+        <soap:header message="i0:GetLicenseForAllOwnersFromDBResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetLicenseForAllOwnersFromDBResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetLicenseForAllOwnersFromDBResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetLicenseForAllOwnersFromDBResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseFromLicenseServer">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetLicenseFromLicenseServer" style="document" />
+      <wsdl:input name="GetLicenseFromLicenseServerRequest">
+        <soap:header message="i0:GetLicenseFromLicenseServerRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetLicenseFromLicenseServerRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetLicenseFromLicenseServerRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLicenseFromLicenseServerResponse">
+        <soap:header message="i0:GetLicenseFromLicenseServerResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetLicenseFromLicenseServerResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetLicenseFromLicenseServerResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetLicenseFromLicenseServerResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModuleLicenseHistoryFromLicenseServer">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetModuleLicenseHistoryFromLicenseServer" style="document" />
+      <wsdl:input name="GetModuleLicenseHistoryFromLicenseServerRequest">
+        <soap:header message="i0:GetModuleLicenseHistoryFromLicenseServerRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetModuleLicenseHistoryFromLicenseServerRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetModuleLicenseHistoryFromLicenseServerRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetModuleLicenseHistoryFromLicenseServerResponse">
+        <soap:header message="i0:GetModuleLicenseHistoryFromLicenseServerResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetModuleLicenseHistoryFromLicenseServerResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetModuleLicenseHistoryFromLicenseServerResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetModuleLicenseHistoryFromLicenseServerResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseInfo">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/ValidateLicenseInfo" style="document" />
+      <wsdl:input name="ValidateLicenseInfoRequest">
+        <soap:header message="i0:ValidateLicenseInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ValidateLicenseInfoRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ValidateLicenseInfoRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ValidateLicenseInfoResponse">
+        <soap:header message="i0:ValidateLicenseInfoResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ValidateLicenseInfoResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ValidateLicenseInfoResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ValidateLicenseInfoResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateLicenseInfo">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/ActivateLicenseInfo" style="document" />
+      <wsdl:input name="ActivateLicenseInfoRequest">
+        <soap:header message="i0:ActivateLicenseInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ActivateLicenseInfoRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ActivateLicenseInfoRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ActivateLicenseInfoResponse">
+        <soap:header message="i0:ActivateLicenseInfoResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ActivateLicenseInfoResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ActivateLicenseInfoResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ActivateLicenseInfoResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseStatusFromLicenseServer">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetLicenseStatusFromLicenseServer" style="document" />
+      <wsdl:input name="GetLicenseStatusFromLicenseServerRequest">
+        <soap:header message="i0:GetLicenseStatusFromLicenseServerRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetLicenseStatusFromLicenseServerRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetLicenseStatusFromLicenseServerRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLicenseStatusFromLicenseServerResponse">
+        <soap:header message="i0:GetLicenseStatusFromLicenseServerResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetLicenseStatusFromLicenseServerResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetLicenseStatusFromLicenseServerResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetLicenseStatusFromLicenseServerResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseFromDB">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetLicenseFromDB" style="document" />
+      <wsdl:input name="GetLicenseFromDBRequest">
+        <soap:header message="i0:GetLicenseFromDBRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetLicenseFromDBRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetLicenseFromDBRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLicenseFromDBResponse">
+        <soap:header message="i0:GetLicenseFromDBResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetLicenseFromDBResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetLicenseFromDBResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetLicenseFromDBResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSerialNumber">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/ChangeSerialNumber" style="document" />
+      <wsdl:input name="ChangeSerialNumberRequest">
+        <soap:header message="i0:ChangeSerialNumberRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ChangeSerialNumberRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ChangeSerialNumberRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangeSerialNumberResponse">
+        <soap:header message="i0:ChangeSerialNumberResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ChangeSerialNumberResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ChangeSerialNumberResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ChangeSerialNumberResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLicenses">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetUserLicenses" style="document" />
+      <wsdl:input name="GetUserLicensesRequest">
+        <soap:header message="i0:GetUserLicensesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserLicensesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserLicensesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserLicensesResponse">
+        <soap:header message="i0:GetUserLicensesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserLicensesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserLicensesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserLicensesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSatelliteLicenses">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetSatelliteLicenses" style="document" />
+      <wsdl:input name="GetSatelliteLicensesRequest">
+        <soap:header message="i0:GetSatelliteLicensesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSatelliteLicensesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSatelliteLicensesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSatelliteLicensesResponse">
+        <soap:header message="i0:GetSatelliteLicensesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSatelliteLicensesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSatelliteLicensesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSatelliteLicensesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLicenseFromDB">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/RemoveLicenseFromDB" style="document" />
+      <wsdl:input name="RemoveLicenseFromDBRequest">
+        <soap:header message="i0:RemoveLicenseFromDBRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:RemoveLicenseFromDBRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:RemoveLicenseFromDBRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RemoveLicenseFromDBResponse">
+        <soap:header message="i0:RemoveLicenseFromDBResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:RemoveLicenseFromDBResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:RemoveLicenseFromDBResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:RemoveLicenseFromDBResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseFromFile">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetLicenseFromFile" style="document" />
+      <wsdl:input name="GetLicenseFromFileRequest">
+        <soap:header message="i0:GetLicenseFromFileRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetLicenseFromFileRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetLicenseFromFileRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLicenseFromFileResponse">
+        <soap:header message="i0:GetLicenseFromFileResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetLicenseFromFileResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetLicenseFromFileResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetLicenseFromFileResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShopUrl">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetShopUrl" style="document" />
+      <wsdl:input name="GetShopUrlRequest">
+        <soap:header message="i0:GetShopUrlRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetShopUrlRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetShopUrlRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetShopUrlResponse">
+        <soap:header message="i0:GetShopUrlResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetShopUrlResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetShopUrlResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetShopUrlResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLicensesMDOList">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetUserLicensesMDOList" style="document" />
+      <wsdl:input name="GetUserLicensesMDOListRequest">
+        <soap:header message="i0:GetUserLicensesMDOListRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserLicensesMDOListRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserLicensesMDOListRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserLicensesMDOListResponse">
+        <soap:header message="i0:GetUserLicensesMDOListResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserLicensesMDOListResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserLicensesMDOListResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserLicensesMDOListResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_License1" type="i0:License">
+    <wsp:PolicyReference URI="#BasicHttpBinding_License1_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLicenseForAllOwnersFromDB">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetLicenseForAllOwnersFromDB" style="document" />
+      <wsdl:input name="GetLicenseForAllOwnersFromDBRequest">
+        <soap:header message="i0:GetLicenseForAllOwnersFromDBRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetLicenseForAllOwnersFromDBRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetLicenseForAllOwnersFromDBRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLicenseForAllOwnersFromDBResponse">
+        <soap:header message="i0:GetLicenseForAllOwnersFromDBResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetLicenseForAllOwnersFromDBResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetLicenseForAllOwnersFromDBResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetLicenseForAllOwnersFromDBResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseFromLicenseServer">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetLicenseFromLicenseServer" style="document" />
+      <wsdl:input name="GetLicenseFromLicenseServerRequest">
+        <soap:header message="i0:GetLicenseFromLicenseServerRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetLicenseFromLicenseServerRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetLicenseFromLicenseServerRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLicenseFromLicenseServerResponse">
+        <soap:header message="i0:GetLicenseFromLicenseServerResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetLicenseFromLicenseServerResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetLicenseFromLicenseServerResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetLicenseFromLicenseServerResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModuleLicenseHistoryFromLicenseServer">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetModuleLicenseHistoryFromLicenseServer" style="document" />
+      <wsdl:input name="GetModuleLicenseHistoryFromLicenseServerRequest">
+        <soap:header message="i0:GetModuleLicenseHistoryFromLicenseServerRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetModuleLicenseHistoryFromLicenseServerRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetModuleLicenseHistoryFromLicenseServerRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetModuleLicenseHistoryFromLicenseServerResponse">
+        <soap:header message="i0:GetModuleLicenseHistoryFromLicenseServerResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetModuleLicenseHistoryFromLicenseServerResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetModuleLicenseHistoryFromLicenseServerResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetModuleLicenseHistoryFromLicenseServerResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseInfo">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/ValidateLicenseInfo" style="document" />
+      <wsdl:input name="ValidateLicenseInfoRequest">
+        <soap:header message="i0:ValidateLicenseInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ValidateLicenseInfoRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ValidateLicenseInfoRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ValidateLicenseInfoResponse">
+        <soap:header message="i0:ValidateLicenseInfoResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ValidateLicenseInfoResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ValidateLicenseInfoResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ValidateLicenseInfoResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateLicenseInfo">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/ActivateLicenseInfo" style="document" />
+      <wsdl:input name="ActivateLicenseInfoRequest">
+        <soap:header message="i0:ActivateLicenseInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ActivateLicenseInfoRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ActivateLicenseInfoRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ActivateLicenseInfoResponse">
+        <soap:header message="i0:ActivateLicenseInfoResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ActivateLicenseInfoResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ActivateLicenseInfoResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ActivateLicenseInfoResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseStatusFromLicenseServer">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetLicenseStatusFromLicenseServer" style="document" />
+      <wsdl:input name="GetLicenseStatusFromLicenseServerRequest">
+        <soap:header message="i0:GetLicenseStatusFromLicenseServerRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetLicenseStatusFromLicenseServerRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetLicenseStatusFromLicenseServerRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLicenseStatusFromLicenseServerResponse">
+        <soap:header message="i0:GetLicenseStatusFromLicenseServerResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetLicenseStatusFromLicenseServerResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetLicenseStatusFromLicenseServerResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetLicenseStatusFromLicenseServerResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseFromDB">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetLicenseFromDB" style="document" />
+      <wsdl:input name="GetLicenseFromDBRequest">
+        <soap:header message="i0:GetLicenseFromDBRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetLicenseFromDBRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetLicenseFromDBRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLicenseFromDBResponse">
+        <soap:header message="i0:GetLicenseFromDBResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetLicenseFromDBResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetLicenseFromDBResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetLicenseFromDBResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSerialNumber">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/ChangeSerialNumber" style="document" />
+      <wsdl:input name="ChangeSerialNumberRequest">
+        <soap:header message="i0:ChangeSerialNumberRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ChangeSerialNumberRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ChangeSerialNumberRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangeSerialNumberResponse">
+        <soap:header message="i0:ChangeSerialNumberResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ChangeSerialNumberResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ChangeSerialNumberResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ChangeSerialNumberResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLicenses">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetUserLicenses" style="document" />
+      <wsdl:input name="GetUserLicensesRequest">
+        <soap:header message="i0:GetUserLicensesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserLicensesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserLicensesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserLicensesResponse">
+        <soap:header message="i0:GetUserLicensesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserLicensesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserLicensesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserLicensesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSatelliteLicenses">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetSatelliteLicenses" style="document" />
+      <wsdl:input name="GetSatelliteLicensesRequest">
+        <soap:header message="i0:GetSatelliteLicensesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSatelliteLicensesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSatelliteLicensesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSatelliteLicensesResponse">
+        <soap:header message="i0:GetSatelliteLicensesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSatelliteLicensesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSatelliteLicensesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSatelliteLicensesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLicenseFromDB">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/RemoveLicenseFromDB" style="document" />
+      <wsdl:input name="RemoveLicenseFromDBRequest">
+        <soap:header message="i0:RemoveLicenseFromDBRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:RemoveLicenseFromDBRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:RemoveLicenseFromDBRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RemoveLicenseFromDBResponse">
+        <soap:header message="i0:RemoveLicenseFromDBResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:RemoveLicenseFromDBResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:RemoveLicenseFromDBResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:RemoveLicenseFromDBResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseFromFile">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetLicenseFromFile" style="document" />
+      <wsdl:input name="GetLicenseFromFileRequest">
+        <soap:header message="i0:GetLicenseFromFileRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetLicenseFromFileRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetLicenseFromFileRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLicenseFromFileResponse">
+        <soap:header message="i0:GetLicenseFromFileResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetLicenseFromFileResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetLicenseFromFileResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetLicenseFromFileResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShopUrl">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetShopUrl" style="document" />
+      <wsdl:input name="GetShopUrlRequest">
+        <soap:header message="i0:GetShopUrlRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetShopUrlRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetShopUrlRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetShopUrlResponse">
+        <soap:header message="i0:GetShopUrlResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetShopUrlResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetShopUrlResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetShopUrlResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLicensesMDOList">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services75/License/GetUserLicensesMDOList" style="document" />
+      <wsdl:input name="GetUserLicensesMDOListRequest">
+        <soap:header message="i0:GetUserLicensesMDOListRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetUserLicensesMDOListRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetUserLicensesMDOListRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserLicensesMDOListResponse">
+        <soap:header message="i0:GetUserLicensesMDOListResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetUserLicensesMDOListResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetUserLicensesMDOListResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetUserLicensesMDOListResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WcfLicenseService">
+    <wsdl:port name="BasicHttpBinding_License" binding="tns:BasicHttpBinding_License">
+      <soap:address location="http://192.168.10.151/SuperOffice/Remote/Services75/License.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_License1" binding="tns:BasicHttpBinding_License1">
+      <soap:address location="https://qm-eis-dev-mok.modules.local/SuperOffice/Remote/Services75/License.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

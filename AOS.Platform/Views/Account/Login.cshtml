@@ -1,0 +1,73 @@
+﻿@using AOS.Platform.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4 class="panel-title"><strong>Log in with your credentials</strong></h4>
+    </div>
+    <div class="panel-body">
+        <div class="aoswell">
+            <div class="row">
+                <div class="col-md-12">
+                    @*<section id="loginForm">*@
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form center-block", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "E-mail" } })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            @*@Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                </div>*@
+                        </div>
+                        <div class="form-group">
+                            @Html.EditorFor(m => m.Password, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "Password" } })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            @*@Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>*@
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-lg btn-block" type="submit" id="submit">
+                                <span class="glyphicon glyphicon-log-in"></span>&nbsp;Login
+                            </button>
+                            @*<input type="submit" value="Log in" class="btn btn-default" />*@
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-4">
+                                <div class="checkbox aos-checkbox">
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                    @Html.LabelFor(m => m.RememberMe)
+                                </div>
+                            </div>
+                            <div class="col-lg-4 text-right">
+                                <p>
+                                    @Html.ActionLink("Sign up as a new user", "Register")
+                                </p>
+                            </div>
+                            <div class="col-lg-4 text-right">
+                                <p>
+                                    @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                                </p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="93f69774-7f85-416f-a681-ff56304470f7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.10.151/SuperOffice/Remote/Services75/Sale.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Sale1.wsdl" MetadataType="Wsdl" ID="19cb4898-921f-484c-929e-91b54f9cd58d" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Sale.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Sale3.xsd" MetadataType="Schema" ID="a4c19873-d8de-436b-843a-ac04d5b95d9c" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Sale.svc?xsd=xsd1" />
+    <MetadataFile FileName="Sale31.xsd" MetadataType="Schema" ID="24e9b45e-acae-460e-9e3e-59d82428df1d" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Sale.svc?xsd=xsd0" />
+    <MetadataFile FileName="Sale32.xsd" MetadataType="Schema" ID="4b3b7450-3baf-4352-a66d-81ba4a5d76e7" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Sale.svc?xsd=xsd2" />
+    <MetadataFile FileName="Sale1.disco" MetadataType="Disco" ID="d610623f-0622-4aca-9023-c4104c3f5689" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Sale.svc?disco" />
+    <MetadataFile FileName="WcfSaleService1.wsdl" MetadataType="Wsdl" ID="80416339-7623-4b66-bf24-b7ec00114591" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Sale.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

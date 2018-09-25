@@ -1,0 +1,934 @@
+﻿@model AOS.Platform.Models.AppAdminGlobalViewModel
+@{
+    ViewBag.Title = "App Administrator";
+    Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <!-- My AOS panel-->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title sysuserfg"><strong>App Administrator</strong></h4>
+            </div>
+            <div class="panel-body">
+                <div class="aoswell">
+                    <div class="form-group">
+                        This is your app administrator page. From here you can modify all properties for a single app
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="igAppSelector">App</span>
+                                    @Html.DropDownListFor(m => m.AppId, new SelectList(Model.ListOfApps, "AppID", "Name"), new { @class = "form-control", id = "selection", aria_describedby = "igAppSelector", @onchange = "ChangeApp(this.value)" })
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-success" id="btnAddNewApp" type="button" data-placement="bottom" title="Add New app" data-toggle="modal" data-target="#newApp" data-title="Please enter a name for your new app" data-message="App name">
+                                            <i class="glyphicon glyphicon-plus"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class=frame>
+                                <span class="spinnerhelper"></span><img src="~/Content/Images/ajax-loader.gif" id="ajaxloader" hidden="hidden" height="35" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Apps panel-->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title sysuserfg"><strong>Properties for <span id="curAccount"></span> app</strong></h4>
+            </div>
+            <div class="panel-body">
+                <div class="aoswell">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#generalinfo" aria-controls="generalinfo" role="tab" data-toggle="tab">General info</a></li>
+                                    <li role="presentation"><a href="#maintenance" aria-controls="maintenance" role="tab" data-toggle="tab">Maintenance</a></li>
+                                    <li role="presentation"><a href="#icons" aria-controls="icons" role="tab" data-toggle="tab">Icons</a></li>
+                                    <li role="presentation"><a href="#availability" aria-controls="availability" role="tab" data-toggle="tab">Availability</a></li>
+                                    <li role="presentation"><a href="#urlinfo" aria-controls="urlinfo" role="tab" data-toggle="tab">URL info</a></li>
+                                    <li role="presentation"><a href="#descriptiontext" aria-controls="descriptiontext" role="tab" data-toggle="tab">Description</a></li>
+                                    <li role="presentation"><a href="#advanced" aria-controls="advanced" role="tab" data-toggle="tab">Advanced</a></li>
+                                </ul>
+                                <hr />
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <!-- *** General info *** -->
+                                    <div role="tabpanel" class="tab-pane active" id="generalinfo">
+                                        @{Html.RenderPartial("_AppAdminGeneralInfo", Model.GeneralInfo); }
+                                    </div>
+                                    <!-- *** Maintenance *** -->
+                                    <div role="tabpanel" class="tab-pane" id="maintenance">
+                                        @{Html.RenderPartial("_AppAdminMaintenance", Model.Maintenance); }
+                                    </div>
+                                    <!-- *** Icons *** -->
+                                    <div role="tabpanel" class="tab-pane" id="icons">
+                                        @{Html.RenderPartial("_AppAdminIcons", Model.Icons); }
+                                    </div>
+                                    <!-- *** Availability *** -->
+                                    <div role="tabpanel" class="tab-pane" id="availability">
+                                        @{Html.RenderPartial("_AppAdminAvailability", Model.Availability); }
+                                    </div>
+                                    <!-- *** URL Info *** -->
+                                    <div role="tabpanel" class="tab-pane" id="urlinfo">
+                                        @{Html.RenderPartial("_AppAdminURLInfo", Model.URLInfo); }
+                                    </div>
+                                    <!-- Description -->
+                                    <div role="tabpanel" class="tab-pane" id="descriptiontext">
+                                        @{Html.RenderPartial("_AppAdminDescrText", Model.DescrText); }
+                                    </div>
+                                    <!-- *** Advanced *** -->
+                                    <div role="tabpanel" class="tab-pane" id="advanced">
+                                        @{Html.RenderPartial("_AppAdminAdvanced", Model.Advanced); }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("NewApp", new AOS.Platform.Models.AppAdminNewApp())
+</div>
+@Html.Partial("ShowContent")
+<script>
+
+    // Change selection dropdown
+    function ChangeApp(val) {
+        $("#ajaxloader").show();
+
+        var url = "@Url.Action("GetAppInfo", "SysAdmin")";
+        var data = val;
+
+        // Assign handlers immediately after making the request,
+        // and remember the jqxhr object for this request
+        var jqxhr = $.getJSON(url, { appId: val }, function (resp) {
+
+            // *** Update all relevant controls on partial views ***
+            app_id: $("#hiddenAppIdMaster").val(resp.AppId);
+
+            // General info
+            $("#hiddenAppIdGeneralInfo").val(resp.GeneralInfo.AppId);
+            $("#appName").val(resp.GeneralInfo.AppName);
+            $("#appEnabled").bootstrapSwitch('state', resp.GeneralInfo.AppEnabled);
+            $("#userPoolCount").val(resp.GeneralInfo.UserPoolCount);
+            $("#trialDays").val(resp.GeneralInfo.TrialDays);
+            $("#sendExpireMails").bootstrapSwitch('state', resp.GeneralInfo.SendExpireMails);
+
+            // Maintenance
+            $("#hiddenAppIdMaintenance").val(resp.Maintenance.AppId);
+            $("#maintMode").bootstrapSwitch('state', resp.Maintenance.MaintenanceEnabled);
+            $("#maintModeText").val(resp.Maintenance.MaintenanceText);
+            $("#maintModePlanned").bootstrapSwitch('state', resp.Maintenance.MaintenancePlannedEnabled);
+            $("#maintModePlannedText").val(resp.Maintenance.MaintenancePlannedText);
+
+            // Icons
+            var imgAppLogo = resp.Icons.AppLogoIcon;
+            var imgAppLogoName = resp.Icons.AppLogoName;
+            var imgAppLogoSize = resp.Icons.AppLogoSize;
+
+            var imgTrialLogo = resp.Icons.TrialLogoIcon;
+            var imgTrialLogoName = resp.Icons.TrialLogoName;
+            var imgTrialLogoSize = resp.Icons.TrialLogoSize;
+
+            if (imgAppLogo != null)
+                document.getElementById('applogoimg').setAttribute('src', 'data:image/jpeg;base64,' + imgAppLogo);
+
+            if (imgAppLogoName != null)
+                $("#dispAppLogoName").html(imgAppLogoName);
+
+            if (imgAppLogoSize != null)
+                $("#dispAppLogoSize").html(imgAppLogoSize + " bytes");
+
+            if (imgTrialLogo != null)
+                document.getElementById('triallogoimg').setAttribute('src', 'data:image/jpeg;base64,' + imgTrialLogo);
+
+            if (imgTrialLogoName != null)
+                $("#dispTrialLogoName").html(imgTrialLogoName);
+
+            if (imgTrialLogoSize != null)
+                $("#dispTrialLogoSize").html(imgTrialLogoSize + " bytes");
+
+            // Availability
+            $("#hiddenAppIdAvailability").val(resp.Availability.AppId);
+            $("#selAppStateOnPremise").val(resp.Availability.AppStateOnPremise);
+            $("#selAppStateSOOnline").val(resp.Availability.AppStateSOOnline);
+
+            // URL Info
+            $("#hiddenAppIdURLInfo").val(resp.URLInfo.AppId);
+            $("#appAdminURL").val(resp.URLInfo.AdminURL);
+            $("#appStartURL").val(resp.URLInfo.StartURL);
+            $("#appAlternateRedirectURL").val(resp.URLInfo.AlternateRedirectURL);
+
+            // Description text
+            $("#hiddenAppIdDescrText").val(resp.AppId);
+            CKEDITOR.instances['appAboutText'].setData(resp.DescrText.AppAboutText);
+
+            // Advanced
+            $("#hiddenAppIdAdvanced").val(resp.Availability.AppId);
+            $("#soAppId").val(resp.Advanced.SOAppId);
+            $("#appToken").val(resp.Advanced.ApplicationToken);
+            $("#environmentSelection").val(resp.Advanced.SelectedEnvironment);
+            $("#privateKeySOD").val(resp.Advanced.PrivateKeyFileNameSOD);
+            $("#privateKeySTAGE").val(resp.Advanced.PrivateKeyFileNameSTAGE);
+            $("#privateKeyPROD").val(resp.Advanced.PrivateKeyFileNamePROD);
+
+            if ($("#privateKeySOD").val() != "") {
+                $("#pkeySODDelete").show();
+                $("#pkeySODView").show();
+            }
+            else {
+                $("#pkeySODDelete").hide();
+                $("#pkeySODView").hide();
+            }
+
+            if ($("#privateKeySTAGE").val() != "") {
+                $("#pkeySTAGEDelete").show();
+                $("#pkeySTAGEView").show();
+            }
+            else {
+                $("#pkeySTAGEDelete").hide();
+                $("#pkeySTAGEView").hide();
+            }
+
+            if ($("#privateKeyPROD").val() != "") {
+                $("#pkeyPRODDelete").show();
+                $("#pkeyPRODView").show();
+            }
+            else {
+                $("#pkeyPRODDelete").hide();
+                $("#pkeyPRODView").hide();
+            }
+
+            $("#pkeySODView").attr("data-message", resp.Advanced.SODXML);
+            $("#pkeySTAGEView").attr("data-message", resp.Advanced.STAGEXML);
+            $("#pkeyPRODView").attr("data-message", resp.Advanced.PRODXML);
+
+            console.log("success");
+            $("#ajaxloader").hide();
+        })
+          .done(function () {
+              console.log("second success");
+          })
+          .fail(function () {
+              console.log("error");
+          })
+          .always(function () {
+              console.log("complete");
+          });
+
+    }
+
+    function htmlEncode(value) {
+        //create a in-memory div, set it's inner text(which jQuery automatically encodes)
+        //then grab the encoded contents back out.  The div never exists on the page.
+        return $('<div/>').text(value).html().replace(/&/g, '%26');
+    }
+
+    function htmlDecode(value) {
+        return $('<div/>').html(value).text();
+    }
+
+    function uploadCallback(appId, logo_kind, logo_file) {
+        var fileSize = logo_file.size;
+        var fileName = logo_file.name;
+        //alert("In uploadCallback. appId: " + appId + ", logo_kind: " + logo_kind + ", fileSize: " + fileSize + ", fileName:" + fileName);
+
+        var data = new FormData();
+
+        data.append("AppId", appId);
+        data.append("LogoKind", logo_kind);
+        data.append("FileSize", fileSize);
+        data.append("FileName", fileName);
+        data.append("LogoFile", logo_file);
+
+        $.ajax({
+            url: "@Url.Action("UploadLogo", "SysAdmin")",
+            type: "POST",
+            processData: false,
+            contentType: false,
+            data: data,
+            success: function (resp) {
+                // Check if we should redirect
+                if (resp.Redirect) {
+                    window.location = "@Url.Action("Login", "Account")";
+                };
+
+                if (resp.IsOK) {
+                    // Show success alert box
+                    $("#success-alert-logoupload").show();
+                    // Remove success alert-box after a few seconds
+                    $("#success-alert-logoupload").fadeTo(2000, 1000).slideUp(1000, function () {
+                        $("#success-alert-logoupload").hide();
+                    });
+
+                    // Load images into placeholders
+                    var obj = jQuery.parseJSON(resp.ReturnedJsonData);
+
+                    var imgAppLogo = obj.AppLogoIcon;
+                    var imgAppLogoName = obj.AppLogoName;
+                    var imgAppLogoSize = obj.AppLogoSize;
+
+                    var imgTrialLogo = obj.TrialLogoIcon;
+                    var imgTrialLogoName = obj.TrialLogoName;
+                    var imgTrialLogoSize = obj.TrialLogoSize;
+
+                    if (imgAppLogo != null)
+                        document.getElementById('applogoimg').setAttribute('src', 'data:image/jpeg;base64,' + imgAppLogo);
+
+                    if (imgAppLogoName != null)
+                        $("#dispAppLogoName").html(imgAppLogoName);
+
+                    if (imgAppLogoSize != null)
+                        $("#dispAppLogoSize").html(imgAppLogoSize + " bytes");
+
+                    if (imgTrialLogo != null)
+                        document.getElementById('triallogoimg').setAttribute('src', 'data:image/jpeg;base64,' + imgTrialLogo);
+
+                    if (imgTrialLogoName != null)
+                        $("#dispTrialLogoName").html(imgTrialLogoName);
+
+                    if (imgTrialLogoSize != null)
+                        $("#dispTrialLogoSize").html(imgTrialLogoSize + " bytes");
+                }
+                else {
+                    // Show error alert box
+                    $("#error-alert-logoupload").html(resp.ErrorMsg);
+                    $("#error-alert-logoupload").show();
+                    // Remove error alert-box after a few seconds
+                    $("#error-alert-logoupload").fadeTo(2000, 500).slideUp(500, function () {
+                        $("#error-alert-logoupload").hide();
+                    });
+                }
+            }
+        })
+          .done(function () {
+              console.log("second success");
+          })
+          .fail(function () {
+              console.log("error");
+          })
+          .always(function () {
+              console.log("complete");
+          });
+        return false;
+    }
+
+    // This function uploads private key XML-files
+    function UploadPKey(e, environment) {
+        var files = e.target.files;
+
+        if (files.length > 0) {
+            if (window.FormData !== undefined) {
+
+                var currAppId = $("#hiddenAppIdAdvanced").val();
+                var data = new FormData();
+
+                data.append("appId", currAppId);
+                data.append("environment", environment);
+
+                for (var x = 0; x < files.length; x++) {
+                    data.append("file" + x, files[x]);
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("UploadPrivateKey", "SysAdmin")",
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    success: function (resp) {
+                        if (resp.IsOK) {
+                            // Show success alert box
+                            $("#error-alert-advanced").html(resp.ErrorMsg);
+                            $("#success-alert-advanced").show();
+                            // Remove success alert-box after a few seconds
+                            $("#success-alert-advanced").fadeTo(2000, 1000).slideUp(1000, function () {
+                                $("#success-alert-advanced").hide();
+                            });
+
+                            // Update filename
+                            var obj = jQuery.parseJSON(resp.ReturnedJsonData);
+                            var fileName = obj.PKeyName;
+
+                            if (environment == "sod") {
+                                $("#privateKeySOD").val(fileName);
+                                $("#pkeySODDelete").show();
+                                $("#pkeySODView").show();
+                            }
+                            else if (environment == "stage") {
+                                $("#privateKeySTAGE").val(fileName);
+                                $("#pkeySTAGEDelete").show();
+                                $("#pkeySTAGEView").show();
+                            }
+                            else if (environment == "prod") {
+                                $("#privateKeyPROD").val(fileName);
+                                $("#pkeyPRODDelete").show();
+                                $("#pkeyPRODView").show();
+                            }
+                        }
+                        else {
+                            // Show error alert box
+                            $("#error-alert-advanced").html(resp.ErrorMsg);
+                            $("#error-alert-advanced").show();
+                            // Remove error alert-box after a few seconds
+                            $("#error-alert-advanced").fadeTo(2000, 500).slideUp(500, function () {
+                                $("#error-alert-advanced").hide();
+                            });
+                        }
+                    },
+                    error: function (xhr, status, p3, p4) {
+                        var err = "Error " + " " + status + " " + p3 + " " + p4;
+                        if (xhr.responseText && xhr.responseText[0] == "{")
+                            err = JSON.parse(xhr.responseText).Message;
+                        console.log(err);
+                    }
+                });
+            } else {
+                alert("This browser doesn't support HTML5 file uploads!");
+            }
+        };
+    }
+
+    // This function uploads private key XML-files
+    function RemovePKey(environment) {
+
+        var currAppId = $("#hiddenAppIdAdvanced").val();
+        var data = new FormData();
+
+        data.append("appId", currAppId);
+        data.append("environment", environment);
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("RemovePrivateKey", "SysAdmin")",
+            contentType: false,
+            processData: false,
+            data: data,
+            success: function (resp) {
+                if (resp.IsOK) {
+                    // Show success alert box
+                    $("#error-alert-advanced").html(resp.ErrorMsg);
+                    $("#success-alert-advanced").show();
+                    // Remove success alert-box after a few seconds
+                    $("#success-alert-advanced").fadeTo(2000, 1000).slideUp(1000, function () {
+                        $("#success-alert-advanced").hide();
+                    });
+
+                    if (environment == "sod") {
+                        $("#privateKeySOD").val("");
+                        $("#pkeySODDelete").hide();
+                    }
+                    else if (environment == "stage") {
+                        $("#privateKeySTAGE").val("");
+                        $("#pkeySTAGEDelete").hide();
+                    }
+                    else if (environment == "prod") {
+                        $("#privateKeyPROD").val("");
+                        $("#pkeyPRODDelete").hide();
+                    }
+                }
+                else {
+                    // Show error alert box
+                    $("#error-alert-advanced").html(resp.ErrorMsg);
+                    $("#error-alert-advanced").show();
+                    // Remove error alert-box after a few seconds
+                    $("#error-alert-advanced").fadeTo(2000, 500).slideUp(500, function () {
+                        $("#error-alert-advanced").hide();
+                    });
+                }
+            },
+            error: function (xhr, status, p3, p4) {
+                var err = "Error " + " " + status + " " + p3 + " " + p4;
+                if (xhr.responseText && xhr.responseText[0] == "{")
+                    err = JSON.parse(xhr.responseText).Message;
+                console.log(err);
+            }
+        });
+    }
+
+    // This section will only be available when the page is ready
+    $(document).ready(function () {
+
+        // Attach click handlers to delete buttons on advanced tab
+        $('#pkeySODDelete').click(function () {
+            RemovePKey("sod");
+        });
+
+        $('#pkeySTAGEDelete').click(function () {
+            RemovePKey("stage");
+        });
+
+        $('#pkeyPRODDelete').click(function () {
+            RemovePKey("prod");
+        });
+
+        if ($("#privateKeySOD").val() != "") {
+            $("#pkeySODDelete").show();
+            $("#pkeySODView").show();
+        }
+        else {
+            $("#pkeySODDelete").hide();
+            $("#pkeySODView").hide();
+        }
+
+        if ($("#privateKeySTAGE").val() != "") {
+            $("#pkeySTAGEDelete").show();
+            $("#pkeySTAGEView").show();
+        }
+        else {
+            $("#pkeySTAGEDelete").hide();
+            $("#pkeySTAGEView").hide();
+        }
+
+        if ($("#privateKeyPROD").val() != "") {
+            $("#pkeyPRODDelete").show();
+            $("#pkeyPRODView").show();
+        }
+        else {
+            $("#pkeyPRODDelete").hide();
+            $("#pkeyPRODView").hide();
+        }
+
+        $('#upload-productKeySOD').on('change', function (e) {
+            UploadPKey(e, "sod");
+        });
+
+        $('#upload-productKeySTAGE').on('change', function (e) {
+            UploadPKey(e, "stage");
+        });
+
+        $('#upload-productKeyPROD').on('change', function (e) {
+            UploadPKey(e, "prod");
+        });
+
+        $('.btn-file :file').on('fileselect', function (event, numFiles, label) {
+            console.log(numFiles);
+            console.log(label);
+        });
+
+        $.uploadPreview({
+            input_field: "#image-upload-applogo",       // Default: .image-upload-applogo
+            preview_box: "#image-preview-applogo",      // Default: .image-preview-applogo
+            label_field: "#image-label",                // Default: .image-label
+            label_default: "Choose File",               // Default: Choose File
+            label_selected: "Change File",              // Default: Change File
+            no_label: false,                            // Default: false
+            app_id: $("#hiddenAppIdMaster").val(),
+            //app_id: $("#image-preview-applogo").data('appid'),
+            logo_kind: $("#image-preview-applogo").data('logo-kind'),
+            callback_function: $("#image-preview-applogo").data('callback-url'),
+        });
+
+        $.uploadPreview({
+            input_field: "#image-upload-triallogo",     // Default: .image-upload-triallogo
+            preview_box: "#image-preview-triallogo",    // Default: .image-preview-triallogo
+            label_field: "#image-label",                // Default: .image-label
+            label_default: "Choose File",               // Default: Choose File
+            label_selected: "Change File",              // Default: Change File
+            no_label: false,                            // Default: false
+            app_id: $("#hiddenAppIdMaster").val(),
+            //app_id: $("#image-preview-triallogo").data('appid'),
+            logo_kind: $("#image-preview-triallogo").data('logo-kind'),
+            callback_function: $("#image-preview-triallogo").data('callback-url'),
+        });
+
+        // The ladda button (button with spinner)
+        var ladda = null;
+        var editor_data = CKEDITOR.instances['appAboutText'].getData();
+
+
+
+        // Attach click handler to the submit button - General Info:
+        $('#form-submit1').click(function () {
+            // Assign button to ladda button
+            ladda = Ladda.create(this);
+            // Submit form
+            $('#frmUpdateGeneralInfo').submit();
+        });
+
+        // Attach click handler to the submit button - Maintenance:
+        $('#form-submit2').click(function () {
+            // Assign button to ladda button
+            ladda = Ladda.create(this);
+            // Submit form
+            $('#frmUpdateMaintenance').submit();
+        });
+
+        // Attach click handler to the submit button - Availability:
+        $('#form-submit3').click(function () {
+            // Assign button to ladda button
+            ladda = Ladda.create(this);
+            // Submit form
+            $('#frmUpdateAvailability').submit();
+        });
+
+        // Attach click handler to the submit button - URL Info:
+        $('#form-submit4').click(function () {
+            // Assign button to ladda button
+            ladda = Ladda.create(this);
+            // Submit form
+            $('#frmUpdateURLInfo').submit();
+        });
+
+        // Attach click handler to the submit button:
+        $('#form-submit5').click(function () {
+            // Assign button to ladda button
+            ladda = Ladda.create(this);
+            // Submit form
+            $('#frmUpdateDescrText').submit();
+        });
+
+        // Attach click handler to the submit button:
+        $('#form-submit6').click(function () {
+            // Assign button to ladda button
+            ladda = Ladda.create(this);
+            // Submit form
+            $('#frmUpdateAdvanced').submit();
+        });
+
+        // Hide alert boxes
+        $('div[role="alert"]').hide();
+
+        // General info - submit form
+        $("#frmUpdateGeneralInfo").on("submit", function (event) {
+            event.preventDefault();
+
+            var url = $(this).attr("action");
+            var formData = $(this).serialize();
+
+            // Start loading. Turn on spinner
+            ladda.start();
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: formData,
+                dataType: "json",
+                success: function (resp) {
+                    // Check if we should redirect
+                    if (resp.Redirect) {
+                        window.location = "@Url.Action("Login", "Account")";
+                    };
+
+                    if (resp.IsOK) {
+                        // Hide modal wait spinner
+                        $('#SpinnerWait_Modal').modal('hide');
+                        // Show success alert box
+                        $("#success-alert-generalinfo").show();
+                        // Remove success alert-box after a few seconds
+                        $("#success-alert-generalinfo").fadeTo(2000, 1000).slideUp(1000, function () {
+                            $("#success-alert-generalinfo").hide();
+                        });
+                    }
+                    else {
+                        // Hide modal wait spinner
+                        $('#SpinnerWait_Modal').modal('hide');
+                        // Show error alert box
+                        $("#error-alert-generalinfo").html(resp.ErrorMsg);
+                        $("#error-alert-generalinfo").show();
+                        // Remove error alert-box after a few seconds
+                        $("#error-alert-generalinfo").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#error-alert-generalinfo").hide();
+                        });
+                    }
+                }
+            })
+            .always(function () {
+                // Stop loading. Turn off spinner
+                ladda.stop();
+            });
+
+            return false;
+        });
+
+        // Maintenance - submit form
+        $("#frmUpdateMaintenance").on("submit", function (event) {
+            event.preventDefault();
+
+            var url = $(this).attr("action");
+            var formData = $(this).serialize();
+
+            // Start loading. Turn on spinner
+            ladda.start();
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: formData,
+                dataType: "json",
+                success: function (resp) {
+                    // Check if we should redirect
+                    if (resp.Redirect) {
+                        window.location = "@Url.Action("Login", "Account")";
+                    };
+
+                    if (resp.IsOK) {
+                        // Show success alert box
+                        $("#success-alert-maintenance").show();
+                        // Remove success alert-box after a few seconds
+                        $("#success-alert-maintenance").fadeTo(2000, 1000).slideUp(1000, function () {
+                            $("#success-alert-maintenance").hide();
+                        });
+                    }
+                    else {
+                        // Show error alert box
+                        $("#error-alert-maintenance").html(resp.ErrorMsg);
+                        $("#error-alert-maintenance").show();
+                        // Remove error alert-box after a few seconds
+                        $("#error-alert-maintenance").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#error-alert-maintenance").hide();
+                        });
+                    }
+                }
+            })
+            .always(function () {
+                // Stop loading. Turn off spinner
+                ladda.stop();
+            });
+
+            return false;
+        });
+
+        // Availability - submit form
+        $("#frmUpdateAvailability").on("submit", function (event) {
+            event.preventDefault();
+
+            var url = $(this).attr("action");
+            var formData = $(this).serialize();
+
+            // Start loading. Turn on spinner
+            ladda.start();
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: formData,
+                dataType: "json",
+                success: function (resp) {
+                    // Check if we should redirect
+                    if (resp.Redirect) {
+                        window.location = "@Url.Action("Login", "Account")";
+                    };
+
+                    if (resp.IsOK) {
+                        // Show success alert box
+                        $("#success-alert-availability").show();
+                        // Remove success alert-box after a few seconds
+                        $("#success-alert-availability").fadeTo(2000, 1000).slideUp(1000, function () {
+                            $("#success-alert-availability").hide();
+                        });
+                    }
+                    else {
+                        // Show error alert box
+                        $("#error-alert-availability").html(resp.ErrorMsg);
+                        $("#error-alert-availability").show();
+                        // Remove error alert-box after a few seconds
+                        $("#error-alert-availability").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#error-alert-availability").hide();
+                        });
+                    }
+                }
+            })
+            .always(function () {
+                // Stop loading. Turn off spinner
+                ladda.stop();
+            });
+
+            return false;
+        });
+
+        // Availability - submit form
+        $("#frmUpdateURLInfo").on("submit", function (event) {
+            event.preventDefault();
+
+            var url = $(this).attr("action");
+            var formData = $(this).serialize();
+
+            // Start loading. Turn on spinner
+            ladda.start();
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: formData,
+                dataType: "json",
+                success: function (resp) {
+                    // Check if we should redirect
+                    if (resp.Redirect) {
+                        window.location = "@Url.Action("Login", "Account")";
+                    };
+
+                    if (resp.IsOK) {
+                        // Show success alert box
+                        $("#success-alert-urlinfo").show();
+                        // Remove success alert-box after a few seconds
+                        $("#success-alert-urlinfo").fadeTo(2000, 1000).slideUp(1000, function () {
+                            $("#success-alert-urlinfo").hide();
+                        });
+                    }
+                    else {
+                        // Show error alert box
+                        $("#error-alert-urlinfo").html(resp.ErrorMsg);
+                        $("#error-alert-urlinfo").show();
+                        // Remove error alert-box after a few seconds
+                        $("#error-alert-urlinfo").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#error-alert-urlinfo").hide();
+                        });
+                    }
+                }
+            })
+            .always(function () {
+                // Stop loading. Turn off spinner
+                ladda.stop();
+            });
+
+            return false;
+        });
+
+        // Description text - submit form
+        $("#frmUpdateDescrText").on("submit", function (event) {
+            event.preventDefault();
+
+            var url = $(this).attr("action");
+
+            $(".apptext").html()
+
+            for (instance in CKEDITOR.instances)
+                CKEDITOR.instances[instance].updateElement();
+
+            var formData = $(this).serialize();
+            var editorData = CKEDITOR.instances['appAboutText'].getData();
+
+            console.log("formData: " + formData);
+            console.log("editorData: " + editorData);
+
+            // Start loading. Turn on spinner
+            ladda.start();
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: formData,
+                dataType: "json",
+                success: function (resp) {
+                    // Check if we should redirect
+                    if (resp.Redirect) {
+                        window.location = "@Url.Action("Login", "Account")";
+                    };
+
+                    if (resp.IsOK) {
+                        // Show success alert box
+                        //$("#jsonwell").html(resp.ReturnedJsonData);
+                        $("#success-alert-descrtext").show();
+                        // Remove success alert-box after a few seconds
+                        $("#success-alert-descrtext").fadeTo(2000, 1000).slideUp(1000, function () {
+                            $("#success-alert-descrtext").hide();
+                        });
+                    }
+                    else {
+                        // Show error alert box
+                        $("#error-alert-descrtext").html(resp.ErrorMsg);
+                        $("#error-alert-descrtext").show();
+                        // Remove error alert-box after a few seconds
+                        $("#error-alert-descrtext").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#error-alert-descrtext").hide();
+                        });
+                    }
+                }
+            })
+            .always(function () {
+                // Stop loading. Turn off spinner
+                ladda.stop();
+            });
+            return false;
+        });
+
+        // Availability - submit form
+        $("#frmUpdateAdvanced").on("submit", function (event) {
+            event.preventDefault();
+
+            var url = $(this).attr("action");
+            var formData = $(this).serialize();
+
+            // Start loading. Turn on spinner
+            ladda.start();
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: formData,
+                dataType: "json",
+                success: function (resp) {
+                    // Check if we should redirect
+                    if (resp.Redirect) {
+                        window.location = "@Url.Action("Login", "Account")";
+                    };
+
+                    if (resp.IsOK) {
+                        // Show success alert box
+                        $("#success-alert-advanced").show();
+                        // Remove success alert-box after a few seconds
+                        $("#success-alert-advanced").fadeTo(2000, 1000).slideUp(1000, function () {
+                            $("#success-alert-advanced").hide();
+                        });
+                    }
+                    else {
+                        // Show error alert box
+                        $("#error-alert-advanced").html(resp.ErrorMsg);
+                        $("#error-alert-advanced").show();
+                        // Remove error alert-box after a few seconds
+                        $("#error-alert-advanced").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#error-alert-advanced").hide();
+                        });
+                    }
+                }
+            })
+            .always(function () {
+                // Stop loading. Turn off spinner
+                ladda.stop();
+            });
+
+            return false;
+        });
+
+
+    });
+
+    // Automatically trigger the loading animation on click
+    Ladda.bind('input[type=submit]');
+
+    //$("#appEnabled").bootstrapSwitch();
+    $(".switch").bootstrapSwitch();
+    $("[id^=notifswitch]").bootstrapSwitch();
+    $("#btnAddNewApp").tooltip();
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/ckfinder/ckfinder.js"></script>
+    <script type="text/javascript">
+        var editor = CKEDITOR.instances['AppAboutText'];
+
+        if (editor) {
+            editor.destroy(true);
+        }
+
+        CKEDITOR.replace('AppAboutText', {
+            enterMode: CKEDITOR.ENTER_BR,
+            resize_enabled: false
+        });
+
+        CKFinder.setupCKEditor(null, '@Url.Content("~/Content/ckfinder/")');
+
+    </script>
+}

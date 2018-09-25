@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.superoffice.net/ws/crm/NetServer/Services82" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WcfPersonService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_Person1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://www.superoffice.net/ws/crm/NetServer/Services82" location="http://localhost/SuperOffice82R01/Remote/Services82/Person.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_Person" type="i0:Person">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateDefaultPersonEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/CreateDefaultPersonEntity" style="document" />
+      <wsdl:input name="CreateDefaultPersonEntityRequest">
+        <soap:header message="i0:CreateDefaultPersonEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultPersonEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultPersonEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultPersonEntityResponse">
+        <soap:header message="i0:CreateDefaultPersonEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultPersonEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultPersonEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultPersonEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePersonEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/SavePersonEntity" style="document" />
+      <wsdl:input name="SavePersonEntityRequest">
+        <soap:header message="i0:SavePersonEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SavePersonEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SavePersonEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SavePersonEntityResponse">
+        <soap:header message="i0:SavePersonEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SavePersonEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SavePersonEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SavePersonEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/DeletePersonEntity" style="document" />
+      <wsdl:input name="DeletePersonEntityRequest">
+        <soap:header message="i0:DeletePersonEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DeletePersonEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DeletePersonEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeletePersonEntityResponse">
+        <soap:header message="i0:DeletePersonEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DeletePersonEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DeletePersonEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DeletePersonEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerson">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetPerson" style="document" />
+      <wsdl:input name="GetPersonRequest">
+        <soap:header message="i0:GetPersonRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPersonRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPersonRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPersonResponse">
+        <soap:header message="i0:GetPersonResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPersonResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPersonResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPersonResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetPersonEntity" style="document" />
+      <wsdl:input name="GetPersonEntityRequest">
+        <soap:header message="i0:GetPersonEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPersonEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPersonEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPersonEntityResponse">
+        <soap:header message="i0:GetPersonEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPersonEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPersonEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPersonEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyPerson">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetMyPerson" style="document" />
+      <wsdl:input name="GetMyPersonRequest">
+        <soap:header message="i0:GetMyPersonRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetMyPersonRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetMyPersonRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMyPersonResponse">
+        <soap:header message="i0:GetMyPersonResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetMyPersonResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetMyPersonResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetMyPersonResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesRep">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetSalesRep" style="document" />
+      <wsdl:input name="GetSalesRepRequest">
+        <soap:header message="i0:GetSalesRepRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSalesRepRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSalesRepRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSalesRepResponse">
+        <soap:header message="i0:GetSalesRepResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSalesRepResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSalesRepResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSalesRepResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhones">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetPhones" style="document" />
+      <wsdl:input name="GetPhonesRequest">
+        <soap:header message="i0:GetPhonesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPhonesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPhonesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPhonesResponse">
+        <soap:header message="i0:GetPhonesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPhonesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPhonesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPhonesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCountry">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/ChangeCountry" style="document" />
+      <wsdl:input name="ChangeCountryRequest">
+        <soap:header message="i0:ChangeCountryRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ChangeCountryRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ChangeCountryRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangeCountryResponse">
+        <soap:header message="i0:ChangeCountryResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ChangeCountryResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ChangeCountryResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ChangeCountryResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetAddress" style="document" />
+      <wsdl:input name="GetAddressRequest">
+        <soap:header message="i0:GetAddressRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetAddressRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetAddressRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAddressResponse">
+        <soap:header message="i0:GetAddressResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetAddressResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetAddressResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetAddressResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressByCountry">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetAddressByCountry" style="document" />
+      <wsdl:input name="GetAddressByCountryRequest">
+        <soap:header message="i0:GetAddressByCountryRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetAddressByCountryRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetAddressByCountryRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAddressByCountryResponse">
+        <soap:header message="i0:GetAddressByCountryResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetAddressByCountryResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetAddressByCountryResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetAddressByCountryResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetPersonImage" style="document" />
+      <wsdl:input name="GetPersonImageRequest">
+        <soap:header message="i0:GetPersonImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPersonImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPersonImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPersonImageResponse">
+        <soap:header message="i0:GetPersonImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPersonImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPersonImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPersonImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPersonImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/SetPersonImage" style="document" />
+      <wsdl:input name="SetPersonImageRequest">
+        <soap:header message="i0:SetPersonImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetPersonImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetPersonImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetPersonImageResponse">
+        <soap:header message="i0:SetPersonImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetPersonImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetPersonImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetPersonImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultByContactId">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/CreateDefaultByContactId" style="document" />
+      <wsdl:input name="CreateDefaultByContactIdRequest">
+        <soap:header message="i0:CreateDefaultByContactIdRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultByContactIdRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultByContactIdRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultByContactIdResponse">
+        <soap:header message="i0:CreateDefaultByContactIdResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultByContactIdResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultByContactIdResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultByContactIdResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Move">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/Move" style="document" />
+      <wsdl:input name="MoveRequest">
+        <soap:header message="i0:MoveRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:MoveRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:MoveRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MoveResponse">
+        <soap:header message="i0:MoveResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:MoveResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:MoveResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:MoveResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Merge">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/Merge" style="document" />
+      <wsdl:input name="MergeRequest">
+        <soap:header message="i0:MergeRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:MergeRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:MergeRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MergeResponse">
+        <soap:header message="i0:MergeResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:MergeResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:MergeResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:MergeResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultFromCredential">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/CreateDefaultFromCredential" style="document" />
+      <wsdl:input name="CreateDefaultFromCredentialRequest">
+        <soap:header message="i0:CreateDefaultFromCredentialRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultFromCredentialRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultFromCredentialRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultFromCredentialResponse">
+        <soap:header message="i0:CreateDefaultFromCredentialResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultFromCredentialResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultFromCredentialResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultFromCredentialResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsNumberValid">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/IsNumberValid" style="document" />
+      <wsdl:input name="IsNumberValidRequest">
+        <soap:header message="i0:IsNumberValidRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:IsNumberValidRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:IsNumberValidRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IsNumberValidResponse">
+        <soap:header message="i0:IsNumberValidResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:IsNumberValidResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:IsNumberValidResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:IsNumberValidResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResolvePersonFromInfo">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/ResolvePersonFromInfo" style="document" />
+      <wsdl:input name="ResolvePersonFromInfoRequest">
+        <soap:header message="i0:ResolvePersonFromInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ResolvePersonFromInfoRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ResolvePersonFromInfoRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ResolvePersonFromInfoResponse">
+        <soap:header message="i0:ResolvePersonFromInfoResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ResolvePersonFromInfoResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ResolvePersonFromInfoResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ResolvePersonFromInfoResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonList">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetPersonList" style="document" />
+      <wsdl:input name="GetPersonListRequest">
+        <soap:header message="i0:GetPersonListRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPersonListRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPersonListRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPersonListResponse">
+        <soap:header message="i0:GetPersonListResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPersonListResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPersonListResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPersonListResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonsFromContact">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetPersonsFromContact" style="document" />
+      <wsdl:input name="GetPersonsFromContactRequest">
+        <soap:header message="i0:GetPersonsFromContactRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPersonsFromContactRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPersonsFromContactRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPersonsFromContactResponse">
+        <soap:header message="i0:GetPersonsFromContactResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPersonsFromContactResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPersonsFromContactResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPersonsFromContactResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonsFromProject">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetPersonsFromProject" style="document" />
+      <wsdl:input name="GetPersonsFromProjectRequest">
+        <soap:header message="i0:GetPersonsFromProjectRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPersonsFromProjectRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPersonsFromProjectRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPersonsFromProjectResponse">
+        <soap:header message="i0:GetPersonsFromProjectResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPersonsFromProjectResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPersonsFromProjectResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPersonsFromProjectResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColleagues">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetColleagues" style="document" />
+      <wsdl:input name="GetColleaguesRequest">
+        <soap:header message="i0:GetColleaguesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetColleaguesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetColleaguesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetColleaguesResponse">
+        <soap:header message="i0:GetColleaguesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetColleaguesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetColleaguesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetColleaguesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColleaguesByDepartment">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetColleaguesByDepartment" style="document" />
+      <wsdl:input name="GetColleaguesByDepartmentRequest">
+        <soap:header message="i0:GetColleaguesByDepartmentRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetColleaguesByDepartmentRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetColleaguesByDepartmentRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetColleaguesByDepartmentResponse">
+        <soap:header message="i0:GetColleaguesByDepartmentResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetColleaguesByDepartmentResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetColleaguesByDepartmentResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetColleaguesByDepartmentResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColleaguesBySource">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetColleaguesBySource" style="document" />
+      <wsdl:input name="GetColleaguesBySourceRequest">
+        <soap:header message="i0:GetColleaguesBySourceRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetColleaguesBySourceRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetColleaguesBySourceRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetColleaguesBySourceResponse">
+        <soap:header message="i0:GetColleaguesBySourceResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetColleaguesBySourceResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetColleaguesBySourceResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetColleaguesBySourceResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyOwner">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetMyOwner" style="document" />
+      <wsdl:input name="GetMyOwnerRequest">
+        <soap:header message="i0:GetMyOwnerRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetMyOwnerRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetMyOwnerRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMyOwnerResponse">
+        <soap:header message="i0:GetMyOwnerResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetMyOwnerResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetMyOwnerResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetMyOwnerResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOwnerOnPersonId">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetOwnerOnPersonId" style="document" />
+      <wsdl:input name="GetOwnerOnPersonIdRequest">
+        <soap:header message="i0:GetOwnerOnPersonIdRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetOwnerOnPersonIdRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetOwnerOnPersonIdRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetOwnerOnPersonIdResponse">
+        <soap:header message="i0:GetOwnerOnPersonIdResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetOwnerOnPersonIdResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetOwnerOnPersonIdResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetOwnerOnPersonIdResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePersonRank">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/ChangePersonRank" style="document" />
+      <wsdl:input name="ChangePersonRankRequest">
+        <soap:header message="i0:ChangePersonRankRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ChangePersonRankRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ChangePersonRankRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangePersonRankResponse">
+        <soap:header message="i0:ChangePersonRankResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ChangePersonRankResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ChangePersonRankResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ChangePersonRankResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPersonRank">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/SetPersonRank" style="document" />
+      <wsdl:input name="SetPersonRankRequest">
+        <soap:header message="i0:SetPersonRankRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetPersonRankRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetPersonRankRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetPersonRankResponse">
+        <soap:header message="i0:SetPersonRankResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetPersonRankResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetPersonRankResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetPersonRankResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NormalizeRanks">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/NormalizeRanks" style="document" />
+      <wsdl:input name="NormalizeRanksRequest">
+        <soap:header message="i0:NormalizeRanksRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:NormalizeRanksRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:NormalizeRanksRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="NormalizeRanksResponse">
+        <soap:header message="i0:NormalizeRanksResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:NormalizeRanksResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:NormalizeRanksResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:NormalizeRanksResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_Person1" type="i0:Person">
+    <wsp:PolicyReference URI="#BasicHttpBinding_Person1_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateDefaultPersonEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/CreateDefaultPersonEntity" style="document" />
+      <wsdl:input name="CreateDefaultPersonEntityRequest">
+        <soap:header message="i0:CreateDefaultPersonEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultPersonEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultPersonEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultPersonEntityResponse">
+        <soap:header message="i0:CreateDefaultPersonEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultPersonEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultPersonEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultPersonEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePersonEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/SavePersonEntity" style="document" />
+      <wsdl:input name="SavePersonEntityRequest">
+        <soap:header message="i0:SavePersonEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SavePersonEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SavePersonEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SavePersonEntityResponse">
+        <soap:header message="i0:SavePersonEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SavePersonEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SavePersonEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SavePersonEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/DeletePersonEntity" style="document" />
+      <wsdl:input name="DeletePersonEntityRequest">
+        <soap:header message="i0:DeletePersonEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:DeletePersonEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:DeletePersonEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeletePersonEntityResponse">
+        <soap:header message="i0:DeletePersonEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:DeletePersonEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:DeletePersonEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:DeletePersonEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerson">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetPerson" style="document" />
+      <wsdl:input name="GetPersonRequest">
+        <soap:header message="i0:GetPersonRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPersonRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPersonRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPersonResponse">
+        <soap:header message="i0:GetPersonResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPersonResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPersonResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPersonResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonEntity">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetPersonEntity" style="document" />
+      <wsdl:input name="GetPersonEntityRequest">
+        <soap:header message="i0:GetPersonEntityRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPersonEntityRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPersonEntityRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPersonEntityResponse">
+        <soap:header message="i0:GetPersonEntityResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPersonEntityResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPersonEntityResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPersonEntityResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyPerson">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetMyPerson" style="document" />
+      <wsdl:input name="GetMyPersonRequest">
+        <soap:header message="i0:GetMyPersonRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetMyPersonRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetMyPersonRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMyPersonResponse">
+        <soap:header message="i0:GetMyPersonResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetMyPersonResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetMyPersonResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetMyPersonResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesRep">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetSalesRep" style="document" />
+      <wsdl:input name="GetSalesRepRequest">
+        <soap:header message="i0:GetSalesRepRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetSalesRepRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetSalesRepRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSalesRepResponse">
+        <soap:header message="i0:GetSalesRepResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetSalesRepResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetSalesRepResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetSalesRepResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhones">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetPhones" style="document" />
+      <wsdl:input name="GetPhonesRequest">
+        <soap:header message="i0:GetPhonesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPhonesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPhonesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPhonesResponse">
+        <soap:header message="i0:GetPhonesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPhonesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPhonesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPhonesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCountry">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/ChangeCountry" style="document" />
+      <wsdl:input name="ChangeCountryRequest">
+        <soap:header message="i0:ChangeCountryRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ChangeCountryRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ChangeCountryRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangeCountryResponse">
+        <soap:header message="i0:ChangeCountryResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ChangeCountryResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ChangeCountryResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ChangeCountryResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetAddress" style="document" />
+      <wsdl:input name="GetAddressRequest">
+        <soap:header message="i0:GetAddressRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetAddressRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetAddressRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAddressResponse">
+        <soap:header message="i0:GetAddressResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetAddressResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetAddressResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetAddressResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressByCountry">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetAddressByCountry" style="document" />
+      <wsdl:input name="GetAddressByCountryRequest">
+        <soap:header message="i0:GetAddressByCountryRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetAddressByCountryRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetAddressByCountryRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAddressByCountryResponse">
+        <soap:header message="i0:GetAddressByCountryResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetAddressByCountryResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetAddressByCountryResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetAddressByCountryResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetPersonImage" style="document" />
+      <wsdl:input name="GetPersonImageRequest">
+        <soap:header message="i0:GetPersonImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPersonImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPersonImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPersonImageResponse">
+        <soap:header message="i0:GetPersonImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPersonImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPersonImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPersonImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPersonImage">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/SetPersonImage" style="document" />
+      <wsdl:input name="SetPersonImageRequest">
+        <soap:header message="i0:SetPersonImageRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetPersonImageRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetPersonImageRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetPersonImageResponse">
+        <soap:header message="i0:SetPersonImageResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetPersonImageResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetPersonImageResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetPersonImageResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultByContactId">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/CreateDefaultByContactId" style="document" />
+      <wsdl:input name="CreateDefaultByContactIdRequest">
+        <soap:header message="i0:CreateDefaultByContactIdRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultByContactIdRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultByContactIdRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultByContactIdResponse">
+        <soap:header message="i0:CreateDefaultByContactIdResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultByContactIdResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultByContactIdResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultByContactIdResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Move">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/Move" style="document" />
+      <wsdl:input name="MoveRequest">
+        <soap:header message="i0:MoveRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:MoveRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:MoveRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MoveResponse">
+        <soap:header message="i0:MoveResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:MoveResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:MoveResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:MoveResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Merge">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/Merge" style="document" />
+      <wsdl:input name="MergeRequest">
+        <soap:header message="i0:MergeRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:MergeRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:MergeRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MergeResponse">
+        <soap:header message="i0:MergeResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:MergeResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:MergeResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:MergeResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultFromCredential">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/CreateDefaultFromCredential" style="document" />
+      <wsdl:input name="CreateDefaultFromCredentialRequest">
+        <soap:header message="i0:CreateDefaultFromCredentialRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:CreateDefaultFromCredentialRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:CreateDefaultFromCredentialRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateDefaultFromCredentialResponse">
+        <soap:header message="i0:CreateDefaultFromCredentialResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultFromCredentialResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:CreateDefaultFromCredentialResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:CreateDefaultFromCredentialResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsNumberValid">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/IsNumberValid" style="document" />
+      <wsdl:input name="IsNumberValidRequest">
+        <soap:header message="i0:IsNumberValidRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:IsNumberValidRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:IsNumberValidRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IsNumberValidResponse">
+        <soap:header message="i0:IsNumberValidResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:IsNumberValidResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:IsNumberValidResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:IsNumberValidResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResolvePersonFromInfo">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/ResolvePersonFromInfo" style="document" />
+      <wsdl:input name="ResolvePersonFromInfoRequest">
+        <soap:header message="i0:ResolvePersonFromInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ResolvePersonFromInfoRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ResolvePersonFromInfoRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ResolvePersonFromInfoResponse">
+        <soap:header message="i0:ResolvePersonFromInfoResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ResolvePersonFromInfoResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ResolvePersonFromInfoResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ResolvePersonFromInfoResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonList">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetPersonList" style="document" />
+      <wsdl:input name="GetPersonListRequest">
+        <soap:header message="i0:GetPersonListRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPersonListRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPersonListRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPersonListResponse">
+        <soap:header message="i0:GetPersonListResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPersonListResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPersonListResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPersonListResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonsFromContact">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetPersonsFromContact" style="document" />
+      <wsdl:input name="GetPersonsFromContactRequest">
+        <soap:header message="i0:GetPersonsFromContactRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPersonsFromContactRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPersonsFromContactRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPersonsFromContactResponse">
+        <soap:header message="i0:GetPersonsFromContactResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPersonsFromContactResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPersonsFromContactResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPersonsFromContactResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonsFromProject">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetPersonsFromProject" style="document" />
+      <wsdl:input name="GetPersonsFromProjectRequest">
+        <soap:header message="i0:GetPersonsFromProjectRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPersonsFromProjectRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPersonsFromProjectRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPersonsFromProjectResponse">
+        <soap:header message="i0:GetPersonsFromProjectResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPersonsFromProjectResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPersonsFromProjectResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPersonsFromProjectResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColleagues">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetColleagues" style="document" />
+      <wsdl:input name="GetColleaguesRequest">
+        <soap:header message="i0:GetColleaguesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetColleaguesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetColleaguesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetColleaguesResponse">
+        <soap:header message="i0:GetColleaguesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetColleaguesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetColleaguesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetColleaguesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColleaguesByDepartment">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetColleaguesByDepartment" style="document" />
+      <wsdl:input name="GetColleaguesByDepartmentRequest">
+        <soap:header message="i0:GetColleaguesByDepartmentRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetColleaguesByDepartmentRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetColleaguesByDepartmentRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetColleaguesByDepartmentResponse">
+        <soap:header message="i0:GetColleaguesByDepartmentResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetColleaguesByDepartmentResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetColleaguesByDepartmentResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetColleaguesByDepartmentResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColleaguesBySource">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetColleaguesBySource" style="document" />
+      <wsdl:input name="GetColleaguesBySourceRequest">
+        <soap:header message="i0:GetColleaguesBySourceRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetColleaguesBySourceRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetColleaguesBySourceRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetColleaguesBySourceResponse">
+        <soap:header message="i0:GetColleaguesBySourceResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetColleaguesBySourceResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetColleaguesBySourceResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetColleaguesBySourceResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyOwner">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetMyOwner" style="document" />
+      <wsdl:input name="GetMyOwnerRequest">
+        <soap:header message="i0:GetMyOwnerRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetMyOwnerRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetMyOwnerRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMyOwnerResponse">
+        <soap:header message="i0:GetMyOwnerResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetMyOwnerResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetMyOwnerResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetMyOwnerResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOwnerOnPersonId">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/GetOwnerOnPersonId" style="document" />
+      <wsdl:input name="GetOwnerOnPersonIdRequest">
+        <soap:header message="i0:GetOwnerOnPersonIdRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetOwnerOnPersonIdRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetOwnerOnPersonIdRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetOwnerOnPersonIdResponse">
+        <soap:header message="i0:GetOwnerOnPersonIdResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetOwnerOnPersonIdResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetOwnerOnPersonIdResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetOwnerOnPersonIdResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePersonRank">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/ChangePersonRank" style="document" />
+      <wsdl:input name="ChangePersonRankRequest">
+        <soap:header message="i0:ChangePersonRankRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:ChangePersonRankRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:ChangePersonRankRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangePersonRankResponse">
+        <soap:header message="i0:ChangePersonRankResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:ChangePersonRankResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:ChangePersonRankResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:ChangePersonRankResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPersonRank">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/SetPersonRank" style="document" />
+      <wsdl:input name="SetPersonRankRequest">
+        <soap:header message="i0:SetPersonRankRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetPersonRankRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetPersonRankRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetPersonRankResponse">
+        <soap:header message="i0:SetPersonRankResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetPersonRankResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetPersonRankResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetPersonRankResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NormalizeRanks">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/Person/NormalizeRanks" style="document" />
+      <wsdl:input name="NormalizeRanksRequest">
+        <soap:header message="i0:NormalizeRanksRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:NormalizeRanksRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:NormalizeRanksRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="NormalizeRanksResponse">
+        <soap:header message="i0:NormalizeRanksResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:NormalizeRanksResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:NormalizeRanksResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:NormalizeRanksResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WcfPersonService">
+    <wsdl:port name="BasicHttpBinding_Person" binding="tns:BasicHttpBinding_Person">
+      <soap:address location="http://localhost/SuperOffice82R01/Remote/Services82/Person.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_Person1" binding="tns:BasicHttpBinding_Person1">
+      <soap:address location="https://qm-eis-dev-mok.modules.local/SuperOffice82R01/Remote/Services82/Person.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

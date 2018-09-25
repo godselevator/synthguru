@@ -1,0 +1,375 @@
+﻿@using AOS.Platform.Models
+@model AccountModel
+@{
+    ViewBag.Title = "Assign account";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4 class="panel-title"><strong>Account information</strong></h4>
+    </div>
+    <div class="panel-body">
+        <div class="aoswell">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        @if (Model.AppID == 0)
+                        {
+                            <p>Thank you for confirming your e-mail. Now it's time to assign your profile to an account. You can create a new account or you can assign an existing account</p>
+                        }
+                        else
+                        {
+                            <p>Thank you for confirming your e-mail. Now it's time to assign your profile to an account. Fill in the form to create your new account</p>
+                        }
+                    </div>
+                    <div class="form-group">
+                        @if (Model.AppID == 0)
+                        {
+                            <label class="radio-inline control-label">
+                                <input type="radio" name='AccountType' value='Existing' data-id="existing" /> Assign to existing account
+                            </label>
+                            <label class="radio-inline control-label">
+                                <input type="radio" name='AccountType' value='New' data-id="new" checked="checked" /> Create and assign to new account
+                            </label>
+                        }
+                    </div>
+                    <hr />
+                    <div id="existing">
+                        @using (Html.BeginForm("CreateNewAccount", "Account", FormMethod.Post, new { @class = "form center-block", encType = "multipart/form-data", id = "frmnewaccount", name = "frmnewaccount" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(m => m.UserId, new { id = "hiddenUserId" })
+                            @Html.HiddenFor(m => m.AppID, new { id = "hiddenAppId" })
+                            @Html.HiddenFor(m => m.IsTrial, new { id = "hiddenIsTrial" })
+                            <div class="form-group">
+                                @Html.EditorFor(m => m.NewAccount.NewAccountName, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "Account display name" } })
+                                @Html.ValidationMessageFor(m => m.NewAccount.NewAccountName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.EditorFor(m => m.NewAccount.NewAccountPublishURL, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "Account name", id = "accountName" } })
+                                @Html.ValidationMessageFor(m => m.NewAccount.NewAccountPublishURL, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <p>Publish URL: <strong>http://{service}.online.adwiza.com/<span id="publishURL"></span>/</strong></p>
+                            </div>
+                            <div class="form-group">
+                                @Html.EditorFor(m => m.NewAccount.NewAccountAddress, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "Address" } })
+                                @Html.ValidationMessageFor(m => m.NewAccount.NewAccountAddress, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.EditorFor(m => m.NewAccount.NewAccountAddress2, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "Address 2" } })
+                                @Html.ValidationMessageFor(m => m.NewAccount.NewAccountAddress2, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.EditorFor(m => m.NewAccount.NewAccountZip, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "Zip" } })
+                                @Html.ValidationMessageFor(m => m.NewAccount.NewAccountZip, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.EditorFor(m => m.NewAccount.NewAccountCity, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "City" } })
+                                @Html.ValidationMessageFor(m => m.NewAccount.NewAccountCity, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.EditorFor(m => m.NewAccount.NewAccountCountry, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "Country", id = "country", name = "country", @type = "text", @autocomplete = "off" } })
+                                @Html.ValidationMessageFor(m => m.NewAccount.NewAccountCountry, "", new { @class = "text-danger" })
+                            </div>
+                            @*<button class="ladda-button btn btn-primary btn-lg btn-block" data-style="zoom-in" type="submit" id="form-submit-new" onclick="$('#SpinnerWait_Modal').modal('show')">*@
+                            <button class="ladda-button btn btn-primary btn-lg btn-block" data-style="zoom-in" type="submit" id="form-submit-new">
+                                <span class="ladda-label">Assign to new account</span>
+                            </button>
+                                <div class="form-group">
+                                    <div class="alert alert-success" role="alert" id="success-alert-new">Assign succesful...</div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="alert alert-danger" role="alert" id="error-alert-new"></div>
+                                </div>
+                        }
+                    </div>
+                    @if (Model.AppID > 0)
+                    {
+                        <div id="new" class="aos-none" hidden="hidden">
+                            <div class="form-group">
+                                <h5>Choose which existing account you want to assign to:</h5>
+                            </div>
+                            @using (Html.BeginForm("AssignExistingAccount", "Account", FormMethod.Get, new { @class = "form center-block", encType = "multipart/form-data", id = "frmexistingaccount", name = "frmexistingaccount" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(m => m.UserId, new { id = "hiddenUserId" })
+                                <div class="form-group">
+                                    @Html.EditorFor(m => m.ExistingAccount.ExistingAccountName, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "Existing account", id = "existingaccount", name = "existingaccount", @type = "text", @autocomplete = "off" } })
+                                    @Html.ValidationMessageFor(m => m.ExistingAccount.ExistingAccountName, "", new { @class = "text-danger" })
+                                </div>
+                            }
+                            <button class="ladda-button btn btn-primary btn-lg btn-block" data-style="zoom-out" type="submit" id="form-submit-existing">
+                                <span class="ladda-label">Assign to existing</span>
+                            </button>
+                            <div class="form-group">
+                                <div class="alert alert-success" role="alert" id="success-alert-existing">Assign succesful...</div>
+                            </div>
+                            <div class="form-group">
+                                <div class="alert alert-danger" role="alert" id="error-alert-existing"></div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div id="new" class="aos-none">
+                            <div class="form-group">
+                                <h5>Choose which existing account you want to assign to:</h5>
+                            </div>
+                            @using (Html.BeginForm("AssignExistingAccount", "Account", FormMethod.Get, new { @class = "form center-block", encType = "multipart/form-data", id = "frmexistingaccount", name = "frmexistingaccount" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(m => m.UserId, new { id = "hiddenUserId" })
+                                <div class="form-group">
+                                    @Html.EditorFor(m => m.ExistingAccount.ExistingAccountName, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "Existing account", id = "existingaccount", name = "existingaccount", @type = "text", @autocomplete = "off" } })
+                                    @Html.ValidationMessageFor(m => m.ExistingAccount.ExistingAccountName, "", new { @class = "text-danger" })
+                                </div>
+                            }
+                            <button class="ladda-button btn btn-primary btn-lg btn-block" data-style="zoom-out" type="submit" id="form-submit-existing" onclick="$('#SpinnerWait_Modal').modal('show')">
+                                <span class="ladda-label">Assign to existing</span>
+                            </button>
+                            <div class="form-group">
+                                <div class="alert alert-success" role="alert" id="success-alert-existing">Assign succesful...</div>
+                            </div>
+                            <div class="form-group">
+                                <div class="alert alert-danger" role="alert" id="error-alert-existing"></div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Partial("SpinnerWaitModal")
+
+<script>
+    $(':radio').change(function (event) {
+        var id = $(this).data('id');
+        $('#' + id).addClass('aos-none').siblings().removeClass('aos-none');
+    });
+
+    $(document).ready(function () {
+        $('[data-toggle="popover"]').popover({
+            placement: 'top'
+        });
+
+        $("#country").typeahead({
+            ajax: {
+                url: "@Url.Action("GetAllCountries", "Account")",
+                timeout: 200,
+                displayField: "Name",
+                triggerLength: 1,
+                method: "get",
+                preDispatch: function (query) {
+                    //showLoadingMask(true);
+                    return {
+                        search: query
+                        //otherParam: 123
+                    }
+                },
+                preProcess: function (data) {
+                    //showLoadingMask(false);
+                    //if (data.success === false) {
+                    //    // Hide the list, there was some error
+                    //    return false;
+                    //}
+                    // We good!
+                    //console.log(data);
+                    return data;
+                }
+            }
+        })
+
+        $("#existingaccount").typeahead({
+            ajax: {
+                url: "@Url.Action("GetAllAccounts", "Account")",
+                timeout: 200,
+                displayField: "Name",
+                triggerLength: 1,
+                method: "get",
+                preDispatch: function (query) {
+                    //showLoadingMask(true);
+                    return {
+                        search: query
+                        //otherParam: 123
+                    }
+                },
+                preProcess: function (data) {
+                    //showLoadingMask(false);
+                    //if (data.success === false) {
+                    //    // Hide the list, there was some error
+                    //    return false;
+                    //}
+                    // We good!
+                    c//onsole.log(data);
+                    return data;
+                }
+            }
+        })
+
+        // Generate publish URL
+        $('#accountName').on("input", function () {
+            var dInput = this.value;
+            console.log(dInput);
+            $('#publishURL').text(dInput);
+        });
+
+        $("#accountName").on("blur", function () {
+            var dest = $(this);
+            dest.val(dest.val().split(" ").join(""));
+            $('#publishURL').text(dest.val());
+        });
+
+        function log(message) {
+            $("<div>").text(message).prependTo("#log");
+            $("#log").scrollTop(0);
+        }
+        //// Hardcoded for now
+        //$('#existingaccount').typeahead({
+        //    local: ['Proinfo A/S', 'Ganske Enkelt AS', 'Adwiza A/S', "MoK Inc", 'Coolstuff']
+        //});
+
+        $('.tt-query').css('background-color', '#fff');
+
+        // The ladda button (button with spinner)
+        var ladda = null;
+
+        // Attach click handler to the submit button:
+        $('#form-submit-new').click(function (e) {
+            e.preventDefault();
+            // Assign button to ladda button
+            ladda = Ladda.create(this);
+            // Submit form
+            $('#frmnewaccount').submit();
+            return false;
+        });
+
+        // Attach click handler to the submit button:
+        $('#form-submit-existing').click(function () {
+            // Assign button to ladda button
+            ladda = Ladda.create(this);
+            // Submit form
+            $('#frmexistingaccount').submit();
+        });
+
+        // Hide alert boxes
+        $("#success-alert-new").hide();
+        $("#error-alert-new").hide();
+        $("#success-alert-existing").hide();
+        $("#error-alert-existing").hide();
+
+        // Submit form - New account
+        $("#frmnewaccount").on("submit", function (e) {
+            e.preventDefault();
+
+            var url = $(this).attr("action");
+            var formData = $(this).serialize();
+
+            // Start loading. Turn on spinner
+            ladda.start();
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: formData,
+                dataType: "json",
+                success: function (resp) {
+                    if (resp.IsOK) {
+                        // Hide modal wait spinner
+                        //$('#SpinnerWait_Modal').modal('hide');
+                        // Show success alert box
+                        $("#success-alert-new").show();
+                        // Remove success alert-box after a few seconds
+                        $("#success-alert-new").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#success-alert-new").hide();
+                        });
+                        window.location.href = "@Url.Action("UserHome", "User")";
+                    }
+                    else {
+                        // Hide modal wait spinner
+                        //$('#SpinnerWait_Modal').modal('hide');
+                        // Show error alert box
+                        $("#error-alert-new").html(resp.ErrorMsg);
+                        $("#error-alert-new").show();
+                        // Remove error alert-box after a few seconds
+                        $("#error-alert-new").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#error-alert-new").hide();
+                        });
+                    }
+                }
+            })
+            .always(function () {
+                // Stop loading. Turn off spinner
+                ladda.stop();
+            });
+            return false;
+        });
+
+        // Submit form - New account
+        $("#frmexistingaccount").on("submit", function (event) {
+            event.preventDefault();
+
+            var url = $(this).attr("action");
+            var formData = $(this).serialize();
+
+            // Start loading. Turn on spinner
+            ladda.start();
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: formData,
+                dataType: "json",
+                success: function (resp) {
+                    if (resp.IsOK) {
+                        // Hide modal wait spinner
+                        $('#SpinnerWait_Modal').modal('hide');
+                        // Show success alert box
+                        $("#success-alert-existing").html(resp.ErrorMsg);
+                        $("#success-alert-existing").show();
+                        // Remove success alert-box after a few seconds
+                        $("#success-alert-existing").fadeTo(7000, 500).slideUp(500, function () {
+                            $("#success-alert-existing").hide();
+                            window.location.href = "@Url.Action("Index", "Home")";
+                        });
+                    }
+                    else {
+                        // Hide modal wait spinner
+                        $('#SpinnerWait_Modal').modal('hide');
+                        // Show error alert box
+                        $("#error-alert-existing").html(resp.ErrorMsg);
+                        $("#error-alert-existing").show();
+                        // Remove error alert-box after a few seconds
+                        $("#error-alert-existing").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#error-alert-existing").hide();
+                        });
+                    }
+                }
+            })
+            .always(function () {
+                // Stop loading. Turn off spinner
+                ladda.stop();
+            });
+            return false;
+        });
+
+    });
+
+    //$('#pUrl').on("input", function () {
+    //    var dInput = this.value;
+    //    console.log(dInput);
+    //    $('#composedpublishurl').text(dInput);
+    //});
+
+
+    $('.typeahead.input-sm').siblings('input.tt-hint').addClass('hint-small');
+    $('.typeahead.input-lg').siblings('input.tt-hint').addClass('hint-large');
+
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

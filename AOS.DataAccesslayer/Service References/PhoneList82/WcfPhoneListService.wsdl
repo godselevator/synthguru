@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.superoffice.net/ws/crm/NetServer/Services82" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WcfPhoneListService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_PhoneList1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://www.superoffice.net/ws/crm/NetServer/Services82" location="http://localhost/SuperOffice82R01/Remote/Services82/PhoneList.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_PhoneList" type="i0:PhoneList">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/PhoneList/Search" style="document" />
+      <wsdl:input name="SearchRequest">
+        <soap:header message="i0:SearchRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SearchRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SearchRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SearchResponse">
+        <soap:header message="i0:SearchResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SearchResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SearchResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SearchResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchWithPreferences">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/PhoneList/SearchWithPreferences" style="document" />
+      <wsdl:input name="SearchWithPreferencesRequest">
+        <soap:header message="i0:SearchWithPreferencesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SearchWithPreferencesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SearchWithPreferencesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SearchWithPreferencesResponse">
+        <soap:header message="i0:SearchWithPreferencesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SearchWithPreferencesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SearchWithPreferencesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SearchWithPreferencesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentPhones">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/PhoneList/GetDepartmentPhones" style="document" />
+      <wsdl:input name="GetDepartmentPhonesRequest">
+        <soap:header message="i0:GetDepartmentPhonesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetDepartmentPhonesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetDepartmentPhonesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDepartmentPhonesResponse">
+        <soap:header message="i0:GetDepartmentPhonesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetDepartmentPhonesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetDepartmentPhonesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetDepartmentPhonesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFavoritesPhones">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/PhoneList/GetFavoritesPhones" style="document" />
+      <wsdl:input name="GetFavoritesPhonesRequest">
+        <soap:header message="i0:GetFavoritesPhonesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetFavoritesPhonesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetFavoritesPhonesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetFavoritesPhonesResponse">
+        <soap:header message="i0:GetFavoritesPhonesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetFavoritesPhonesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetFavoritesPhonesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetFavoritesPhonesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPhones">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/PhoneList/GetContactPhones" style="document" />
+      <wsdl:input name="GetContactPhonesRequest">
+        <soap:header message="i0:GetContactPhonesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetContactPhonesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetContactPhonesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetContactPhonesResponse">
+        <soap:header message="i0:GetContactPhonesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetContactPhonesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetContactPhonesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetContactPhonesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToFavorites">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/PhoneList/AddToFavorites" style="document" />
+      <wsdl:input name="AddToFavoritesRequest">
+        <soap:header message="i0:AddToFavoritesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:AddToFavoritesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:AddToFavoritesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddToFavoritesResponse">
+        <soap:header message="i0:AddToFavoritesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:AddToFavoritesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:AddToFavoritesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:AddToFavoritesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreferences">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/PhoneList/GetPreferences" style="document" />
+      <wsdl:input name="GetPreferencesRequest">
+        <soap:header message="i0:GetPreferencesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPreferencesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPreferencesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPreferencesResponse">
+        <soap:header message="i0:GetPreferencesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPreferencesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPreferencesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPreferencesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPreferences">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/PhoneList/SetPreferences" style="document" />
+      <wsdl:input name="SetPreferencesRequest">
+        <soap:header message="i0:SetPreferencesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetPreferencesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetPreferencesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetPreferencesResponse">
+        <soap:header message="i0:SetPreferencesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetPreferencesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetPreferencesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetPreferencesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_PhoneList1" type="i0:PhoneList">
+    <wsp:PolicyReference URI="#BasicHttpBinding_PhoneList1_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/PhoneList/Search" style="document" />
+      <wsdl:input name="SearchRequest">
+        <soap:header message="i0:SearchRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SearchRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SearchRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SearchResponse">
+        <soap:header message="i0:SearchResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SearchResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SearchResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SearchResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchWithPreferences">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/PhoneList/SearchWithPreferences" style="document" />
+      <wsdl:input name="SearchWithPreferencesRequest">
+        <soap:header message="i0:SearchWithPreferencesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SearchWithPreferencesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SearchWithPreferencesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SearchWithPreferencesResponse">
+        <soap:header message="i0:SearchWithPreferencesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SearchWithPreferencesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SearchWithPreferencesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SearchWithPreferencesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentPhones">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/PhoneList/GetDepartmentPhones" style="document" />
+      <wsdl:input name="GetDepartmentPhonesRequest">
+        <soap:header message="i0:GetDepartmentPhonesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetDepartmentPhonesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetDepartmentPhonesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDepartmentPhonesResponse">
+        <soap:header message="i0:GetDepartmentPhonesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetDepartmentPhonesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetDepartmentPhonesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetDepartmentPhonesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFavoritesPhones">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/PhoneList/GetFavoritesPhones" style="document" />
+      <wsdl:input name="GetFavoritesPhonesRequest">
+        <soap:header message="i0:GetFavoritesPhonesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetFavoritesPhonesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetFavoritesPhonesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetFavoritesPhonesResponse">
+        <soap:header message="i0:GetFavoritesPhonesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetFavoritesPhonesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetFavoritesPhonesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetFavoritesPhonesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPhones">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/PhoneList/GetContactPhones" style="document" />
+      <wsdl:input name="GetContactPhonesRequest">
+        <soap:header message="i0:GetContactPhonesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetContactPhonesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetContactPhonesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetContactPhonesResponse">
+        <soap:header message="i0:GetContactPhonesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetContactPhonesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetContactPhonesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetContactPhonesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToFavorites">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/PhoneList/AddToFavorites" style="document" />
+      <wsdl:input name="AddToFavoritesRequest">
+        <soap:header message="i0:AddToFavoritesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:AddToFavoritesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:AddToFavoritesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddToFavoritesResponse">
+        <soap:header message="i0:AddToFavoritesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:AddToFavoritesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:AddToFavoritesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:AddToFavoritesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreferences">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/PhoneList/GetPreferences" style="document" />
+      <wsdl:input name="GetPreferencesRequest">
+        <soap:header message="i0:GetPreferencesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:GetPreferencesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:GetPreferencesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPreferencesResponse">
+        <soap:header message="i0:GetPreferencesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:GetPreferencesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:GetPreferencesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:GetPreferencesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPreferences">
+      <soap:operation soapAction="http://www.superoffice.net/ws/crm/NetServer/Services82/PhoneList/SetPreferences" style="document" />
+      <wsdl:input name="SetPreferencesRequest">
+        <soap:header message="i0:SetPreferencesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="i0:SetPreferencesRequest_Headers" part="Credentials" use="literal" />
+        <soap:header message="i0:SetPreferencesRequest_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetPreferencesResponse">
+        <soap:header message="i0:SetPreferencesResponse_Headers" part="ExceptionInfo" use="literal" />
+        <soap:header message="i0:SetPreferencesResponse_Headers" part="ExtraInfo" use="literal" />
+        <soap:header message="i0:SetPreferencesResponse_Headers" part="Succeeded" use="literal" />
+        <soap:header message="i0:SetPreferencesResponse_Headers" part="TimeZone" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WcfPhoneListService">
+    <wsdl:port name="BasicHttpBinding_PhoneList" binding="tns:BasicHttpBinding_PhoneList">
+      <soap:address location="http://localhost/SuperOffice82R01/Remote/Services82/PhoneList.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_PhoneList1" binding="tns:BasicHttpBinding_PhoneList1">
+      <soap:address location="https://qm-eis-dev-mok.modules.local/SuperOffice82R01/Remote/Services82/PhoneList.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,31 @@
+﻿@model AOS.Platform.Models.IFrameHostViewModel
+@{
+    ViewBag.Title = @Model.AppInfo.AppIFrameHeader;
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+@*<iframe src="@Model.AppInfo.AppAdminURL" frameborder="0" style="overflow:hidden;width:100%" id="idIframe" onload="iframeLoaded()"></iframe>*@
+<script type="text/javascript" src="~/Scripts/iframeResizer.min.js"></script>
+
+<div class="row" id="rowId">
+    <div class="col-md-12">
+        <div class="btn-primary" style="padding: 5px 5px 5px 10px; font-weight:bold">@Model.AppInfo.AppIFrameHeader</div>
+        <div class="aoswelliframe">
+            <iframe src="@Model.AppInfo.AppAdminURL" class="iframe" frameborder="0" style="width:100%; height:10000px" scrolling="no" id="idIframe"></iframe>
+        </div>
+        <p id="callback">
+        </p>
+    </div>
+</div>
+
+<script>
+    // This section will only be available when the page is ready
+    $(document).ready(function () {
+        if ("@Model.IsSystemUser.ToString().ToLower()" == "false") {
+            $("#suDashboard").hide();
+        }
+    });
+
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

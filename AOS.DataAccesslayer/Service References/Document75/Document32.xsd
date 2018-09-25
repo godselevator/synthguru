@@ -1,0 +1,1899 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.superoffice.net/ws/crm/NetServer/Services75" elementFormDefault="qualified" targetNamespace="http://www.superoffice.net/ws/crm/NetServer/Services75" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.10.151/SuperOffice/Remote/Services75/Document.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://192.168.10.151/SuperOffice/Remote/Services75/Document.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="CreateDefaultDocumentEntity">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplicationToken" nillable="true" type="xs:string" />
+  <xs:complexType name="SoCredentials">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ticket" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoCredentials" nillable="true" type="tns:SoCredentials" />
+  <xs:element name="Credentials" nillable="true" type="tns:SoCredentials" />
+  <xs:complexType name="SoTimeZone">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SoTimeZoneId" type="xs:int" />
+      <xs:element minOccurs="0" name="SoTimeZoneLocationCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoTimeZone" nillable="true" type="tns:SoTimeZone" />
+  <xs:element name="TimeZone" nillable="true" type="tns:SoTimeZone" />
+  <xs:element name="CreateDefaultDocumentEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:DocumentEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="DocumentEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+          <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="tns:Associate" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="tns:Associate" />
+          <xs:element minOccurs="0" name="Attention" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Header" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OurRef" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="YourRef" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UpdatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentTemplate" nillable="true" type="tns:DocumentTemplate" />
+          <xs:element minOccurs="0" name="Person" nillable="true" type="tns:Person" />
+          <xs:element minOccurs="0" name="Associate" nillable="true" type="tns:Associate" />
+          <xs:element minOccurs="0" name="Contact" nillable="true" type="tns:Contact" />
+          <xs:element minOccurs="0" name="Project" nillable="true" type="tns:Project" />
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ExternalRef" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Completed" type="tns:ActivityStatus" />
+          <xs:element minOccurs="0" name="ActiveLinks" type="xs:int" />
+          <xs:element minOccurs="0" name="Type" type="tns:AppointmentType" />
+          <xs:element minOccurs="0" name="Links" nillable="true" type="tns:ArrayOfLink" />
+          <xs:element minOccurs="0" name="LockSemantics" type="tns:DocumentLockSemantics" />
+          <xs:element minOccurs="0" name="Sale" nillable="true" type="tns:Sale" />
+          <xs:element minOccurs="0" name="SuggestedDocumentId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserDefinedFields" nillable="true" type="tns:StringDictionary" />
+          <xs:element minOccurs="0" name="ExtraFields" nillable="true" type="tns:StringDictionary" />
+          <xs:element minOccurs="0" name="PublishEventDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PublishTo" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PublishFrom" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsPublished" type="xs:boolean" />
+          <xs:element minOccurs="0" name="VisibleFor" nillable="true" type="tns:ArrayOfVisibleFor" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DocumentEntity" nillable="true" type="tns:DocumentEntity" />
+  <xs:complexType name="Carrier">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TableRight" nillable="true" type="tns:TableRight" />
+      <xs:element minOccurs="0" name="FieldProperties" nillable="true" type="tns:FieldPropertyDictionary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Carrier" nillable="true" type="tns:Carrier" />
+  <xs:complexType name="TableRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Mask" type="tns:ETableRight" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TableRight" nillable="true" type="tns:TableRight" />
+  <xs:simpleType name="ETableRight">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Select" />
+          <xs:enumeration value="Update" />
+          <xs:enumeration value="Insert" />
+          <xs:enumeration value="Delete" />
+          <xs:enumeration value="Filtering" />
+          <xs:enumeration value="RestrictedUpdate" />
+          <xs:enumeration value="Unused1" />
+          <xs:enumeration value="Uninitialized" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ETableRight" nillable="true" type="tns:ETableRight" />
+  <xs:complexType name="FieldPropertyDictionary">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FieldPropertyDictionaryKeyValuePair">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element name="Value" nillable="true" type="tns:FieldProperty" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FieldPropertyDictionary" nillable="true" type="tns:FieldPropertyDictionary" />
+  <xs:complexType name="FieldProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldRight" nillable="true" type="tns:FieldRight" />
+      <xs:element minOccurs="0" name="FieldType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldLength" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FieldProperty" nillable="true" type="tns:FieldProperty" />
+  <xs:complexType name="FieldRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Mask" type="tns:EFieldRight" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FieldRight" nillable="true" type="tns:FieldRight" />
+  <xs:simpleType name="EFieldRight">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Read" />
+          <xs:enumeration value="Write" />
+          <xs:enumeration value="Unused1" />
+          <xs:enumeration value="Unused2" />
+          <xs:enumeration value="Unused3" />
+          <xs:enumeration value="Unused4" />
+          <xs:enumeration value="UIHintMandatory" />
+          <xs:enumeration value="UIHintReadOnly" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="EFieldRight" nillable="true" type="tns:EFieldRight" />
+  <xs:complexType name="Associate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+          <xs:element minOccurs="0" name="Rank" type="xs:short" />
+          <xs:element minOccurs="0" name="Tooltip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" type="tns:UserType" />
+          <xs:element minOccurs="0" name="GroupIdx" type="xs:int" />
+          <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FormalName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Deleted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EjUserId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Associate" nillable="true" type="tns:Associate" />
+  <xs:simpleType name="UserType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="InternalAssociate" />
+      <xs:enumeration value="ResourceAssociate" />
+      <xs:enumeration value="ExternalAssociate" />
+      <xs:enumeration value="AnonymousAssociate" />
+      <xs:enumeration value="SystemAssociate" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserType" nillable="true" type="tns:UserType" />
+  <xs:complexType name="DocumentTemplate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentTemplateId" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tooltip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SaveInDb" type="xs:short" />
+          <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DefaultOref" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecordType" type="tns:DocTmplType" />
+          <xs:element minOccurs="0" name="Deleted" type="xs:short" />
+          <xs:element minOccurs="0" name="Direction" type="tns:DocTmplDirection" />
+          <xs:element minOccurs="0" name="AutoeventId" type="xs:int" />
+          <xs:element minOccurs="0" name="QuoteDocType" type="tns:DocTmplQuoteType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DocumentTemplate" nillable="true" type="tns:DocumentTemplate" />
+  <xs:simpleType name="DocTmplType">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="short" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Appointment" />
+      <xs:enumeration value="Document" />
+      <xs:enumeration value="Email" />
+      <xs:enumeration value="Fax" />
+      <xs:enumeration value="Phone" />
+      <xs:enumeration value="Todo" />
+      <xs:enumeration value="MergeDraft" />
+      <xs:enumeration value="MergeFinal" />
+      <xs:enumeration value="SavedReport" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DocTmplType" nillable="true" type="tns:DocTmplType" />
+  <xs:simpleType name="DocTmplDirection">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="short" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Incoming" />
+      <xs:enumeration value="Outgoing" />
+      <xs:enumeration value="SaintAll" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DocTmplDirection" nillable="true" type="tns:DocTmplDirection" />
+  <xs:simpleType name="DocTmplQuoteType">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="short" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="MailBody" />
+      <xs:enumeration value="MainDocument" />
+      <xs:enumeration value="QuoteLines" />
+      <xs:enumeration value="ConfirmationMailBody" />
+      <xs:enumeration value="ConfirmationLines" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DocTmplQuoteType" nillable="true" type="tns:DocTmplQuoteType" />
+  <xs:complexType name="Person">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+          <xs:element minOccurs="0" name="Mrmrs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Firstname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Lastname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DirectPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FormalName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryId" type="xs:int" />
+          <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+          <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Retired" type="xs:short" />
+          <xs:element minOccurs="0" name="Rank" type="xs:short" />
+          <xs:element minOccurs="0" name="ActiveInterests" type="xs:short" />
+          <xs:element minOccurs="0" name="ContactDepartment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactCountryId" type="xs:int" />
+          <xs:element minOccurs="0" name="ContactOrgNr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FaxPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MobilePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssociateName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+          <xs:element minOccurs="0" name="UsePersonAddress" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ContactFax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Kanafname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Kanalname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Post1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Post2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Post3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmailName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactFullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ActiveErpLinks" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="Contact">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrgNr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Department" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DirectPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+          <xs:element minOccurs="0" name="CountryId" type="xs:int" />
+          <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Kananame" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmailAddressName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="URLName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssociateFullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BusinessName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address" nillable="true" type="tns:Address" />
+          <xs:element minOccurs="0" name="FormattedAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsOwnerContact" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ActiveErpLinks" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Contact" nillable="true" type="tns:Contact" />
+  <xs:complexType name="Address">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Wgs84Latitude" type="xs:double" />
+          <xs:element minOccurs="0" name="Wgs84Longitude" type="xs:double" />
+          <xs:element minOccurs="0" name="LocalizedAddress" nillable="true" type="tns:ArrayOfArrayOfLocalizedField" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="ArrayOfArrayOfLocalizedField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfLocalizedField" nillable="true" type="tns:ArrayOfLocalizedField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArrayOfLocalizedField" nillable="true" type="tns:ArrayOfArrayOfLocalizedField" />
+  <xs:complexType name="ArrayOfLocalizedField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LocalizedField" nillable="true" type="tns:LocalizedField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocalizedField" nillable="true" type="tns:ArrayOfLocalizedField" />
+  <xs:complexType name="LocalizedField">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tooltip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValueLength" type="xs:int" />
+          <xs:element minOccurs="0" name="AddressType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LocalizedField" nillable="true" type="tns:LocalizedField" />
+  <xs:complexType name="Project">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+          <xs:element minOccurs="0" name="AssociateFullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="Updated" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="StatusId" type="xs:int" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TextId" type="xs:int" />
+          <xs:element minOccurs="0" name="PublishTo" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PublishFrom" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsPublished" type="xs:boolean" />
+          <xs:element minOccurs="0" name="URLName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjectNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ActiveErpLinks" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Project" nillable="true" type="tns:Project" />
+  <xs:simpleType name="ActivityStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="NotStarted" />
+      <xs:enumeration value="Started" />
+      <xs:enumeration value="Completed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActivityStatus" nillable="true" type="tns:ActivityStatus" />
+  <xs:simpleType name="AppointmentType">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="short" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="inDiary" />
+      <xs:enumeration value="inChecklist" />
+      <xs:enumeration value="Note" />
+      <xs:enumeration value="Document" />
+      <xs:enumeration value="SavedReport" />
+      <xs:enumeration value="BookingForDiary" />
+      <xs:enumeration value="BookingForChecklist" />
+      <xs:enumeration value="MergeDraft" />
+      <xs:enumeration value="MergeFinal" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AppointmentType" nillable="true" type="tns:AppointmentType" />
+  <xs:complexType name="ArrayOfLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Link" nillable="true" type="tns:Link" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLink" nillable="true" type="tns:ArrayOfLink" />
+  <xs:complexType name="Link">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EntityName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExtraInfo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LinkId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Link" nillable="true" type="tns:Link" />
+  <xs:simpleType name="DocumentLockSemantics">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Locking" />
+      <xs:enumeration value="Versioning" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DocumentLockSemantics" nillable="true" type="tns:DocumentLockSemantics" />
+  <xs:complexType name="Sale">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SaleDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SaleId" type="xs:int" />
+          <xs:element minOccurs="0" name="Probability" type="xs:short" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Amount" type="xs:double" />
+          <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjectName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssociateFullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" type="tns:SaleStatus" />
+          <xs:element minOccurs="0" name="WeightedAmount" type="xs:double" />
+          <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+          <xs:element minOccurs="0" name="EarningPercent" type="xs:double" />
+          <xs:element minOccurs="0" name="Earning" type="xs:double" />
+          <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+          <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+          <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+          <xs:element minOccurs="0" name="SaleTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="SaleTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonFullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Completed" type="tns:ActivityStatus" />
+          <xs:element minOccurs="0" name="ActiveErpLinks" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Sale" nillable="true" type="tns:Sale" />
+  <xs:simpleType name="SaleStatus">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="short" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Open" />
+      <xs:enumeration value="Sold" />
+      <xs:enumeration value="Lost" />
+      <xs:enumeration value="Stalled" />
+      <xs:enumeration value="SaintAll">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1000</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SaleStatus" nillable="true" type="tns:SaleStatus" />
+  <xs:complexType name="StringDictionary">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StringKeyValuePair">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element name="Value" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StringDictionary" nillable="true" type="tns:StringDictionary" />
+  <xs:complexType name="ArrayOfVisibleFor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VisibleFor" nillable="true" type="tns:VisibleFor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVisibleFor" nillable="true" type="tns:ArrayOfVisibleFor" />
+  <xs:complexType name="VisibleFor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="VisibleId" type="xs:int" />
+          <xs:element minOccurs="0" name="Visibility" type="tns:Visibility" />
+          <xs:element minOccurs="0" name="DisplayValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VisibleFor" nillable="true" type="tns:VisibleFor" />
+  <xs:simpleType name="Visibility">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Associate" />
+      <xs:enumeration value="Group" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Visibility" nillable="true" type="tns:Visibility" />
+  <xs:complexType name="SoExceptionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StackTrace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FriendlyText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExceptionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InnerException" nillable="true" type="tns:SoExceptionInfo" />
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:SoExceptionInfoParameters" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoExceptionInfo" nillable="true" type="tns:SoExceptionInfo" />
+  <xs:complexType name="SoExceptionInfoParameters">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SoExceptionInfoParametersKeyValuePair">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element name="Value" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoExceptionInfoParameters" nillable="true" type="tns:SoExceptionInfoParameters" />
+  <xs:element name="ExceptionInfo" nillable="true" type="tns:SoExceptionInfo" />
+  <xs:complexType name="SoExtraInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExtraInfoNameValuePair">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element name="Value" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoExtraInfo" nillable="true" type="tns:SoExtraInfo" />
+  <xs:element name="ExtraInfo" nillable="true" type="tns:SoExtraInfo" />
+  <xs:element name="Succeeded" type="xs:boolean" />
+  <xs:element name="DeleteDocumentEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentEntityId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDocumentEntityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDefaultSuggestedDocumentEntity">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDefaultSuggestedDocumentEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:SuggestedDocumentEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SuggestedDocumentEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SuggestedDocumentId" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tooltip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rank" type="xs:short" />
+          <xs:element minOccurs="0" name="DoctmplId" type="xs:int" />
+          <xs:element minOccurs="0" name="Header" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OurRef" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Deleted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DocTmpl" nillable="true" type="tns:DocumentTemplate" />
+          <xs:element minOccurs="0" name="ProjectTypeStatusLink" nillable="true" type="tns:ProjectTypeStatusLink" />
+          <xs:element minOccurs="0" name="SaleTypeStageLink" nillable="true" type="tns:SaleTypeStageLink" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SuggestedDocumentEntity" nillable="true" type="tns:SuggestedDocumentEntity" />
+  <xs:complexType name="ProjectTypeStatusLink">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProjectTypeStatusLinkId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProjTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProjTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjTypeTooltip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjStatusId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProjStatusName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjStatusTooltip" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjectTypeStatusLink" nillable="true" type="tns:ProjectTypeStatusLink" />
+  <xs:complexType name="SaleTypeStageLink">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SaleTypeStageLinkId" type="xs:int" />
+          <xs:element minOccurs="0" name="SaleTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="SaleTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SaleTypeTooltip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProbId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProbName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProbTooltip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Probability" type="xs:short" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaleTypeStageLink" nillable="true" type="tns:SaleTypeStageLink" />
+  <xs:element name="SaveSuggestedDocumentEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SuggestedDocumentEntity" nillable="true" type="tns:SuggestedDocumentEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSuggestedDocumentEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:SuggestedDocumentEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDefaultTemplateVariablesParameters">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDefaultTemplateVariablesParametersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:TemplateVariablesParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TemplateVariablesParameters">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SourceInput" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Encoding" type="tns:GeneratorEncoding" />
+          <xs:element minOccurs="0" name="CultureName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+          <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+          <xs:element minOccurs="0" name="SelectionId" type="xs:int" />
+          <xs:element minOccurs="0" name="AppointmentId" type="xs:int" />
+          <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+          <xs:element minOccurs="0" name="SaleId" type="xs:int" />
+          <xs:element minOccurs="0" name="QuoteLineId" type="xs:int" />
+          <xs:element minOccurs="0" name="QuoteAlternativeId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductKey" nillable="true" type="xs:string" />
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CustomTags" nillable="true" type="q1:ArrayOfArrayOfstring" />
+          <xs:element minOccurs="0" name="DocumentEntity" nillable="true" type="tns:DocumentEntity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TemplateVariablesParameters" nillable="true" type="tns:TemplateVariablesParameters" />
+  <xs:simpleType name="GeneratorEncoding">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="Html" />
+      <xs:enumeration value="Xml" />
+      <xs:enumeration value="MsWord" />
+      <xs:enumeration value="MsExcel" />
+      <xs:enumeration value="MsPowerpoint" />
+      <xs:enumeration value="MsOffice2007" />
+      <xs:enumeration value="MsOffice2007Xml" />
+      <xs:enumeration value="Url" />
+      <xs:enumeration value="UrlUnicode" />
+      <xs:enumeration value="Pdf" />
+      <xs:enumeration value="Mime" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GeneratorEncoding" nillable="true" type="tns:GeneratorEncoding" />
+  <xs:element name="GetDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:Document" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Document">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Carrier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+          <xs:element minOccurs="0" name="Attention" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Header" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OurRef" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="YourRef" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentTemplate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsPublished" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+          <xs:element minOccurs="0" name="PersonFullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssociateFullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+          <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProjectName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Document" nillable="true" type="tns:Document" />
+  <xs:element name="GetDocumentEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentEntityId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:DocumentEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentStreamFromEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentEntity" nillable="true" type="tns:DocumentEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentStreamFromEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDocumentStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentEntity" nillable="true" type="tns:DocumentEntity" />
+        <xs:element minOccurs="0" name="Stream" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="OverwriteExistingData" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDocumentStreamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:DocumentEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDocumentStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentEntity" nillable="true" type="tns:DocumentEntity" />
+        <xs:element minOccurs="0" name="OverwriteExistingData" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDocumentStreamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTemplateStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TemplateName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AllowPersonal" type="xs:boolean" />
+        <xs:element minOccurs="0" name="UiCulture" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTemplateStreamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTemplateStreamFromId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TemplateId" type="xs:int" />
+        <xs:element minOccurs="0" name="UiCulture" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTemplateStreamFromIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentStreamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewPhysicalMailMergeDocumentFromTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+        <xs:element minOccurs="0" name="UiCulture" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewPhysicalMailMergeDocumentFromTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:DocumentEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewPhysicalDocumentFromTemplateWithCustomTags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="AppointmentId" type="xs:int" />
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+        <xs:element minOccurs="0" name="SaleId" type="xs:int" />
+        <xs:element minOccurs="0" name="SelectionId" type="xs:int" />
+        <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CustomTags" nillable="true" type="q2:ArrayOfstring" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CustomValues" nillable="true" type="q3:ArrayOfstring" />
+        <xs:element minOccurs="0" name="UiCulture" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewPhysicalDocumentFromTemplateWithCustomTagsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:DocumentEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstituteTemplateVariables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GeneratorEncoding" type="tns:GeneratorEncoding" />
+        <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="AppointmentId" type="xs:int" />
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+        <xs:element minOccurs="0" name="SaleId" type="xs:int" />
+        <xs:element minOccurs="0" name="SelectionId" type="xs:int" />
+        <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+        <xs:element minOccurs="0" name="CultureName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstituteTemplateVariablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstituteTemplateVariablesWithCustomTags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GeneratorEncoding" type="tns:GeneratorEncoding" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CustomTags" nillable="true" type="q4:ArrayOfstring" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CustomValues" nillable="true" type="q5:ArrayOfstring" />
+        <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="AppointmentId" type="xs:int" />
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+        <xs:element minOccurs="0" name="SaleId" type="xs:int" />
+        <xs:element minOccurs="0" name="SelectionId" type="xs:int" />
+        <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+        <xs:element minOccurs="0" name="CultureName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstituteTemplateVariablesWithCustomTagsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTempFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DataStream" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTempFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTempFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTempFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTempFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTempFileResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTemplateStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Personal" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Stream" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTemplateStreamResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewPhysicalDocumentFromTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="AppointmentId" type="xs:int" />
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+        <xs:element minOccurs="0" name="SaleId" type="xs:int" />
+        <xs:element minOccurs="0" name="SelectionId" type="xs:int" />
+        <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+        <xs:element minOccurs="0" name="UiCulture" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewPhysicalDocumentFromTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:DocumentEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstituteMergeDocumentTemplateVariables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+        <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CustomTags" nillable="true" type="q6:ArrayOfstring" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CustomValues" nillable="true" type="q7:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstituteMergeDocumentTemplateVariablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstituteTemplateVariablesEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:TemplateVariablesParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstituteTemplateVariablesExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyGetDocumentStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyGetDocumentStreamResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstituteMergeDocumentTemplateVariablesEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MergeDocumentId" type="xs:int" />
+        <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+        <xs:element minOccurs="0" name="SelectionId" type="xs:int" />
+        <xs:element minOccurs="0" name="AppointmentId" type="xs:int" />
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+        <xs:element minOccurs="0" name="SaleId" type="xs:int" />
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CustomTags" nillable="true" type="q8:ArrayOfstring" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CustomValues" nillable="true" type="q9:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstituteMergeDocumentTemplateVariablesExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentUrl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+        <xs:element minOccurs="0" name="VersionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WriteableUrl" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentUrlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePhysicalDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AllowedReturnType" nillable="true" type="q10:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePhysicalDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ReturnInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ReturnInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExternalReference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VersionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Type" type="tns:ReturnType" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdditionalInfo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReturnInfo" nillable="true" type="tns:ReturnInfo" />
+  <xs:simpleType name="ReturnType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Message" />
+      <xs:enumeration value="SoProtocol" />
+      <xs:enumeration value="CustomGui" />
+      <xs:enumeration value="Other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReturnType" nillable="true" type="tns:ReturnType" />
+  <xs:element name="RenameDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+        <xs:element minOccurs="0" name="NewFilename" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenameDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCheckoutState">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCheckoutStateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:CheckoutInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CheckoutInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="State" type="tns:CheckoutState" />
+      <xs:element minOccurs="0" name="AssociateId" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckoutInfo" nillable="true" type="tns:CheckoutInfo" />
+  <xs:simpleType name="CheckoutState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotCheckedOut" />
+      <xs:enumeration value="CheckedOutOwn" />
+      <xs:enumeration value="CheckedOutOther" />
+      <xs:enumeration value="LockingNotSupported" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CheckoutState" nillable="true" type="tns:CheckoutState" />
+  <xs:element name="CheckoutDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AllowedReturnTypes" nillable="true" type="q11:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckoutDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ReturnInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckinDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AllowedReturnTypes" nillable="true" type="q12:ArrayOfstring" />
+        <xs:element minOccurs="0" name="VersionDescription" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="VersionExtraFields" nillable="true" type="q13:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckinDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ReturnInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UndoCheckoutDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AllowedReturnTypes" nillable="true" type="q14:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UndoCheckoutDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ReturnInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfVersionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfVersionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VersionInfo" nillable="true" type="tns:VersionInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVersionInfo" nillable="true" type="tns:ArrayOfVersionInfo" />
+  <xs:complexType name="VersionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExternalReference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+      <xs:element minOccurs="0" name="VersionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CheckedInDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CheckedInByName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CheckedInByAssociateId" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayText" nillable="true" type="xs:string" />
+      <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExtraFields" nillable="true" type="q15:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VersionInfo" nillable="true" type="tns:VersionInfo" />
+  <xs:element name="GetPluginCapabilities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PluginId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPluginCapabilitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:StringDictionary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RequestedProperties" nillable="true" type="q16:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentPropertiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:StringDictionary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentCommands">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AllowedReturnTypes" nillable="true" type="q17:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentCommandsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfCommandInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfCommandInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommandInfo" nillable="true" type="tns:CommandInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommandInfo" nillable="true" type="tns:ArrayOfCommandInfo" />
+  <xs:complexType name="CommandInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayTooltip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IconHint" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnType" type="tns:ReturnType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommandInfo" nillable="true" type="tns:CommandInfo" />
+  <xs:element name="ExecuteDocumentCommand">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+        <xs:element minOccurs="0" name="VersionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AllowedReturnTypes" nillable="true" type="q18:ArrayOfstring" />
+        <xs:element minOccurs="0" name="Command" nillable="true" type="xs:string" />
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdditionalData" nillable="true" type="q19:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteDocumentCommandResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ReturnInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDocumentEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentEntity" nillable="true" type="tns:DocumentEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDocumentEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:DocumentEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDefaultDocumentEntityFromSuggestion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SuggestedDocumentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDefaultDocumentEntityFromSuggestionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:DocumentEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDocumentTemplateStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentTemplateId" type="xs:int" />
+        <xs:element minOccurs="0" name="Content" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="LanguageCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PluginId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDocumentTemplateStreamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:TemplateInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TemplateInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExternalReference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PluginId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TemplateInfo" nillable="true" type="tns:TemplateInfo" />
+  <xs:element name="GetDocumentList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DocumentIds" nillable="true" type="q20:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Document" nillable="true" type="tns:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocument" nillable="true" type="tns:ArrayOfDocument" />
+  <xs:element name="GetAppointmentDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AppointmentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAppointmentDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSaleDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaleId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSaleDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPublishedDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPublishedDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:Document" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPublishedDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DocumentIds" nillable="true" type="q21:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPublishedDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMyPublishedDocuments">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMyPublishedDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPublishedDocumentsByDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="IncludeProjectDocuments" type="xs:boolean" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPublishedDocumentsByDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactDocumentsByTemplateTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DocumentTemplateIds" nillable="true" type="q22:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactDocumentsByTemplateTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactDocumentsByTemplateType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+        <xs:element minOccurs="0" name="DocumentTemplateId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactDocumentsByTemplateTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactDocumentsByTemplateHeading">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+        <xs:element minOccurs="0" name="TemplateHeadingId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactDocumentsByTemplateHeadingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ContactId" type="xs:int" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPublishedPersonDocumentsByDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="IncludeProjectDocuments" type="xs:boolean" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPublishedPersonDocumentsByDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPublishedProjectDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPublishedProjectDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectMemberDocumentsByTemplateTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DocumentTemplateIds" nillable="true" type="q23:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectMemberDocumentsByTemplateTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectMemberDocumentsByTemplateType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+        <xs:element minOccurs="0" name="DocumentTemplateId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectMemberDocumentsByTemplateTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectMemberDocumentsByTemplateHeading">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+        <xs:element minOccurs="0" name="TemplateHeadingId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectMemberDocumentsByTemplateHeadingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectMemberDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectMemberDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectDocumentsByTemplateTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DocumentTemplateIds" nillable="true" type="q24:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectDocumentsByTemplateTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectDocumentsByTemplateType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+        <xs:element minOccurs="0" name="DocumentTemplateId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectDocumentsByTemplateTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectDocumentsByTemplateHeading">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+        <xs:element minOccurs="0" name="TemplateHeadingId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectDocumentsByTemplateHeadingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonDocumentsByTemplateTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="IncludeProjectDocuments" type="xs:boolean" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DocumentTemplateIds" nillable="true" type="q25:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonDocumentsByTemplateTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonDocumentsByTemplateType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="IncludeProjectDocuments" type="xs:boolean" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+        <xs:element minOccurs="0" name="DocumentTemplateId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonDocumentsByTemplateTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonDocumentsByTemplateHeading">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="IncludeProjectDocuments" type="xs:boolean" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+        <xs:element minOccurs="0" name="TemplateHeadingId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonDocumentsByTemplateHeadingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonDocumentsByDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+        <xs:element minOccurs="0" name="IncludeProjectDocuments" type="xs:boolean" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonDocumentsByDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentsByTemplateHeading">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TemplateHeadingId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentsByTemplateHeadingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuggestedDocumentEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SuggestedDocumentEntityId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuggestedDocumentEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Response" nillable="true" type="tns:SuggestedDocumentEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,40 @@
+﻿@model AOS.Platform.Models.GrantAccessViewModel
+@{
+    ViewBag.Title = "Grant access";
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4 class="panel-title"><strong>Grant access</strong></h4>
+    </div>
+    <div class="panel-body">
+        <div class="aoswell">
+            <div class="row">
+                <div class="col-md-12">
+                    @if (Model.ErrorMessage != "")
+                    {
+                        <div class="form-group">
+                            Granting access <span style="color:red"><strong>failed</strong>!!!</span>
+                        </div>
+                        <div class="form-group">
+                            Error message: <p style="color:red"><strong>@Model.ErrorMessage</strong></p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="form-group">
+                            Granting access to account <p class="adwiza-label">@Model.GrantedAccount</p> for user <p class="adwiza-label">@Model.GrantedUser</p><p style="color:green"><strong>succeeded</strong>...</p>
+                        </div>
+                        <div class="form-group">
+                            <strong>@Model.GrantedUser</strong> is now member of the <strong>@Model.GrantedAccount</strong> account and has been notified by email
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

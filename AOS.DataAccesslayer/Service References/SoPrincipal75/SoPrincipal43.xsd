@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.10.151/SuperOffice/Remote/Services75/SoPrincipal.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="DSAParameters">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Counter" type="xs:int" />
+      <xs:element name="G" nillable="true" type="xs:base64Binary" />
+      <xs:element name="J" nillable="true" type="xs:base64Binary" />
+      <xs:element name="P" nillable="true" type="xs:base64Binary" />
+      <xs:element name="Q" nillable="true" type="xs:base64Binary" />
+      <xs:element name="Seed" nillable="true" type="xs:base64Binary" />
+      <xs:element name="Y" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DSAParameters" nillable="true" type="tns:DSAParameters" />
+</xs:schema>

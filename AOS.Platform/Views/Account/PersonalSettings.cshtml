@@ -1,0 +1,151 @@
+﻿@model AOS.Platform.Models.PersonalSettingsViewModel
+@{
+    ViewBag.Title = "Personal settings";
+    Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <!-- Upper panel-->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title"><strong>Personal settings</strong></h4>
+            </div>
+            <div class="panel-body">
+                <div class="aoswell">
+                    <div class="form-group">
+                        This is your personal settings page. From here you can adjust your personal settings
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("ChangePassword", "Manage")'"><span class="fa fa-key"></span> Change password</button>
+                </div>
+            </div>
+        </div>
+        <!-- Personal settings panel-->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title"><strong>Personal info</strong></h4>
+            </div>
+            <div class="panel-body">
+                <div class="aoswell">
+                    <div class="row">
+                        <div class="col-md-12">
+                            @using (Html.BeginForm("UpdatePersonalSettings", "Account", FormMethod.Post, new { @class = "form center-block", encType = "multipart/form-data", id = "frmUpdatePersonalSettings", name = "frmUpdatePersonalSettings" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(m => m.UserId, new { id = "hiddenUserId" })
+                                <div class="form-group">
+                                    @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "Email", id = "email", name = "email" } })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.EditorFor(m => m.FirstNameLastName, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "First name and last name", id = "firstnamelastname", name = "firstnamelastname" } })
+                                    @Html.ValidationMessageFor(m => m.FirstNameLastName, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.EditorFor(m => m.PhoneNumber, new { htmlAttributes = new { @class = "form-control input-lg", @placeholder = "Phone number", id = "phonenumber", name = "phonenumber" } })
+                                    @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
+                                </div>
+                            }
+                            <button class="ladda-button btn btn-primary btn-lg btn-block" data-style="zoom-in" type="submit" id="form-submit" onclick="$('#SpinnerWait_Modal').modal('show')">
+                                <span class="ladda-label">Save</span>
+                            </button>
+                            <div class="form-group">
+                                <div class="alert alert-success" role="alert" id="success-alert">Personal settings successfully saved...</div>
+                            </div>
+                            <div class="form-group">
+                                <div class="alert alert-danger" role="alert" id="error-alert"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Partial("SpinnerWaitModal")
+<script>
+
+    $(function () {
+
+        $('[data-toggle="popover"]').popover();
+
+        // The ladda button (button with spinner)
+        var ladda = null;
+
+        // Attach click handler to the submit button:
+        $('#form-submit').click(function () {
+            // Assign button to ladda button
+            ladda = Ladda.create(this);
+            // Submit form
+            $('#frmUpdatePersonalSettings').submit();
+        });
+
+        // Hide alert boxes
+        $("#success-alert").hide();
+        $("#error-alert").hide();
+
+        // Submit form
+        $("#frmUpdatePersonalSettings").on("submit", function (event) {
+            event.preventDefault();
+
+            var url = $(this).attr("action");
+            var formData = $(this).serialize();
+
+            // Start loading. Turn on spinner
+            ladda.start();
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: formData,
+                dataType: "json",
+                success: function (resp) {
+                    // Check if we should redirect
+                    if (resp.Redirect) {
+                        window.location = "@Url.Action("Login", "Account")";
+                    };
+
+                    if (resp.IsOK) {
+                        // Hide modal wait spinner
+                        $('#SpinnerWait_Modal').modal('hide');
+                        // Show success alert box
+                        $("#success-alert").show();
+                        // Remove success alert-box after a few seconds
+                        $("#success-alert").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#success-alert").hide();
+                        });
+
+                        //$("#currentUser").html("Hello " + resp.RedirectAction + "!");
+                    }
+                    else {
+                        // Hide modal wait spinner
+                        $('#SpinnerWait_Modal').modal('hide');
+                        // Show error alert box
+                        $("#error-alert").html(resp.ErrorMsg);
+                        $("#error-alert").show();
+                        // Remove error alert-box after a few seconds
+                        $("#error-alert").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#error-alert").hide();
+                        });
+                    }
+                }
+            })
+            .always(function () {
+                // Stop loading. Turn off spinner
+                ladda.stop();
+            });
+            return false;
+        });
+
+    });
+
+    // Automatically trigger the loading animation on click
+    Ladda.bind('input[type=submit]');
+
+
+
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

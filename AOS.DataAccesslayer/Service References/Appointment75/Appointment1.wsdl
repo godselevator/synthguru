@@ -1,0 +1,2015 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.superoffice.net/ws/crm/NetServer/Services75" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.superoffice.net/ws/crm/NetServer/Services75" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.superoffice.net/ws/crm/NetServer/Services75/Imports">
+      <xsd:import schemaLocation="http://192.168.10.151/SuperOffice/Remote/Services75/Appointment.svc?xsd=xsd0" namespace="http://www.superoffice.net/ws/crm/NetServer/Services75" />
+      <xsd:import schemaLocation="http://192.168.10.151/SuperOffice/Remote/Services75/Appointment.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.10.151/SuperOffice/Remote/Services75/Appointment.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateDefaultAppointmentEntityRequest">
+    <wsdl:part name="parameters" element="tns:CreateDefaultAppointmentEntity" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityResponse">
+    <wsdl:part name="parameters" element="tns:CreateDefaultAppointmentEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="SaveAppointmentEntityRequest">
+    <wsdl:part name="parameters" element="tns:SaveAppointmentEntity" />
+  </wsdl:message>
+  <wsdl:message name="SaveAppointmentEntityRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="SaveAppointmentEntityResponse">
+    <wsdl:part name="parameters" element="tns:SaveAppointmentEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveAppointmentEntityResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAppointmentEntityRequest">
+    <wsdl:part name="parameters" element="tns:DeleteAppointmentEntity" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAppointmentEntityRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAppointmentEntityResponse">
+    <wsdl:part name="parameters" element="tns:DeleteAppointmentEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAppointmentEntityResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultSuggestedAppointmentEntityRequest">
+    <wsdl:part name="parameters" element="tns:CreateDefaultSuggestedAppointmentEntity" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultSuggestedAppointmentEntityRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultSuggestedAppointmentEntityResponse">
+    <wsdl:part name="parameters" element="tns:CreateDefaultSuggestedAppointmentEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultSuggestedAppointmentEntityResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="SaveSuggestedAppointmentEntityRequest">
+    <wsdl:part name="parameters" element="tns:SaveSuggestedAppointmentEntity" />
+  </wsdl:message>
+  <wsdl:message name="SaveSuggestedAppointmentEntityRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="SaveSuggestedAppointmentEntityResponse">
+    <wsdl:part name="parameters" element="tns:SaveSuggestedAppointmentEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveSuggestedAppointmentEntityResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultTaskListItemRequest">
+    <wsdl:part name="parameters" element="tns:CreateDefaultTaskListItem" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultTaskListItemRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultTaskListItemResponse">
+    <wsdl:part name="parameters" element="tns:CreateDefaultTaskListItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultTaskListItemResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="SaveTaskListItemRequest">
+    <wsdl:part name="parameters" element="tns:SaveTaskListItem" />
+  </wsdl:message>
+  <wsdl:message name="SaveTaskListItemRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="SaveTaskListItemResponse">
+    <wsdl:part name="parameters" element="tns:SaveTaskListItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveTaskListItemResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentRequest">
+    <wsdl:part name="parameters" element="tns:GetAppointment" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentResponse">
+    <wsdl:part name="parameters" element="tns:GetAppointmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="ToggleAppointmentStatusRequest">
+    <wsdl:part name="parameters" element="tns:ToggleAppointmentStatus" />
+  </wsdl:message>
+  <wsdl:message name="ToggleAppointmentStatusRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="ToggleAppointmentStatusResponse">
+    <wsdl:part name="parameters" element="tns:ToggleAppointmentStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ToggleAppointmentStatusResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="ToggleActivityRequest">
+    <wsdl:part name="parameters" element="tns:ToggleActivity" />
+  </wsdl:message>
+  <wsdl:message name="ToggleActivityRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="ToggleActivityResponse">
+    <wsdl:part name="parameters" element="tns:ToggleActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ToggleActivityResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="ToggleActivitiesRequest">
+    <wsdl:part name="parameters" element="tns:ToggleActivities" />
+  </wsdl:message>
+  <wsdl:message name="ToggleActivitiesRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="ToggleActivitiesResponse">
+    <wsdl:part name="parameters" element="tns:ToggleActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ToggleActivitiesResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="SetActivityStatusRequest">
+    <wsdl:part name="parameters" element="tns:SetActivityStatus" />
+  </wsdl:message>
+  <wsdl:message name="SetActivityStatusRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="SetActivityStatusResponse">
+    <wsdl:part name="parameters" element="tns:SetActivityStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetActivityStatusResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="ToggleAndSetActivitiesRequest">
+    <wsdl:part name="parameters" element="tns:ToggleAndSetActivities" />
+  </wsdl:message>
+  <wsdl:message name="ToggleAndSetActivitiesRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="ToggleAndSetActivitiesResponse">
+    <wsdl:part name="parameters" element="tns:ToggleAndSetActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ToggleAndSetActivitiesResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetMySyncAppointmentsRequest">
+    <wsdl:part name="parameters" element="tns:GetMySyncAppointments" />
+  </wsdl:message>
+  <wsdl:message name="GetMySyncAppointmentsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetMySyncAppointmentsResponse">
+    <wsdl:part name="parameters" element="tns:GetMySyncAppointmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMySyncAppointmentsResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentEntityRequest">
+    <wsdl:part name="parameters" element="tns:GetAppointmentEntity" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentEntityRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentEntityResponse">
+    <wsdl:part name="parameters" element="tns:GetAppointmentEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentEntityResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityByTypeRequest">
+    <wsdl:part name="parameters" element="tns:CreateDefaultAppointmentEntityByType" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityByTypeRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityByTypeResponse">
+    <wsdl:part name="parameters" element="tns:CreateDefaultAppointmentEntityByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityByTypeResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="AcceptRequest">
+    <wsdl:part name="parameters" element="tns:Accept" />
+  </wsdl:message>
+  <wsdl:message name="AcceptRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="AcceptResponse">
+    <wsdl:part name="parameters" element="tns:AcceptResponse" />
+  </wsdl:message>
+  <wsdl:message name="AcceptResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="RejectRequest">
+    <wsdl:part name="parameters" element="tns:Reject" />
+  </wsdl:message>
+  <wsdl:message name="RejectRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="RejectResponse">
+    <wsdl:part name="parameters" element="tns:RejectResponse" />
+  </wsdl:message>
+  <wsdl:message name="RejectResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="SaveRequest">
+    <wsdl:part name="parameters" element="tns:Save" />
+  </wsdl:message>
+  <wsdl:message name="SaveRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="SaveResponse">
+    <wsdl:part name="parameters" element="tns:SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRequest">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="DeleteResponse">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CalculateDaysRequest">
+    <wsdl:part name="parameters" element="tns:CalculateDays" />
+  </wsdl:message>
+  <wsdl:message name="CalculateDaysRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CalculateDaysResponse">
+    <wsdl:part name="parameters" element="tns:CalculateDaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateDaysResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="ValidateDaysRequest">
+    <wsdl:part name="parameters" element="tns:ValidateDays" />
+  </wsdl:message>
+  <wsdl:message name="ValidateDaysRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="ValidateDaysResponse">
+    <wsdl:part name="parameters" element="tns:ValidateDaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateDaysResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultRecurrenceRequest">
+    <wsdl:part name="parameters" element="tns:CreateDefaultRecurrence" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultRecurrenceRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultRecurrenceResponse">
+    <wsdl:part name="parameters" element="tns:CreateDefaultRecurrenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultRecurrenceResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="AssignToRequest">
+    <wsdl:part name="parameters" element="tns:AssignTo" />
+  </wsdl:message>
+  <wsdl:message name="AssignToRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="AssignToResponse">
+    <wsdl:part name="parameters" element="tns:AssignToResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssignToResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="SetSeenRequest">
+    <wsdl:part name="parameters" element="tns:SetSeen" />
+  </wsdl:message>
+  <wsdl:message name="SetSeenRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="SetSeenResponse">
+    <wsdl:part name="parameters" element="tns:SetSeenResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSeenResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="MoveRequest">
+    <wsdl:part name="parameters" element="tns:Move" />
+  </wsdl:message>
+  <wsdl:message name="MoveRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="MoveResponse">
+    <wsdl:part name="parameters" element="tns:MoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="MoveResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="AcceptRejectedRequest">
+    <wsdl:part name="parameters" element="tns:AcceptRejected" />
+  </wsdl:message>
+  <wsdl:message name="AcceptRejectedRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="AcceptRejectedResponse">
+    <wsdl:part name="parameters" element="tns:AcceptRejectedResponse" />
+  </wsdl:message>
+  <wsdl:message name="AcceptRejectedResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultRecurrenceByDateRequest">
+    <wsdl:part name="parameters" element="tns:CreateDefaultRecurrenceByDate" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultRecurrenceByDateRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultRecurrenceByDateResponse">
+    <wsdl:part name="parameters" element="tns:CreateDefaultRecurrenceByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultRecurrenceByDateResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CleanUpBookingDeletedRequest">
+    <wsdl:part name="parameters" element="tns:CleanUpBookingDeleted" />
+  </wsdl:message>
+  <wsdl:message name="CleanUpBookingDeletedRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CleanUpBookingDeletedResponse">
+    <wsdl:part name="parameters" element="tns:CleanUpBookingDeletedResponse" />
+  </wsdl:message>
+  <wsdl:message name="CleanUpBookingDeletedResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityByTypeAndAssociateRequest">
+    <wsdl:part name="parameters" element="tns:CreateDefaultAppointmentEntityByTypeAndAssociate" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityByTypeAndAssociateRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityByTypeAndAssociateResponse">
+    <wsdl:part name="parameters" element="tns:CreateDefaultAppointmentEntityByTypeAndAssociateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityByTypeAndAssociateResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetCanInsertForAssociatesRequest">
+    <wsdl:part name="parameters" element="tns:GetCanInsertForAssociates" />
+  </wsdl:message>
+  <wsdl:message name="GetCanInsertForAssociatesRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetCanInsertForAssociatesResponse">
+    <wsdl:part name="parameters" element="tns:GetCanInsertForAssociatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCanInsertForAssociatesResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentHaveParticipantsWithEmailRequest">
+    <wsdl:part name="parameters" element="tns:GetAppointmentHaveParticipantsWithEmail" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentHaveParticipantsWithEmailRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentHaveParticipantsWithEmailResponse">
+    <wsdl:part name="parameters" element="tns:GetAppointmentHaveParticipantsWithEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentHaveParticipantsWithEmailResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityFromSaleSuggestionRequest">
+    <wsdl:part name="parameters" element="tns:CreateDefaultAppointmentEntityFromSaleSuggestion" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityFromSaleSuggestionRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityFromSaleSuggestionResponse">
+    <wsdl:part name="parameters" element="tns:CreateDefaultAppointmentEntityFromSaleSuggestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityFromSaleSuggestionResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetNextSuggestedAppointmentBySaleRequest">
+    <wsdl:part name="parameters" element="tns:GetNextSuggestedAppointmentBySale" />
+  </wsdl:message>
+  <wsdl:message name="GetNextSuggestedAppointmentBySaleRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetNextSuggestedAppointmentBySaleResponse">
+    <wsdl:part name="parameters" element="tns:GetNextSuggestedAppointmentBySaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNextSuggestedAppointmentBySaleResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultReOpenAppointmentRequest">
+    <wsdl:part name="parameters" element="tns:CreateDefaultReOpenAppointment" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultReOpenAppointmentRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultReOpenAppointmentResponse">
+    <wsdl:part name="parameters" element="tns:CreateDefaultReOpenAppointmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultReOpenAppointmentResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityFromProjectSuggestionRequest">
+    <wsdl:part name="parameters" element="tns:CreateDefaultAppointmentEntityFromProjectSuggestion" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityFromProjectSuggestionRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityFromProjectSuggestionResponse">
+    <wsdl:part name="parameters" element="tns:CreateDefaultAppointmentEntityFromProjectSuggestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultAppointmentEntityFromProjectSuggestionResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CanAssignToProjectMemberRequest">
+    <wsdl:part name="parameters" element="tns:CanAssignToProjectMember" />
+  </wsdl:message>
+  <wsdl:message name="CanAssignToProjectMemberRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="CanAssignToProjectMemberResponse">
+    <wsdl:part name="parameters" element="tns:CanAssignToProjectMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="CanAssignToProjectMemberResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentListRequest">
+    <wsdl:part name="parameters" element="tns:GetAppointmentList" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentListRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentListResponse">
+    <wsdl:part name="parameters" element="tns:GetAppointmentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentListResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetMyAppointmentsRequest">
+    <wsdl:part name="parameters" element="tns:GetMyAppointments" />
+  </wsdl:message>
+  <wsdl:message name="GetMyAppointmentsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetMyAppointmentsResponse">
+    <wsdl:part name="parameters" element="tns:GetMyAppointmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMyAppointmentsResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsRequest">
+    <wsdl:part name="parameters" element="tns:GetPersonAppointments" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsResponse">
+    <wsdl:part name="parameters" element="tns:GetPersonAppointmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetMyDiaryRequest">
+    <wsdl:part name="parameters" element="tns:GetMyDiary" />
+  </wsdl:message>
+  <wsdl:message name="GetMyDiaryRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetMyDiaryResponse">
+    <wsdl:part name="parameters" element="tns:GetMyDiaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMyDiaryResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetMyTasksRequest">
+    <wsdl:part name="parameters" element="tns:GetMyTasks" />
+  </wsdl:message>
+  <wsdl:message name="GetMyTasksRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetMyTasksResponse">
+    <wsdl:part name="parameters" element="tns:GetMyTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMyTasksResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonDiaryRequest">
+    <wsdl:part name="parameters" element="tns:GetPersonDiary" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonDiaryRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonDiaryResponse">
+    <wsdl:part name="parameters" element="tns:GetPersonDiaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonDiaryResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonTasksRequest">
+    <wsdl:part name="parameters" element="tns:GetPersonTasks" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonTasksRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonTasksResponse">
+    <wsdl:part name="parameters" element="tns:GetPersonTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonTasksResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsByTypeRequest">
+    <wsdl:part name="parameters" element="tns:GetPersonAppointmentsByType" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsByTypeRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsByTypeResponse">
+    <wsdl:part name="parameters" element="tns:GetPersonAppointmentsByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsByTypeResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsRequest">
+    <wsdl:part name="parameters" element="tns:GetProjectAppointments" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsResponse">
+    <wsdl:part name="parameters" element="tns:GetProjectAppointmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsByTypeRequest">
+    <wsdl:part name="parameters" element="tns:GetProjectAppointmentsByType" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsByTypeRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsByTypeResponse">
+    <wsdl:part name="parameters" element="tns:GetProjectAppointmentsByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsByTypeResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsRequest">
+    <wsdl:part name="parameters" element="tns:GetContactAppointments" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsResponse">
+    <wsdl:part name="parameters" element="tns:GetContactAppointmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsByTypeRequest">
+    <wsdl:part name="parameters" element="tns:GetContactAppointmentsByType" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsByTypeRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsByTypeResponse">
+    <wsdl:part name="parameters" element="tns:GetContactAppointmentsByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsByTypeResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsRequest">
+    <wsdl:part name="parameters" element="tns:GetProjectMemberAppointments" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsResponse">
+    <wsdl:part name="parameters" element="tns:GetProjectMemberAppointmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsByTypeRequest">
+    <wsdl:part name="parameters" element="tns:GetProjectMemberAppointmentsByType" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsByTypeRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsByTypeResponse">
+    <wsdl:part name="parameters" element="tns:GetProjectMemberAppointmentsByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsByTypeResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsByTaskRequest">
+    <wsdl:part name="parameters" element="tns:GetPersonAppointmentsByTask" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsByTaskRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsByTaskResponse">
+    <wsdl:part name="parameters" element="tns:GetPersonAppointmentsByTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsByTaskResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsByTasksRequest">
+    <wsdl:part name="parameters" element="tns:GetPersonAppointmentsByTasks" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsByTasksRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsByTasksResponse">
+    <wsdl:part name="parameters" element="tns:GetPersonAppointmentsByTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsByTasksResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsByTaskHeadingRequest">
+    <wsdl:part name="parameters" element="tns:GetPersonAppointmentsByTaskHeading" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsByTaskHeadingRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsByTaskHeadingResponse">
+    <wsdl:part name="parameters" element="tns:GetPersonAppointmentsByTaskHeadingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonAppointmentsByTaskHeadingResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsByTaskRequest">
+    <wsdl:part name="parameters" element="tns:GetProjectAppointmentsByTask" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsByTaskRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsByTaskResponse">
+    <wsdl:part name="parameters" element="tns:GetProjectAppointmentsByTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsByTaskResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsByTasksRequest">
+    <wsdl:part name="parameters" element="tns:GetProjectAppointmentsByTasks" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsByTasksRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsByTasksResponse">
+    <wsdl:part name="parameters" element="tns:GetProjectAppointmentsByTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsByTasksResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsByTaskHeadingRequest">
+    <wsdl:part name="parameters" element="tns:GetProjectAppointmentsByTaskHeading" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsByTaskHeadingRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsByTaskHeadingResponse">
+    <wsdl:part name="parameters" element="tns:GetProjectAppointmentsByTaskHeadingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectAppointmentsByTaskHeadingResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsByTaskRequest">
+    <wsdl:part name="parameters" element="tns:GetProjectMemberAppointmentsByTask" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsByTaskRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsByTaskResponse">
+    <wsdl:part name="parameters" element="tns:GetProjectMemberAppointmentsByTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsByTaskResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsByTasksRequest">
+    <wsdl:part name="parameters" element="tns:GetProjectMemberAppointmentsByTasks" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsByTasksRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsByTasksResponse">
+    <wsdl:part name="parameters" element="tns:GetProjectMemberAppointmentsByTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsByTasksResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsByTaskHeadingRequest">
+    <wsdl:part name="parameters" element="tns:GetProjectMemberAppointmentsByTaskHeading" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsByTaskHeadingRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsByTaskHeadingResponse">
+    <wsdl:part name="parameters" element="tns:GetProjectMemberAppointmentsByTaskHeadingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectMemberAppointmentsByTaskHeadingResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsByTaskRequest">
+    <wsdl:part name="parameters" element="tns:GetContactAppointmentsByTask" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsByTaskRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsByTaskResponse">
+    <wsdl:part name="parameters" element="tns:GetContactAppointmentsByTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsByTaskResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsByTasksRequest">
+    <wsdl:part name="parameters" element="tns:GetContactAppointmentsByTasks" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsByTasksRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsByTasksResponse">
+    <wsdl:part name="parameters" element="tns:GetContactAppointmentsByTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsByTasksResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsByTaskHeadingRequest">
+    <wsdl:part name="parameters" element="tns:GetContactAppointmentsByTaskHeading" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsByTaskHeadingRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsByTaskHeadingResponse">
+    <wsdl:part name="parameters" element="tns:GetContactAppointmentsByTaskHeadingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAppointmentsByTaskHeadingResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPublishedAppointmentRequest">
+    <wsdl:part name="parameters" element="tns:GetPublishedAppointment" />
+  </wsdl:message>
+  <wsdl:message name="GetPublishedAppointmentRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPublishedAppointmentResponse">
+    <wsdl:part name="parameters" element="tns:GetPublishedAppointmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPublishedAppointmentResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPublishedAppointmentsRequest">
+    <wsdl:part name="parameters" element="tns:GetPublishedAppointments" />
+  </wsdl:message>
+  <wsdl:message name="GetPublishedAppointmentsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPublishedAppointmentsResponse">
+    <wsdl:part name="parameters" element="tns:GetPublishedAppointmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPublishedAppointmentsResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetMyPublishedAppointmentsRequest">
+    <wsdl:part name="parameters" element="tns:GetMyPublishedAppointments" />
+  </wsdl:message>
+  <wsdl:message name="GetMyPublishedAppointmentsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetMyPublishedAppointmentsResponse">
+    <wsdl:part name="parameters" element="tns:GetMyPublishedAppointmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMyPublishedAppointmentsResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPublishedProjectAppointmentsRequest">
+    <wsdl:part name="parameters" element="tns:GetPublishedProjectAppointments" />
+  </wsdl:message>
+  <wsdl:message name="GetPublishedProjectAppointmentsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetPublishedProjectAppointmentsResponse">
+    <wsdl:part name="parameters" element="tns:GetPublishedProjectAppointmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPublishedProjectAppointmentsResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentsByTaskHeadingRequest">
+    <wsdl:part name="parameters" element="tns:GetAppointmentsByTaskHeading" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentsByTaskHeadingRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentsByTaskHeadingResponse">
+    <wsdl:part name="parameters" element="tns:GetAppointmentsByTaskHeadingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentsByTaskHeadingResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAssociateDiaryRequest">
+    <wsdl:part name="parameters" element="tns:GetAssociateDiary" />
+  </wsdl:message>
+  <wsdl:message name="GetAssociateDiaryRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAssociateDiaryResponse">
+    <wsdl:part name="parameters" element="tns:GetAssociateDiaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAssociateDiaryResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetDiaryByGroupRequest">
+    <wsdl:part name="parameters" element="tns:GetDiaryByGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetDiaryByGroupRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetDiaryByGroupResponse">
+    <wsdl:part name="parameters" element="tns:GetDiaryByGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDiaryByGroupResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAppointmentRequest">
+    <wsdl:part name="parameters" element="tns:UpdateAppointment" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAppointmentRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAppointmentResponse">
+    <wsdl:part name="parameters" element="tns:UpdateAppointmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAppointmentResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAssociatesDiaryRequest">
+    <wsdl:part name="parameters" element="tns:GetAssociatesDiary" />
+  </wsdl:message>
+  <wsdl:message name="GetAssociatesDiaryRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAssociatesDiaryResponse">
+    <wsdl:part name="parameters" element="tns:GetAssociatesDiaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAssociatesDiaryResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentRecordsRequest">
+    <wsdl:part name="parameters" element="tns:GetAppointmentRecords" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentRecordsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentRecordsResponse">
+    <wsdl:part name="parameters" element="tns:GetAppointmentRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentRecordsResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetDayInformationListByDatesAndAssociateRequest">
+    <wsdl:part name="parameters" element="tns:GetDayInformationListByDatesAndAssociate" />
+  </wsdl:message>
+  <wsdl:message name="GetDayInformationListByDatesAndAssociateRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetDayInformationListByDatesAndAssociateResponse">
+    <wsdl:part name="parameters" element="tns:GetDayInformationListByDatesAndAssociateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDayInformationListByDatesAndAssociateResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetActivityInformationListByDatesAndAssociateRequest">
+    <wsdl:part name="parameters" element="tns:GetActivityInformationListByDatesAndAssociate" />
+  </wsdl:message>
+  <wsdl:message name="GetActivityInformationListByDatesAndAssociateRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetActivityInformationListByDatesAndAssociateResponse">
+    <wsdl:part name="parameters" element="tns:GetActivityInformationListByDatesAndAssociateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActivityInformationListByDatesAndAssociateResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetRedLetterInformationListByDatesAndAssociateRequest">
+    <wsdl:part name="parameters" element="tns:GetRedLetterInformationListByDatesAndAssociate" />
+  </wsdl:message>
+  <wsdl:message name="GetRedLetterInformationListByDatesAndAssociateRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetRedLetterInformationListByDatesAndAssociateResponse">
+    <wsdl:part name="parameters" element="tns:GetRedLetterInformationListByDatesAndAssociateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRedLetterInformationListByDatesAndAssociateResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmsRequest">
+    <wsdl:part name="parameters" element="tns:GetAlarms" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmsResponse">
+    <wsdl:part name="parameters" element="tns:GetAlarmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmsResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GenerateLeadRequest">
+    <wsdl:part name="parameters" element="tns:GenerateLead" />
+  </wsdl:message>
+  <wsdl:message name="GenerateLeadRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GenerateLeadResponse">
+    <wsdl:part name="parameters" element="tns:GenerateLeadResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateLeadResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="RequestForInfoRequest">
+    <wsdl:part name="parameters" element="tns:RequestForInfo" />
+  </wsdl:message>
+  <wsdl:message name="RequestForInfoRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="RequestForInfoResponse">
+    <wsdl:part name="parameters" element="tns:RequestForInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestForInfoResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetSuggestedAppointmentRequest">
+    <wsdl:part name="parameters" element="tns:GetSuggestedAppointment" />
+  </wsdl:message>
+  <wsdl:message name="GetSuggestedAppointmentRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetSuggestedAppointmentResponse">
+    <wsdl:part name="parameters" element="tns:GetSuggestedAppointmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSuggestedAppointmentResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetSuggestedAppointmentEntityRequest">
+    <wsdl:part name="parameters" element="tns:GetSuggestedAppointmentEntity" />
+  </wsdl:message>
+  <wsdl:message name="GetSuggestedAppointmentEntityRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetSuggestedAppointmentEntityResponse">
+    <wsdl:part name="parameters" element="tns:GetSuggestedAppointmentEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSuggestedAppointmentEntityResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskListItemRequest">
+    <wsdl:part name="parameters" element="tns:GetTaskListItem" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskListItemRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskListItemResponse">
+    <wsdl:part name="parameters" element="tns:GetTaskListItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskListItemResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskListItemsRequest">
+    <wsdl:part name="parameters" element="tns:GetTaskListItems" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskListItemsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="Credentials" element="tns:Credentials" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskListItemsResponse">
+    <wsdl:part name="parameters" element="tns:GetTaskListItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskListItemsResponse_Headers">
+    <wsdl:part name="ExceptionInfo" element="tns:ExceptionInfo" />
+    <wsdl:part name="ExtraInfo" element="tns:ExtraInfo" />
+    <wsdl:part name="Succeeded" element="tns:Succeeded" />
+    <wsdl:part name="TimeZone" element="tns:TimeZone" />
+  </wsdl:message>
+  <wsdl:portType name="Appointment">
+    <wsdl:documentation>
+      <summary>Declaration of Wcf web services for Appointment</summary>
+    </wsdl:documentation>
+    <wsdl:operation name="CreateDefaultAppointmentEntity">
+      <wsdl:documentation>
+        <summary>Loading default values into a new AppointmentEntity.  NetServer calculates default values (e.g. Country) on the entity, which is required when creating/storing a new instance.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultAppointmentEntity" name="CreateDefaultAppointmentEntityRequest" message="tns:CreateDefaultAppointmentEntityRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultAppointmentEntityResponse" name="CreateDefaultAppointmentEntityResponse" message="tns:CreateDefaultAppointmentEntityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAppointmentEntity">
+      <wsdl:documentation>
+        <summary>Updates the existing AppointmentEntity or creates a new AppointmentEntity if the id parameter is empty.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/SaveAppointmentEntity" name="SaveAppointmentEntityRequest" message="tns:SaveAppointmentEntityRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/SaveAppointmentEntityResponse" name="SaveAppointmentEntityResponse" message="tns:SaveAppointmentEntityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAppointmentEntity">
+      <wsdl:documentation>
+        <summary>Deletes the AppointmentEntity</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/DeleteAppointmentEntity" name="DeleteAppointmentEntityRequest" message="tns:DeleteAppointmentEntityRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/DeleteAppointmentEntityResponse" name="DeleteAppointmentEntityResponse" message="tns:DeleteAppointmentEntityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultSuggestedAppointmentEntity">
+      <wsdl:documentation>
+        <summary>Loading default values into a new SuggestedAppointmentEntity.  NetServer calculates default values (e.g. Country) on the entity, which is required when creating/storing a new instance.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultSuggestedAppointmentEntity" name="CreateDefaultSuggestedAppointmentEntityRequest" message="tns:CreateDefaultSuggestedAppointmentEntityRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultSuggestedAppointmentEntityResponse" name="CreateDefaultSuggestedAppointmentEntityResponse" message="tns:CreateDefaultSuggestedAppointmentEntityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSuggestedAppointmentEntity">
+      <wsdl:documentation>
+        <summary>Updates the existing SuggestedAppointmentEntity or creates a new SuggestedAppointmentEntity if the id parameter is empty.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/SaveSuggestedAppointmentEntity" name="SaveSuggestedAppointmentEntityRequest" message="tns:SaveSuggestedAppointmentEntityRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/SaveSuggestedAppointmentEntityResponse" name="SaveSuggestedAppointmentEntityResponse" message="tns:SaveSuggestedAppointmentEntityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultTaskListItem">
+      <wsdl:documentation>
+        <summary>Loading default values into a new TaskListItem.  NetServer calculates default values (e.g. Country) on the entity, which is required when creating/storing a new instance.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultTaskListItem" name="CreateDefaultTaskListItemRequest" message="tns:CreateDefaultTaskListItemRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultTaskListItemResponse" name="CreateDefaultTaskListItemResponse" message="tns:CreateDefaultTaskListItemResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTaskListItem">
+      <wsdl:documentation>
+        <summary>Updates the existing TaskListItem or creates a new TaskListItem if the id parameter is empty.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/SaveTaskListItem" name="SaveTaskListItemRequest" message="tns:SaveTaskListItemRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/SaveTaskListItemResponse" name="SaveTaskListItemResponse" message="tns:SaveTaskListItemResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointment">
+      <wsdl:documentation>
+        <summary>Gets a Appointment object..</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAppointment" name="GetAppointmentRequest" message="tns:GetAppointmentRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAppointmentResponse" name="GetAppointmentResponse" message="tns:GetAppointmentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ToggleAppointmentStatus">
+      <wsdl:documentation>
+        <summary>Sets an appointment's status to Completed if the appointment had a different status, or sets the status to started if already set to completed.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/ToggleAppointmentStatus" name="ToggleAppointmentStatusRequest" message="tns:ToggleAppointmentStatusRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/ToggleAppointmentStatusResponse" name="ToggleAppointmentStatusResponse" message="tns:ToggleAppointmentStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ToggleActivity">
+      <wsdl:documentation>
+        <summary>
+        </summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/ToggleActivity" name="ToggleActivityRequest" message="tns:ToggleActivityRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/ToggleActivityResponse" name="ToggleActivityResponse" message="tns:ToggleActivityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ToggleActivities">
+      <wsdl:documentation>
+        <summary>
+        </summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/ToggleActivities" name="ToggleActivitiesRequest" message="tns:ToggleActivitiesRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/ToggleActivitiesResponse" name="ToggleActivitiesResponse" message="tns:ToggleActivitiesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SetActivityStatus">
+      <wsdl:documentation>
+        <summary>Sets the completed status for an array of activities. The string activityIdentifier param may contain of a mix of appointment_id, sale_id, document_id and todo_id. The changes are saved immediately. If an invalid id is passed in (nonexistent record), no changes will be made. If there is no write access to the record being changed, a Sentry exception will be thrown in the usual manner.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/SetActivityStatus" name="SetActivityStatusRequest" message="tns:SetActivityStatusRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/SetActivityStatusResponse" name="SetActivityStatusResponse" message="tns:SetActivityStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ToggleAndSetActivities">
+      <wsdl:documentation>
+        <summary>Toggles the first activity and sets the rest of the activities to the result of the first toggle. However, there are some special rules for appointments that trigger a suggested appointment when they are completed. If more than one appointment in the set of identifiers triggers a suggestion, we will not toggle those appointments. This rule is only active when changing the status of an appointment to complete. There must be more than one appointment that triggers such an event for this rule to take effect.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/ToggleAndSetActivities" name="ToggleAndSetActivitiesRequest" message="tns:ToggleAndSetActivitiesRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/ToggleAndSetActivitiesResponse" name="ToggleAndSetActivitiesResponse" message="tns:ToggleAndSetActivitiesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMySyncAppointments">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments within a time range. The appointments belong to the currently logged on user.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetMySyncAppointments" name="GetMySyncAppointmentsRequest" message="tns:GetMySyncAppointmentsRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetMySyncAppointmentsResponse" name="GetMySyncAppointmentsResponse" message="tns:GetMySyncAppointmentsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentEntity">
+      <wsdl:documentation>
+        <summary>Gets a AppointmentEntity object..</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAppointmentEntity" name="GetAppointmentEntityRequest" message="tns:GetAppointmentEntityRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAppointmentEntityResponse" name="GetAppointmentEntityResponse" message="tns:GetAppointmentEntityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultAppointmentEntityByType">
+      <wsdl:documentation>
+        <summary>Creates a AppointmentEntity populated with the default values for the specific type.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultAppointmentEntityByType" name="CreateDefaultAppointmentEntityByTypeRequest" message="tns:CreateDefaultAppointmentEntityByTypeRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultAppointmentEntityByTypeResponse" name="CreateDefaultAppointmentEntityByTypeResponse" message="tns:CreateDefaultAppointmentEntityByTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Accept">
+      <wsdl:documentation>
+        <summary>Accepting an appointment invitation.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/Accept" name="AcceptRequest" message="tns:AcceptRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/AcceptResponse" name="AcceptResponse" message="tns:AcceptResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Reject">
+      <wsdl:documentation>
+        <summary>Rejecting an appointment invitation</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/Reject" name="RejectRequest" message="tns:RejectRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/RejectResponse" name="RejectResponse" message="tns:RejectResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <wsdl:documentation>
+        <summary>Saving a booking.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/Save" name="SaveRequest" message="tns:SaveRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/SaveResponse" name="SaveResponse" message="tns:SaveResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:documentation>
+        <summary>Deleting a booking</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/Delete" name="DeleteRequest" message="tns:DeleteRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/DeleteResponse" name="DeleteResponse" message="tns:DeleteResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateDays">
+      <wsdl:documentation>
+        <summary>Calculates the set of dates that represents a recurrence pattern. Adds conflict information to each date.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CalculateDays" name="CalculateDaysRequest" message="tns:CalculateDaysRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CalculateDaysResponse" name="CalculateDaysResponse" message="tns:CalculateDaysResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateDays">
+      <wsdl:documentation>
+        <summary>Validates the set of dates to calculate any conflicts.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/ValidateDays" name="ValidateDaysRequest" message="tns:ValidateDaysRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/ValidateDaysResponse" name="ValidateDaysResponse" message="tns:ValidateDaysResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultRecurrence">
+      <wsdl:documentation>
+        <summary>Creates a RecurrenceInfo object populated with the default values for the specific type.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultRecurrence" name="CreateDefaultRecurrenceRequest" message="tns:CreateDefaultRecurrenceRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultRecurrenceResponse" name="CreateDefaultRecurrenceResponse" message="tns:CreateDefaultRecurrenceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignTo">
+      <wsdl:documentation>
+        <summary>Assigning an appointment to another person.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/AssignTo" name="AssignToRequest" message="tns:AssignToRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/AssignToResponse" name="AssignToResponse" message="tns:AssignToResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSeen">
+      <wsdl:documentation>
+        <summary>Sets an appointment invitiation to seen.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/SetSeen" name="SetSeenRequest" message="tns:SetSeenRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/SetSeenResponse" name="SetSeenResponse" message="tns:SetSeenResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Move">
+      <wsdl:documentation>
+        <summary>Moving a booking to another start time.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/Move" name="MoveRequest" message="tns:MoveRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/MoveResponse" name="MoveResponse" message="tns:MoveResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptRejected">
+      <wsdl:documentation>
+        <summary>Accept that an invited participant has rejected your invitation or assignment.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/AcceptRejected" name="AcceptRejectedRequest" message="tns:AcceptRejectedRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/AcceptRejectedResponse" name="AcceptRejectedResponse" message="tns:AcceptRejectedResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultRecurrenceByDate">
+      <wsdl:documentation>
+        <summary>Creates a RecurrenceInfo object populated with the default values for the specific type. Using startDate as start date for the recurreing pattern.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultRecurrenceByDate" name="CreateDefaultRecurrenceByDateRequest" message="tns:CreateDefaultRecurrenceByDateRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultRecurrenceByDateResponse" name="CreateDefaultRecurrenceByDateResponse" message="tns:CreateDefaultRecurrenceByDateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CleanUpBookingDeleted">
+      <wsdl:documentation>
+        <summary>Deletes all appointments(within the appointmentIds array) with status BookingDeleted.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CleanUpBookingDeleted" name="CleanUpBookingDeletedRequest" message="tns:CleanUpBookingDeletedRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CleanUpBookingDeletedResponse" name="CleanUpBookingDeletedResponse" message="tns:CleanUpBookingDeletedResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultAppointmentEntityByTypeAndAssociate">
+      <wsdl:documentation>
+        <summary>Creates a AppointmentEntity populated with the default values for the specific type and owner.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultAppointmentEntityByTypeAndAssociate" name="CreateDefaultAppointmentEntityByTypeAndAssociateRequest" message="tns:CreateDefaultAppointmentEntityByTypeAndAssociateRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultAppointmentEntityByTypeAndAssociateResponse" name="CreateDefaultAppointmentEntityByTypeAndAssociateResponse" message="tns:CreateDefaultAppointmentEntityByTypeAndAssociateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCanInsertForAssociates">
+      <wsdl:documentation>
+        <summary>Check if current associate can create appointments in the diary of other associates.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetCanInsertForAssociates" name="GetCanInsertForAssociatesRequest" message="tns:GetCanInsertForAssociatesRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetCanInsertForAssociatesResponse" name="GetCanInsertForAssociatesResponse" message="tns:GetCanInsertForAssociatesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentHaveParticipantsWithEmail">
+      <wsdl:documentation>
+        <summary>GetAppointmentHaveParticipantsWithEmail will check if any of the participants is marked to receive emails on this appointment. If no participants are defined, false will be returned.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAppointmentHaveParticipantsWithEmail" name="GetAppointmentHaveParticipantsWithEmailRequest" message="tns:GetAppointmentHaveParticipantsWithEmailRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAppointmentHaveParticipantsWithEmailResponse" name="GetAppointmentHaveParticipantsWithEmailResponse" message="tns:GetAppointmentHaveParticipantsWithEmailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultAppointmentEntityFromSaleSuggestion">
+      <wsdl:documentation>
+        <summary>Creates an appointment based on a suggested appointment. </summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultAppointmentEntityFromSaleSuggestion" name="CreateDefaultAppointmentEntityFromSaleSuggestionRequest" message="tns:CreateDefaultAppointmentEntityFromSaleSuggestionRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultAppointmentEntityFromSaleSuggestionResponse" name="CreateDefaultAppointmentEntityFromSaleSuggestionResponse" message="tns:CreateDefaultAppointmentEntityFromSaleSuggestionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextSuggestedAppointmentBySale">
+      <wsdl:documentation>
+        <summary>Gets the next suggested appointment for a given sale (or rather a given sale's guide).</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetNextSuggestedAppointmentBySale" name="GetNextSuggestedAppointmentBySaleRequest" message="tns:GetNextSuggestedAppointmentBySaleRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetNextSuggestedAppointmentBySaleResponse" name="GetNextSuggestedAppointmentBySaleResponse" message="tns:GetNextSuggestedAppointmentBySaleResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultReOpenAppointment">
+      <wsdl:documentation>
+        <summary>A re-open appointment should be created as a reminder to re-open the sale at a certain date with information regarding the stalled sale. </summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultReOpenAppointment" name="CreateDefaultReOpenAppointmentRequest" message="tns:CreateDefaultReOpenAppointmentRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultReOpenAppointmentResponse" name="CreateDefaultReOpenAppointmentResponse" message="tns:CreateDefaultReOpenAppointmentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultAppointmentEntityFromProjectSuggestion">
+      <wsdl:documentation>
+        <summary>
+        </summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultAppointmentEntityFromProjectSuggestion" name="CreateDefaultAppointmentEntityFromProjectSuggestionRequest" message="tns:CreateDefaultAppointmentEntityFromProjectSuggestionRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CreateDefaultAppointmentEntityFromProjectSuggestionResponse" name="CreateDefaultAppointmentEntityFromProjectSuggestionResponse" message="tns:CreateDefaultAppointmentEntityFromProjectSuggestionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CanAssignToProjectMember">
+      <wsdl:documentation>
+        <summary>
+        </summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CanAssignToProjectMember" name="CanAssignToProjectMemberRequest" message="tns:CanAssignToProjectMemberRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/CanAssignToProjectMemberResponse" name="CanAssignToProjectMemberResponse" message="tns:CanAssignToProjectMemberResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentList">
+      <wsdl:documentation>
+        <summary>Gets an array of Appointment objects..</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAppointmentList" name="GetAppointmentListRequest" message="tns:GetAppointmentListRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAppointmentListResponse" name="GetAppointmentListResponse" message="tns:GetAppointmentListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyAppointments">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments within a time range. The appointments belong to the currently logged on user.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetMyAppointments" name="GetMyAppointmentsRequest" message="tns:GetMyAppointmentsRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetMyAppointmentsResponse" name="GetMyAppointmentsResponse" message="tns:GetMyAppointmentsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonAppointments">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments within a time range. The appointments belong to the person specified. If the person not is a SuperOffice user (associate) or the logged on user is not allowed to view this persons appointments an exception is thrown.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPersonAppointments" name="GetPersonAppointmentsRequest" message="tns:GetPersonAppointmentsRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPersonAppointmentsResponse" name="GetPersonAppointmentsResponse" message="tns:GetPersonAppointmentsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyDiary">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments within a time range. It only returns appointments that would be displayed in the user's diary. The appointments belong to the currently logged on user.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetMyDiary" name="GetMyDiaryRequest" message="tns:GetMyDiaryRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetMyDiaryResponse" name="GetMyDiaryResponse" message="tns:GetMyDiaryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyTasks">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments within a time range. It only returns appointments that would be displayed in the user's task list. The appointments belong to the currently logged on user.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetMyTasks" name="GetMyTasksRequest" message="tns:GetMyTasksRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetMyTasksResponse" name="GetMyTasksResponse" message="tns:GetMyTasksResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonDiary">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments within a time range. It only returns appointments that would be displayed in the user's diary. The appointments belong to the person specified. If the person not is a SuperOffice user (associate) or the logged on user is not allowed to view this persons appointments an exception is thrown.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPersonDiary" name="GetPersonDiaryRequest" message="tns:GetPersonDiaryRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPersonDiaryResponse" name="GetPersonDiaryResponse" message="tns:GetPersonDiaryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonTasks">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments within a time range. It only returns appointments that would be displayed in the user's task list. The appointments belong to the person specified. If the person not is a SuperOffice user (associate) or the logged on user is not allowed to view this persons appointments an exception is thrown.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPersonTasks" name="GetPersonTasksRequest" message="tns:GetPersonTasksRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPersonTasksResponse" name="GetPersonTasksResponse" message="tns:GetPersonTasksResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonAppointmentsByType">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments of a specific appointment type within a time range. The appointments belong to the person specified.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPersonAppointmentsByType" name="GetPersonAppointmentsByTypeRequest" message="tns:GetPersonAppointmentsByTypeRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPersonAppointmentsByTypeResponse" name="GetPersonAppointmentsByTypeResponse" message="tns:GetPersonAppointmentsByTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectAppointments">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments within a time range. The appointments belong to the project specified. If the logged on user is not allowed to view this projects appointments an exception is thrown.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectAppointments" name="GetProjectAppointmentsRequest" message="tns:GetProjectAppointmentsRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectAppointmentsResponse" name="GetProjectAppointmentsResponse" message="tns:GetProjectAppointmentsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectAppointmentsByType">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments of a specific appointment type within a time range. The appointments belong to the project specified.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectAppointmentsByType" name="GetProjectAppointmentsByTypeRequest" message="tns:GetProjectAppointmentsByTypeRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectAppointmentsByTypeResponse" name="GetProjectAppointmentsByTypeResponse" message="tns:GetProjectAppointmentsByTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactAppointments">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments within a time range. The appointments belong to the contact specified. If the logged on user is not allowed to view this persons appointments an exception is thrown.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetContactAppointments" name="GetContactAppointmentsRequest" message="tns:GetContactAppointmentsRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetContactAppointmentsResponse" name="GetContactAppointmentsResponse" message="tns:GetContactAppointmentsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactAppointmentsByType">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments of a specific appointment type within a time range. The appointments belong to the contact specified. If the logged on user is not allowed to view this contacts appointments an exception is thrown.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetContactAppointmentsByType" name="GetContactAppointmentsByTypeRequest" message="tns:GetContactAppointmentsByTypeRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetContactAppointmentsByTypeResponse" name="GetContactAppointmentsByTypeResponse" message="tns:GetContactAppointmentsByTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectMemberAppointments">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments within a time range. The appointments belong to the projects where the person specified is member.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectMemberAppointments" name="GetProjectMemberAppointmentsRequest" message="tns:GetProjectMemberAppointmentsRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectMemberAppointmentsResponse" name="GetProjectMemberAppointmentsResponse" message="tns:GetProjectMemberAppointmentsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectMemberAppointmentsByType">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments of a specific appointment type within a time range. The appointments belong to the projects where the person specified is member.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectMemberAppointmentsByType" name="GetProjectMemberAppointmentsByTypeRequest" message="tns:GetProjectMemberAppointmentsByTypeRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectMemberAppointmentsByTypeResponse" name="GetProjectMemberAppointmentsByTypeResponse" message="tns:GetProjectMemberAppointmentsByTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonAppointmentsByTask">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments of a specific appointment task type within a time range. The appointments belong to the person specified.  Task represents the different types of activities, like “Phone call”, “Meeting” and so on.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPersonAppointmentsByTask" name="GetPersonAppointmentsByTaskRequest" message="tns:GetPersonAppointmentsByTaskRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPersonAppointmentsByTaskResponse" name="GetPersonAppointmentsByTaskResponse" message="tns:GetPersonAppointmentsByTaskResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonAppointmentsByTasks">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments from a list of appointment task types within a time range. The appointments belong to the person specified.  Task represents the different types of activities, like “Phone call”, “Meeting” and so on.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPersonAppointmentsByTasks" name="GetPersonAppointmentsByTasksRequest" message="tns:GetPersonAppointmentsByTasksRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPersonAppointmentsByTasksResponse" name="GetPersonAppointmentsByTasksResponse" message="tns:GetPersonAppointmentsByTasksResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonAppointmentsByTaskHeading">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments of a specific appointment task heading within a time range. The appointments belong to the person specified.  Task represents the different types of activities, like “Phone call”, “Meeting” and so on. The heading represents a grouping or filtering of tasks.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPersonAppointmentsByTaskHeading" name="GetPersonAppointmentsByTaskHeadingRequest" message="tns:GetPersonAppointmentsByTaskHeadingRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPersonAppointmentsByTaskHeadingResponse" name="GetPersonAppointmentsByTaskHeadingResponse" message="tns:GetPersonAppointmentsByTaskHeadingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectAppointmentsByTask">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments of a specific appointment task type within a time range. The appointments belong to the project specified.  Task represents the different types of activities, like “Phone call”, “Meeting” and so on.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectAppointmentsByTask" name="GetProjectAppointmentsByTaskRequest" message="tns:GetProjectAppointmentsByTaskRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectAppointmentsByTaskResponse" name="GetProjectAppointmentsByTaskResponse" message="tns:GetProjectAppointmentsByTaskResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectAppointmentsByTasks">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments matching the list of appointment task types within a time range. The appointments belong to the project specified.  Task represents the different types of activities, like “Phone call”, “Meeting” and so on.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectAppointmentsByTasks" name="GetProjectAppointmentsByTasksRequest" message="tns:GetProjectAppointmentsByTasksRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectAppointmentsByTasksResponse" name="GetProjectAppointmentsByTasksResponse" message="tns:GetProjectAppointmentsByTasksResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectAppointmentsByTaskHeading">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments of a specific appointment task heading within a time range. The appointments belong to the project specified.  Task represents the different types of activities, like “Phone call”, “Meeting” and so on. The heading represents a grouping or filtering of tasks.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectAppointmentsByTaskHeading" name="GetProjectAppointmentsByTaskHeadingRequest" message="tns:GetProjectAppointmentsByTaskHeadingRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectAppointmentsByTaskHeadingResponse" name="GetProjectAppointmentsByTaskHeadingResponse" message="tns:GetProjectAppointmentsByTaskHeadingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectMemberAppointmentsByTask">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments of a specific appointment task type within a time range. The appointments belong to the projects where the person specified is member. Task represents the different types of activities, like “Phone call”, “Meeting” and so on.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectMemberAppointmentsByTask" name="GetProjectMemberAppointmentsByTaskRequest" message="tns:GetProjectMemberAppointmentsByTaskRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectMemberAppointmentsByTaskResponse" name="GetProjectMemberAppointmentsByTaskResponse" message="tns:GetProjectMemberAppointmentsByTaskResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectMemberAppointmentsByTasks">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments matching a set of appointment task types within a time range. The appointments belong to the projects where the person specified is member. Task represents the different types of activities, like “Phone call”, “Meeting” and so on.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectMemberAppointmentsByTasks" name="GetProjectMemberAppointmentsByTasksRequest" message="tns:GetProjectMemberAppointmentsByTasksRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectMemberAppointmentsByTasksResponse" name="GetProjectMemberAppointmentsByTasksResponse" message="tns:GetProjectMemberAppointmentsByTasksResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectMemberAppointmentsByTaskHeading">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments of a specific appointment task heading within a time range. The appointments belong to the projects where the person specified is member. Task represents the different types of activities, like “Phone call”, “Meeting” and so on. The heading represents a grouping or filtering of tasks.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectMemberAppointmentsByTaskHeading" name="GetProjectMemberAppointmentsByTaskHeadingRequest" message="tns:GetProjectMemberAppointmentsByTaskHeadingRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetProjectMemberAppointmentsByTaskHeadingResponse" name="GetProjectMemberAppointmentsByTaskHeadingResponse" message="tns:GetProjectMemberAppointmentsByTaskHeadingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactAppointmentsByTask">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments of a specific appointment task type within a time range. The appointments belong to the contact specified. Task represents the different types of activities, like “Phone call”, “Meeting” and so on.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetContactAppointmentsByTask" name="GetContactAppointmentsByTaskRequest" message="tns:GetContactAppointmentsByTaskRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetContactAppointmentsByTaskResponse" name="GetContactAppointmentsByTaskResponse" message="tns:GetContactAppointmentsByTaskResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactAppointmentsByTasks">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments belonging to an array of appointment task types within a time range. The appointments belong to the contact specified. Task represents the different types of activities, like “Phone call”, “Meeting” and so on.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetContactAppointmentsByTasks" name="GetContactAppointmentsByTasksRequest" message="tns:GetContactAppointmentsByTasksRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetContactAppointmentsByTasksResponse" name="GetContactAppointmentsByTasksResponse" message="tns:GetContactAppointmentsByTasksResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactAppointmentsByTaskHeading">
+      <wsdl:documentation>
+        <summary>Method that returns a specified number of appointments of a specific appointment task heading within a time range. The appointments belong to the contact specified. Task represents the different types of activities, like “Phone call”, “Meeting” and so on. The heading represents a grouping or filtering of tasks.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetContactAppointmentsByTaskHeading" name="GetContactAppointmentsByTaskHeadingRequest" message="tns:GetContactAppointmentsByTaskHeadingRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetContactAppointmentsByTaskHeadingResponse" name="GetContactAppointmentsByTaskHeadingResponse" message="tns:GetContactAppointmentsByTaskHeadingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPublishedAppointment">
+      <wsdl:documentation>
+        <summary>Get published appointment by appointment id.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPublishedAppointment" name="GetPublishedAppointmentRequest" message="tns:GetPublishedAppointmentRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPublishedAppointmentResponse" name="GetPublishedAppointmentResponse" message="tns:GetPublishedAppointmentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPublishedAppointments">
+      <wsdl:documentation>
+        <summary>Get published appointments by appointment ids.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPublishedAppointments" name="GetPublishedAppointmentsRequest" message="tns:GetPublishedAppointmentsRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPublishedAppointmentsResponse" name="GetPublishedAppointmentsResponse" message="tns:GetPublishedAppointmentsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyPublishedAppointments">
+      <wsdl:documentation>
+        <summary>Get published appointments from the logged in user.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetMyPublishedAppointments" name="GetMyPublishedAppointmentsRequest" message="tns:GetMyPublishedAppointmentsRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetMyPublishedAppointmentsResponse" name="GetMyPublishedAppointmentsResponse" message="tns:GetMyPublishedAppointmentsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPublishedProjectAppointments">
+      <wsdl:documentation>
+        <summary>Get published appointments by project id.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPublishedProjectAppointments" name="GetPublishedProjectAppointmentsRequest" message="tns:GetPublishedProjectAppointmentsRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetPublishedProjectAppointmentsResponse" name="GetPublishedProjectAppointmentsResponse" message="tns:GetPublishedProjectAppointmentsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentsByTaskHeading">
+      <wsdl:documentation>
+        <summary>Method that returns appointments of a specific appointment task heading. Task represents the different types of activities, like “Phone call”, “Meeting” and so on. The heading represents a grouping or filtering of tasks.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAppointmentsByTaskHeading" name="GetAppointmentsByTaskHeadingRequest" message="tns:GetAppointmentsByTaskHeadingRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAppointmentsByTaskHeadingResponse" name="GetAppointmentsByTaskHeadingResponse" message="tns:GetAppointmentsByTaskHeadingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssociateDiary">
+      <wsdl:documentation>
+        <summary>
+        </summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAssociateDiary" name="GetAssociateDiaryRequest" message="tns:GetAssociateDiaryRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAssociateDiaryResponse" name="GetAssociateDiaryResponse" message="tns:GetAssociateDiaryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDiaryByGroup">
+      <wsdl:documentation>
+        <summary>
+        </summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetDiaryByGroup" name="GetDiaryByGroupRequest" message="tns:GetDiaryByGroupRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetDiaryByGroupResponse" name="GetDiaryByGroupResponse" message="tns:GetDiaryByGroupResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAppointment">
+      <wsdl:documentation>
+        <summary>Updates an appointment record.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/UpdateAppointment" name="UpdateAppointmentRequest" message="tns:UpdateAppointmentRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/UpdateAppointmentResponse" name="UpdateAppointmentResponse" message="tns:UpdateAppointmentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssociatesDiary">
+      <wsdl:documentation>
+        <summary>
+        </summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAssociatesDiary" name="GetAssociatesDiaryRequest" message="tns:GetAssociatesDiaryRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAssociatesDiaryResponse" name="GetAssociatesDiaryResponse" message="tns:GetAssociatesDiaryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentRecords">
+      <wsdl:documentation>
+        <summary>Get all records involved in a booking and/or recurring appointments. MotherId can be zero for repeating appointments or bookings, and recurrenceRuleId can be zero for bookings that are not repeating.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAppointmentRecords" name="GetAppointmentRecordsRequest" message="tns:GetAppointmentRecordsRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAppointmentRecordsResponse" name="GetAppointmentRecordsResponse" message="tns:GetAppointmentRecordsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDayInformationListByDatesAndAssociate">
+      <wsdl:documentation>
+        <summary>Get combined day information (activity + redletter summary) for one or more days according to the given date interval. The time portion of the dates is ignored. Private appointments are counted, but may not be visible through tooltips or other more detailed services.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetDayInformationListByDatesAndAssociate" name="GetDayInformationListByDatesAndAssociateRequest" message="tns:GetDayInformationListByDatesAndAssociateRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetDayInformationListByDatesAndAssociateResponse" name="GetDayInformationListByDatesAndAssociateResponse" message="tns:GetDayInformationListByDatesAndAssociateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivityInformationListByDatesAndAssociate">
+      <wsdl:documentation>
+        <summary>Get activity information for one or more days according to the given date interval. The time portion of the dates is ignored. Private appointments are counted, but may not be visible through tooltips or other more detailed services.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetActivityInformationListByDatesAndAssociate" name="GetActivityInformationListByDatesAndAssociateRequest" message="tns:GetActivityInformationListByDatesAndAssociateRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetActivityInformationListByDatesAndAssociateResponse" name="GetActivityInformationListByDatesAndAssociateResponse" message="tns:GetActivityInformationListByDatesAndAssociateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRedLetterInformationListByDatesAndAssociate">
+      <wsdl:documentation>
+        <summary>Get detailed red letter day information (redletter summary + individual day texts) for one or more days according to the given date interval. The time portion of the dates is ignored. </summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetRedLetterInformationListByDatesAndAssociate" name="GetRedLetterInformationListByDatesAndAssociateRequest" message="tns:GetRedLetterInformationListByDatesAndAssociateRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetRedLetterInformationListByDatesAndAssociateResponse" name="GetRedLetterInformationListByDatesAndAssociateResponse" message="tns:GetRedLetterInformationListByDatesAndAssociateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarms">
+      <wsdl:documentation>
+        <summary>
+        </summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAlarms" name="GetAlarmsRequest" message="tns:GetAlarmsRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetAlarmsResponse" name="GetAlarmsResponse" message="tns:GetAlarmsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateLead">
+      <wsdl:documentation>
+        <summary>Adds a sales lead (task) to a contact in SuperOffice. If the contact or person is known, the sales lead is added to the current contact. If not, a new contact is created, with the associate with ownerIdForNewContact as responsible (Our Contact). A relation is created between the contact and the person submitting the lead. Based on wether the person the request is made for is found or not, the following happens: If the person is found, the person, person's contact and sales representative is returned. If neither the person nor the contact is found a new person and contact is created (if sufficient data is supplied), and the person, person's contact and sales representative is returned. If the contact and not the person is found a new person is created on this contact, and the contact, salesrep, and person is returned (if there was enough data to return the person). If more than one contact is found a list of contacts is returned.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GenerateLead" name="GenerateLeadRequest" message="tns:GenerateLeadRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GenerateLeadResponse" name="GenerateLeadResponse" message="tns:GenerateLeadResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestForInfo">
+      <wsdl:documentation>
+        <summary>Submits a request for information. The request is added to the task list of the user that is responsible for this contact. Based on wether the person the request is made for is found or not, the following happens: If the person is found, the person, person's contact and sales representative is returned. If neither the person nor the contact is found a new person and contact is created (if sufficient data is supplied), and the person, person's contact and sales representative is returned. If the contact and not the person is found a new person is created on this contact, and the contact, salesrep, and person is returned (if there was enough data to return the person). If more than one contact is found a list of contacts is returned.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/RequestForInfo" name="RequestForInfoRequest" message="tns:RequestForInfoRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/RequestForInfoResponse" name="RequestForInfoResponse" message="tns:RequestForInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSuggestedAppointment">
+      <wsdl:documentation>
+        <summary>Gets a SuggestedAppointment object..</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetSuggestedAppointment" name="GetSuggestedAppointmentRequest" message="tns:GetSuggestedAppointmentRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetSuggestedAppointmentResponse" name="GetSuggestedAppointmentResponse" message="tns:GetSuggestedAppointmentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSuggestedAppointmentEntity">
+      <wsdl:documentation>
+        <summary>Gets a SuggestedAppointmentEntity object..</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetSuggestedAppointmentEntity" name="GetSuggestedAppointmentEntityRequest" message="tns:GetSuggestedAppointmentEntityRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetSuggestedAppointmentEntityResponse" name="GetSuggestedAppointmentEntityResponse" message="tns:GetSuggestedAppointmentEntityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskListItem">
+      <wsdl:documentation>
+        <summary>Gets a TaskListItem object..</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetTaskListItem" name="GetTaskListItemRequest" message="tns:GetTaskListItemRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetTaskListItemResponse" name="GetTaskListItemResponse" message="tns:GetTaskListItemResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskListItems">
+      <wsdl:documentation>
+        <summary>Gets all takslist items</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetTaskListItems" name="GetTaskListItemsRequest" message="tns:GetTaskListItemsRequest" />
+      <wsdl:output wsaw:Action="http://www.superoffice.net/ws/crm/NetServer/Services75/Appointment/GetTaskListItemsResponse" name="GetTaskListItemsResponse" message="tns:GetTaskListItemsResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

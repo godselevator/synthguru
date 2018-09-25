@@ -1,0 +1,22 @@
+﻿@model AOS.Platform.Models.IndexViewModel
+@{
+    ViewBag.Title = "Manage";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title"><strong>Manage password</strong></h4>
+            </div>
+            <div class="panel-body">
+                <div class="aoswell">
+                    <p class="adwiza-label">@ViewBag.StatusMessage</p>
+                    <button type="button" class="btn btn-primary" id="btnpersonalsettings" onclick="location.href='@Url.Action("PersonalSettings", "Account")'">
+                        <span class="fa fa-arrow-left"></span>&nbsp;Back
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

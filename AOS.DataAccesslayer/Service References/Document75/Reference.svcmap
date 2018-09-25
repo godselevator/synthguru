@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="371e3bc0-7d00-407b-ab55-43795a8d382d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.10.151/SuperOffice/Remote/Services75/Document.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Document3.xsd" MetadataType="Schema" ID="21d3d4da-db16-4039-bda6-8995805c006e" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Document.svc?xsd=xsd2" />
+    <MetadataFile FileName="Document31.xsd" MetadataType="Schema" ID="c1a728eb-e0ae-4280-9ada-edb0b313c0c9" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Document.svc?xsd=xsd1" />
+    <MetadataFile FileName="Document32.xsd" MetadataType="Schema" ID="2aab020f-7043-431d-ad30-a6d97bb3e11e" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Document.svc?xsd=xsd0" />
+    <MetadataFile FileName="Document1.wsdl" MetadataType="Wsdl" ID="94c10074-fb39-4cda-95f7-dd0d1823d6f1" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Document.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Document1.disco" MetadataType="Disco" ID="a367ddc7-ae6a-497c-8f9e-379491c2772f" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Document.svc?disco" />
+    <MetadataFile FileName="WcfDocumentService1.wsdl" MetadataType="Wsdl" ID="3ec369c8-96f9-47a2-b1c7-0433e162220b" SourceId="1" SourceUrl="http://192.168.10.151/SuperOffice/Remote/Services75/Document.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
