@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOS.DataAccesslayer", "AOS.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOS.DomainModel", "AOS.DomainModel\AOS.DomainModel.csproj", "{C6310604-6BC9-4D66-A89C-3C65E7DED6C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynthGuru.Web", "SynthGuru.Web\SynthGuru.Web.csproj", "{FE7213D1-EF3B-4EF9-A085-2D5C35ED3A32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C6310604-6BC9-4D66-A89C-3C65E7DED6C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6310604-6BC9-4D66-A89C-3C65E7DED6C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6310604-6BC9-4D66-A89C-3C65E7DED6C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE7213D1-EF3B-4EF9-A085-2D5C35ED3A32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE7213D1-EF3B-4EF9-A085-2D5C35ED3A32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE7213D1-EF3B-4EF9-A085-2D5C35ED3A32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE7213D1-EF3B-4EF9-A085-2D5C35ED3A32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
