@@ -23,7 +23,20 @@ namespace SynthGuru.BusinessLayer
     {
         public IList<SynthModel> GetAllSynthModels()
         {
-            return _SynthModelRepository.GetAll();
+            return _SynthModelRepository.GetAll(a => a.Manufacturer, a => a.SynthesisType);
+        }
+
+        public IList<SynthModel> GetAllSynthModelsUnpacked()
+        {
+            return _SynthModelRepository.GetList(a => a.Id > 0, a => a.Id,
+                                                                a => a.ManufacturerId,
+                                                                a => a.Manufacturer,
+                                                                a => a.Name,
+                                                                a => a.Year,
+                                                                a => a.Polyphony,
+                                                                a => a.SynthesisTypeId,
+                                                                a => a.SynthesisType,
+                                                                a => a.StorageMemory);
         }
 
         public SynthModel GetSynthModelById(int SynthModelId)

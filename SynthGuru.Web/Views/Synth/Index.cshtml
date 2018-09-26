@@ -1,18 +1,45 @@
-﻿@model SynthGuru.Web.Models.SynthViewModel
-<h2>Synths</h2>
-<div class="row">
-    <div class="col-md-4">
-        <div class="form-group">
-            <button class="btn-primary">Show synth list</button>
-        </div>
-    </div>
-</div>
-<div class="row">
+﻿<div class="row" style="padding-top: 25px;">
     <div class="col-md-12">
-        <div class="synthList">
-            <div class="well" id="dummy">
-
-            </div>
-        </div>
+        <table id="tblSynthModelsList" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Manufacturer</th>
+                    <th>Year</th>
+                    <th>Polyphony</th>
+                    <th>Synthesis Type</th>
+                    <th>Storage Memory</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </div>
 </div>
+@section scripts{
+    <script type="text/javascript">
+        // Shorthand for $( document ).ready()
+        $(function () {
+            $("#tblSynthModelsList").DataTable({
+                processing: true,
+                ajax: {
+                    //"url": "../SynthGuru/Synth/GetList",
+                    "url": "../SynthGuru/api/SynthModel",
+                    "type": "GET",
+                    "datatype": "json",
+                    "dataSrc": ""
+                },
+                "columns": [
+                    { "data": 'Id' },
+                    { "data": 'Name' },
+                    { "data": 'Manufacturer' },
+                    { "data": 'Year' },
+                    { "data": 'Polyphony' },
+                    { "data": 'SynthesisType' },
+                    { "data": 'StorageMemory' }
+                ]
+            });  
+        });
+    </script>
+}

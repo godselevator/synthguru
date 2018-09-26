@@ -21,12 +21,11 @@ namespace SynthGuru.Web.Services
         {
             var bl = new SynthModelBL();
 
-            var resp = bl.GetAll();
+            var resp = bl.GetAllUnpacked();
 
             return (!resp.IsOK) ? Request.CreateErrorResponse(HttpStatusCode.InternalServerError, resp.ErrorMsg) :
-                Request.CreateResponse(HttpStatusCode.OK, JsonConvert.SerializeObject(resp.ReturnObj, Formatting.None));
+                Request.CreateResponse(HttpStatusCode.OK, resp.ReturnObj);
         }
-
         /// <summary>
         /// Get a single synthesizer SynthModel by id
         /// </summary>

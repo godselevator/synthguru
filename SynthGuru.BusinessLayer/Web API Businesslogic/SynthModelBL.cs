@@ -47,6 +47,36 @@ namespace SynthGuru.BusinessLayer
             return resp;
         }
 
+        public GenericResponse<List<SynthModelListDTO>> GetAllUnpacked()
+        {
+            var resp = new GenericResponse<List<SynthModelListDTO>>();
+            resp.ReturnObj = new List<SynthModelListDTO>();
+
+            try
+            {
+                var currList = bll.GetAllSynthModels();
+
+                resp.ReturnObj = (from a in currList
+                                  select new SynthModelListDTO()
+                                  {
+                                      Id = a.Id,
+                                      Manufacturer = a.Manufacturer.Name,
+                                      Name = a.Name,
+                                      Year = a.Year,
+                                      Polyphony = a.Polyphony,
+                                      SynthesisType = a.SynthesisType.Name,
+                                      StorageMemory = a.StorageMemory
+                                  }).ToList();
+            }
+            catch (Exception ex)
+            {
+                resp.IsOK = false;
+                resp.ErrorMsg = $"Exception: {ex.Message}";
+            }
+
+            return resp;
+        }
+
         public GenericResponse<SynthModelDTO> GetById(int id)
         {
             var resp = new GenericResponse<SynthModelDTO>();

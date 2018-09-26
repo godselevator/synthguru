@@ -1,4 +1,6 @@
-﻿using SynthGuru.Web.Models;
+﻿using Newtonsoft.Json;
+using SynthGuru.BusinessLayer;
+using SynthGuru.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,15 +14,21 @@ namespace SynthGuru.Web.Controllers
         // GET: Content
         public ActionResult Index()
         {
-            var bll = new BusinessLayer.BusinessLayer();
+            return View();
+            //var synthModelBL = new SynthModelBL();
 
-            var allSynths = bll.GetAllSynthModels();
-            var viewModel = new SynthViewModel()
-            {
-                SynthList = allSynths
-            };
+            //var resp = synthModelBL.GetAllUnpacked();
 
-            return View(viewModel);
+            //return Json(resp.ReturnObj, "json", JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetList()
+        {
+            var synthModelBL = new SynthModelBL();
+
+            var resp = synthModelBL.GetAllUnpacked();
+
+            return Json(new { data = resp.ReturnObj }, JsonRequestBehavior.AllowGet);
         }
     }
 }

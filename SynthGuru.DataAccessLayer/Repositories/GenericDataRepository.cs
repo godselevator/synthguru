@@ -7,7 +7,8 @@ using System.Linq.Expressions;
 
 namespace SynthGuru.DataAccessLayer.Repositories
 {
-    public class GenericDataRepository<T> : IGenericDataRepository<T> where T : class    {
+    public class GenericDataRepository<T> : IGenericDataRepository<T> where T : class
+    {
         public virtual IList<T> GetAll(params Expression<Func<T, object>>[] navigationProperties)
         {
             List<T> list;
@@ -26,8 +27,7 @@ namespace SynthGuru.DataAccessLayer.Repositories
             return list;
         }
 
-        public virtual IList<T> GetList(Func<T, bool> where,
-             params Expression<Func<T, object>>[] navigationProperties)
+        public virtual IList<T> GetList(Func<T, bool> where, params Expression<Func<T, object>>[] navigationProperties)
         {
             List<T> list;
             using (var context = new SynthGuruEntities())
